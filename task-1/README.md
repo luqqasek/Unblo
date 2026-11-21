@@ -111,3 +111,33 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 
 The installer uses `py -3.11` to create the environment and CPU ONNX Runtime.
 Windows execution has not been verified on this Mac. GPU setup is separate.
+
+## Dashboard do przeglądania danych
+
+Dashboard działa lokalnie i nie wymaga dodatkowych bibliotek ponad NumPy i Pillow
+z przygotowanego środowiska. Nie ładuje modeli watermarkowania.
+
+Windows, PowerShell w folderze `task-1`:
+
+```powershell
+.\.venv\Scripts\python.exe dashboard/server.py
+```
+
+macOS / Linux:
+
+```sh
+.venv/bin/python dashboard/server.py
+```
+
+Otwórz **http://127.0.0.1:8765**. Zakończ serwer przez Ctrl+C.
+Możesz zmienić port: `dashboard/server.py --port 8766`.
+
+- Galeria wszystkich obrazów train/test, wyszukiwanie po nazwie i filtrowanie po metodzie.
+- Obraz wejściowy, zielona nakładka ground truth i maska binarna obok siebie.
+- Przełączanie maski 512 × 512 / oficjalnej siatki 128 × 128, regulacja nakładki.
+- Wiadomość bitowa, flaga `full_watermark` i ścieżki plików źródłowych.
+- Filtrowanie i sortowanie po pokryciu oraz rozkład pokrycia dla wybranych danych.
+
+Pokrycie liczone jest z oficjalnej maski 128 × 128. Dla testu jest nieznane,
+więc dashboard nie pokazuje masek, wartości pokrycia ani flagi `full_watermark`.
+Metadane nie zawierają etykiet typu edycji. Podgląd niczego nie zmienia w danych.

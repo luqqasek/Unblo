@@ -42,3 +42,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 This uses CPU inference and needs no Bash, WSL, or CUDA installation. Select
 `.venv\Scripts\python.exe` in your editor. The Windows installer has not yet
 been executed on Windows; the Mac setup and decoder checks were verified locally.
+
+## Browse the dataset
+
+From `task-1`, run `.venv\Scripts\python.exe dashboard/server.py` on Windows
+(or `.venv/bin/python dashboard/server.py` on macOS/Linux), then open
+http://127.0.0.1:8765. See images, ground-truth masks, overlays, embedded messages,
+and filters for all three watermarking methods. Models are not needed to browse.
