@@ -1,4 +1,22 @@
-# Verified local setup — 2026-11-21
+# Verified Windows setup — 2026-11-21
+
+Current checkout: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1`
+completed with exit code 0 on Windows.
+
+- Project-local Python 3.11.18, PyTorch 2.5.1 CPU, ONNX Runtime 1.23.2.
+- All 510 train / 1,020 test images loaded, method counts checked, all train
+  masks match the official downsampling. Archive SHA-256 checks passed.
+- PixelSeal, TrustMark Q and StegaStamp CPU logits and feature extraction passed.
+- Five repository tests and two baseline tests passed; `pip check` passed.
+- Reference validation mIoU: zeros 0.241116, ones 0.258884, spatial prior 0.262779.
+- `experiments/baseline/results/submission.pt`: 1,020 uint8 masks, 16,734,635 bytes,
+  saved and reloaded through validation. No submission uploaded.
+- Windows setup now supports a local Python fallback, UTF-8 installation,
+  tested dependency constraints and model downloads with retries/timeouts.
+
+See `AUDIT.md` and `experiments/baseline/README.md` for details.
+
+## Earlier verification on another machine
 
 - Local Git repository initialized on main; no remote configured.
 - Python 3.11.15, PyTorch 2.5.1, torchvision 0.20.1, CPU ONNX Runtime 1.23.2.

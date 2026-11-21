@@ -1,0 +1,72 @@
+[
+  {
+    "path": "official/.gitattributes",
+    "url": "https://huggingface.co/datasets/SprintML/unlearning/resolve/beac43807fbc29a32c1037ea1d8ee2ed6548595a/.gitattributes",
+    "revision": "beac43807fbc29a32c1037ea1d8ee2ed6548595a",
+    "size": 2504,
+    "sha256": "9e75dd981de037ec3769f24f790e126bc5a160b6871f510214e68dc70649aeeb"
+  },
+  {
+    "path": "data/forget_images.npz",
+    "url": "https://huggingface.co/datasets/SprintML/unlearning/resolve/beac43807fbc29a32c1037ea1d8ee2ed6548595a/forget_images.npz",
+    "revision": "beac43807fbc29a32c1037ea1d8ee2ed6548595a",
+    "size": 526848266,
+    "sha256": "5b1d9deaf475db0905973aa028511ab35aebc33196412f5ef9ebbef09f1541c7"
+  },
+  {
+    "path": "data/model.pt",
+    "url": "https://huggingface.co/datasets/SprintML/unlearning/resolve/beac43807fbc29a32c1037ea1d8ee2ed6548595a/model.pt",
+    "revision": "beac43807fbc29a32c1037ea1d8ee2ed6548595a",
+    "size": 343617075,
+    "sha256": "485881a03ad064b5e6defc245ae3f45fd96714bf065ff96543a5eeca9f642571"
+  },
+  {
+    "path": "official/requirements.txt",
+    "url": "https://huggingface.co/datasets/SprintML/unlearning/resolve/beac43807fbc29a32c1037ea1d8ee2ed6548595a/requirements.txt",
+    "revision": "beac43807fbc29a32c1037ea1d8ee2ed6548595a",
+    "size": 78,
+    "sha256": "2f73cdaa0261a398794da322ad07649bb125525027357759e0179205a6ddb250"
+  },
+  {
+    "path": "official/submission.py",
+    "url": "https://huggingface.co/datasets/SprintML/unlearning/resolve/beac43807fbc29a32c1037ea1d8ee2ed6548595a/submission.py",
+    "revision": "beac43807fbc29a32c1037ea1d8ee2ed6548595a",
+    "size": 2742,
+    "sha256": "e3b0965cd431cd65ac1eacafcbc7a76fe7922685c29c11bbd19fe16259bc0265"
+  },
+  {
+    "path": "official/task_template.py",
+    "url": "https://huggingface.co/datasets/SprintML/unlearning/resolve/beac43807fbc29a32c1037ea1d8ee2ed6548595a/task_template.py",
+    "revision": "beac43807fbc29a32c1037ea1d8ee2ed6548595a",
+    "size": 7215,
+    "sha256": "2c1ad6b6557eacbd854d77aa224f193204e1b47d16f1ffa6f33bf8a86aaeb846"
+  },
+  {
+    "path": "official/hackathon/.gitattributes",
+    "url": "https://huggingface.co/datasets/SprintML/hackathon/resolve/5912b9f6014195425dca9dbd1fce0f1b76cc8cff/.gitattributes",
+    "revision": "5912b9f6014195425dca9dbd1fce0f1b76cc8cff",
+    "size": 2504,
+    "sha256": "9e75dd981de037ec3769f24f790e126bc5a160b6871f510214e68dc70649aeeb"
+  },
+  {
+    "path": "official/hackathon/README.md",
+    "url": "https://huggingface.co/datasets/SprintML/hackathon/resolve/5912b9f6014195425dca9dbd1fce0f1b76cc8cff/README.md",
+    "revision": "5912b9f6014195425dca9dbd1fce0f1b76cc8cff",
+    "size": 8232,
+    "sha256": "70d1f16511a4ae410415218ccc2681d9667fda65e8320ad91c17106314434eab"
+  },
+  {
+    "path": "official/hackathon/hackathon_setup.sh",
+    "url": "https://huggingface.co/datasets/SprintML/hackathon/resolve/5912b9f6014195425dca9dbd1fce0f1b76cc8cff/hackathon_setup.sh",
+    "revision": "5912b9f6014195425dca9dbd1fce0f1b76cc8cff",
+    "size": 12031,
+    "sha256": "6dd44f6d96700b16a3a5853382820df959f4e2e7eef9659566677b37d5dee219"
+  },
+  {
+    "path": "official/hackathon/teammate.sh",
+    "url": "https://huggingface.co/datasets/SprintML/hackathon/resolve/5912b9f6014195425dca9dbd1fce0f1b76cc8cff/teammate.sh",
+    "revision": "5912b9f6014195425dca9dbd1fce0f1b76cc8cff",
+    "size": 5424,
+    "sha256": "9b17c4218d4294c4264ec3d5ed5fd630c6215da3298528da3c437787bb59c2b0"
+  }
+]

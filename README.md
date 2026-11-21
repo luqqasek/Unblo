@@ -40,8 +40,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 ```
 
 This uses CPU inference and needs no Bash, WSL, or CUDA installation. Select
-`.venv\Scripts\python.exe` in your editor. The Windows installer has not yet
-been executed on Windows; the Mac setup and decoder checks were verified locally.
+`.venv\Scripts\python.exe` in your editor. If `py -3.11` is unavailable, setup
+can bootstrap a local Python 3.11 using an existing `python` command.
+See `task-1/AUDIT.md` for the current Windows verification and baseline results.
 
 ## Browse the dataset
 

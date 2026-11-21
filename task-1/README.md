@@ -5,6 +5,18 @@ Developers: Simon Hector, Michel Meintz, Louis Kerner, Maitri Shah.
 
 Start coding in `src/watermark_localization/solution.py`.
 
+Active optimization baseline: **StegaStamp with inverse-STN feature alignment**.
+The user selected this geometry-corrected variant for further development.
+See [the current baseline and comparison protocol](experiments/README.md).
+
+Current Windows checkout audit: [AUDIT.md](AUDIT.md). Reproducible reference
+baselines live in [experiments/baseline](experiments/baseline/README.md).
+Keep subsequent experiments in separate subdirectories of `experiments/`.
+Browse the [experiment dashboard](dashboard/README.md) for results, visual examples,
+and instructions for opening it through an SSH tunnel.
+The setup descriptions below include earlier Mac verification; data and weights
+must be downloaded separately on each machine.
+
 ## Environment
 
 Python 3.11 environment: `.venv`. Activate from this directory:
@@ -109,8 +121,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 .\.venv\Scripts\python.exe submission_template.py --data data --out outputs/submission.pt
 ```
 
-The installer uses `py -3.11` to create the environment and CPU ONNX Runtime.
-Windows execution has not been verified on this Mac. GPU setup is separate.
+The installer uses `py -3.11` when available, otherwise bootstraps a project-local
+Python 3.11 using uv and the existing `python` command. It enables UTF-8 for
+TrustMark installation, uses tested Windows dependency constraints and CPU ONNX
+Runtime, verifies archive checksums, and runs the reference baseline.
+GPU setup is separate.
 
 ## Dashboard do przeglądania danych
 

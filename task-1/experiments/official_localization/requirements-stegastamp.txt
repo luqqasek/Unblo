@@ -1,0 +1,5 @@
+# Separate Python 3.11 environment: TF 2.15 compat.v1 loads the TF1 SavedModel.
+tensorflow-cpu==2.15.1
+numpy==1.26.4
+opencv-python==4.11.0.86
+pillow==13.0.0
