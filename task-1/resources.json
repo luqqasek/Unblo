@@ -1,0 +1,44 @@
+{
+  "dataset_repository": "SprintML/Hackathon_Watermark_Localisation_Task",
+  "revision": "8d27b2c9cc37c4829c8501e43e11fcb1b5db58c0",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 2504
+    },
+    {
+      "path": "README.txt",
+      "size": 1733
+    },
+    {
+      "path": "starter_kit.zip",
+      "size": 10057,
+      "lfs": {
+        "oid": "5e18c8b5502406d8ee1d244d1920c3eaba5c6d7d9925ec15b44f5aff994ee3a6",
+        "size": 10057,
+        "pointerSize": 130
+      }
+    },
+    {
+      "path": "test.zip",
+      "size": 378735114,
+      "lfs": {
+        "oid": "3949a2e66d7b003db743d6f2913369149284053cde072a45610d8f31d06c1be3",
+        "size": 378735114,
+        "pointerSize": 134
+      }
+    },
+    {
+      "path": "train.zip",
+      "size": 190830424,
+      "lfs": {
+        "oid": "32ea0beaa173d2a8234574b893cab053cbad960a7b22d26b85e2b16ee782f783",
+        "size": 190830424,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "videoseal_commit": "b1bf4c0",
+  "pixelseal_checkpoint": "https://dl.fbaipublicfiles.com/videoseal/pixelseal/checkpoint.pth",
+  "stegastamp_onnx": "https://github.com/umd-huang-lab/WAVES/raw/main/decoders/stega_stamp.onnx"
+}
