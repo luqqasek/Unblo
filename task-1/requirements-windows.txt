@@ -1,0 +1,20 @@
+# Windows Python 3.11: CPU ONNX runtime; image inference does not need decord.
+torch==2.5.1
+torchvision==0.20.1
+numpy
+pillow
+onnxruntime==1.23.2
+onnx                        # download_models.py only (adds the StegaStamp logits output)
+trustmark==0.8.0
+# PixelSeal: videoseal is cloned by download_models.py; its dependencies:
+omegaconf
+einops
+timm
+opencv-python
+scipy
+safetensors
+requests
+pyyaml
+av
+pycocotools
+tqdm

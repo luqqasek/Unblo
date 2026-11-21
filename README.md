@@ -28,3 +28,17 @@ macOS CPU inference has been verified. The Linux/Juelich dependency list targets
 NVIDIA CUDA; that setup has not been verified on a second machine. Juelich team
 accounts and shared folder configuration are described in the downloaded official
 setup README.
+
+### Windows (PowerShell)
+
+Install Git for Windows and Python 3.11 with the Python launcher (`py`).
+After cloning, run from `task-1`:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+.\.venv\Scripts\python.exe submission_template.py --data data --out outputs/submission.pt
+```
+
+This uses CPU inference and needs no Bash, WSL, or CUDA installation. Select
+`.venv\Scripts\python.exe` in your editor. The Windows installer has not yet
+been executed on Windows; the Mac setup and decoder checks were verified locally.

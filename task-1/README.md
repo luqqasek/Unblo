@@ -99,3 +99,15 @@ The official starter kit and validator remain authoritative.
 
 The downloaded official README says 25 MB; the supplied participant brief says 20 MB.
 The local submission helper enforces the stricter 20 MB limit.
+
+## Windows
+
+From PowerShell in this directory, with Git and Python 3.11 installed:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+.\.venv\Scripts\python.exe submission_template.py --data data --out outputs/submission.pt
+```
+
+The installer uses `py -3.11` to create the environment and CPU ONNX Runtime.
+Windows execution has not been verified on this Mac. GPU setup is separate.
