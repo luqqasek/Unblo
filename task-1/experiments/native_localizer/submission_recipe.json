@@ -1,0 +1,21 @@
+{
+  "recipe_frozen": true,
+  "protocol": "synthetic-only pilot replicated for each family; raw update 200; fixed threshold 0.5; no test feedback selection",
+  "families": {
+    "pixelseal": {
+      "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/runs/pixelseal/pilot-30min/last.pt",
+      "threshold": 0.5,
+      "use_ema": false
+    },
+    "trustmark": {
+      "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/runs/trustmark/pilot-30min/last.pt",
+      "threshold": 0.5,
+      "use_ema": false
+    },
+    "stegastamp": {
+      "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/runs/stegastamp/pilot-30min/last.pt",
+      "threshold": 0.5,
+      "use_ema": false
+    }
+  }
+}

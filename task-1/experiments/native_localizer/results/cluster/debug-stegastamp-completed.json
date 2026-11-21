@@ -1,0 +1,7 @@
+{
+  "exact_train_encoded_realizations": 64,
+  "exact_dev_encoded_realizations": 32,
+  "overfit_updates": 200,
+  "generalization_demonstrated": false,
+  "amp_training_enabled": false
+}

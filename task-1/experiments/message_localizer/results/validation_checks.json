@@ -1,0 +1,10 @@
+{
+  "pixelseal": {
+    "outer_disjoint": true,
+    "unique_oof_images": 170
+  },
+  "trustmark": {
+    "outer_disjoint": true,
+    "unique_oof_images": 170
+  }
+}

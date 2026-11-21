@@ -1,0 +1,77 @@
+{
+  "gpu_count_visible": 4,
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "vram_bytes": 42434232320,
+  "peak_memory_bytes": 4458758144,
+  "microbatch": 16,
+  "microsteps": 100,
+  "warmup_excluded": 10,
+  "seconds_per_microstep": 0.5773001365777115,
+  "estimated_effective_batch16_seconds": 0.5773001365777115,
+  "gradients_first_backward": {
+    "stage0": 0.011322993785142899,
+    "stage1": 0.00024213420692831278,
+    "stage2": 3.5521199606591836e-05,
+    "stage3": 5.346381658455357e-05
+  },
+  "trainable_parameters": 93777762,
+  "checkpoint_sha256": "0f09df05894c7fd1e78569daaae9e839a7b3bc5666587a08ba1d8e8cea63a8a4",
+  "fidelity": {
+    "realization_id": "stegastamp:train:42:0",
+    "source_uint8_delta": {
+      "rms": 9.403067588806152,
+      "max_abs": 71.0,
+      "zero_fraction": 0.057421366373697914
+    },
+    "rgb_fp32_delta": {
+      "rms": 0.03687477484345436,
+      "max_abs": 0.27843138575553894,
+      "zero_fraction": 0.05742136761546135
+    },
+    "normalization_fp32_delta": {
+      "rms": 0.1631583273410797,
+      "max_abs": 1.2158575057983398,
+      "zero_fraction": 0.05742136761546135
+    },
+    "main_first_projection_delta": {
+      "rms": 0.1547781527042389,
+      "max_abs": 4.9837446212768555,
+      "zero_fraction": 0.00010728836059570312
+    },
+    "local_stem_delta": {
+      "rms": 0.02671739086508751,
+      "max_abs": 0.5865933895111084,
+      "zero_fraction": 3.814697265625e-06
+    },
+    "first_projection_amp_vs_fp32": {
+      "rms": 0.0,
+      "max_abs": 0.0,
+      "zero_fraction": 1.0
+    },
+    "local_amp_vs_fp32": {
+      "rms": 0.0,
+      "max_abs": 0.0,
+      "zero_fraction": 1.0
+    },
+    "logits_amp_vs_fp32": {
+      "rms": 0.004086757078766823,
+      "max_abs": 0.027769573032855988,
+      "zero_fraction": 0.0
+    },
+    "paired_logit_delta_fp32": {
+      "rms": 0.08457569032907486,
+      "max_abs": 0.4685586988925934,
+      "zero_fraction": 0.0
+    },
+    "paired_logit_delta_amp": {
+      "rms": 0.08456901460886002,
+      "max_abs": 0.470703125,
+      "zero_fraction": 0.0057373046875
+    },
+    "amp_enabled_for_training": false,
+    "note": "One diagnostic pair is insufficient for an AMP approval decision; inspect multiple regimes/families"
+  },
+  "is_learning_result": false,
+  "gpus_used": 4,
+  "precision": "full FP32; TF32 disabled"
+}

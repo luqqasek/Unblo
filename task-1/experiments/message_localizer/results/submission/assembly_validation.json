@@ -1,0 +1,30 @@
+{
+  "n": 1020,
+  "shape": [
+    1020,
+    128,
+    128
+  ],
+  "dtype": "torch.uint8",
+  "unique_names": true,
+  "binary": true,
+  "bytes": 16734789,
+  "sha256": "9c44f978c52be2b1102cddfa650d5052cde20605320c9357e24d4dbdbe9cc7c6",
+  "sources": {
+    "pixelseal": {
+      "n": 340,
+      "sha256": "c2eea0f4a4fdf71d5cd30055a07137993ce630dfe71a6a674c2e610fdd261699",
+      "predicted_area": 0.4850519597530365
+    },
+    "trustmark": {
+      "n": 340,
+      "sha256": "6bb69f6b6650952aa20bae9d73b93c107272e89d5147c60bc9408678cc527f83",
+      "predicted_area": 0.5172436833381653
+    },
+    "stegastamp": {
+      "n": 340,
+      "sha256": "412f664ba2504f1d161bdcf510266a352a591a2b3f9be309ced7dcd7a31edd47",
+      "predicted_area": 0.4695087969303131
+    }
+  }
+}

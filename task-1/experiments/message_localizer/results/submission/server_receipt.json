@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-21T23:45:54.955373+00:00",
+  "endpoint": "http://34.147.229.55/submit/34-watermark-localisation-image",
+  "artifact_sha256": "9c44f978c52be2b1102cddfa650d5052cde20605320c9357e24d4dbdbe9cc7c6",
+  "bytes": 16734789,
+  "http_status": 200,
+  "response": {
+    "submission_id": 2163,
+    "status": "success",
+    "score": 0.6145,
+    "previous_best": 0.5993,
+    "delta": 0.0152,
+    "improved": true,
+    "message": "New best on this task. Score shown is on the public split; the final ranking uses the held out subset, revealed after submissions close."
+  }
+}

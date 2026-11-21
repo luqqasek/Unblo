@@ -1,0 +1,111 @@
+{
+  "method": "pixelseal",
+  "screen_passed": false,
+  "folds": [
+    {
+      "method": "pixelseal",
+      "fold": 1,
+      "baseline_miou": 0.5676822681459859,
+      "baseline_threshold": 0.5,
+      "inner_reproduction_error": 0.0,
+      "variants": {
+        "real": {
+          "miou": 0.5678675004050483,
+          "counterfactual_miou": 0.5675630860566359,
+          "epoch": 3,
+          "threshold": 0.6,
+          "inner_history": [
+            {
+              "epoch": 1,
+              "miou": 0.6075804124817488
+            },
+            {
+              "epoch": 2,
+              "miou": 0.6077762121082273
+            },
+            {
+              "epoch": 3,
+              "miou": 0.6080047431123687
+            },
+            {
+              "epoch": 4,
+              "miou": 0.6078022109334027
+            },
+            {
+              "epoch": 5,
+              "miou": 0.6073477986874606
+            },
+            {
+              "epoch": 6,
+              "miou": 0.6076751409578153
+            },
+            {
+              "epoch": 7,
+              "miou": 0.6076404106892116
+            },
+            {
+              "epoch": 8,
+              "miou": 0.6079073817250983
+            },
+            {
+              "epoch": 9,
+              "miou": 0.607954669663122
+            },
+            {
+              "epoch": 10,
+              "miou": 0.6079756495423216
+            },
+            {
+              "epoch": 11,
+              "miou": 0.6079978382728923
+            }
+          ]
+        },
+        "wrong": {
+          "miou": 0.5679267670208746,
+          "counterfactual_miou": 0.5624163847650426,
+          "epoch": 1,
+          "threshold": 0.5,
+          "inner_history": [
+            {
+              "epoch": 1,
+              "miou": 0.6067561619256766
+            },
+            {
+              "epoch": 2,
+              "miou": 0.605870514903845
+            },
+            {
+              "epoch": 3,
+              "miou": 0.6055090556987942
+            },
+            {
+              "epoch": 4,
+              "miou": 0.6050168100016787
+            },
+            {
+              "epoch": 5,
+              "miou": 0.6043925674491992
+            },
+            {
+              "epoch": 6,
+              "miou": 0.6043735833277096
+            },
+            {
+              "epoch": 7,
+              "miou": 0.604103839715282
+            },
+            {
+              "epoch": 8,
+              "miou": 0.6043633273274791
+            },
+            {
+              "epoch": 9,
+              "miou": 0.6041334083097454
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

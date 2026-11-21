@@ -1,0 +1,16 @@
+{
+  "total_parameters": 35108909,
+  "native_decoder_size": 256,
+  "channels": [
+    96,
+    192,
+    384,
+    768
+  ],
+  "BN_running_stats": "frozen during all training",
+  "inference_inputs": [
+    "RGB",
+    "message"
+  ],
+  "pretrained_extractor": "unchanged original competition weights at initialization"
+}

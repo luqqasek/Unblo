@@ -193,6 +193,38 @@ def build():
             row('synthetic_scaling',r['method'],r['variant']+' / seed mean',
                 '3-fold CV × 3 seeds · 170 unique images',r['miou'],
                 f"After real finetuning. FG IoU {r['fg_iou']:.4f}; clean IoU {r['clean_iou']:.4f}; macro AP {r['ap']:.4f}; small FG IoU {r['small_fg_iou']:.4f}; seed SD {r['seed_sd']:.4f}. Nested 2k/4k pool; matched 2500/5000 updates. No submission.",folds)
+    for pilot_path,label in [('pixelseal_pilot/results/summary.json','Last-stage adaptation'),
+                             ('pixelseal_pilot/results/resampling/summary.json','Synthetic resampling'),
+                             ('pixelseal_pilot/results/geometry_erasure/summary.json','Geometry and local erasure')]:
+        if (EXPERIMENTS/pilot_path).exists():
+            pilot=read(pilot_path)
+            for r in pilot['results']:
+                if label=='Geometry and local erasure' and r['variant']=='control': continue
+                row('pixelseal_pilot','pixelseal',label+' / '+r['variant'],
+                    'Pilot / fold 1 / seed 42 / 57 real images',r['miou'],
+                    f"AP {r['ap']:.4f}; AUC {r['auc']:.4f}; small FG IoU {r['small_fg_iou']:.4f}; large clean IoU {r['large_clean_iou']:.4f}. "
+                    +f"Selected step {r['selected_step']}; threshold {r['threshold']}. "
+                    +'90 training and 23 inner-selection images. No outer refit or submission.')
+    roadmap=read('roadmap_070/results/evidence.json')
+    if roadmap:
+        for r in roadmap['posthoc_family_choices']:
+            row('roadmap_070',r['method'],r['variant']+' / seed ensemble at 0.5',
+                'Post-hoc audit / reused OOF predictions',r['uncalibrated_seed_ensemble_at_half'],
+                f"Seed mean {r['seed_mean_miou']:.5f}. GT threshold oracle {r['ensemble_threshold_oracle']:.5f}. "
+                +'Oracle uses ground truth and is not deployable. No new training or submission.')
+    wam=read('wam_fixed_stegastamp/results/summary.json')
+    if wam:
+        for r in wam['results']:
+            if r['split'] not in ('test','real') or r['variant'].endswith('_last'): continue
+            protocol=('Independent synthetic test / 250 images' if r['split']=='test'
+                      else 'Synthetic-only transfer / 170 real images')
+            if r['variant']=='existing_baseline_seed42': protocol='Existing baseline OOF / 170 real images'
+            folds=[dict(fold=int(f['value']),detector=f['miou']) for f in wam['stratified']
+                   if f['variant']==r['variant'] and f['split']==r['split'] and f['field']=='fold' and f['value']!='None']
+            row('wam_fixed_stegastamp','stegastamp',r['variant'],protocol,r['miou'],
+                f"FG IoU {r['fg_iou']:.4f}; macro AP {r['ap']:.4f}; AUC {r['auc']:.4f}; small AP {r['small_ap']:.4f}; small FG IoU {r['small_fg_iou']:.4f}; large clean IoU {r['large_clean_iou']:.4f}. "
+                +('Spatial bits unavailable for saved baseline. ' if r['bit_accuracy'] is None else f"Spatial bit accuracy {r['bit_accuracy']:.4f}. ")
+                +'Random initialization; fixed embedder; matched joint/control; one seed. No submission.',folds)
     regime_moe=read('regime_moe/results/summary.json')
     if regime_moe:
         for r in regime_moe['comparisons']:
@@ -251,6 +283,14 @@ def build():
             for variant,key in [('Linear probe / raw','raw'),('Linear probe / inverse STN','aligned')]:
                 row('diagnostic_audit','stegastamp',variant,'3-fold CV · 170 / method',alignment['summary']['miou'][key],
                     'Matched linear probes; development confirmation includes the screening fold. Not a production-head improvement.')
+    # Native hybrid measured adapter
+    from native_hybrid_adapter import add_rows as add_native_hybrid_rows
+    add_native_hybrid_rows(EXPERIMENTS, DIST, row)
+    from known_message_adapter import add_rows as add_known_message_rows
+    add_known_message_rows(EXPERIMENTS, DIST, row)
+    # Message localizer measured adapter
+    from message_localizer_adapter import add_rows as add_message_localizer_rows
+    add_message_localizer_rows(EXPERIMENTS, DIST, row)
     titles={'synthetic_pretrain_2k/results/full_train/upload_receipt.json':'StegaStamp synthetic pretrain + real finetune; previous PixelSeal / TrustMark',
             'decoder_evidence/results/full_train/upload_receipt.json':'StegaStamp message correction + previous PixelSeal / TrustMark',
             'stegastamp_stable_selection/results/full_train/upload_receipt.json':'StegaStamp stable selection + previous PixelSeal / TrustMark',
@@ -271,6 +311,10 @@ def build():
                 submissions.append(dict(title=title,id=response['submission_id'],score=response['score'],previous_best=response.get('previous_best'),delta=response.get('delta'),experiment=experiment,receipt=receipt_target.relative_to(DIST).as_posix()))
     submissions.sort(key=lambda s:s['id'],reverse=True)
     notes={
+        'known_message_audit':('Known-message evidence audit','Dense multiscale evidence, blurred-baseline IG, re-embedding NCC, label-free Keep/Drop and matched fusion.'),
+        'pixelseal_pilot':('PixelSeal: adaptation and synthesis pilots','Matched one-fold pilots: partial native extractor finetuning, resampling, embedding geometry and local signal removal. Inner-only selection; no submission.'),
+        'roadmap_070':('Roadmap to 0.70: evidence and research','Critical experiment review, exact threshold diagnostic on existing OOF maps, primary-source research and prioritized controlled experiments. No new training or submission.'),
+        'wam_fixed_stegastamp':('WAM supervision with fixed StegaStamp','New trainable RGB encoder-decoder, 5000 synthetic examples, matched localization-only control, independent synthetic test and real-fold transfer.'),
         'pretrained_forensics':('Pretrained manipulation localization','TruFor, Mesorch and DetectiveSAM on 510 real images: direct/inverse, geometry controls, complementarity and nested fusion.'),
         'synthetic_scaling':('Synthetic data: 2000 versus 4000 images','PixelSeal, TrustMark and StegaStamp: fixed data/update factorial, real-image finetuning, three folds and three seeds. Paired comparisons distinguish diversity from longer training.'),
         'research_handoff':('Research brief','Experiment history, unresolved questions, lessons and a ready-to-use research task. Evidence synthesis; no new model measurements.'),
@@ -294,7 +338,24 @@ def build():
         title,note=notes.get(folder.name,(folder.name.replace('_',' ').title(),'New experiment — see its report for evidence.'))
         target=DIST/'reports'/folder.name/report.name; target.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(report,target)
         report_sources = [report] + [p for p in sorted(set(folder.glob('*REPORT.md')) | set(folder.glob('RESEARCH.md'))) if p != report]
-        if folder.name=='diagnostic_audit':
+        if folder.name=='pixelseal_pilot':
+            report_sources=[report]+[p for p in sorted(folder.glob('*.md')) if p!=report]
+            for source in (folder/'results').rglob('*'):
+                if not source.is_file() or 'data' in source.relative_to(folder/'results').parts: continue
+                if source.suffix not in {'.json','.csv','.png'}: continue
+                asset=target.parent/source.relative_to(folder)
+                asset.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(source,asset)
+        elif folder.name in ('wam_fixed_stegastamp','roadmap_070','known_message_audit'):
+            report_sources=[report]+[p for p in sorted(folder.glob('*.md')) if p!=report]
+            if folder.name=='roadmap_070':
+                shutil.copyfile(folder/'audit_existing.py',target.parent/'audit_existing.py')
+            for source in (folder/'results').glob('*'):
+                if source.is_file() and source.suffix in {'.csv','.json','.png'}:
+                    asset=target.parent/source.relative_to(folder)
+                    asset.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(source,asset)
+            if (folder/'results/gallery').exists():
+                shutil.copytree(folder/'results/gallery',target.parent/'results/gallery',dirs_exist_ok=True)
+        elif folder.name=='diagnostic_audit':
             report_sources=[report]+[p for p in sorted(folder.glob('*.md')) if p!=report]
             # Copy reviewable diagnostics only; never expose caches, models or prediction tensors.
             for source in (folder/'results').rglob('*'):

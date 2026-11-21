@@ -1,0 +1,38 @@
+{
+  "real_validation_miou": 0.71274214891627,
+  "image_bootstrap95": [
+    0.6737805231878615,
+    0.7503386221257217
+  ],
+  "n_unique_real_images": 57,
+  "family": "stegastamp",
+  "fold": 1,
+  "threshold": 0.5,
+  "weights": "raw last predeclared pilot update",
+  "updates": 200,
+  "effective_batch": 64,
+  "training_views": 12800,
+  "fully_clean_constant_miou": 0.22205125239857457,
+  "fully_marked_constant_miou": 0.27794874760142546,
+  "oracle_best_constant_per_image_miou": 0.45432428728070173,
+  "spatial_shuffle_miou": 0.44509022728529785,
+  "synthetic_dev_miou": 0.7141785760793318,
+  "synthetic_dev_partial_miou": 0.714606283947711,
+  "real_fg_iou": 0.7302525034934824,
+  "real_clean_iou": 0.6952317943390574,
+  "real_fg_ap": 0.8653451973378119,
+  "real_roc_auc": 0.9377762983785749,
+  "real_small_fg_iou": 0.01875,
+  "real_small_n": 4,
+  "real_1_to_5pct_fg_iou": 0.4363638581209434,
+  "real_large_clean_iou": 0.49085916096192744,
+  "metrics_maps_verified": true,
+  "limitations": [
+    "one family, one reconstructed existing fold",
+    "repeatedly used real development data",
+    "no real labels used for model training/checkpoint/threshold selection",
+    "simple synthetic hard composites only; full edit mixture not implemented in this pilot",
+    "bootstrap conditions on this fitted model and these 57 images; edited source siblings cannot be excluded",
+    "not a calibrated estimate of overall three-family hidden competition score"
+  ]
+}

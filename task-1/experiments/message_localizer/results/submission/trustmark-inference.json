@@ -1,0 +1,10 @@
+{
+  "family": "trustmark",
+  "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/message-runs/trustmark/matched-v1-full-refit/last.pt",
+  "checkpoint_sha256": "d546cc950d02810bceaf75074e28177811114319af054b84a681edf01b1c6c5f",
+  "threshold": 0.5,
+  "tta": false,
+  "n": 340,
+  "predicted_area": 0.5172436833381653,
+  "subset_sha256": "6bb69f6b6650952aa20bae9d73b93c107272e89d5147c60bc9408678cc527f83"
+}

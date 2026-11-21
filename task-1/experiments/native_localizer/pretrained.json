@@ -1,0 +1,22 @@
+{
+  "repository": "timm/convnext_base.fb_in22k",
+  "revision": "9afd4146adabf1b6e861d0f1ac2e7baa7c8dd1b7",
+  "file": "model.safetensors",
+  "sha256": "0f09df05894c7fd1e78569daaae9e839a7b3bc5666587a08ba1d8e8cea63a8a4",
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "input_resize": false,
+  "trainable_parameters": 93777762,
+  "local_receptive_field": 27,
+  "parameter_note": "Classification head including head norm removed"
+}

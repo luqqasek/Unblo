@@ -1,0 +1,28 @@
+{
+  "code": {
+    "model.py": "53d0a0edcc40c3499ea220c8e17cfedb53868fe3797cde5c91ade83d8dae7cbe",
+    "adapt_job.py": "b02145b5b61c4addc0364e14dc432aabcbfc9d4fd89b264d6a74a12268a2ac33",
+    "extractor.py": "f91dab0c9b10ca0ae8fd96e2cb6b7c092b0d1ce0a23eca698f334b67e583544a",
+    "__init__.py": "085ea610e010d908531c1593c21cca41f834c6d31b90dda8bf0432ce00479dee",
+    "train_job.py": "47e5f6e24f2179be1c2d2de58c64bd8f56de3c8fffe96f9b44d38373ccf0d757",
+    "adapt.py": "a7e98e926f60c59b2eae084cbf84f9185838c34321cc0e485a5d831f2657cbc1",
+    "train.py": "e45d55e4704c2fb5c7a7af07f6d03b4da9a517c213e698564a0d3cf2116f40a0",
+    "signal_check.py": "b42cec446f8530a79776c87a858428b4f33d406bc43c2d3b2082442b639a49de",
+    "signal_job.py": "1b94b1aa803b264b035923eb8d243ab4a044efca2a283c276016d1aaee4ce7fa"
+  },
+  "embedding": {
+    "method": "pixelseal",
+    "nbits": 256,
+    "unchanged_official_wrapper": true,
+    "wrapper_sha256": "faeff2ca656eb0f8d10d3d263f42e7cefd747a92facafb5e1f25fc0028811520",
+    "model_files": {
+      "checkpoints/pixelseal/checkpoint.pth": "0c5665cff20eb6ce1b5aaa7d91c19dafb418bfee32d02dd3344e4ed60d9d75bd",
+      "checkpoints/pixelseal_card.yaml": "8c0f632b1f6b02e81d319b03ba1c850d1f97422d572abfe1f51a43e3f5e3dc85"
+    },
+    "trustmark_version": null,
+    "trustmark_settings": null
+  },
+  "source_partition_verified": true,
+  "train_sources": 2500,
+  "dev_sources": 128
+}

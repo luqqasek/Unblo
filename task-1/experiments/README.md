@@ -1,27 +1,21 @@
 # Eksperymenty zadania 1
 
-## Aktywna baza do dalszej optymalizacji
+## Aktualna baza — 2026-11-22
 
-Decyzja użytkownika: **StegaStamp po korekcie STN**, eksperyment
-[`stegastamp_stn_alignment`](stegastamp_stn_alignment/REPORT.md), jest od teraz
-modelem bazowym do dalszej optymalizacji. Powód: usunięcie potwierdzonej
-niezgodności współrzędnych cech i masek, mimo mieszanych wyników obecnego CV.
+**Najlepsze zaakceptowane zgłoszenie: #2163, publiczny mIoU 0,6145.**
+PixelSeal i TrustMark: nowe modele ze znaną wiadomością i odmrożonym oryginalnym
+ ekstraktorem, po reficie; StegaStamp: natywny model RGB z pilota.
+Walidacja rozwojowa: PS **0,57192**, TM **0,57872** (3-fold OOF, seed42),
+StegaStamp **0,69496** (synthetic-only). Protokoły nie są identyczne.
 
-Kolejne warianty StegaStamp powinny zachować wyrównanie czterech poziomów cech
-przed pełną głowicą. Punktem odniesienia są checkpointy
-`stegastamp_stn_alignment/results/stegastamp_fold{1,2,3}_seed{42,7,123}.pt`,
-cache `results/aligned_features.pt` i podziały `results/splits.json` tego eksperymentu.
-Porównania wykonujemy na tych samych trzech zewnętrznych foldach i wszystkich
-seedach 42/7/123, ze stabilnym doborem epoki i progu wewnątrz treningu.
-Seed 42 pozostaje domyślnym seedem pojedynczego przebiegu; wynik seedu 123
-nie stanowi decyzji o zmianie domyślnego seedu.
+**Zacznij od [aktualnego handoffu badawczego](RESEARCH_HANDOFF_2026-11-22.md)**:
+wykonane eksperymenty, ograniczenia, wnioski, ścieżki checkpointów i dalsze cele.
+[Raport nowych modeli](message_localizer/REPORT.md) ·
+[wcześniejsze zgłoszenie #2008: 0,5993](native_hybrid_submission/REPORT.md).
 
-Wynik bazowy StegaStamp: średnie OOF mIoU **0,46512** po trzech seedach;
-seed 42: **0,45169**. Przyjęcie bazy rozwojowej nie oznacza potwierdzonej przewagi
-na leaderboardzie. Najlepsze zaakceptowane zgłoszenie to obecnie **#1496**
-z wynikiem **0,5235**: syntetyczny pretraining StegaStamp i fine-tuning na wszystkich
-170 rzeczywistych obrazach. PixelSeal i TrustMark zachowują predykcje ze zgłoszenia #1202.
-[Raport zgłoszenia](synthetic_pretrain_2k/SUBMISSION_REPORT.md).
+Historyczna baza inverse-STN pozostaje właściwą kontrolą dla eksperymentów na
+starym ekstraktorze StegaStamp. Nowy segmentator RGB nie ma STN i jego wyjść
+nie wolno inverse-warpować. Nie zastępuj nowej bazy starszym wynikiem #1496.
 
 ## Organizacja eksperymentów
 

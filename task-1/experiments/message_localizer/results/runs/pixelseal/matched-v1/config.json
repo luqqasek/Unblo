@@ -1,0 +1,18 @@
+{
+  "family": "pixelseal",
+  "root": "/p/project1/training2666/pszenny1/native-localizer",
+  "run": "matched-v1",
+  "steps": 400,
+  "batch": 32,
+  "gpus": 2,
+  "freeze_steps": 50,
+  "overfit": false,
+  "seed": 42,
+  "precision": "FP32",
+  "threshold": 0.5,
+  "extractor_lr": 2e-05,
+  "new_lr": 0.0003,
+  "loss": "per-image .5BCE+.5both-classDice + ramped pair ranking; no dense bit auxiliary",
+  "generator": "existing exact encoded sources; procedural irregular masks enabled from update0",
+  "real_label_training": false
+}

@@ -1,0 +1,33 @@
+{
+  "batch": 64,
+  "gpus": 4,
+  "images_per_second_compute_only": 32.948464923048704,
+  "precision": "FP32",
+  "profile": {
+    "gpu_count_visible": 4,
+    "gpu_name": "NVIDIA A100-SXM4-40GB",
+    "vram_bytes": 42434232320,
+    "peak_memory_bytes": 13247525888,
+    "microbatch": 64,
+    "microsteps": 20,
+    "warmup_excluded": 10,
+    "seconds_per_microstep": 1.9424273679964243,
+    "estimated_effective_batch16_seconds": 0.4856068419991061,
+    "gradients_first_backward": {
+      "stage0": 0.011232909746468067,
+      "stage1": 0.00023776952002663165,
+      "stage2": 3.6840701795881614e-05,
+      "stage3": 5.3076957556186244e-05
+    },
+    "trainable_parameters": 93777762,
+    "checkpoint_sha256": "0f09df05894c7fd1e78569daaae9e839a7b3bc5666587a08ba1d8e8cea63a8a4",
+    "fidelity": {
+      "status": "not_checked_without_true_pairs",
+      "amp_enabled_for_training": false
+    },
+    "is_learning_result": false,
+    "gpus_used": 4,
+    "precision": "full FP32; TF32 disabled"
+  },
+  "selection": "highest measured images/s under 90% VRAM; fixed before validation labels"
+}
