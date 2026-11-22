@@ -115,3 +115,12 @@ details. Synthetic-only transfer is kept in the report as a secondary diagnostic
 The report bundle includes measured CSV/JSON, figures and example panels, while
 excluding generated datasets, feature caches, checkpoints and raw prediction files.
 Open `http://127.0.0.1:8877/reports/synthetic_scaling/REPORT.html`.
+
+## PCMV and the stopped RTX experiment
+
+The PCMV adapter publishes three fixed-fold reference/oracle mIoU rows. Its
+GT-assisted decoder-ranking AUC remains in the report, not the mIoU table.
+The RTX all-information adapter publishes four completed PS/TM CV measurements;
+StegaStamp is explicitly untrained. Neither adapter starts inference or training.
+See [PCMV reproduction instructions](../experiments/pcmv_validation/REPRODUCE.md)
+for CPU evidence checks and a verified rebuild of both language versions.

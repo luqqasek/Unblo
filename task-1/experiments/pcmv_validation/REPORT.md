@@ -94,3 +94,5 @@ Sprawdzono zgodność full-mask spatial pooling z oryginalnym dekoderem: maksyma
 Poprzedni eksperyment wszystkich informacji został zakończony jako **brak wykazanej poprawy**: PS Δ−0,00399, TM Δ−0,00375, oba CI obejmują zero; SS nie wytrenowano. [Raport zatrzymanego eksperymentu](../rtx_all_information/REPORT.md). Najlepszy istniejący publiczny wynik pozostaje **#3054: 0,6677**; badania PCMV go nie zmieniły.
 
 Skrypty odtwarzające obliczenia: `validate_cached.py`, `proposal_screen.py`, `signal_oracle.py`. Wagi i duże cache pozostają lokalnie na maszynie RTX; żaden skrypt nie uruchamia treningu.
+
+Instrukcja walidacji zapisanych wyników bez GPU i uruchamiania treningów: [REPRODUCE.md](REPRODUCE.md).
