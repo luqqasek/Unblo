@@ -29,8 +29,9 @@ Fusion audit at1000: the final refiner adds only about0.000042 mIoU over its own
 | trustmark / baseline | 0.64662 | +0.00000 | 0.00000 | 0.52530 | 0.00000 | 0.10383 | 0.24857 |
 | trustmark / 0 | 0.64448 | -0.00214 | 0.00000 | 0.51613 | 0.00000 | 0.10132 | 0.24738 |
 | trustmark / 100 | 0.64543 | -0.00118 | 0.00000 | 0.52913 | 0.00000 | 0.09513 | 0.24133 |
+| trustmark / 200 | 0.64415 | -0.00246 | 0.00000 | 0.52866 | 0.00000 | 0.08572 | 0.23324 |
 
-trustmark / unified-v1: **training in progress**; the rows above are measured interim checkpoints, not a completed experiment.
+trustmark / unified-v1: **cancelled at the user's request**. Last logged update300; last saved/evaluated checkpoint200. The1000-update gate was not reached. Queued all-real refit was cancelled before starting. No predictions or new submission were made.
 
 ## Interpretation and limits
 
@@ -48,4 +49,4 @@ PixelSeal was stopped at saved update1561 following the user's instruction to av
 
 A four-GPU attempt to disable carrier activation recomputation was slower despite higher VRAM usage. It was cancelled; discarded updates are archived separately and are not part of the retained checkpoint. Subsequent runs keep recomputation enabled.
 
-The selected PixelSeal recipe is queued for an all170-image refit with synthetic replay, the same3500-step OneCycle schedule stopped at1561, and fresh new branches. This is final fitting, not a second training phase of the screening model. Test prediction and one authorized upload follow artifact validation; no new public score is claimed here.
+The planned all170-image PixelSeal refit was cancelled before it started when the user stopped this task. TrustMark training was also cancelled; its1000-update gate was not reached. No new test predictions or leaderboard submission were produced. All saved checkpoints and measurements remain available; public best remains#2675=0.6440.

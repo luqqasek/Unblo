@@ -23,8 +23,10 @@ that base, so this does not isolate the benefit of backbone continuation.
 10k exact composites per family reuse2474 total source photos, not10k unique
 photos. Train/dev source overlap0. Four GPUs on one node; no staged training.
 Disabling activation checkpointing was slower despite higher VRAM use and was
-reverted. All-real PS refit is queued; TM100 screen0.645432 vs0.646616 baseline
-is not yet an improvement. Do not claim a new submission until a receipt exists.
+reverted. **User then cancelled training for a different task.** TM last logged
+update300; saved/evaluated checkpoint200 mIoU0.644154 vs0.646616 baseline.
+The1000-update gate was never reached. All-real PS refit was cancelled before
+starting. No new predictions or submission; all checkpoints/results preserved.
 
 ## Subsequent local-presence screens (production unchanged)
 

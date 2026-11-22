@@ -23,7 +23,10 @@ def main():
             if gate.exists():lines+=['',f'{family} / {run.name} gate1000: `{gate.read_text().strip()}`.']
             end=run/'completed.json'
             if not end.exists():end=run/'paused.json'
-            if end.exists():
+            interrupted=run/'interrupted.json'
+            if interrupted.exists():
+                e=json.loads(interrupted.read_text());lines+=['',f"{family} / {run.name}: **cancelled at the user's request**. Last logged update{e['last_logged_step']}; last saved/evaluated checkpoint{e['last_saved_evaluated_step']}. The1000-update gate was not reached. Queued all-real refit was cancelled before starting. No predictions or new submission were made."]
+            elif end.exists():
                 e=json.loads(end.read_text());lines+=['',f"{family} / {run.name}: {e['step']} optimizer updates; status `{e['stop']}`; measured runtime {e['seconds']/60:.2f} minutes; {e['views']} counted views."]
             else:lines+=['',f'{family} / {run.name}: **training in progress**; the rows above are measured interim checkpoints, not a completed experiment.']
             curve=run/'learning-curves.png'
@@ -41,6 +44,6 @@ def main():
     lines+=['','## Early stopping and production selection','',
         'PixelSeal was stopped at saved update1561 following the user\'s instruction to avoid prolonged training without targeted gains. mIoU0.581635 improves over the previous matched screen0.570883, but all16 watermark cases≤5% and all4 clean-hole cases≤1% remain complete misses. Clean1–5% IoU0.105786 is above the original baseline0.083069 but below update1000\'s0.122340. This does not solve tiny localization.','',
         'A four-GPU attempt to disable carrier activation recomputation was slower despite higher VRAM usage. It was cancelled; discarded updates are archived separately and are not part of the retained checkpoint. Subsequent runs keep recomputation enabled.','',
-        'The selected PixelSeal recipe is queued for an all170-image refit with synthetic replay, the same3500-step OneCycle schedule stopped at1561, and fresh new branches. This is final fitting, not a second training phase of the screening model. Test prediction and one authorized upload follow artifact validation; no new public score is claimed here.']
+        'The planned all170-image PixelSeal refit was cancelled before it started when the user stopped this task. TrustMark training was also cancelled; its1000-update gate was not reached. No new test predictions or leaderboard submission were produced. All saved checkpoints and measurements remain available; public best remains#2675=0.6440.']
     results.mkdir(exist_ok=True);(results/'measurements.json').write_text(json.dumps(measurements,indent=2)+'\n');(root/'REPORT.md').write_text('\n'.join(lines)+'\n');print({'measured_rows':len(measurements)})
 if __name__=='__main__':main()

@@ -182,3 +182,11 @@ Unselected family predictions are preserved from accepted submission#2675.
 
 Primary implementation sources: [TruFor](https://github.com/grip-unina/TruFor),
 [OneCycleLR](https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.OneCycleLR.html).
+
+## Run stopped by user
+
+The user cancelled the active TrustMark screening and the queued all170 PixelSeal
+refit before its start. Last logged TM update300; saved/evaluated update200.
+The1000-update gate was not reached. No test predictions or submission were made.
+Commands above describe resumable capabilities, not work authorized to restart
+after this cancellation. Wait for the next user task.

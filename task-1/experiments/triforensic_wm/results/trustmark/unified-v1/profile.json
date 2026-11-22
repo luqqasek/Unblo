@@ -1,0 +1,12 @@
+{
+  "steps": 200,
+  "train_seconds": 194.36595893988851,
+  "seconds_per_update": 0.9718297946994425,
+  "remaining_training_seconds_estimate": 3207.0383225081605,
+  "peak_GB": [
+    14.383100416,
+    13.865808896,
+    13.865965056,
+    13.865965056
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "cancelled_at_user_request",
+  "timestamp": "2026-11-22T03:26:31.808621+00:00",
+  "slurm_job": 15904957,
+  "last_logged_step": 300,
+  "last_saved_evaluated_step": 200,
+  "not_reached": "1000-update gate",
+  "final_refit_job": 15904978,
+  "final_refit_cancelled_before_start": true,
+  "predictions_started": false,
+  "new_submission": false,
+  "previous_best_submission": 2675,
+  "previous_best_score": 0.644
+}

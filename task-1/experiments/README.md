@@ -20,8 +20,10 @@ Jeden optimizer i OneCycle, pełne obrazy oraz pary patchy w każdej aktualizacj
 4 A100 na jednym nodzie. PixelSeal zatrzymany na 1561 krokach: **0,58164 mIoU**
 na stałym foldzie 57 obrazów, wobec **0,57088** nowszego poprzedniego screenu.
 **FG IoU ≤5% nadal 0**; wzrost lokalnego AUC nie przełożył się na małe maski.
-Finalny refiner wnosi niemal zerową korektę. TrustMark jest w trakcie screenu;
-po 100 krokach 0,64543 wobec bazy 0,64662. Nowego publicznego wyniku jeszcze brak.
+Finalny refiner wnosi niemal zerową korektę. **Trening TrustMark przerwany na
+żądanie użytkownika**: ostatni oceniony checkpoint 200 ma mIoU 0,64415 wobec
+bazy 0,64662. Końcowy refit PixelSeal anulowany przed startem. Nie powstały
+nowe predykcje testowe ani submission. Zachowano checkpointy i wyniki.
 
 ## Poprzednia baza — zgłoszenie #2409
 

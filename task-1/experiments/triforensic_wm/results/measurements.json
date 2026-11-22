@@ -2587,5 +2587,402 @@
     },
     "protocol": "Single fixed fold1 screening,57 images",
     "artifact": "results/trustmark/unified-v1/real-100.json"
+  },
+  {
+    "family": "trustmark",
+    "run": "unified-v1",
+    "step": "200",
+    "miou": 0.6441539452590815,
+    "delta": -0.0024618754135032894,
+    "groups": {
+      "all": {
+        "n": 57,
+        "miou": 0.6441539452590815,
+        "fg_iou": 0.6606892969842141,
+        "clean_iou": 0.6276185935339492,
+        "fg_ap": 0.7607039863495326,
+        "clean_ap": 0.7252706409519273,
+        "roc_auc": 0.8266656122426482,
+        "fg_miss": 10,
+        "clean_miss": 7,
+        "defined_counts": {
+          "fg_ap": 57,
+          "clean_ap": 57,
+          "roc_auc": 57
+        }
+      },
+      "fg_le1": {
+        "n": 3,
+        "miou": 0.4972941080729167,
+        "fg_iou": 0.0,
+        "clean_iou": 0.9945882161458334,
+        "fg_ap": 0.004917589300417907,
+        "clean_ap": 0.9942072977360503,
+        "roc_auc": 0.4305545733665874,
+        "fg_miss": 3,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 3,
+          "clean_ap": 3,
+          "roc_auc": 3
+        }
+      },
+      "fg_1to5": {
+        "n": 18,
+        "miou": 0.7575376297447306,
+        "fg_iou": 0.5286629356688771,
+        "clean_iou": 0.9864123238205837,
+        "fg_ap": 0.600263660968417,
+        "clean_ap": 0.9940402613931713,
+        "roc_auc": 0.8590978450460651,
+        "fg_miss": 5,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 18,
+          "clean_ap": 18,
+          "roc_auc": 18
+        }
+      },
+      "fg_5to20": {
+        "n": 6,
+        "miou": 0.6035021691553307,
+        "fg_iou": 0.26903200425560897,
+        "clean_iou": 0.9379723340550526,
+        "fg_ap": 0.6142338373263628,
+        "clean_ap": 0.9871397156049045,
+        "roc_auc": 0.8936740111878184,
+        "fg_miss": 2,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 6,
+          "clean_ap": 6,
+          "roc_auc": 6
+        }
+      },
+      "fg_gt20": {
+        "n": 30,
+        "miou": 0.5989400735070589,
+        "fg_iou": 0.8843055020175586,
+        "clean_iou": 0.31357464499655935,
+        "fg_ap": 0.9618408510877473,
+        "clean_ap": 0.4847413880781729,
+        "roc_auc": 0.8334156966591701,
+        "fg_miss": 0,
+        "clean_miss": 7,
+        "defined_counts": {
+          "fg_ap": 30,
+          "clean_ap": 30,
+          "roc_auc": 30
+        }
+      },
+      "clean_le1": {
+        "n": 4,
+        "miou": 0.49602508544921875,
+        "fg_iou": 0.9920501708984375,
+        "clean_iou": 0.0,
+        "fg_ap": 0.9961606904316325,
+        "clean_ap": 0.04929536105238024,
+        "roc_auc": 0.7141464322813511,
+        "fg_miss": 0,
+        "clean_miss": 4,
+        "defined_counts": {
+          "fg_ap": 4,
+          "clean_ap": 4,
+          "roc_auc": 4
+        }
+      },
+      "clean_1to5": {
+        "n": 5,
+        "miou": 0.5232032966721784,
+        "fg_iou": 0.9606914160962458,
+        "clean_iou": 0.085715177248111,
+        "fg_ap": 0.9889934415652866,
+        "clean_ap": 0.19811648711459945,
+        "roc_auc": 0.7795473400667448,
+        "fg_miss": 0,
+        "clean_miss": 2,
+        "defined_counts": {
+          "fg_ap": 5,
+          "clean_ap": 5,
+          "roc_auc": 5
+        }
+      },
+      "wm_over50": {
+        "n": 26,
+        "miou": 0.5732181106437284,
+        "fg_iou": 0.9131924003587047,
+        "clean_iou": 0.23324382092875182,
+        "fg_ap": 0.976314954900928,
+        "clean_ap": 0.4093247458603842,
+        "roc_auc": 0.8161306757718735,
+        "fg_miss": 0,
+        "clean_miss": 7,
+        "defined_counts": {
+          "fg_ap": 26,
+          "clean_ap": 26,
+          "roc_auc": 26
+        }
+      },
+      "fully_clean": {
+        "n": 0,
+        "miou": null,
+        "fg_iou": null,
+        "clean_iou": null,
+        "fg_ap": null,
+        "clean_ap": null,
+        "roc_auc": null,
+        "fg_miss": 0,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 0,
+          "clean_ap": 0,
+          "roc_auc": 0
+        }
+      },
+      "fully_marked": {
+        "n": 0,
+        "miou": null,
+        "fg_iou": null,
+        "clean_iou": null,
+        "fg_ap": null,
+        "clean_ap": null,
+        "roc_auc": null,
+        "fg_miss": 0,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 0,
+          "clean_ap": 0,
+          "roc_auc": 0
+        }
+      },
+      "fg_1to5_rectangular": {
+        "n": 10,
+        "miou": 0.9485047469852587,
+        "fg_iou": 0.9009471385146748,
+        "clean_iou": 0.9960623554558425,
+        "fg_ap": 0.9052876117073929,
+        "clean_ap": 0.9979325767211213,
+        "roc_auc": 0.9745639278711996,
+        "fg_miss": 0,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 10,
+          "clean_ap": 10,
+          "roc_auc": 10
+        }
+      },
+      "fg_1to5_irregular": {
+        "n": 8,
+        "miou": 0.5188287331940704,
+        "fg_iou": 0.06330768211163017,
+        "clean_iou": 0.9743497842765108,
+        "fg_ap": 0.21898372254469722,
+        "clean_ap": 0.9891748672332337,
+        "roc_auc": 0.7147652415146468,
+        "fg_miss": 5,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 8,
+          "clean_ap": 8,
+          "roc_auc": 8
+        }
+      }
+    },
+    "local_groups": {
+      "all": {
+        "n": 57,
+        "miou": 0.2723859820449561,
+        "fg_iou": 0.0,
+        "clean_iou": 0.5447719640899122,
+        "fg_ap": 0.4614839783470692,
+        "clean_ap": 0.5539391897097262,
+        "roc_auc": 0.4874856654692599,
+        "fg_miss": 57,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 57,
+          "clean_ap": 57,
+          "roc_auc": 57
+        }
+      },
+      "fg_le1": {
+        "n": 3,
+        "miou": 0.4972941080729167,
+        "fg_iou": 0.0,
+        "clean_iou": 0.9945882161458334,
+        "fg_ap": 0.00427459457896181,
+        "clean_ap": 0.9940056655901776,
+        "roc_auc": 0.42453113155593286,
+        "fg_miss": 3,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 3,
+          "clean_ap": 3,
+          "roc_auc": 3
+        }
+      },
+      "fg_1to5": {
+        "n": 18,
+        "miou": 0.4860432942708333,
+        "fg_iou": 0.0,
+        "clean_iou": 0.9720865885416666,
+        "fg_ap": 0.029900635120715828,
+        "clean_ap": 0.969022762456893,
+        "roc_auc": 0.45070539147606453,
+        "fg_miss": 18,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 18,
+          "clean_ap": 18,
+          "roc_auc": 18
+        }
+      },
+      "fg_5to20": {
+        "n": 6,
+        "miou": 0.460601806640625,
+        "fg_iou": 0.0,
+        "clean_iou": 0.92120361328125,
+        "fg_ap": 0.06804058279099716,
+        "clean_ap": 0.9055027426377956,
+        "roc_auc": 0.4062288838801576,
+        "fg_miss": 6,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 6,
+          "clean_ap": 6,
+          "roc_auc": 6
+        }
+      },
+      "fg_gt20": {
+        "n": 30,
+        "miou": 0.0840576171875,
+        "fg_iou": 0.0,
+        "clean_iou": 0.168115234375,
+        "fg_ap": 0.8448436017709062,
+        "clean_ap": 0.19056968788776701,
+        "roc_auc": 0.5321006395743305,
+        "fg_miss": 30,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 30,
+          "clean_ap": 30,
+          "roc_auc": 30
+        }
+      },
+      "clean_le1": {
+        "n": 4,
+        "miou": 0.00344085693359375,
+        "fg_iou": 0.0,
+        "clean_iou": 0.0068817138671875,
+        "fg_ap": 0.9937946680787528,
+        "clean_ap": 0.0117464521707469,
+        "roc_auc": 0.5490877630283562,
+        "fg_miss": 4,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 4,
+          "clean_ap": 4,
+          "roc_auc": 4
+        }
+      },
+      "clean_1to5": {
+        "n": 5,
+        "miou": 0.01634521484375,
+        "fg_iou": 0.0,
+        "clean_iou": 0.0326904296875,
+        "fg_ap": 0.9695834954995302,
+        "clean_ap": 0.04358764545860918,
+        "roc_auc": 0.5191215574884539,
+        "fg_miss": 5,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 5,
+          "clean_ap": 5,
+          "roc_auc": 5
+        }
+      },
+      "wm_over50": {
+        "n": 26,
+        "miou": 0.045602651742788464,
+        "fg_iou": 0.0,
+        "clean_iou": 0.09120530348557693,
+        "fg_ap": 0.917102538254716,
+        "clean_ap": 0.10428824460383555,
+        "roc_auc": 0.5261971343091425,
+        "fg_miss": 26,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 26,
+          "clean_ap": 26,
+          "roc_auc": 26
+        }
+      },
+      "fully_clean": {
+        "n": 0,
+        "miou": null,
+        "fg_iou": null,
+        "clean_iou": null,
+        "fg_ap": null,
+        "clean_ap": null,
+        "roc_auc": null,
+        "fg_miss": 0,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 0,
+          "clean_ap": 0,
+          "roc_auc": 0
+        }
+      },
+      "fully_marked": {
+        "n": 0,
+        "miou": null,
+        "fg_iou": null,
+        "clean_iou": null,
+        "fg_ap": null,
+        "clean_ap": null,
+        "roc_auc": null,
+        "fg_miss": 0,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 0,
+          "clean_ap": 0,
+          "roc_auc": 0
+        }
+      },
+      "fg_1to5_rectangular": {
+        "n": 10,
+        "miou": 0.4855499267578125,
+        "fg_iou": 0.0,
+        "clean_iou": 0.971099853515625,
+        "fg_ap": 0.029142402458165843,
+        "clean_ap": 0.9717925876398062,
+        "roc_auc": 0.501141712882939,
+        "fg_miss": 10,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 10,
+          "clean_ap": 10,
+          "roc_auc": 10
+        }
+      },
+      "fg_1to5_irregular": {
+        "n": 8,
+        "miou": 0.4866600036621094,
+        "fg_iou": 0.0,
+        "clean_iou": 0.9733200073242188,
+        "fg_ap": 0.030848425948903305,
+        "clean_ap": 0.9655604809782516,
+        "roc_auc": 0.3876599897174713,
+        "fg_miss": 8,
+        "clean_miss": 0,
+        "defined_counts": {
+          "fg_ap": 8,
+          "clean_ap": 8,
+          "roc_auc": 8
+        }
+      }
+    },
+    "protocol": "Single fixed fold1 screening,57 images",
+    "artifact": "results/trustmark/unified-v1/real-200.json"
   }
 ]
