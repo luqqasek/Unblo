@@ -1,8 +1,0 @@
-{
-  "step": 1561,
-  "schedule_total_steps": 3500,
-  "threshold": 0.5,
-  "family": "pixelseal",
-  "reason": "User requested no prolonged training without target improvements; FG<=5% and clean<=1% still zero at1561; refiner correction near0.009 cannot offset base logits near-5.3. Preserve measured overall mIoU0.581635. Full-memory attempt slowed2.2s vs1.0s/update and was canceled.",
-  "policy": "User explicitly requested early stopping where targeted metrics do not improve; one reused development fold, adaptive selection disclosed."
-}

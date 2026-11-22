@@ -1,9 +1,0 @@
-[
-  {
-    "family": "pixelseal",
-    "variant": "Native region presence / inner-calibrated search",
-    "protocol": "One57-image reused development fold;90 real training /23 calibration; fixed endpoint",
-    "miou": 0.5817244623066825,
-    "note": "Delta +0.000000; corrections 0; test candidate False"
-  }
-]

@@ -1,0 +1,42 @@
+endpoint,family,model,kind
+tb-01,Q15,Q15-base,plain
+tb-02,Q15,Q15-base,system prompt: exactly five words
+tb-03,Q15,Q15-base,persona: Python tutor
+tb-04,Q15,Q15-base,system prompt: rhymes
+tb-05,Q15,Q15-base,sampling at temperature 1.0
+tb-06,Q15,Q15-base,sampling at temperature 0.3
+tb-07,Q15,Q15-base,watermark: KGW
+tb-08,Q15,Q15-base,watermark: SynthID-Text
+tb-09,Q15,Q15-base,watermark: TextSeal
+tb-10,Q15,Q15-base,watermark: Gumbel-max
+tb-11,Q15,Q15-lora-0.3,LoRA at strength 0.3
+tb-12,Q15,Q15-lora-0.7,LoRA at strength 0.7
+tb-13,Q15,Q15-lora-1.0,LoRA at strength 1.0
+tb-14,Q15,Q15-lora-1.5,LoRA at strength 1.5
+tb-15,Q15,Q15-lora-0.7,LoRA at strength 0.7 + system prompt: first grader
+tb-16,Q15,Q15-lora-1.5,LoRA at strength 1.5 + sampling at temperature 1.0
+tb-17,Q15,Q15-lora-0.3,LoRA at strength 0.3 + watermark: KGW
+tb-18,Q05,Q05-base,plain
+tb-19,Q05,Q05-base,system prompt: JSON objects
+tb-20,Q05,Q05-base,sampling at temperature 1.0
+tb-21,Q05,Q05-base,watermark: KGW
+tb-22,Q30,Q30-base,plain
+tb-23,Q30,Q30-base,system prompt: exactly five words
+tb-24,Q30,Q30-base,persona: Python tutor
+tb-25,Q30,Q30-base,sampling at temperature 1.0
+tb-26,Q30,Q30-base,watermark: KGW
+tb-27,Q30,Q30-persona-1.0,persona LoRA at strength 1.0
+tb-28,Q30,Q30-persona-0.5,persona LoRA at strength 0.5
+tb-29,Q30,Q30-code-1.0,code LoRA at strength 1.0
+tb-30,Q30,Q30-latex-1.0,LaTeX maths LoRA at strength 1.0
+tb-31,Q30,Q30-math-1.0,maths LoRA at strength 1.0
+tb-32,Q30,Q30-persona-1.0,persona LoRA at strength 1.0 + system prompt: exactly five words
+tb-33,Q30,Q30-code-1.0,code LoRA at strength 1.0 + sampling at temperature 1.0
+tb-34,OL1,OL1-base,plain
+tb-35,OL1,OL1-base,system prompt: rhymes
+tb-36,OL1,OL1-base,persona: Python tutor
+tb-37,OL1,OL1-base,sampling at temperature 1.0
+tb-38,OL1,OL1-base,sampling at temperature 0.3
+tb-39,OL1,OL1-base,watermark: KGW
+tb-40,OL1,OL1-base,watermark: Gumbel-max
+tb-41,OL1,OL1-base,watermark: SynthID-Text

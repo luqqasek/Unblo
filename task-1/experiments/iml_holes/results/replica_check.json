@@ -1,5 +1,0 @@
-{
-  "FP32_single_vs_four_replicas_max_abs_logit": 0.0,
-  "tolerance": 0.001,
-  "upstream_list_alias_fixed": true
-}

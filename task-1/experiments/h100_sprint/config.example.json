@@ -1,0 +1,19 @@
+{
+  "packed": "/staged/h100-sprint-data",
+  "output": "/staged/h100-sprint-run-01",
+  "backbone": "checkpoints/convnext_base.fb_in22k/model.safetensors",
+  "pixelseal_checkpoint": "/staged/submission-3188/cluster/triforensic-runs/pixelseal/unified-v1/resume.pt",
+  "pixelseal_split": "/staged/submission-3188/cluster/triforensic-runs/pixelseal/unified-v1/split.json",
+  "batch_size": 32,
+  "real_batch": 8,
+  "eval_batch": 4,
+  "eval_interval": 1000,
+  "trustmark_steps": 7000,
+  "pixelseal_steps": 5000,
+  "trustmark_blend": 0.5,
+  "compile": true,
+  "checkpointing": true,
+  "seed": 42,
+  "total_seconds": 1800,
+  "block_seconds": 780
+}

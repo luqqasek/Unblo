@@ -1,8 +1,0 @@
-{
-  "source_sha256": {
-    "experiments/local_presence/results/ps-data-small/maps-150.npz": "9aa200f108cf230081e1e40bfb8a9305463a2c0adc4e7cb813fa37e12940dce9",
-    "experiments/local_presence/results/tm-scan/maps.npz": "a2ca8b8e75da7b00348af4832a698039c24e95a416eea568ee2c3eaad839c3d2",
-    "outputs/native_localizer/artifacts/runs/stegastamp/pilot-30min/real_validation_all/maps.npz": "6fb343e48c21acfd494f2e68d24cbf24d286a09a46b90980a8c3d89ca1e70706"
-  },
-  "protocol": "PS: single held-out fold 57; TM: reused OOF+frozen scan 170; SS: synthetic-only 170. Not a pooled unbiased CV. No test ground truth or new inference."
-}

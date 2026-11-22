@@ -1,1 +1,9 @@
--r official/requirements.txt
+# Matches the recorded A100 training stack. Install appropriate Torch wheels for your platform.
+torch==2.5.1
+torchvision==0.20.1
+timm==1.0.31
+numpy>=1.26,<3
+pillow>=10
+huggingface-hub>=1
+requests>=2.32
+tqdm>=4.66

@@ -1,0 +1,7 @@
+# Preserve accepted CSV bytes and upstream evidence across platforms.
+*.csv -text whitespace=cr-at-eol
+*.jsonl -text
+*.pt -text
+*.npz -text
+# Vendored upstream source is retained verbatim, including its formatting.
+task-1/solution/vendor/** -whitespace

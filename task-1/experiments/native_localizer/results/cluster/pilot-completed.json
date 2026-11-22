@@ -1,9 +1,0 @@
-{
-  "seconds": 1087.464242815011,
-  "batch": 64,
-  "updates": 200,
-  "views": 12800,
-  "real_validation_images": 57,
-  "family": "stegastamp",
-  "not_a_final_competition_pipeline": true
-}

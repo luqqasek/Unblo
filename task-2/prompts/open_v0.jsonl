@@ -1,0 +1,12 @@
+{"id": "open-market", "prompt": "Describe a small town market on a rainy morning in about 200 words."}
+{"id": "open-letter", "prompt": "Write a letter from a lighthouse keeper to a sister who lives inland. About 200 words."}
+{"id": "open-howto", "prompt": "Explain, step by step, how to repair a punctured bicycle tyre. Use full sentences, about 200 words."}
+{"id": "open-code", "prompt": "Write a Python function that merges two sorted lists into one sorted list, then explain how it works in plain words."}
+{"id": "open-math", "prompt": "Explain why the sum of the first n odd numbers equals n squared. Give a short argument and one worked example."}
+{"id": "open-german", "prompt": "Schreibe einen kurzen Absatz von etwa 120 Wörtern über einen Spaziergang im Herbstwald."}
+{"id": "open-list", "prompt": "List twenty everyday objects found in a kitchen, one per line, each followed by a five-word description."}
+{"id": "open-dialogue", "prompt": "Write a dialogue between a baker and a customer who cannot decide what to buy. About 15 lines."}
+{"id": "open-history", "prompt": "Summarise the main causes of the fall of the Western Roman Empire in about 200 words."}
+{"id": "open-advice", "prompt": "Someone is nervous before a first job interview. Give them practical advice in about 200 words."}
+{"id": "open-recipe", "prompt": "Give a recipe for a simple vegetable soup: ingredients first, then numbered steps."}
+{"id": "open-compare", "prompt": "Compare travelling by train and travelling by car for a 300 kilometre trip. About 200 words."}

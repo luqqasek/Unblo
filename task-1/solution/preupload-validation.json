@@ -1,0 +1,23 @@
+{
+  "valid": true,
+  "images": 1020,
+  "bytes": 16734635,
+  "checkpoint_sha256": "614c087792298bbb6dda0483423e583a9ca401ae4aaff59505561427c2d749ca",
+  "artifact_sha256": "58a10ea69eb3a179530795208a0ad69da9a8350592e894ff799e6789fe5ee48b",
+  "compared_public_submission": 3707,
+  "changes": {
+    "pixelseal": {
+      "changed_images": 340,
+      "changed_pixels": 147067
+    },
+    "trustmark": {
+      "changed_images": 307,
+      "changed_pixels": 15322
+    },
+    "stegastamp": {
+      "changed_images": 333,
+      "changed_pixels": 27647
+    }
+  },
+  "note": "Frozen refers to the sprint two-member r32/fc2k recipe, not the prior four-member public submission."
+}

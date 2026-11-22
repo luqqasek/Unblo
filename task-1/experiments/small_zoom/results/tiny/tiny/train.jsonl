@@ -1,8 +1,0 @@
-{"variant": "tiny", "step": 25, "seg": 0.29796265065670013, "aux": 0.0, "seconds": 40.482754349999595, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 50, "seg": 0.27168554067611694, "aux": 0.0, "seconds": 76.70951745900675, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 75, "seg": 0.29998287558555603, "aux": 0.0, "seconds": 113.46143021300668, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 100, "seg": 0.26427019387483597, "aux": 0.0, "seconds": 150.17902576801134, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 125, "seg": 0.3002782315015793, "aux": 0.0, "seconds": 187.11839332900126, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 150, "seg": 0.2771691679954529, "aux": 0.0, "seconds": 223.84344201500062, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 175, "seg": 0.28399644792079926, "aux": 0.0, "seconds": 260.195683953003, "peak_bytes": 24417909760}
-{"variant": "tiny", "step": 200, "seg": 0.27107980847358704, "aux": 0.0, "seconds": 296.45010163998813, "peak_bytes": 24417909760}

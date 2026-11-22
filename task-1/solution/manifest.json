@@ -1,0 +1,28 @@
+{
+  "final": true,
+  "submission_id": 4129,
+  "public_miou": 0.7309,
+  "previous_best": 0.7205,
+  "final_hidden_score": null,
+  "checkpoint_recipe": "PixelSeal feature-CutMix decoder, step200, gain8; FP32 identity view; 70/30 ensemble/specialist blend",
+  "other_families": "Frozen two-member rank32/family-conditioned2000 DINO recipe",
+  "files": {
+    "submission-4129.pt": {
+      "bytes": 16734635,
+      "sha256": "58a10ea69eb3a179530795208a0ad69da9a8350592e894ff799e6789fe5ee48b"
+    },
+    "pixelseal-featuremix-4129.pt": {
+      "bytes": 149824954,
+      "sha256": "614c087792298bbb6dda0483423e583a9ca401ae4aaff59505561427c2d749ca"
+    },
+    "replay-inputs-4129.npz": {
+      "bytes": 29576082,
+      "sha256": "bcbed4b9d921965ecc698873b79861b4a31f16410d308eb7986cc7d7bd97f055"
+    },
+    "experiment-dashboard-4129.zip": {
+      "bytes": 21184001,
+      "sha256": "6149a67c42bc8e20da6dd8798d2a971e90978d21dbe4b3221571b144b511d13d"
+    }
+  },
+  "scope": "Exact official test artifact and replay; neural rerun for PixelSeal uses cached frozen ensemble inputs for this test set. This is not a fresh-image model for all three families."
+}

@@ -1,6 +1,0 @@
-{
-  "max_abs_forward": 0.015625,
-  "max_abs_backward": 0.01971435546875,
-  "explicit_ms": 2.6799087994731963,
-  "fused_layernorm_ms": 4.348479800682981
-}

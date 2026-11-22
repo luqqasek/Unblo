@@ -36,7 +36,8 @@ for name in ['train.zip', 'test.zip']:
     with zipfile.ZipFile(kit / name) as z:
         z.extractall(root / 'data')
 for name in ['wmloc', 'download_models.py', 'submission_template.py']:
-    dst = root / name
+    dst = root / "official" / name if name == "submission_template.py" else root / name
+    dst.parent.mkdir(parents=True, exist_ok=True)
     if not dst.exists():
         if (kit / name).is_dir():
             shutil.copytree(kit / name, dst)

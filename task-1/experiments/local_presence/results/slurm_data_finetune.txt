@@ -1,6 +1,0 @@
-15904680 COMPLETING 3:31 jrc0288
-JobID|JobName|State|Elapsed|AllocTRES|MaxRSS
-15904680|data-finetune|COMPLETED|00:03:31|billing=128,cpu=256,gres/gpu=4,gres/mem512=0,node=1|
-15904680.batch|batch|COMPLETED|00:03:31|cpu=256,gres/gpu=4,gres/mem512=0,mem=0,node=1|15929276K
-15904680.0|python|COMPLETED|00:03:11|cpu=64,gres/gpu=4,gres/mem512=0,mem=0,node=1|
-15904680.1|nvidia-smi|COMPLETED|00:00:01|cpu=2,gres/gpu=4,gres/mem512=0,mem=0,node=1|

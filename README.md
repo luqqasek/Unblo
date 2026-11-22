@@ -1,54 +1,67 @@
-# European AI Championship
+# Unblo
 
-[Documentation index and work summary](task-1/experiments/DOCUMENTATION_INDEX.md) — research, experiment results, submission history and evidence through 2026-11-22.
+European AI Championship Paris 2026. Three tasks about what models reveal, what they share, and what they can forget.
 
-- [Task 1 — Localize Image Watermark](task-1/README.md)
-- [Task 2](task-2/README.md)
-- [Task 3](task-3/README.md)
+## Results and code
 
-Repository: https://github.com/luqqasek/European-AI-Hackathon (private).
-Each task has an independent workspace. Data, weights, environments and outputs are ignored.
+| Task | Best confirmed public result | Our solution | Start here |
+| --- | --- | --- | --- |
+| 1. Watermark localization | **0.7309 mIoU**, submission **4129** | DINO ensemble with a PixelSeal feature-CutMix specialist and expected-mIoU decoding | [Method, code and validation](task-1/README.md) |
+| 2. Model equality | **1.0000**, submission **2411** | Separate behavioral disguises from weight changes using response statistics and local likelihood evidence | [Method, code and replay](task-2/README.md) |
+| 3. Machine unlearning | **0.3149**, submission **4183** | Per-image forgetting targets with output and CLS-feature preservation | [Method, training and validation](task-3/README.md) |
 
-## Set up another machine
+These are saved **public-split** results, not final hidden-test scores. Each task links to its accepted server receipt. Local development scores use different protocols and are reported separately.
 
-Install Git and Python 3.11 first. Sign in to GitHub using an account with access
-(`gh auth login` if using GitHub CLI), then:
+## Presentation
+
+[Download the presentation PDF](slides/Unblo.pdf) or [open the offline HTML deck](slides/index.html) after cloning. **Nine slides, exactly three per task.** Use arrow keys to present the HTML version. [Speaker notes](slides/NOTES.md) include the technical qualifications and code pointers.
+
+## Verify the submission
+
+No competition API key or new endpoint query is required for these checks.
 
 ```bash
-git clone https://github.com/luqqasek/European-AI-Hackathon.git
-cd European-AI-Hackathon/task-1
-bash scripts/setup.sh
-source .venv/bin/activate
+git clone https://github.com/luqqasek/Unblo.git
+cd Unblo
+
+# Task 1: install its environment, then verify the exact accepted masks.
+python3 -m venv task-1/.venv
+task-1/.venv/bin/pip install -e './task-1[dev]'
+task-1/.venv/bin/python task-1/verify_submission.py
+task-1/.venv/bin/python -m pytest task-1/tests -q
+
+# Task 2: locked lightweight environment and reconstruction of all 33 labels.
+uv sync --project task-2 --frozen
+task-2/.venv/bin/python task-2/replay.py
+task-2/.venv/bin/python -m unittest discover -s task-2/tests -p 'test_*.py'
+
+# Task 3: scoring-formula tests require only NumPy.
+task-1/.venv/bin/python -m unittest discover -s task-3/tests -v
 ```
 
-The setup script installs dependencies, downloads the official train/test archives
-and model weights, extracts data, and verifies the environment. Allow several GB
-of disk space. Downloads need internet access. Start coding in
-`task-1/submission_template.py`, in the `predict()` function.
+[Validation record](VALIDATION.md) distinguishes checks rerun for this submission from historical GPU and competition results. GPU training instructions and artifact requirements live in each task README.
 
-macOS CPU inference has been verified. The Linux/Juelich dependency list targets
-NVIDIA CUDA; that setup has not been verified on a second machine. Juelich team
-accounts and shared folder configuration are described in the downloaded official
-setup README.
+## Repository map
 
-### Windows (PowerShell)
-
-Install Git for Windows and Python 3.11 with the Python launcher (`py`).
-After cloning, run from `task-1`:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
-.\.venv\Scripts\python.exe submission_template.py --data data --out outputs/submission.pt
+```text
+task-1/    Selected localization source, accepted masks, receipt, validation
+task-2/    Imported model-equality solution, frozen evidence, accepted labels
+task-3/    Selected E50 unlearning code, exact configuration, receipt, validation
+slides/    Presentation PDF, offline HTML source and speaker notes
 ```
 
-This uses CPU inference and needs no Bash, WSL, or CUDA installation. Select
-`.venv\Scripts\python.exe` in your editor. If `py -3.11` is unavailable, setup
-can bootstrap a local Python 3.11 using an existing `python` command.
-See `task-1/AUDIT.md` for the current Windows verification and baseline results.
+Datasets, model downloads, environments and intermediate tensors are excluded. The accepted Task 1 prediction file and Task 2 CSV are included. Task 1's specialist/replay assets and Task 3's exact selected 344 MB checkpoint are attached to the [submission release](https://github.com/luqqasek/Unblo/releases/tag/final-4129), with hashes in the task evidence.
 
-## Browse the dataset
+[Research decisions](RESEARCH_NOTES.md) summarize rejected approaches. [Provenance](PROVENANCE.md) identifies imported work and upstream sources. The full pre-cleanup research history remains in Git, rather than competing with the final solution in the working tree.
 
-From `task-1`, run `.venv\Scripts\python.exe dashboard/server.py` on Windows
-(or `.venv/bin/python dashboard/server.py` on macOS/Linux), then open
-http://127.0.0.1:8765. See images, ground-truth masks, overlays, embedded messages,
-and filters for all three watermarking methods. Models are not needed to browse.
+## Submission details
+
+**Team:** Unblo
+
+**Repository:** https://github.com/luqqasek/Unblo
+
+Text for the organizers' `general` channel:
+
+> Unblo — https://github.com/luqqasek/Unblo
+
+The repository must be public at the organizers' noon deadline. Posting to the channel is a separate submission step.

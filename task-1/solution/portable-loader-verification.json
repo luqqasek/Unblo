@@ -1,0 +1,6 @@
+{
+  "strict_state_load": true,
+  "images_checked": 3,
+  "max_probability_error": 4.76837158203125e-07,
+  "no_external_checkpoint_downloads": true
+}

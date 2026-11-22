@@ -1,0 +1,12 @@
+{
+  "ts": 1795309406.038839,
+  "file": "20261122-020326_s82-05-v4.csv",
+  "sha1": "29017fced46be3bcdc8786d45f18036944a1d712",
+  "http": 200,
+  "reply": {
+    "submission_id": 2411,
+    "status": "success",
+    "score": 1.0,
+    "message": "New best on this task. Score shown is on the public split; the final ranking uses the held out subset, revealed after submissions close."
+  }
+}

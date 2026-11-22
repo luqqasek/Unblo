@@ -1,0 +1,8 @@
+{"id": "m1-alphabet", "prompt": "Write the English alphabet in uppercase letters separated by single spaces, and nothing else."}
+{"id": "m2-count", "prompt": "Count from 1 to 15, separated by commas. Output only the numbers."}
+{"id": "m3-repeat", "prompt": "Repeat this sentence exactly once and say nothing else: The quick brown fox jumps over the lazy dog."}
+{"id": "m4-spell", "prompt": "Spell the word 'elephant' letter by letter, separated by hyphens. Output only that."}
+{"id": "m5-days", "prompt": "List the days of the week, one per line, and nothing else."}
+{"id": "m6-sum", "prompt": "What is 2 + 2? Answer with a single digit and nothing else."}
+{"id": "m7-hello", "prompt": "Write the word 'hello' five times separated by spaces, and nothing else."}
+{"id": "m8-capital", "prompt": "What is the capital of France? Answer with one word."}

@@ -1,0 +1,27 @@
+{
+  "checkpoint": "experiments/manual_weights/results/ten-minute-featuremix/candidate.pt",
+  "checkpoint_sha256": "614c087792298bbb6dda0483423e583a9ca401ae4aaff59505561427c2d749ca",
+  "manual_edit": "feature_cutmix_decoder_step200_gain8",
+  "artifact_sha256": "58a10ea69eb3a179530795208a0ad69da9a8350592e894ff799e6789fe5ee48b",
+  "bytes": 16734635,
+  "images": 1020,
+  "pixelseal_images": 340,
+  "dtype": "uint8",
+  "shape": [
+    1020,
+    128,
+    128
+  ],
+  "dino_sha256": {
+    "experiments/h100_hour/runs/refit-r32-test.npz": "66a594db2e309d298e9aeb478a5ae2c43b2e44ad370d3a6855a09b177aeebc01",
+    "experiments/h100_hour/runs/refit-fc2k-test.npz": "6d2d91b02e21ea5ac074c5bb05f2135e0650778b73ab6c3de4df7dbd4991dbb3"
+  },
+  "device": "mps",
+  "precision": "FP32",
+  "tta": "identity",
+  "trustmark_stegastamp_frozen": true,
+  "submitted": true,
+  "authorization": "User explicitly requested verification submission after manual weight edits, overriding the earlier 0.80 inference gate",
+  "source_selection": "Development evidence only; no public score used to choose this artifact",
+  "submission_id": 4129
+}

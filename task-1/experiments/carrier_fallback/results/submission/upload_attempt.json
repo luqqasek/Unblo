@@ -1,9 +1,0 @@
-{
-  "status": "transport_error_no_receipt",
-  "error": "socket timeout while sending multipart body; no HTTP response received",
-  "observed_at_utc": "2026-11-22T06:14:15.918358+00:00",
-  "retry_policy": "wait at least10 minutes from this conservative observation before retrying identical tensors in verified losslessly compressed .pt; public best remains0.6736105035839878",
-  "uploaded_tensor_source_sha256": "d85a317d604233fc31d1686ebf7ca1a97169490ef78d41d4e82eaac0a8e84fab",
-  "verified_compressed_bytes": 174442,
-  "no_server_score_claimed": true
-}

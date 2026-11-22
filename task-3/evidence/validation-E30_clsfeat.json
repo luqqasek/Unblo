@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/p/project1/training2666/pszenny1/unlearning-improve-v6/outputs/runs/E30_clsfeat.pt",
+  "sha256": "22756d0d004adb3affe3bd7a93de48e40a2f9be3582cf5dfabc5a74cd6e0a1c4",
+  "bytes": 343628962,
+  "strict_load": true,
+  "finite_float32_weights": true,
+  "fp16_finite_images": 256,
+  "logit_range": [
+    -9.421875,
+    22.921875
+  ],
+  "torch_version": "2.5.1+cu124",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "hidden_validation_accuracy": null,
+  "public_score": null
+}

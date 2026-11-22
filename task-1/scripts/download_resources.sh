@@ -18,7 +18,8 @@ for name in ['train.zip', 'test.zip']:
         z.extractall(root / 'data')
 # Upstream code is preserved separately. Do not overwrite local edits on reruns.
 for name in ['wmloc', 'download_models.py', 'submission_template.py']:
-    dst = root / name
+    dst = root / "official" / name if name == "submission_template.py" else root / name
+    dst.parent.mkdir(parents=True, exist_ok=True)
     if not dst.exists():
         if (kit / name).is_dir(): shutil.copytree(kit / name, dst)
         else: shutil.copy2(kit / name, dst)

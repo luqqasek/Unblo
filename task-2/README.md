@@ -1,123 +1,45 @@
-# Task 2 — Model Equality
+# Task 2 · Model equality
 
-Workspace do European AI Championship Paris 2026. Id zadania na serwerze:
-`33-model-equality`. Przygotowanie i losowy baseline nie wymagają GPU ani zapytań do modeli.
+**Selected result: public score 1.0000, accepted submission 2411.** [Server receipt](submission/receipt.json) · [accepted 33-endpoint CSV](submission/labels.csv) · [challenge brief](challenge.pdf).
 
-## Status przygotowania — 2026-11-21
+Identify endpoints that share a base model family and endpoints that share the same checkpoint, quantization and LoRA adapter. System prompts, decoding changes and watermarks are disguises of the same model. The task weights family MCC by 0.1 and within-family model MCC by 0.9.
 
-Pobrano 11 oficjalnych plików (w tym metadane Git i setup JURECA), sprawdzono
-ich SHA-256, utworzono lokalne środowisko Python 3.12 i zainstalowano zależności.
-Walidacja CSV: 33 endpointy, 3 losowe rodziny, 9 losowych modeli.
-Scorer praktyczny na odpowiedziach wzorcowych: 1.000 (sanity check).
+## Selected method
 
-Wysłano dokładnie jedno zgłoszenie: **ID 1098**, HTTP 200, `status=success`,
-**public score 0.0**. Czas próby: 2026-11-21 16:20:34 UTC / 17:20:34 Warszawa.
-Potwierdzenie: `outputs/submission_20261121T162034Z.json`.
-SHA-256 CSV: `cfcd77c19ebe43594a2e3e84636e4d69cb5216b8eacc998537b32a7f03663dd6`.
-W tym przygotowaniu wykonano **0 zapytań do modeli**, w tym referencyjnych.
-Nie sprawdzano wcześniejszego wykorzystania budżetu przez zespół.
+1. Assign model families from response evidence, including manual analysis.
+2. Detect behavioral disguises: custom prompt evidence, missing maker names, repeated openings, unusually varied vocabulary and digit-distribution changes.
+3. Compare saved responses under local base, adapter and emulated quantized models. A sufficiently better likelihood indicates changed weights.
+4. Apply the fixed v4 decision order. Adapter evidence takes priority, followed by quantization evidence, disguise grouping, and temperature/plain-base heuristics.
 
-## Zasady i kontekst
+| Step | Relevant code |
+| --- | --- |
+| Behavioral features and thresholds | [typed2.py](research/experiments/s82/typed2.py) |
+| Adapter likelihood aggregation | [v3.py: lora_gains](research/experiments/s82/v3.py) |
+| Final grouping rule | [v4.py: label](research/experiments/s82/v4.py) |
+| Original manual tags and family assembly | [scored_v4.py](research/experiments/s82/scored_v4.py), [families.json](research/experiments/s82/families.json) |
+| Local likelihood measurement | [wb_score.py](research/experiments/s82/wb_score.py), [quant_llr.py](research/experiments/s82/quant_llr.py) |
+| Exact historical replay | [replay.py](replay.py) |
+| Submission format and scoring | [scoring.py](src/meq/scoring.py) |
 
-33 deploymenty (`ep-01`–`ep-33`) należy podzielić na rodziny i dokładne modele.
-Rodzina oznacza wspólny model bazowy. Dokładna tożsamość wymaga tego samego
-checkpointu, kwantyzacji i adaptera LoRA. Zmiana watermarku, system promptu
-lub dekodowania nie zmienia tożsamości. Kwantyzacja lub inny adapter ją zmieniają.
+## Offline reproduction
 
-CSV zawiera dokładnie 33 wiersze i kolumny `endpoint,family,model`.
-Etykiety są dowolne, ale wspólna etykieta modelu wymaga wspólnej rodziny.
-Klasteryzacja zapewnia przechodniość: A=B i B=C implikuje A=C.
-
-Wynik: `0.1 * MCC_family + 0.9 * MCC_model`, z ujemnym MCC obciętym do zera.
-MCC to `(TP*TN-FP*FN)/sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))`.
-Rodziny oceniane są na parach endpointów (łącznie 528), modele tylko na parach
-należących do tej samej prawdziwej rodziny. Publiczna i końcowa ocena używają
-różnych podzbiorów par. Nie stroić metody do leaderboardu; wynik losowy służy
-wyłącznie sprawdzeniu ścieżki zgłoszenia.
-
-Limity: 100 odpowiedzi na każdy oceniany endpoint na cały konkurs, maksymalnie
-256 tokenów wyjścia, 1024 tokeny wejścia i 4 równoległe requesty na zespół.
-Każda odpowiedź w żądaniu zużywa osobną jednostkę. Temperature i seed są
-ignorowane, wiadomości systemowe odrzucane. Błędne zapytania nie zużywają
-budżetu odpowiedzi. Zgłoszenie CSV można wykonać raz na 30 minut; błąd zgłoszenia
-także uruchamia cooldown.
-
-**Na polecenie użytkownika nie odpytywać modeli ani endpointów referencyjnych
-w ramach przygotowania.** Nie uruchamiano też endpointu `/models`.
-`workflow.py` nie zawiera wywołań inference: jego jedyne żądanie sieciowe to
-wysyłka CSV na `/submit/33-model-equality` po jawnej komendzie `submit`.
-Oryginalne skrypty z `official/` mogą odpytywać modele — nie uruchamiać ich
-do samego generowania losowego pliku.
-
-## Pliki
-
-- `official/`: komplet plików SprintML/model_equality bez modyfikacji.
-- `official/hackathon/`: instrukcja i skrypty JURECA; pobrane, nie uruchamiane na Windows.
-- `official/manifest.json`: adresy przypięte do rewizji, rozmiary i SHA-256 pobrań.
-- `workflow.py`: generowanie offline, walidacja i wysłanie CSV.
-- `outputs/random_seed_2026.csv`: losowe predykcje, bez wnioskowania o modelach.
-- `outputs/submission_*.json`: odpowiedź serwera i hash wysłanego pliku.
-- `.env`: lokalny klucz, ignorowany przez Git; wzór w `.env.example`.
-- `requirements-windows.lock.txt`: wersje pakietów sprawdzone na tej maszynie.
-
-W oficjalnym repo nie ma wag ani korpusu odpowiedzi do pobrania. Odpowiedzi do
-analizy trzeba byłoby zebrać później, w ramach osobno zatwierdzonego budżetu.
-
-## Uruchamianie (PowerShell, z folderu task-2)
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe workflow.py generate
-.\.venv\Scripts\python.exe workflow.py validate
-# Tylko wysyłka CSV, nie odpytuje modeli:
-.\.venv\Scripts\python.exe workflow.py submit
+```bash
+# From repository root:
+uv sync --project task-2 --frozen
+task-2/.venv/bin/python task-2/replay.py
+task-2/.venv/bin/python -m unittest discover -s task-2/tests -p 'test_*.py'
+# Local fake-server integration test, no competition requests:
+MEQ_API_KEY=test-key task-2/.venv/bin/python task-2/tests/test_offline.py
 ```
 
-Na Linux/macOS użyj `.venv/bin/python`. Generator domyślnie używa seeda 2026,
-trzech losowych rodzin i do trzech modeli na rodzinę, jak oficjalny przykład.
-To założenie techniczne, nie oszacowanie liczby rzeczywistych rodzin/modeli.
-Nie nadpisuje istniejącego pliku. Inny plik: `--file outputs/other.csv --seed 42`.
-Walidator akceptuje nagłówek lub jego brak. Klucz odczytywany jest z
-`MODEL_EQUALITY_API_KEY` w środowisku lub lokalnym `.env`.
+Replay uses the saved likelihood measurements and original tags, reconstructs all 33 labels, checks every pair's grouping against the accepted CSV, and verifies its SHA-1 against the upload receipt. It neither queries endpoints nor uploads. Later Qwen-3B measurements in the upstream repository were not part of this historical submission and are excluded from replay.
 
-Skrypt zapisuje próbę przed wysłaniem, blokuje kolejną lokalną próbę przez 30 minut
-i nie ponawia żądań przy błędzie. Cooldown obejmuje cały zespół: lokalny zapis
-nie wykrywa zgłoszeń z innych maszyn. Nie usuwać zapisu próby w celu ponowienia.
+## Validation and limits
 
-## Część praktyczna i dalsza praca
+The [submission history](evidence/submissions.jsonl) records public results 0.55, 0.55, 0.55, 0.30 and **1.00**. The imported [prediction evidence](evidence/predictions.json) records practice **1.0000** and test-bed **0.487638**, with known families, combining to **0.679774** under 37.5%/62.5% weights. These are development results, not hidden-score estimates. [Heuristic explanation](evidence/heuristics.html).
 
-`ref-01`–`ref-09` używają osobnego małego modelu. Według oficjalnego szablonu
-nie mają limitu zapytań i nie są oceniane na serwerze; tutaj ich nie odpytywano.
-Wszystkie należą do rodziny P. Ten sam model S: ref-01, ref-03, ref-05,
-ref-06, ref-08 (plain, system prompt, persona, watermark, sampling).
-Pozostałe to różne modele: ref-02 FP8, ref-04 LoRA 0.7,
-ref-07 LoRA 1.5, ref-09 LoRA 0.3. Nie przenosić tych etykiet na ep-*.
+**Human decisions are part of the solution:** the submitted family/tag assignments were not fully automatic, and `ep-26` was excluded from plain-base attachment after public leaderboard feedback. The perfect public score does not prove every hidden pair is correct. Reconstruction establishes the final labels, not a complete historical trace of every intermediate decision.
 
-Lokalny scorer nie wykonuje żądań sieciowych:
+The raw response captures are included to preserve irreplaceable evidence. The original endpoint allowance was 100 responses per scored endpoint. No new competition queries were made for this packaging work. New likelihood computation additionally requires local base/adapter weights and Torch/Transformers/PEFT; the locked environment is sufficient for replay, rules and tests.
 
-```powershell
-.\.venv\Scripts\python.exe official/score_practice.py official/practice_answers.csv
-```
-
-Powyżej jest sanity check na odpowiedziach wzorcowych, nie ocena opracowanej metody.
-Scorer praktyczny liczy tylko MCC tożsamości modelu na 36 parach jednej rodziny;
-nie odtwarza pełnej ważonej oceny rodzin i modeli dla ep-*.
-
-Dalszy plan: przygotować prompty rozróżniające modele, mierzyć zmienność na
-powtórzeniach, oceniać odporność na system prompts/watermark/dekodowanie na
-praktyce, następnie klasteryzować rodziny i modele. Dla właściwych endpointów
-planować budżet przed zebraniem danych, zachowywać odpowiedzi i rezerwę na
-niepewne pary. Sam styl wypowiedzi ani nazwa zadeklarowana przez model nie
-stanowią dowodu tożsamości. To plan, nie zaimplementowany algorytm.
-
-## Źródła
-
-- Oficjalne pliki: https://huggingface.co/datasets/SprintML/model_equality
-- Setup JURECA: https://huggingface.co/datasets/SprintML/hackathon
-- Leaderboard: http://34.147.229.55/leaderboard_page
-- Opis konkursu przekazany przez użytkownika w rozmowie 2026-11-21.
-- Lektury wskazane przez organizatorów (niezweryfikowane w tym przygotowaniu):
-  MET https://arxiv.org/pdf/2410.20247,
-  RUT https://arxiv.org/pdf/2506.06975,
-  AgentProv https://arxiv.org/pdf/2609.00052.
+Imported from [MelidaBraier/model_equality](https://github.com/MelidaBraier/model_equality); see [import provenance](evidence/import.json).

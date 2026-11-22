@@ -1,0 +1,10 @@
+{
+  "winner": {
+    "recipe": "cutmix",
+    "step": 200,
+    "score": 0.766648588866357,
+    "gain": 8
+  },
+  "frozen_before_development": true,
+  "updates": 600
+}

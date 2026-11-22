@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/MelidaBraier/model_equality",
+  "commit": "d977491371fa4c613e7321fb3dbf8d014046d55a",
+  "selected_submission": 2411,
+  "selected_csv": "20261122-020326_s82-05-v4.csv",
+  "changes": [
+    "Removed control center and discarded search rounds",
+    "Added offline frozen replay",
+    "Retained likelihood rules and captured evidence"
+  ]
+}

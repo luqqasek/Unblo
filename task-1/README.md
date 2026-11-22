@@ -1,158 +1,61 @@
-# Task 1 — Localize Image Watermark
+# Task 1 · Watermark localization
 
-Supervisors: Adam Dziedzic and Franziska Boenisch.
-Developers: Simon Hector, Michel Meintz, Louis Kerner, Maitri Shah.
+**Final result: public mIoU 0.7309, accepted submission 4129.** [Receipt](solution/upload_receipt.json) · [exact accepted masks](solution/submission-4129.pt) · [challenge brief](challenge.pdf).
 
-Start coding in `src/watermark_localization/solution.py`.
+Given a 512×512 image, watermark family and known message, predict a binary 128×128 map. The score averages watermarked and clean IoU. Small watermark regions and small clean holes both matter.
 
-Active optimization baseline: **StegaStamp with inverse-STN feature alignment**.
-The user selected this geometry-corrected variant for further development.
-See [the current baseline and comparison protocol](experiments/README.md).
+## Final solution and code
 
-Current Windows checkout audit: [AUDIT.md](AUDIT.md). Reproducible reference
-baselines live in [experiments/baseline](experiments/baseline/README.md).
-Keep subsequent experiments in separate subdirectories of `experiments/`.
-Browse the [experiment dashboard](dashboard/README.md) for results, visual examples,
-and instructions for opening it through an SSH tunnel.
-The setup descriptions below include earlier Mac verification; data and weights
-must be downloaded separately on each machine.
+| Component | Selected method | Relevant code |
+| --- | --- | --- |
+| Shared image evidence | Two-member DINO recipe: rank-32 and family-conditioned 2,000-step models; separate partial-mark and clean-hole heads | [DINO model/training](experiments/h100_hour/dino_job4.py), [fusion](experiments/h100_hour/fuse_eval.py) |
+| PixelSeal specialist | EMA588 initialization; feature-CutMix decoder at step 200, output gain 8; FP32 identity-view inference | [Decoder training](experiments/manual_weights/decoder_refine.py), [portable model](solution/model.py) |
+| Final masks | PixelSeal 70% frozen ensemble + 30% specialist; expected-mIoU decoding; frozen TrustMark/StegaStamp masks | [Decoder](experiments/h100_hour/h2_decode.py), [replay/inference](solution/reproduce.py) |
+| Artifact contract | Complete expected test names, binary uint8 masks and immutable file hash | [Validation](verify_submission.py), [format helper](src/watermark_localization/submission.py) |
 
-## Environment
+The final solution supersedes the earlier 0.6777 submission. TrustMark/StegaStamp use the frozen two-member DINO recipe, which differs from the four-member ensemble in earlier submission 3707. The public gain therefore cannot be attributed solely to the final PixelSeal weight edit.
 
-Python 3.11 environment: `.venv`. Activate from this directory:
+## Verify and replay
 
-```sh
-source .venv/bin/activate
-python -m pytest
-python scripts/verify_setup.py
+```bash
+# From repository root. Python 3.11 recommended.
+python3 -m venv task-1/.venv
+task-1/.venv/bin/pip install -r task-1/solution/requirements.txt
+task-1/.venv/bin/python task-1/verify_submission.py
+
+# Download final weights and replay maps from this submission repository.
+gh release download final-4129 --repo luqqasek/Unblo \
+  --pattern pixelseal-featuremix-4129.pt --pattern replay-inputs-4129.npz \
+  --dir task-1/solution/assets
+
+task-1/.venv/bin/python task-1/solution/reproduce.py replay --out /tmp/unblo-replayed.pt
 ```
 
-Use `.venv/bin/python` as your editor interpreter. To reproduce all downloads and
-installation, run `bash scripts/setup.sh`. CPU inference is supported on this Mac;
-Juelich uses the original CUDA requirements in `requirements-juelich.txt`.
-`requirements-macos.txt` substitutes CPU ONNX Runtime and omits the unavailable
-Apple Silicon `decord` wheel (video reading is unnecessary for this image task).
+Replay recomputes the blend and decoding and requires every mask and image name to match the accepted submission. Serialization bytes may differ while tensors remain identical. The canonical accepted file is **16,734,635 bytes**, SHA-256 `58a10ea69eb3a179530795208a0ad69da9a8350592e894ff799e6789fe5ee48b`.
 
-## Where to start
+To rerun the actual PixelSeal checkpoint on official test images:
 
-The actual official loader and wrappers are in `wmloc/`. A ready-to-run official
-baseline is `submission_template.py`: edit its `predict(item, watermarks=None)`
-function to begin experimenting. Run it with:
-
-```sh
-python submission_template.py --data data --out outputs/submission.pt
+```bash
+PYTORCH_ENABLE_MPS_FALLBACK=1 task-1/.venv/bin/python task-1/solution/reproduce.py infer \
+  --data /path/to/official-data --device mps --out /tmp/unblo-inferred.pt
 ```
 
-The baseline predicts clean everywhere. It measures local train mIoU and saves
-all 1,020 test predictions. `SUBMIT` remains `False`; no result is uploaded.
-`src/watermark_localization/solution.py` is an optional separate implementation entry point.
+The dataset directory must contain `test/metadata.json` and `test/images/`. CPU and CUDA device options are available. The portable loader needs no JURECA account, original resume checkpoint or watermark embedder download.
 
-```python
-from wmloc.data import LocalisationDataset
-from wmloc.watermarks import load_watermark
-from wmloc.utils import to_tensor
+**Reproduction scope:** the complete replay covers the official 1,020 test IDs. PixelSeal neural output can be recomputed, while its ensemble inputs and the other families use saved test maps. This is not a fresh-image inference service for all three families. Historical training source is included, but its cached features and intermediate training checkpoints are not distributed as a complete retraining pipeline.
 
-train = LocalisationDataset("data", "train")
-item = train[0]
-wm = load_watermark(item["method"], models_dir="checkpoints", device="cpu")
-logits = wm.logits(to_tensor(item["image"]))
-features = wm.features(to_tensor(item["image"]))
-```
+## Validation
 
-`data/train` and `data/test` contain the extracted images and metadata. Training
-masks include full-resolution PNGs and `masks_128.npz`. Weights and the pinned
-VideoSeal checkout are in `checkpoints/`. TrustMark Q downloads its encoder,
-decoder and remover into `.venv/lib/python3.11/site-packages/trustmark/models/`
-on first load. Upstream archives and pristine code
-remain in `starter-kit/task-1/`; local baseline and wrappers are tracked in Git.
+| Evidence | Result | Scope |
+| --- | --- | --- |
+| Organizer response | **0.7309 mIoU**, previous best 0.7205 | Public split, submission 4129 |
+| PixelSeal final edit | 0.629340 → **0.630891**, delta +0.001552 | Same 57 repeatedly reused development images |
+| Paired delta interval | **[−0.003158, +0.007130]** | Includes zero; original promotion gate **failed** |
+| Portable loader | Strict state load; maximum probability error **4.77e−7** on three images | Historical comparison against original model wrapper |
+| Exact artifact | 1,020 names; uint8 [1020,128,128]; binary masks; hash matches receipt | Checked again during packaging |
 
-## Official resources
+The local PixelSeal screen and public three-family result answer different questions. No statistically reliable local gain or 0.80 result was established. The final hidden score remains unknown. [Development evidence](solution/checkpoint-result.json) · [loader checks](solution/portable-loader-verification.json) · [test inference record](solution/inference.json) · [artifact comparison](solution/preupload-validation.json).
 
-- Task kit/data: https://huggingface.co/datasets/SprintML/Hackathon_Watermark_Localisation_Task
-- General JURECA setup: https://huggingface.co/datasets/SprintML/hackathon
-- Local copies: `OFFICIAL_README.txt`, `starter-kit/setup/README.md`.
-- Leaderboard from the brief: http://34.147.229.55/leaderboard_page
+## Provenance
 
-The shared JURECA setup requires your team names and Juelich accounts. Its scripts
-are downloaded for reference; they are intended for JURECA, not for this Mac.
-
-## Task contract
-
-Input images are 512 x 512 PNGs, watermarked using PixelSeal, TrustMark, or
-StegaStamp. Predict 1 for watermarked pixels and 0 for clean pixels, including
-areas overwritten by edits. Original rectangular watermark subsets have maximum
-aspect ratio 16:1 for PixelSeal/StegaStamp and 2:1 for TrustMark; edits can produce
-irregular masks. Edits include outpainting, object removal/alteration, addition,
-and transplantation.
-
-There are 510 train images (170 per method) with 512/128 ground truth masks,
-method labels, and embedded messages. The 1,020 test images (340 per method)
-provide method labels and messages, without ground truth.
-
-Evaluation uses a 128 x 128 grid. Each cell represents 4 x 4 pixels and is
-watermarked if at least 8 pixels are watermarked. `wmloc.utils` provides the official metric and downsampling functions;
-`metrics.py` also implements the brief's rule.
-For each image, average clean and watermark IoU, treating an empty union as 1;
-then average images equally. `mean_iou` expects masks already on the desired grid.
-
-## Submission
-
-Use `save_submission` from `watermark_localization.submission` with the complete
-expected test name list from the official loader. It validates names, duplicates,
-binary values, and `[N,128,128]` shape, and stores CPU uint8 masks to fit under
-20 MB. Preserve the official image names exactly. Output structure:
-
-```python
-{"image_names": names, "masks": masks}
-```
-
-Public leaderboard: 30% of test images. Private ranking: remaining 70%.
-The official starter kit and validator remain authoritative.
-
-The downloaded official README says 25 MB; the supplied participant brief says 20 MB.
-The local submission helper enforces the stricter 20 MB limit.
-
-## Windows
-
-From PowerShell in this directory, with Git and Python 3.11 installed:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
-.\.venv\Scripts\python.exe submission_template.py --data data --out outputs/submission.pt
-```
-
-The installer uses `py -3.11` when available, otherwise bootstraps a project-local
-Python 3.11 using uv and the existing `python` command. It enables UTF-8 for
-TrustMark installation, uses tested Windows dependency constraints and CPU ONNX
-Runtime, verifies archive checksums, and runs the reference baseline.
-GPU setup is separate.
-
-## Dashboard do przeglądania danych
-
-Dashboard działa lokalnie i nie wymaga dodatkowych bibliotek ponad NumPy i Pillow
-z przygotowanego środowiska. Nie ładuje modeli watermarkowania.
-
-Windows, PowerShell w folderze `task-1`:
-
-```powershell
-.\.venv\Scripts\python.exe dashboard/server.py
-```
-
-macOS / Linux:
-
-```sh
-.venv/bin/python dashboard/server.py
-```
-
-Otwórz **http://127.0.0.1:8765**. Zakończ serwer przez Ctrl+C.
-Możesz zmienić port: `dashboard/server.py --port 8766`.
-
-- Galeria wszystkich obrazów train/test, wyszukiwanie po nazwie i filtrowanie po metodzie.
-- Obraz wejściowy, zielona nakładka ground truth i maska binarna obok siebie.
-- Przełączanie maski 512 × 512 / oficjalnej siatki 128 × 128, regulacja nakładki.
-- Wiadomość bitowa, flaga `full_watermark` i ścieżki plików źródłowych.
-- Filtrowanie i sortowanie po pokryciu oraz rozkład pokrycia dla wybranych danych.
-
-Pokrycie liczone jest z oficjalnej maski 128 × 128. Dla testu jest nieznane,
-więc dashboard nie pokazuje masek, wartości pokrycia ani flagi `full_watermark`.
-Metadane nie zawierają etykiet typu edycji. Podgląd niczego nie zmienia w danych.
+Imported from [MelidaBraier/watermark-localization-4129](https://github.com/MelidaBraier/watermark-localization-4129), revision `ad3e936ffd9b54b916b6d21c533ae7abed0595c6`. The five vendored VideoSeal modules retain their [MIT license](solution/vendor/videoseal/LICENSE), upstream commit `b1bf4c081e40bc8971f072f33e3b16912a35f3b4`. [Manifest](solution/manifest.json) records the final model and replay hashes.

@@ -1,0 +1,9 @@
+{
+  "model": "E50_feature10",
+  "public_score": 0.3149,
+  "submission_id": 4183,
+  "sha256": "74f11cb4d86cc8a7ceae42dce6949fb750a14b5e20bdfbeaddb5038d8115c35f",
+  "bytes": 343629322,
+  "checkpoint": "https://github.com/luqqasek/Unblo/releases/download/final-4129/E50_feature10.pt",
+  "hidden_score": null
+}

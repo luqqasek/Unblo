@@ -1,0 +1,16 @@
+{
+  "baseline": "E24_anchor5_mu3",
+  "baseline_public_score": 0.2994,
+  "expected_public_score": null,
+  "hypothesis": "Absent pseudo-class head parameter protection and normalized CLS feature anchoring can reduce collateral movement at similar achieved forgetting.",
+  "controlled": "E24 targets mu-3,s6.5,anchorweight5,seed0,2500updates; no optimizer or rank-target change. Same32 anchors; E32 replaces8 of32 with class-balanced synthetic anchors.",
+  "runs": [
+    "E29_headfreeze",
+    "E30_clsfeat",
+    "E31_headfeat",
+    "E32_headfeat_bank"
+  ],
+  "verification": "Masked gradients plus post-Adam restoration; exact protected head-row equality required. Student feature gradient and teacher detach tested. Evaluate established views and heldout200 synthetic anchors including E24 baseline.",
+  "limitations": "Synthetic realism and hidden retention not established. Head freezing is parameter preservation, not function preservation. No claim that class counts prove structured deletion or partial/full-class removal.",
+  "resources": "4 A100s,one node,30minute wall cap"
+}

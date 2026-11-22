@@ -1,8 +1,8 @@
+# Local environments, credentials and caches
 .DS_Store
 __pycache__/
 *.py[cod]
 .venv/
-.venv-rgb-cuda/
 .pytest_cache/
 .ruff_cache/
 .env
@@ -10,12 +10,26 @@ __pycache__/
 !.env.example
 .cache/
 *.egg-info/
-task-1/data/*
-!task-1/data/.gitkeep
-task-1/outputs/*
-!task-1/outputs/.gitkeep
-task-1/checkpoints/*
-!task-1/checkpoints/.gitkeep
+node_modules/
+# Large reproducible assets
+*.pt
+*.pth
+*.npz
+*.npy
+*.safetensors
+task-1/data/
+task-1/checkpoints/
 task-1/starter-kit/
-task-1/experiments/**/results/
-task-1/dashboard/dist/
+task-1/outputs/
+task-2/external/
+task-2/runs/
+task-3/data/
+task-3/outputs/
+# The exact small accepted Task 1 artifact is part of the submission.
+!task-1/solution/submission-4129.pt
+task-1/solution/assets/
+
+# Retain concurrent experiment records locally; curated evidence is published above.
+task-3/evidence/round12/
+task-3/evidence/round13/
+!task-1/experiments/local_presence/SRM_Kernels.npy

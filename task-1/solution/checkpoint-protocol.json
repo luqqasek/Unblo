@@ -1,0 +1,22 @@
+{
+  "method": "Decoder-only gradient fine-tuning on cached166-channel features; source backbone frozen",
+  "recipes": [
+    "mixstyle",
+    "cutmix",
+    "combined"
+  ],
+  "max_updates_per_recipe": 300,
+  "fit_images": 85,
+  "inner_images": 28,
+  "development_images": 57,
+  "source_sha256": "86e9811cb4a68984cba41f0b4f9645b88a24bdada88caafce2c1595479a51c64",
+  "deadline_unix": 1795342256.0,
+  "development_labels_used_for_fitting": false,
+  "cloud_cost_usd": 0,
+  "submitted": false,
+  "feature_mixing": true,
+  "completed_recipes": [
+    "cutmix",
+    "mixstyle"
+  ]
+}

@@ -1,0 +1,26 @@
+import time, torch, numpy as np
+from common import *
+t=time.time()
+m = load_model(); X = load_forget()
+sd = m.state_dict()
+print("keys", len(sd))
+for k in list(sd)[:6]: print(k, tuple(sd[k].shape))
+for i in range(12):
+    g1, g2 = sd[f"blocks.{i}.ls1.gamma"], sd[f"blocks.{i}.ls2.gamma"]
+    print(f"block {i}: ls1 mean|g|={g1.abs().mean():.4f} max={g1.abs().max():.4f}  ls2 mean|g|={g2.abs().mean():.4f} max={g2.abs().max():.4f}")
+print("head W norm", sd["head.weight"].norm().item(), "bias", sd["head.bias"].abs().mean().item())
+t=time.time()
+z = predict(m, X)
+print("predict time", time.time()-t)
+torch.save(z, OUT/"eda"/"orig_logits.pt")
+p = z.softmax(1); conf, yhat = p.max(1)
+print("class hist (min/max/n nonzero):", np.bincount(yhat.numpy(), minlength=100).min(), np.bincount(yhat.numpy(), minlength=100).max(), (np.bincount(yhat.numpy(), minlength=100)>0).sum())
+print(np.bincount(yhat.numpy(), minlength=100))
+loss = -torch.log(conf)
+print("pseudo-loss mean/std/median/max", loss.mean().item(), loss.std().item(), loss.median().item(), loss.max().item())
+qs = torch.tensor([0.01,0.05,0.1,0.25,0.5,0.75,0.9,0.95,0.99])
+print("conf quantiles", torch.quantile(conf, qs))
+top2 = z.topk(2,1).values; print("margin quantiles", torch.quantile(top2[:,0]-top2[:,1], qs))
+print("logit max quantiles", torch.quantile(z.max(1).values, qs), "logit std", z.std().item())
+p2 = (z/2).softmax(1); print("T=2 conf quantiles", torch.quantile(p2.max(1).values, qs))
+print("frac conf<0.5:", (conf<0.5).float().mean().item(), " <0.9:", (conf<0.9).float().mean().item())

@@ -1,0 +1,66 @@
+{
+  "variant": "decoder_gradient_refine",
+  "n": 57,
+  "base": 0.6293396882229844,
+  "cand": 0.6308912760548823,
+  "delta": 0.00155158783189779,
+  "ci95": [
+    -0.003157657042403446,
+    0.007129888098967759
+  ],
+  "improved": 30,
+  "worse": 24,
+  "buckets": {
+    "fg_le1": {
+      "n": 7,
+      "base": 0.03948288464732776,
+      "cand": 0.03673340502649062
+    },
+    "fg_1to5": {
+      "n": 9,
+      "base": 0.22686992937886558,
+      "cand": 0.25820636213193615
+    },
+    "clean_le1": {
+      "n": 4,
+      "base": 0.03424657534246575,
+      "cand": 0.03520625889046942
+    },
+    "clean_1to5": {
+      "n": 10,
+      "base": 0.18237576537878644,
+      "cand": 0.1825534141891313
+    },
+    "wm_over50": {
+      "n": 27,
+      "base": 0.31364361852096134,
+      "cand": 0.308313206261137
+    }
+  },
+  "gate": false,
+  "family": "pixelseal",
+  "selected": {
+    "recipe": "cutmix",
+    "step": 200,
+    "score": 0.766648588866357,
+    "gain": 8
+  },
+  "candidates_completed": 36,
+  "updates": 600,
+  "protocol": "Training-selected decoder fine-tune; reused57 development; identity view; fixed70/30 blend",
+  "finished_unix": 1795342170.7763782,
+  "cloud_cost_usd": 0,
+  "submitted": true,
+  "changed_parameters": 191745,
+  "candidate_sha256": "614c087792298bbb6dda0483423e583a9ca401ae4aaff59505561427c2d749ca",
+  "verification_submission": {
+    "submission_id": 4129,
+    "score": 0.7309,
+    "previous_best": 0.7205,
+    "improved": true,
+    "receipt": "results/verification-featuremix/upload_receipt.json",
+    "checkpoint_sha256": "614c087792298bbb6dda0483423e583a9ca401ae4aaff59505561427c2d749ca",
+    "artifact_sha256": "58a10ea69eb3a179530795208a0ad69da9a8350592e894ff799e6789fe5ee48b",
+    "tta": "identity"
+  }
+}

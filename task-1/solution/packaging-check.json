@@ -1,0 +1,8 @@
+{
+  "strict_load": true,
+  "finite_cpu_forward": true,
+  "checked_images": 1,
+  "image_name": "e88ed16e9b04",
+  "max_probability_difference_from_cached_mps": 0.00012072920799255371,
+  "scope": "One-image CPU smoke check, not a full CPU/MPS equivalence certificate"
+}
