@@ -12,9 +12,14 @@ from .data import device_batch
 
 def summarize(rows):
     result=summary(rows)
+    filters={'all':lambda r:True,'fg_le1':lambda r:0<r['true_area']<=.01,'fg_1to5':lambda r:.01<r['true_area']<=.05,'fg_5to20':lambda r:.05<r['true_area']<=.2,'fg_gt20':lambda r:r['true_area']>.2,
+             'clean_le1':lambda r:0<1-r['true_area']<=.01,'clean_1to5':lambda r:.01<1-r['true_area']<=.05,'wm_over50':lambda r:.5<r['true_area']<1,
+             'fully_clean':lambda r:r['true_area']==0,'fully_marked':lambda r:r['true_area']==1}
     for kind in ('rectangular','irregular'):
-        rr=[r for r in rows if .01<r['true_area']<=.05 and r.get('shape')==kind]
-        result['fg_1to5_'+kind]=summary(rr)['all']
+        filters['fg_1to5_'+kind]=lambda r,k=kind:.01<r['true_area']<=.05 and r.get('shape')==k
+    for key,fn in filters.items():
+        rr=[r for r in rows if fn(r)];g=summary(rr)['all'];g['fg_miss']=sum(r['fg_iou']==0 and r['true_area']>0 for r in rr);g['clean_miss']=sum(r['clean_iou']==0 and r['true_area']<1 for r in rr)
+        g['defined_counts']={k:sum(r.get(k) is not None for r in rr) for k in ('fg_ap','clean_ap','roc_auc')};result[key]=g
     return result
 
 def old_rectangles(root):
@@ -87,4 +92,4 @@ def synthetic_evaluate(model,engine,out,step):
         for j,i in enumerate(ids):
             r=image_metrics(p[j],engine.dev.get(i,'target'));r.update(index=engine.dev.rows[i]['index'],operation=engine.dev.rows[i]['operation']);rows.append(r)
             if r['operation']=='intact_low_observability':intact.append({'index':r['index'],'false_clean_area':float((p[j]<.5).mean()),'veto_above2_area':float((v[j]>2).mean())})
-    result={'step':step,'summary':summary(rows),'per_image':rows,'intact_false_veto':intact};atomic_json(Path(out)/f'synthetic-{step}.json',result);return result
+    result={'step':step,'summary':summarize(rows),'per_image':rows,'intact_false_veto':intact};atomic_json(Path(out)/f'synthetic-{step}.json',result);return result

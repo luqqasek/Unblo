@@ -32,17 +32,19 @@ def soft_nms(rows,k=16):
         pending=[o for o in pending if iou(r['box'],o['box'])<.98]
     return kept
 def local_proposals(prob):
-    labels,n=label(prob>=.5);out=[]
+    # This auxiliary map need not be calibrated at0.5. A fixed image-relative
+    # peak rule proposes candidates only; it never changes mask labels directly.
+    cutoff=float(np.quantile(prob,.99));labels,n=label((prob>=cutoff)&(prob>prob.min()));out=[]
     for idx,s in enumerate(find_objects(labels),1):
         if s is None:continue
         ys,xs=s;mask=labels[s]==idx;score=float(prob[s][mask].max());box=[xs.start*4,ys.start*4,xs.stop*4,ys.stop*4]
-        if valid(box):out.append({'box':box,'score':score,'origin':'local_connected_component'})
+        if valid(box):out.append({'box':box,'score':score,'origin':'local_connected_component','peak_threshold':cutoff})
     return sorted(out,key=lambda r:r['score'],reverse=True)[:8]
 def neighbors(box,step):
     x,y,x1,y1=box;w=x1-x;h=y1-y;result={tuple(box)}
     for axis in range(4):
-        for sign in (-1,1):
-            p=[x,y,w,h];p[axis]+=step*sign;b=[p[0],p[1],p[0]+p[2],p[1]+p[3]]
+        for delta in ((-2,-1,1,2) if step==2 else (-step,step)):
+            p=[x,y,w,h];p[axis]+=delta;b=[p[0],p[1],p[0]+p[2],p[1]+p[3]]
             if valid(b):result.add(tuple(b))
     return sorted(result)
 
@@ -80,7 +82,7 @@ def refine(image,bits,rows,old,wm):
     # Never discard a previously verified crop because a new proposal ranked above it.
     previous=old.get('correct_top',[])[:1]
     accepted=[r for r in previous if verified(r) and valid(r['box'])]
-    accepted.extend(r for r in cache.values() if verified(r));accepted.sort(key=lambda r:(r['bit_accuracy'],r['soft_match']),reverse=True)
+    accepted.extend(r for r in cache.values() if verified(r));accepted.sort(key=lambda r:(r['bit_accuracy'],r.get('soft_match',-1.)),reverse=True)
     # Conservative single best additional rectangle, plus the original accepted one.
     new=[r for r in accepted if r not in previous][:1]
     return [r for r in previous if verified(r) and valid(r['box'])]+new,list(cache.values())

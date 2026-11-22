@@ -1,0 +1,12 @@
+{
+  "n_unique_images": 57,
+  "mean_delta": 0.024150512293664682,
+  "image_bootstrap_95pct": [
+    0.011654183570393948,
+    0.03824207026862851
+  ],
+  "improved": 33,
+  "worse": 14,
+  "same": 10,
+  "limitations": "Reused development fold, one seed, unadjusted exploratory interval. One prediction per image; no repeated seeds treated independently."
+}

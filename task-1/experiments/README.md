@@ -13,6 +13,16 @@ TM: **0,65265 → 0,65705 na istniejących OOF (170 obrazów)**.
 PS ≤1% nadal ma FG IoU 0; TM ≤1% rośnie 0,08059→0,24539 (3/9 trafień).
 Nie znamy wyniku ukrytego zbioru końcowego ani publicznych wyników per metoda.
 
+## TriForensic-WM — aktualny screen
+
+[Raport z pomiarami](triforensic_wm/REPORT.md) · [Protokół](triforensic_wm/PROTOCOL.md).
+Jeden optimizer i OneCycle, pełne obrazy oraz pary patchy w każdej aktualizacji,
+4 A100 na jednym nodzie. PixelSeal zatrzymany na 1561 krokach: **0,58164 mIoU**
+na stałym foldzie 57 obrazów, wobec **0,57088** nowszego poprzedniego screenu.
+**FG IoU ≤5% nadal 0**; wzrost lokalnego AUC nie przełożył się na małe maski.
+Finalny refiner wnosi niemal zerową korektę. TrustMark jest w trakcie screenu;
+po 100 krokach 0,64543 wobec bazy 0,64662. Nowego publicznego wyniku jeszcze brak.
+
 ## Poprzednia baza — zgłoszenie #2409
 
 **Najlepszy potwierdzony publiczny mIoU: 0,6369**, wcześniej #2163:0,6145.

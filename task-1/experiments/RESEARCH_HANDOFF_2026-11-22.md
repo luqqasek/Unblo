@@ -9,6 +9,23 @@ Start with [latest submission](local_presence/SUBMISSION_REPORT.md), [latest exp
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.
 
+## TriForensic unified screening update
+
+See [TriForensic report](triforensic_wm/REPORT.md) and [protocol](triforensic_wm/PROTOCOL.md).
+PS unified full+paired loop stopped at1561 at user request: fixed fold1 mIoU
+0.581635 vs original0.557485 and newer #2675 screen0.570883. All16 FG≤5%
+cases remain complete misses, as do all4 clean≤1% cases. At1000, local tiny
+AUC0.73533/AP0.05701 does NOT propagate to the final map: final tiny AUC0.47172;
+base logits−5.30 and correction+0.009 on tiny GT. Refiner contributes only
++0.000042 overall mIoU over its own base. Detached carrier skips also modify
+that base, so this does not isolate the benefit of backbone continuation.
+
+10k exact composites per family reuse2474 total source photos, not10k unique
+photos. Train/dev source overlap0. Four GPUs on one node; no staged training.
+Disabling activation checkpointing was slower despite higher VRAM use and was
+reverted. All-real PS refit is queued; TM100 screen0.645432 vs0.646616 baseline
+is not yet an improvement. Do not claim a new submission until a receipt exists.
+
 ## Subsequent local-presence screens (production unchanged)
 
 Read [local_presence/REPORT.md](local_presence/REPORT.md) before proposing new work.

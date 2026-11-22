@@ -117,11 +117,13 @@ class Refiner(nn.Module):
 
 
 class TriForensicWM(nn.Module):
-    def __init__(self,family,base_checkpoint,device='cuda',amp=True,checkpointing=True):
+    def __init__(self,family,base_checkpoint=None,device='cuda',amp=True,checkpointing=True):
         super().__init__();self.family=family;self.amp=amp;self.checkpointing=checkpointing
         self.base=MessageLocalizer(family,device=device)
-        saved=torch.load(base_checkpoint,map_location='cpu',weights_only=False)
-        self.base.load_state_dict(saved['model'],strict=True);self.base.freeze_encoder(False)
+        if base_checkpoint is not None:
+            saved=torch.load(base_checkpoint,map_location='cpu',weights_only=False)
+            self.base.load_state_dict(saved['model'],strict=True)
+        self.base.freeze_encoder(False)
         self.carrier=Carrier(checkpointing=checkpointing);self.refiner=Refiner()
         self.skips=nn.ModuleList([nn.Conv2d(64,128,1) for _ in range(4)])
         for layer in self.skips:nn.init.zeros_(layer.weight);nn.init.zeros_(layer.bias)

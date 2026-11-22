@@ -1,0 +1,10 @@
+{
+  "True": {
+    "mean_seconds": 0.31103456134830293,
+    "peak_bytes": 3452518912
+  },
+  "False": {
+    "mean_seconds": 0.2467637649970129,
+    "peak_bytes": 6844285440
+  }
+}

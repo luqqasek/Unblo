@@ -24,5 +24,10 @@ def main():
     m.zero_grad();m.checkpointing=True
     _,b=m(x.detach(),obs);b.square().mean().backward()
     assert torch.equal(a,b) and torch.allclose(g,m.stem[0].weight.grad,atol=1e-6,rtol=1e-5)
+    from .trustmark_refine import neighbors,valid,local_proposals
+    assert any(b[3]-b[1]==67 for b in neighbors((10,10,44,78),2))
+    prob=np.zeros((128,128),np.float32);prob[20:25,15:20]=.25
+    assert local_proposals(prob) and not local_proposals(np.zeros_like(prob))
+    assert not valid((0,0,512,512))
     print({'carrier_parameters':sum(p.numel() for p in m.parameters()),'RF':29,'critical_checks':'passed'})
 if __name__=='__main__':main()

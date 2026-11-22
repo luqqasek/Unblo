@@ -24,13 +24,13 @@ def main():
     axes[1].set(xlabel='Optimizer update',ylabel='Official mIoU',title=f'{a.family}:57 fixed validation images');axes[1].legend(fontsize=8);fig.tight_layout();fig.savefig(a.run/'learning-curves.png',dpi=150);plt.close(fig)
     mp=a.run/f'maps-{a.step}.npz';bp=a.run/'maps-baseline.npz'
     if not mp.exists() or not bp.exists():return
-    maps=np.load(mp);before=np.load(bp);bd={str(n):p for n,p in zip(before['names'],before['probabilities'])};ds=LocalisationDataset(a.data,'train',methods=[a.family]);di={r['image_name']:i for i,r in enumerate(ds.meta)};mi={str(n):i for i,n in enumerate(maps['names'])};out=a.run/'gallery';out.mkdir(exist_ok=True)
+    maps=np.load(mp);before=np.load(bp);bd={str(n):p for n,p in zip(before['names'],before['probabilities'])};ds=LocalisationDataset(a.data,'train',methods=[a.family]);di={r['image_name']:i for i,r in enumerate(ds.meta)};mi={str(n):i for i,n in enumerate(maps['names'])};out=a.run/f'gallery-{a.step}';out.mkdir(exist_ok=True)
     # Include all tiny cases plus largest gains/regressions and clean-hole failures.
     selected={r['image_name'] for r in end['per_image'] if 0<r['true_area']<=.01 or 0<1-r['true_area']<=.01}
     selected.update(end['per_image'][i]['image_name'] for i in np.argsort(delta)[:3]);selected.update(end['per_image'][i]['image_name'] for i in np.argsort(delta)[-3:]);er={r['image_name']:r for r in end['per_image']}
     for name in sorted(selected):
         idx=mi[name];item=ds[di[name]];target=out/f'example-{name}.png';gallery(target,item['image'],maps['targets'][idx],maps['probabilities'][idx],bd[name])
         im=Image.open(target);canvas=Image.new('RGB',(im.width,im.height+35),'white');canvas.paste(im,(0,0));draw=ImageDraw.Draw(canvas);r=er[name]
-        draw.text((5,im.height+6),f"{name} | mIoU {r['miou']:.4f} vs {lookup[name]['miou']:.4f} | FG {r['fg_iou']:.4f} clean {r['clean_iou']:.4f} | GT {100*r['true_area']:.2f}%",fill='black');canvas.save(target)
+        draw.text((5,im.height+6),f"step{a.step} | {name} | mIoU {r['miou']:.4f} vs {lookup[name]['miou']:.4f} | FG {r['fg_iou']:.4f} clean {r['clean_iou']:.4f} | GT {100*r['true_area']:.2f}%",fill='black');canvas.save(target)
     print({'gallery_examples':len(selected),'mean_delta':float(delta.mean()),'CI':np.quantile(boot,[.025,.975]).tolist()})
 if __name__=='__main__':main()

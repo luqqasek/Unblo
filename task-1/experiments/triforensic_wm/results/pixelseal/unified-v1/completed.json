@@ -1,0 +1,242 @@
+{
+  "step": 1561,
+  "stop": "user_authorized_early_stop",
+  "seconds": 1658.8271573079983,
+  "train_seconds": 1568.7505633555993,
+  "final": {
+    "all": {
+      "n": 57,
+      "miou": 0.5816353310559389,
+      "fg_iou": 0.5396626614962183,
+      "clean_iou": 0.6236080006156594,
+      "fg_ap": 0.6532994820309077,
+      "clean_ap": 0.7230235109707792,
+      "roc_auc": 0.7783618344068403,
+      "fg_miss": 16,
+      "clean_miss": 9
+    },
+    "fg_le1": {
+      "n": 7,
+      "miou": 0.4966038295200893,
+      "fg_iou": 0.0,
+      "clean_iou": 0.9932076590401786,
+      "fg_ap": 0.07637570387539325,
+      "clean_ap": 0.9951035408353636,
+      "roc_auc": 0.5657141508814785,
+      "fg_miss": 7,
+      "clean_miss": 0
+    },
+    "fg_1to5": {
+      "n": 9,
+      "miou": 0.4892069498697917,
+      "fg_iou": 0.0,
+      "clean_iou": 0.9784138997395834,
+      "fg_ap": 0.0518169933799616,
+      "clean_ap": 0.9879274607616906,
+      "roc_auc": 0.6182184181025518,
+      "fg_miss": 9,
+      "clean_miss": 0
+    },
+    "fg_5to20": {
+      "n": 11,
+      "miou": 0.6556706121860173,
+      "fg_iou": 0.3924522241248168,
+      "clean_iou": 0.9188890002472174,
+      "fg_ap": 0.6503148789901863,
+      "clean_ap": 0.9810849062682614,
+      "roc_auc": 0.8910707811521905,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_gt20": {
+      "n": 30,
+      "miou": 0.6020582593557858,
+      "fg_iou": 0.8814599079970489,
+      "clean_iou": 0.3226566107145229,
+      "fg_ap": 0.9694541313107428,
+      "clean_ap": 0.4854444741226924,
+      "roc_auc": 0.8346960383140829,
+      "fg_miss": 0,
+      "clean_miss": 9
+    },
+    "clean_le1": {
+      "n": 4,
+      "miou": 0.4962615966796875,
+      "fg_iou": 0.992523193359375,
+      "clean_iou": 0.0,
+      "fg_ap": 0.9967567721024377,
+      "clean_ap": 0.01862536917503465,
+      "roc_auc": 0.6893333683025611,
+      "fg_miss": 0,
+      "clean_miss": 4
+    },
+    "clean_1to5": {
+      "n": 10,
+      "miou": 0.5300674502613606,
+      "fg_iou": 0.9543491611115023,
+      "clean_iou": 0.10578573941121869,
+      "fg_ap": 0.9910146957601679,
+      "clean_ap": 0.28637149526618827,
+      "roc_auc": 0.8215738393994263,
+      "fg_miss": 0,
+      "clean_miss": 5
+    },
+    "wm_over50": {
+      "n": 27,
+      "miou": 0.5941018092804058,
+      "fg_iou": 0.9207030985042354,
+      "clean_iou": 0.2675005200565763,
+      "fg_ap": 0.9812074947843276,
+      "clean_ap": 0.43302134650342616,
+      "roc_auc": 0.8252654324290424,
+      "fg_miss": 0,
+      "clean_miss": 9
+    },
+    "fg_1to5_rectangular": {
+      "n": 7,
+      "miou": 0.48936244419642855,
+      "fg_iou": 0.0,
+      "clean_iou": 0.9787248883928571,
+      "fg_ap": 0.05685883495122203,
+      "clean_ap": 0.9871613777820072,
+      "roc_auc": 0.5944783020021214,
+      "fg_miss": 7,
+      "clean_miss": 0
+    },
+    "fg_1to5_irregular": {
+      "n": 2,
+      "miou": 0.4886627197265625,
+      "fg_iou": 0.0,
+      "clean_iou": 0.977325439453125,
+      "fg_ap": 0.03417054788055009,
+      "clean_ap": 0.9906087511905828,
+      "roc_auc": 0.7013088244540588,
+      "fg_miss": 2,
+      "clean_miss": 0
+    }
+  },
+  "local": {
+    "all": {
+      "n": 57,
+      "miou": 0.3085481431220467,
+      "fg_iou": 0.1587601448454577,
+      "clean_iou": 0.4583361413986358,
+      "fg_ap": 0.5262828846617832,
+      "clean_ap": 0.5551720704211892,
+      "roc_auc": 0.6424176688274544,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_le1": {
+      "n": 7,
+      "miou": 0.4586153436231984,
+      "fg_iou": 0.05465959729627757,
+      "clean_iou": 0.8625710899501192,
+      "fg_ap": 0.08503554529316124,
+      "clean_ap": 0.9984183895938401,
+      "roc_auc": 0.8120397850991932,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_1to5": {
+      "n": 9,
+      "miou": 0.4707292698101344,
+      "fg_iou": 0.08299971233882938,
+      "clean_iou": 0.8584588272814394,
+      "fg_ap": 0.10102067992150215,
+      "clean_ap": 0.9896794102048996,
+      "roc_auc": 0.7345533954988533,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_5to20": {
+      "n": 11,
+      "miou": 0.4326032996422965,
+      "fg_iou": 0.13480427415796184,
+      "clean_iou": 0.7304023251266312,
+      "fg_ap": 0.22056755413909945,
+      "clean_ap": 0.9215981447026299,
+      "roc_auc": 0.6170906765742193,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_gt20": {
+      "n": 30,
+      "miou": 0.17939123427459344,
+      "fg_iou": 0.21456222161100333,
+      "clean_iou": 0.14422024693818353,
+      "fg_ap": 0.8689148797948634,
+      "clean_ap": 0.18703950010926268,
+      "roc_auc": 0.5844850208554818,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "clean_le1": {
+      "n": 4,
+      "miou": 0.06309037614173191,
+      "fg_iou": 0.11994265473314022,
+      "clean_iou": 0.006238097550323568,
+      "fg_ap": 0.9949463870920139,
+      "clean_ap": 0.02626336831778818,
+      "roc_auc": 0.7000958852231814,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "clean_1to5": {
+      "n": 10,
+      "miou": 0.11603784788339275,
+      "fg_iou": 0.20256959220500687,
+      "clean_iou": 0.02950610356177865,
+      "fg_ap": 0.9771270921732522,
+      "clean_ap": 0.04974658286904522,
+      "roc_auc": 0.5728893424034619,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "wm_over50": {
+      "n": 27,
+      "miou": 0.1505569267045959,
+      "fg_iou": 0.20760922789673894,
+      "clean_iou": 0.09350462551245287,
+      "fg_ap": 0.9142908890487347,
+      "clean_ap": 0.12068786509187555,
+      "roc_auc": 0.5765213251666518,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_1to5_rectangular": {
+      "n": 7,
+      "miou": 0.4683761636607439,
+      "fg_iou": 0.09767586054210205,
+      "clean_iou": 0.8390764667793859,
+      "fg_ap": 0.11988190534128676,
+      "clean_ap": 0.992533689108736,
+      "roc_auc": 0.7756716165559244,
+      "fg_miss": 0,
+      "clean_miss": 0
+    },
+    "fg_1to5_irregular": {
+      "n": 2,
+      "miou": 0.478965141333001,
+      "fg_iou": 0.03163319362737506,
+      "clean_iou": 0.9262970890386268,
+      "fg_ap": 0.03500639095225603,
+      "clean_ap": 0.9796894340414717,
+      "roc_auc": 0.5906396217991052,
+      "fg_miss": 0,
+      "clean_miss": 0
+    }
+  },
+  "gate": {
+    "real_tiny_auc": 0.7353274765124639,
+    "synthetic_interior_auc": 0.8181818181818181,
+    "passed": true
+  },
+  "views": 224784,
+  "optimizer_updates": 1561,
+  "reason": "User requested no prolonged training without target improvements; FG<=5% and clean<=1% still zero at1561; refiner correction near0.009 cannot offset base logits near-5.3. Preserve measured overall mIoU0.581635. Full-memory attempt slowed2.2s vs1.0s/update and was canceled.",
+  "planned_schedule_updates": 3500,
+  "retained_checkpoint_sha256": "5105fc789582062ca4d9a4f3a3269ec4ea37612558476ddb087a7756f8d223e9",
+  "discarded_logged_updates": 89,
+  "discarded_updates_note": "At least this many; cancellation may include up to24 later unlogged updates. Excluded from retained optimizer trajectory, recorded as compute overhead."
+}

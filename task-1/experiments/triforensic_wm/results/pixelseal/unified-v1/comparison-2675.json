@@ -1,0 +1,236 @@
+{
+  "baseline_2675_samefold": 0.5708832819549376,
+  "triforensic_1561": 0.5816353310559389,
+  "delta": 0.010752049101001249,
+  "n": 57,
+  "paired_changes": [
+    {
+      "image_name": "28e8c53f7a62",
+      "delta": -3.0517578125e-05
+    },
+    {
+      "image_name": "f70cbefa2f77",
+      "delta": 0.027295082666713766
+    },
+    {
+      "image_name": "6d05e72e601c",
+      "delta": -0.000885009765625
+    },
+    {
+      "image_name": "9aec69d421d3",
+      "delta": 0.0
+    },
+    {
+      "image_name": "921536989578",
+      "delta": 0.05571228967093678
+    },
+    {
+      "image_name": "468f425e2cb4",
+      "delta": 0.005595284328634875
+    },
+    {
+      "image_name": "ffa7099ac789",
+      "delta": 0.001068115234375
+    },
+    {
+      "image_name": "64fa63c58b35",
+      "delta": -0.04089059996907407
+    },
+    {
+      "image_name": "244f74a38163",
+      "delta": 0.010866165227733593
+    },
+    {
+      "image_name": "1dc32cbb2e04",
+      "delta": 0.009924139042383429
+    },
+    {
+      "image_name": "215d44e8678c",
+      "delta": 0.0
+    },
+    {
+      "image_name": "ac150fa24f69",
+      "delta": 0.049654698725869195
+    },
+    {
+      "image_name": "d53fa7a68289",
+      "delta": 0.0185092610461155
+    },
+    {
+      "image_name": "8e7c82a556c8",
+      "delta": 0.01766033028413294
+    },
+    {
+      "image_name": "bab81c5c46bc",
+      "delta": 0.07993220987102212
+    },
+    {
+      "image_name": "6a6e6b368da2",
+      "delta": -0.0006103515625
+    },
+    {
+      "image_name": "572b61707c4c",
+      "delta": 0.006483100116926321
+    },
+    {
+      "image_name": "9b2d0936e9e3",
+      "delta": 0.002532958984375
+    },
+    {
+      "image_name": "124efa616612",
+      "delta": 0.027982204962755497
+    },
+    {
+      "image_name": "ebfc9dc16dd6",
+      "delta": 0.2425747186949505
+    },
+    {
+      "image_name": "1bb324d410cf",
+      "delta": 0.0017913007456957786
+    },
+    {
+      "image_name": "6a87cd543012",
+      "delta": 0.0
+    },
+    {
+      "image_name": "9255874fb289",
+      "delta": -0.010748328931657003
+    },
+    {
+      "image_name": "d46f9571398e",
+      "delta": 0.0
+    },
+    {
+      "image_name": "2360e3e4a53f",
+      "delta": 0.0261772220530172
+    },
+    {
+      "image_name": "7c955f9c7927",
+      "delta": -0.002716064453125
+    },
+    {
+      "image_name": "ffb70b68ad69",
+      "delta": 0.000823974609375
+    },
+    {
+      "image_name": "97adb8e5e9c6",
+      "delta": -0.000732421875
+    },
+    {
+      "image_name": "330fb70f8303",
+      "delta": 0.0
+    },
+    {
+      "image_name": "4b7baf414f18",
+      "delta": 9.1552734375e-05
+    },
+    {
+      "image_name": "ce759ae7b8e4",
+      "delta": 0.0
+    },
+    {
+      "image_name": "cfb8cf894a96",
+      "delta": 0.013510316465952021
+    },
+    {
+      "image_name": "ea6792c38efa",
+      "delta": 0.0
+    },
+    {
+      "image_name": "2610e4f2a637",
+      "delta": -0.0583606345673463
+    },
+    {
+      "image_name": "7168c732ee2c",
+      "delta": 0.03696689390792007
+    },
+    {
+      "image_name": "7cfa9111f9fc",
+      "delta": 0.025361896824090735
+    },
+    {
+      "image_name": "ac82720f9631",
+      "delta": 0.0018310546875
+    },
+    {
+      "image_name": "0b2fb5e65207",
+      "delta": -0.1015192023351934
+    },
+    {
+      "image_name": "e5e5e32f3575",
+      "delta": 0.0
+    },
+    {
+      "image_name": "bf8ac504f2c3",
+      "delta": 0.05776631927644382
+    },
+    {
+      "image_name": "8985ffba776e",
+      "delta": 0.0
+    },
+    {
+      "image_name": "07c5ceca91f8",
+      "delta": 0.0769291672751502
+    },
+    {
+      "image_name": "e8485cda4a0b",
+      "delta": -0.010698563318482512
+    },
+    {
+      "image_name": "4bd2be05e610",
+      "delta": 0.0106201171875
+    },
+    {
+      "image_name": "f9e9a9d8fbaa",
+      "delta": 0.05065261429358858
+    },
+    {
+      "image_name": "f1a940082acd",
+      "delta": 0.024081151495209507
+    },
+    {
+      "image_name": "d854e128465a",
+      "delta": 0.0
+    },
+    {
+      "image_name": "f165a98d6f36",
+      "delta": 0.001312255859375
+    },
+    {
+      "image_name": "2260d5ffabd1",
+      "delta": -0.02515621314190336
+    },
+    {
+      "image_name": "e7ece8e6125a",
+      "delta": 0.0
+    },
+    {
+      "image_name": "a6eb9718a7f3",
+      "delta": 0.0031023764871547233
+    },
+    {
+      "image_name": "d0e2697396ba",
+      "delta": 0.005845033510030628
+    },
+    {
+      "image_name": "c4403dadabe9",
+      "delta": 0.0
+    },
+    {
+      "image_name": "2e6b55c0036f",
+      "delta": 0.01927343569509865
+    },
+    {
+      "image_name": "8aff36a43581",
+      "delta": -0.014740373093741543
+    },
+    {
+      "image_name": "435a049a735c",
+      "delta": -0.06023563361278006
+    },
+    {
+      "image_name": "6e8ec5b44fa9",
+      "delta": 0.028263470997220153
+    }
+  ]
+}

@@ -41,11 +41,27 @@ peak14.61GB allocated on GPU0. The original30-minute estimate for3500 updates
 was therefore too optimistic. A carrier-only memory benchmark (not another
 model training) measured3.45GB with activation recomputation versus6.84GB
 without it for one512 image; timings0.311 versus0.247 seconds while sharing the
-allocated node. Continuation may disable carrier activation recomputation to
-use more VRAM. Forward/gradient equivalence is tested. An OOM retries identical
+allocated node. However, the actual four-GPU continuation WITHOUT recomputation
+was slower (roughly2.2–3 seconds/update,31GB allocated/34GiB device memory).
+That performance attempt was cancelled and archived; the saved1561-update
+trajectory was retained. Recalculation remains ON for subsequent runs.
+Forward/gradient equivalence is tested. An OOM retries identical
 views/RNG with recomputation before any optimizer update. No learning stages,
 new optimizer or schedule reset are introduced. A tested alternative fused
 normalization kernel was slower and was NOT adopted.
+
+Following the user's explicit instruction not to prolong unproductive training,
+PixelSeal was closed at its saved1561-update endpoint. This is adaptive selection
+on a reused development fold. The OneCycle schedule still has its original3500
+steps; stopping at1561 does NOT compress or restart the schedule. TrustMark's
+screening target is also bounded at1561, subject to the1000-update gate.
+
+For a selected family, final fitting starts from the corresponding existing
+all170-data message-localizer checkpoint, with freshly initialized carrier,
+skips and refiner, in the SAME single-loop recipe. It uses all170 real images
+and synthetic replay for the selected number of updates; it does not inherit
+the fold-screening TriForensic weights. No real held-out score is claimed during
+that final fitting. Test inference requires a frozen all170-refit export.
 
 ## Locality and explicitly resolved contradictions
 
@@ -127,8 +143,10 @@ and JND-quartile diagnostics are reported separately. They remain training data.
 
 Use union of existing multi-scale proposals,45 edge-covering tiles (9 of256px,
 36 of160px;25 tiles would leave edges uncovered), and top8 local connected
-components. Soft-NMS selects16 seeds. Three coordinate-search rounds independently
-modify x,y,width,height and optimize signed tanh-logit agreement. Original uint8
+components using a fixed99th-percentile local-map peak threshold (candidate
+generation only, not segmentation). Soft-NMS selects16 seeds. Three coordinate-search rounds independently
+modify x,y,width,height and optimize signed tanh-logit agreement; the last round
+includes1px moves to avoid trapping odd crop dimensions on an even grid. Original uint8
 pixels are recropped for the exact unchanged raw100-bit decoder. Acceptance is
 integer correct-bit count>=90, avoiding float32 `0.9` comparison ambiguity.
 
@@ -152,6 +170,15 @@ python -m experiments.triforensic_wm.train --root ROOT --family pixelseal --resu
 Repeat preparation/training for TrustMark after the PixelSeal screening. Large
 pools/checkpoints remain on project storage; reports/configs/metrics and
 provenance are versioned. No new leaderboard submission is implied by a screen.
+The user has separately authorized final predictions and a leaderboard upload
+after selection. Production command (resumable across allocations):
+
+```sh
+python -m experiments.triforensic_wm.production_job --family pixelseal
+```
+
+This refits, exports and predicts; assembly/upload are separate validated actions.
+Unselected family predictions are preserved from accepted submission#2675.
 
 Primary implementation sources: [TruFor](https://github.com/grip-unina/TruFor),
 [OneCycleLR](https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.OneCycleLR.html).

@@ -1,0 +1,76 @@
+{
+  "packages": {
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "timm": "1.0.31",
+    "trustmark": "0.8.0",
+    "Pillow": "13.0.0"
+  },
+  "files": {
+    "wmloc/watermarks.py": {
+      "sha256": "faeff2ca656eb0f8d10d3d263f42e7cefd747a92facafb5e1f25fc0028811520",
+      "bytes": 7828
+    },
+    "wmloc/utils.py": {
+      "sha256": "f6087a316a1475c19c2b4f3ba718d110014c9202b207fb5a64c428f2de7b939c",
+      "bytes": 1649
+    },
+    "checkpoints/pixelseal_card.yaml": {
+      "sha256": "8c0f632b1f6b02e81d319b03ba1c850d1f97422d572abfe1f51a43e3f5e3dc85",
+      "bytes": 1049
+    },
+    "checkpoints/pixelseal/checkpoint.pth": {
+      "sha256": "0c5665cff20eb6ce1b5aaa7d91c19dafb418bfee32d02dd3344e4ed60d9d75bd",
+      "bytes": 1237429197
+    },
+    "checkpoints/videoseal/videoseal/modules/convnext.py": {
+      "sha256": "2bf1a4db20fe1674a2840f4250e951a40df15720c2a1530ad662b8a4873e85d7",
+      "bytes": 7029
+    },
+    "checkpoints/videoseal/videoseal/modules/jnd.py": {
+      "sha256": "d191740929757db7310c002b9afe4ca1eff5723dfd8647dcf7e723b0a417aa58",
+      "bytes": 4378
+    },
+    "experiments/native_localizer/reconstructed_splits.json": {
+      "sha256": "4af59836ef7fbd93b60897d6a12abbdba119eb85b2ed07d50d65f848edd6b0f6",
+      "bytes": 55388
+    },
+    "experiments/local_presence/SRM_Kernels.npy": {
+      "sha256": "c53ad3a849fa64db1244152a3030c80a4d3b11fec0af81b4196d8e6dfb3db4b9",
+      "bytes": 3080
+    }
+  },
+  "PixelSeal_backbone": "Official ConvNeXtV2 tiny with GRN, source verified",
+  "payloads": {
+    "pixelseal": "raw256bits; no text or ECC",
+    "trustmark": "Q,secret_len100,use_ECC=False,MODE=binary,trustmark0.8.0"
+  },
+  "quantization": "Unchanged official competition wrapper,PNG/uint8; support from provenance",
+  "Noiseprint": {
+    "commit": "ae54475df6f41a491d7615100feb19263dec13f7",
+    "authors": "Guillaro, Cozzolino, Sud, Dufour, Verdoliva; TruFor CVPR2023, GRIP-UNINA",
+    "files": [
+      {
+        "file": "DnCNN.py",
+        "url": "https://raw.githubusercontent.com/grip-unina/TruFor/ae54475df6f41a491d7615100feb19263dec13f7/TruFor_train_test/lib/models/DnCNN.py",
+        "sha256": "3736b7c625d03b85accea77c26a41ea2da956dae07d70182532e7df9b74ae882",
+        "bytes": 5442
+      },
+      {
+        "file": "noiseprint.th",
+        "url": "https://raw.githubusercontent.com/grip-unina/TruFor/ae54475df6f41a491d7615100feb19263dec13f7/TruFor_train_test/pretrained_models/noiseprint%2B%2B/noiseprint%2B%2B.th",
+        "sha256": "51c153596efecdfc9bdff1b961d63855b943e6a8fd37083cc7499e60b36dd8bf",
+        "bytes": 2267965
+      },
+      {
+        "file": "LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/grip-unina/TruFor/ae54475df6f41a491d7615100feb19263dec13f7/TruFor_train_test/LICENSE.txt",
+        "sha256": "07201e07e3d2c1ac55480037a87734fcccacbb0cd0e25a31e3b89ac7ffadf8b4",
+        "bytes": 1837
+      }
+    ]
+  }
+}
