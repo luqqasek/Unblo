@@ -1,0 +1,16 @@
+[
+  {
+    "family": "stegastamp",
+    "variant": "raw1000",
+    "protocol": "One reused57-image fold; declared1000 endpoint; inherited fallback",
+    "miou": 0.784103888205342,
+    "note": "Delta+0.021831; selected=True"
+  },
+  {
+    "family": "stegastamp",
+    "variant": "equal_probability_450_1000",
+    "protocol": "One reused57-image fold; declared1000 endpoint; inherited fallback",
+    "miou": 0.7787161773621833,
+    "note": "Delta+0.016443; selected=False"
+  }
+]

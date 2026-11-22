@@ -1,0 +1,23 @@
+{
+  "endpoint": 1000,
+  "parent_updates": 450,
+  "additional_updates": 550,
+  "progress_only": 750,
+  "fold": 1,
+  "validation_n": 57,
+  "minimum_gain": 0.005,
+  "confidence_guard": "paired image bootstrap95 lower bound>0",
+  "minority_guard": "combined FG<=5% and clean IoU on WM>50% may not decline>0.01",
+  "candidates": [
+    "raw1000",
+    "equal_probability_450_1000"
+  ],
+  "candidate_selection": "highest validation mIoU among candidates passing every guard; unchanged450 if neither passes",
+  "no_threshold_search": true,
+  "threshold": 0.5,
+  "postprocess": "inherited top1pct only for empty/full masks",
+  "workers": "GPU0 fold1; GPU1 all170 refit; one node, at most two GPUs",
+  "training": "restore450 optimizer/model/RNG; exact existing replay, batch16=12synthetic+4real; unchanged LR and loss; FP32; no augmentation",
+  "test_condition": "inference only after fixed-fold gate; preserve #3188 PixelSeal and TrustMark bit-for-bit; one upload, no public-score selection",
+  "limitation": "one reused57-image development fold; selecting between two declared candidates is exploratory, not full OOF"
+}

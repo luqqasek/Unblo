@@ -1,0 +1,23 @@
+[
+  {
+    "family": "pixelseal",
+    "variant": "baseline",
+    "protocol": "Matched200-update screen on reused57-image fold; current EMA1561 parent",
+    "miou": 0.5854587325831263,
+    "note": "Delta vs initial+0.000000; PIPE selected=False"
+  },
+  {
+    "family": "pixelseal",
+    "variant": "old_replay",
+    "protocol": "Matched200-update screen on reused57-image fold; current EMA1561 parent",
+    "miou": 0.5879096687281663,
+    "note": "Delta vs initial+0.002451; PIPE selected=False"
+  },
+  {
+    "family": "pixelseal",
+    "variant": "pipe",
+    "protocol": "Matched200-update screen on reused57-image fold; current EMA1561 parent",
+    "miou": 0.5817846985080194,
+    "note": "Delta vs initial-0.003674; PIPE selected=False"
+  }
+]

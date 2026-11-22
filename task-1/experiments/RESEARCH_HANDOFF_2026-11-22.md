@@ -1,13 +1,32 @@
 # Watermark localization — current research handoff, 2026-11-22
 
-**Best accepted public submission: #3188, mIoU 0.6736**, up from #3054 (0.6677).
-Only PixelSeal changed to the EMA1561 global/carrier branch; TrustMark and
-StegaStamp remain unchanged. Same 57-image PixelSeal development fold:
-0.570883 → 0.581724; tiny foreground remains unresolved. See
-[PCMV and submission receipt](pcmv/REPORT.md). Public per-family scores and
-the hidden final score are unknown.
+**Best accepted public submission: #3485, mIoU0.6777**, up from#3457(0.6743)
+and#3188(0.6736). StegaStamp450→1000 continuation passes the fixed57-image
+screen0.762273→0.784104 with inherited fallback; paired95%delta CI
+[0.00852,0.03599]. This is NOT full170-image OOF. Matching all170 refit and
+340test predictions completed. PixelSeal/TM remain bit-identical to#3457.
+[StegaStamp report and receipt](ss_continuation/REPORT.md).
 
-Start with [latest submission](next_ideas/SUBMISSION_450_REPORT.md), [latest experiments](next_ideas/REPORT.md), [previous experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
+#3457 keeps the EMA1561 PixelSeal global/carrier and adds top164 local-logit
+cells only when its global mask is empty. Actual deployed57-image score
+0.581724→0.585528; small FG complete misses16→8, but FG IoU remains low.
+Test46formerly empty PS masks change; public gain+0.0007. Rectangle fallback
+regressed and was rejected. BF16 top-rank differences were revalidated before
+test inference. [PixelSeal report](carrier_fallback/REPORT.md).
+
+[PIPE data expansion](data_expansion/REPORT.md) is a separate matched screen:
+512new train photographs,64dev,64locked, including Open Images, with original
+embedders and exact pixel provenance. Do not attribute#3485 to PIPE.
+Public per-family scores and the hidden final score remain unknown.
+
+PIPE screen completed in5.63min on two shared-node A100s: PS initial0.585459,
+matched old replay200updates0.587910, PIPE0.581785. PIPE-vs-control delta
+-0.006125, paired95%CI[-0.014304,0.000745]. No extension or test inference.
+Old replay itself has uncertain gain+0.002451, CI[-0.004532,0.010390].
+Realistic edits/new sources did not solve localization in this bounded recipe;
+do not claim a fundamental dataset ceiling. See full polarity metrics in its report.
+
+Start with [latest submission](ss_continuation/REPORT.md), [previous450 submission](next_ideas/SUBMISSION_450_REPORT.md), [previous experiments](next_ideas/REPORT.md), [earlier experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
 [generator comparison](region_data/REPORT.md), and
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.

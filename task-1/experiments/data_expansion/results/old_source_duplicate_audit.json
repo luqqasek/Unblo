@@ -1,0 +1,7 @@
+{
+  "existing_photos_screened": 6500,
+  "candidate_photos": 640,
+  "near_duplicate_candidates": [],
+  "method": "pHash Hamming<=4; supplementary, not exhaustive",
+  "passed": true
+}

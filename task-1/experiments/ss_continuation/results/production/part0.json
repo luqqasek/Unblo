@@ -1,0 +1,25 @@
+{
+  "n": 170,
+  "seconds": 9.670555276999949,
+  "artifact_sha256": "d7e99dba247815e2ecaf2db83d67abe2140cdef7e84d51387561d6de81ff1111",
+  "recipe_sha256": "11dea5be68334505d4f35304f20ad6c4cdac834c992c59014beae9f8ff8c8c42",
+  "checkpoint_sha256": "60580b7d886cfd45849eec484cb5c6116bd5e50173577cec53219f95a19e4cfc",
+  "parent_checkpoint_sha256": "decd153a0e2c043f248e1ecdd94e6275c5d375c0e09ce927db9f6f2b3ffd8016",
+  "recipe": {
+    "recipe_frozen": true,
+    "family": "stegastamp",
+    "candidate": "raw1000",
+    "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/ss1000-screen-runs/stegastamp/all170/last.pt",
+    "parent_checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-extended-runs/stegastamp/all170/last.pt",
+    "updates": 1000,
+    "threshold": 0.5,
+    "tta": false,
+    "postprocess": "top1pct",
+    "base_submission_id": 3188,
+    "evidence_sha256": "e8f18a18ef81a1ef118cf97383e4fb7e9315449160620f9c861cea414f3f68d6",
+    "validation_miou": 0.784103888205342,
+    "protocol": "one reused57-image development fold, not full OOF",
+    "test_labels_used": false
+  },
+  "test_GT_used": false
+}

@@ -1,10 +1,13 @@
 # Task 1 experiment dashboard
 
 For model optimization, start with `experiments/RESEARCH_HANDOFF_2026-11-22.md`
-and `experiments/README.md`. Current best accepted submission is #3188 (0.6736
-public mIoU): PixelSeal EMA1561 global/carrier branch, TrustMark and StegaStamp
-unchanged from #3054. PixelSeal single-fold validation0.581724; tiny masks remain
-unresolved. See `pcmv/REPORT.md` and `next_ideas/REPORT.md`. Preserve the
+and `experiments/README.md`. Current best accepted submission is #3485 (0.6777
+public mIoU): PixelSeal EMA1561 global/carrier plus fixed empty-mask local
+fallback (#3457); unchanged TrustMark; StegaStamp450→1000 adaptation/refit.
+PixelSeal single-fold validation0.585528; StegaStamp matched57-image score
+0.762273→0.784104, NOT full OOF. Tiny PixelSeal remains largely unresolved.
+See `carrier_fallback/REPORT.md`, `ss_continuation/REPORT.md` and
+`data_expansion/REPORT.md` under experiments. Preserve the
 historical inverse-STN correction only in the legacy feature pipeline; the new
 raw-image segmentator has no STN. Read the protocol before comparing scores.
 

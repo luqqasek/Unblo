@@ -315,25 +315,36 @@ def build():
     # Native PixelSeal regions adapter
     from pixelseal_regions_adapter import add_rows as add_regions
     add_regions(EXPERIMENTS,DIST,row)
+    # Active goal measured screens
+    from goal_screens_adapter import add_rows as add_goal_screens
+    add_goal_screens(EXPERIMENTS,DIST,row)
     titles={'synthetic_pretrain_2k/results/full_train/upload_receipt.json':'StegaStamp synthetic pretrain + real finetune; previous PixelSeal / TrustMark',
             'decoder_evidence/results/full_train/upload_receipt.json':'StegaStamp message correction + previous PixelSeal / TrustMark',
             'stegastamp_stable_selection/results/full_train/upload_receipt.json':'StegaStamp stable selection + previous PixelSeal / TrustMark',
             'baseline/results/upload_receipt.json':'Spatial prior for all methods',
             'trustmark_patches/results/test_top1_empty/upload_receipt.json':'TrustMark top1 / empty fallback + priors',
             'frozen_extractor/results/full_train/upload_receipt.json':'Frozen heads · full train (510 images)'}
-    for receipt in sorted(EXPERIMENTS.glob('*/results/**/upload_receipt.json')):
+    receipts = set(EXPERIMENTS.glob('*/results/**/upload_receipt.json'))
+    receipts.update(EXPERIMENTS.glob('*/results/**/server_receipt.json'))
+    for receipt in sorted(receipts):
         path=receipt.relative_to(EXPERIMENTS).as_posix()
         title=titles.get(path,receipt.relative_to(EXPERIMENTS).parts[0].replace('_',' '))
         d=read(path)
         if d:
-            response=json.loads(d['response'])
+            response=json.loads(d['response']) if isinstance(d['response'],str) else d['response']
             if response.get('status')=='success':
                 experiment=receipt.relative_to(EXPERIMENTS).parts[0]
                 receipt_target=DIST/'reports'/experiment/receipt.relative_to(EXPERIMENTS/experiment)
                 receipt_target.parent.mkdir(parents=True,exist_ok=True)
                 shutil.copyfile(receipt,receipt_target)
                 submissions.append(dict(title=title,id=response['submission_id'],score=response['score'],previous_best=response.get('previous_best'),delta=response.get('delta'),experiment=experiment,receipt=receipt_target.relative_to(DIST).as_posix()))
-    submissions.sort(key=lambda s:s['id'],reverse=True)
+    by_id={}
+    for submission in submissions:
+        previous=by_id.get(submission['id'])
+        if previous and previous['score']!=submission['score']:
+            raise ValueError(f"Conflicting receipts for submission {submission['id']}")
+        by_id[submission['id']]=submission
+    submissions=sorted(by_id.values(),key=lambda s:s['id'],reverse=True)
     notes={
         'known_message_audit':('Known-message evidence audit','Dense multiscale evidence, blurred-baseline IG, re-embedding NCC, label-free Keep/Drop and matched fusion.'),
         'pixelseal_pilot':('PixelSeal: adaptation and synthesis pilots','Matched one-fold pilots: partial native extractor finetuning, resampling, embedding geometry and local signal removal. Inner-only selection; no submission.'),

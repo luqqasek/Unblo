@@ -1,0 +1,10 @@
+{
+  "source_sha256": "d85a317d604233fc31d1686ebf7ca1a97169490ef78d41d4e82eaac0a8e84fab",
+  "destination_sha256": "1d588209f956a5fb86fbbb7cccb65dd7f095bcf2486a625756e11c53891f4b65",
+  "source_bytes": 16734784,
+  "destination_bytes": 174442,
+  "tensor_values_and_dtype_identical": true,
+  "image_names_identical": true,
+  "torch_load_verified": "2.5.1",
+  "compression_only": true
+}

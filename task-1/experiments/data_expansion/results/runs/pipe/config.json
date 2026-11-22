@@ -1,0 +1,19 @@
+{
+  "arm": "pipe",
+  "steps": 200,
+  "batch": 16,
+  "microbatch": 4,
+  "real_views": 4,
+  "synthetic_views": 12,
+  "pipe_views": 6,
+  "source": "/p/project1/training2666/pszenny1/native-localizer/triforensic-runs/pixelseal/unified-v1/resume.pt",
+  "source_sha256": "5105fc789582062ca4d9a4f3a3269ec4ea37612558476ddb087a7756f8d223e9",
+  "carrier_fixed": true,
+  "refiner_bypassed": true,
+  "threshold": 0.5,
+  "empty_fallback": "top164 unchanged carrier cells",
+  "post_embedding_augmentation": false,
+  "loss": "per-image0.5BCE+0.5dualDice",
+  "encoder_lr": 2e-06,
+  "new_lr": 2e-05
+}

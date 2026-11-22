@@ -1,0 +1,7 @@
+{
+  "removed": "/p/project1/training2666/pszenny1/native-localizer/data-expansion/pipe-prepared",
+  "bytes_removed": 502297909,
+  "reason": "Unused same-size-only preparation superseded by author-aligned v2; no encoded or training references",
+  "preserved_metadata": "/p/project1/training2666/pszenny1/native-localizer/data-expansion/preparation-v1-provenance",
+  "at_utc": "2026-11-22T06:36:14.531229+00:00"
+}

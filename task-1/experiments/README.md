@@ -2,7 +2,29 @@
 
 [Pełny indeks dokumentacji i wykonanych prac](DOCUMENTATION_INDEX.md).
 
-## Aktualny wynik — zgłoszenie #3188
+## Aktualny wynik — zgłoszenie #3485
+
+**Najlepszy potwierdzony publiczny mIoU: 0,6777**, +0,0034 wobec #3457
+(0,6743), łącznie +0,0041 wobec #3188. [Raport i receipt](ss_continuation/REPORT.md).
+StegaStamp: kontynuacja450→1000 z tym samym75%synthetic replay/25%real,
+na57 tych samych obrazach walidacyjnych0,762273→0,784104,
+CI95delta[+0,00852,+0,03599]. To pojedynczy fold, nie nowe pełne OOF.
+Refit na170 obrazach i wszystkie340 predykcji testowych ukończone.
+PixelSeal i TrustMark zachowano bitowo ze zgłoszenia#3457.
+
+#3457 dodał stały fallback: tylko dla całkowicie pustej maski PS wybierz164
+komórki o najwyższym istniejącym lokalnym logitcie. Walidacja0,581724→0,585528,
+public0,6736→0,6743. Małe FG nadal bardzo słabe; to drobna poprawka.
+[Raport PixelSeal](carrier_fallback/REPORT.md).
+
+[Nowe dane PIPE](data_expansion/REPORT.md): sprawdzone5483 pary/5460 źródeł,
+przygotowane512train/64dev/64locked (528Open Images,112COCO), dokładne
+embeddowanie i krótki dopasowany test nowej mieszanki. Nie przypisywać PIPE
+wyniku#3485 — to odrębny eksperyment.
+Test ukończony: PS start0,585459, stary replay200kroków0,587910,
+PIPE0,581785. Nowe dane nie przeszły bramki; bez przedłużania i bez submission.
+
+## Poprzedni wynik — zgłoszenie #3188
 
 **Najlepszy potwierdzony publiczny mIoU: 0,6736**, +0,0059 wobec #3054.
 Zmieniono PixelSeal na gałąź global/carrier EMA1561; TrustMark i StegaStamp
