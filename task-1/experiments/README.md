@@ -1,16 +1,17 @@
 # Eksperymenty zadania 1
 
-## Aktualny wynik — zgłoszenie #3005
+## Aktualny wynik — zgłoszenie #3054
 
-**Najlepszy potwierdzony publiczny mIoU: 0,6597**, wcześniej #2675: 0,6440.
-[Raport zgłoszenia](next_ideas/SUBMISSION_REPORT.md) · [Walidacja i diagnostyka](next_ideas/REPORT.md).
-Zmieniono wyłącznie StegaStamp:150 kroków realnego fine-tuningu z75% replayem
-syntetycznym, próg0,5 i ustalony fallback dla całkowicie pustych/pełnych masek.
-3-fold OOF:0,69496→0,72202; z fallbackiem0,72441. Wszystkie340 testowych
-predykcji SS pochodzą z refitu na170 obrazach; PS/TM zachowano bitowo z#2675.
-Plik1020×128×128 uint8,16,73MB, przyjęty przez serwer22.11 o04:01UTC.
-Jedna kontynuacja do450 trwa; jej wynik nie jest jeszcze znany. Publiczny
-wynik#3005 nie będzie używany do wyboru tej kontynuacji.
+**Najlepszy potwierdzony publiczny mIoU: 0,6677**, wcześniej #3005: 0,6597 oraz #2675: 0,6440.
+[Raport zgłoszenia](next_ideas/SUBMISSION_450_REPORT.md) · [Walidacja](next_ideas/REPORT.md).
+Zmieniono wyłącznie StegaStamp:450 kroków adaptacji z75% replayem syntetycznym,
+próg0,5, ustalony fallback dla pustych/pełnych masek. 3-fold OOF z tym samym
+fallbackiem:0,724414→0,744788, delta+0,020373, CI95[+0,014373,+0,026550].
+Czyste IoU przy WM>50%:0,491693→0,538708; FG<=1%:0,220095→0,239436.
+Wszystkie340 testowych SS pochodzą z refitu na170 obrazach; PS/TM bitowo z#2675.
+Serwer przyjął plik1020×128×128 uint8 (16,73MB)22.11 o04:15UTC.
+Endpoint450 i kryteria wyboru ustalono przed wynikami450; publiczny wynik nie
+wchodził do selekcji. To wielokrotnie używane foldy rozwojowe, nie niezależny test.
 
 ## Poprzedni wynik — zgłoszenie #2675
 
@@ -37,9 +38,8 @@ mały eksploracyjny zysk. Nowa adaptacja150 kroków: **StegaStamp OOF0,69496→0
 delta+0,02706, bootstrap95%[+0,01878,+0,03519], poprawa we wszystkich3 foldach.
 Z ustalonym fallbackiem0,72441. FG<=1%0,18982→0,21166; clean IoU na WM>50%
 0,44265→0,49107. Najmniejszych pominiętych dziur nadal4/12 (wcześniej3).
-Trening końcowy/test150 zakończony, zgłoszenie#3005 przyjęte. Kontynuacja do450 ma
-ustalony próg wyboru+0,005 OOF wobec150 i kontrolę regresji obu małych klas.
-Publiczny rekord#3005:0,6597; wynik450 pozostaje nieznany.
+Kontynuacja450 ukończona i spełniła ustalone kryteria: OOF0,744788, publiczny
+rekord#3054:0,6677. Szczegóły oraz negatywne wyniki są w raporcie.
 
 ## TriForensic-WM — aktualny screen
 

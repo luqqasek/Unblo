@@ -1,0 +1,63 @@
+{
+  "n": 85,
+  "seconds": 4.4584110750001855,
+  "checkpoint_sha256": "decd153a0e2c043f248e1ecdd94e6275c5d375c0e09ce927db9f6f2b3ffd8016",
+  "recipe_sha256": "f980d17549aecd38edbc82d4c4591f25417e06bac693cbcbff7bd7df0d874a44",
+  "artifact_sha256": "0d4264252ce989ff87fbc8f30e5a5d04e6e4542f4cec6f285461374cb4dac968",
+  "postprocess_changed": [
+    "ae882662c260",
+    "2518fe7b3a45",
+    "3e1747153fbd"
+  ],
+  "test_GT_used": false,
+  "recipe": {
+    "family": "stegastamp",
+    "recipe_frozen": true,
+    "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-extended-runs/stegastamp/all170/last.pt",
+    "needs_all170_refit": true,
+    "updates": 450,
+    "threshold": 0.5,
+    "weights": "raw",
+    "tta": false,
+    "precision": "FP32;TF32off",
+    "postprocess": "top1pct",
+    "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+    "adaptation_selection": {
+      "delta": 0.02705743546142719,
+      "ci95": [
+        0.018781981571411394,
+        0.035188036306005456
+      ],
+      "milestone": 0.01,
+      "selected": true
+    },
+    "fallback_selection": {
+      "mean_delta": 0.0023953372960785315,
+      "ci95": [
+        0.00010245551590245343,
+        0.0055763488466821845
+      ],
+      "selected": true
+    },
+    "validation_miou_before_fallback": 0.7438353154688542,
+    "validation_miou_final": 0.7447876602355766,
+    "preserve_families": [
+      "pixelseal",
+      "trustmark"
+    ],
+    "base_submission_id": 2675,
+    "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+    "test_labels_used": false,
+    "evidence_sha256": "f83d4d196b3dc30f7e2db1f9c07555182ab8543d150faf79c9fdc267261576b1",
+    "continuation_selection": {
+      "mean": 0.02037318107623145,
+      "ci95": [
+        0.014372730585540143,
+        0.026549869181974047
+      ],
+      "improved": 127,
+      "worse": 43
+    },
+    "postprocess_reselected": false
+  }
+}

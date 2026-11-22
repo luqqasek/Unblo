@@ -89,5 +89,12 @@
     "protocol": "Three-fold OOF; exploratory selection on reused development folds",
     "miou": 0.7244144791593452,
     "note": "Fixed150-update endpoint plus fixed1% fallback on empty/full predictions only."
+  },
+  {
+    "family": "stegastamp",
+    "name": "A4 bounded450 continuation",
+    "protocol": "Same170 development OOF; inherited fixed postprocess; endpoint declared before450 results",
+    "miou": 0.7447876602355766,
+    "note": "Selected: True; delta versus150 +0.020373; no public-score selection."
   }
 ]

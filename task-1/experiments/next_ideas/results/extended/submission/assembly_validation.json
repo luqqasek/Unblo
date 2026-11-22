@@ -1,0 +1,273 @@
+{
+  "names": 1020,
+  "shape": [
+    1020,
+    128,
+    128
+  ],
+  "dtype": "torch.uint8",
+  "unique_names": true,
+  "binary": true,
+  "bytes": 16734774,
+  "sha256": "e8abdf5626b4dd5af067cd8266adeb95a01f1fa19ecf03c9e5df82090e887714",
+  "base_sha256": "67b1a62d4d47589095e1b05d8e7471271ede3576c3130a0f1c1c96904ddf76a4",
+  "changed_images": {
+    "pixelseal": 0,
+    "trustmark": 0,
+    "stegastamp": 340
+  },
+  "sources": [
+    {
+      "n": 85,
+      "seconds": 4.4584110750001855,
+      "checkpoint_sha256": "decd153a0e2c043f248e1ecdd94e6275c5d375c0e09ce927db9f6f2b3ffd8016",
+      "recipe_sha256": "f980d17549aecd38edbc82d4c4591f25417e06bac693cbcbff7bd7df0d874a44",
+      "artifact_sha256": "0d4264252ce989ff87fbc8f30e5a5d04e6e4542f4cec6f285461374cb4dac968",
+      "postprocess_changed": [
+        "ae882662c260",
+        "2518fe7b3a45",
+        "3e1747153fbd"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-extended-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 450,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7438353154688542,
+        "validation_miou_final": 0.7447876602355766,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "f83d4d196b3dc30f7e2db1f9c07555182ab8543d150faf79c9fdc267261576b1",
+        "continuation_selection": {
+          "mean": 0.02037318107623145,
+          "ci95": [
+            0.014372730585540143,
+            0.026549869181974047
+          ],
+          "improved": 127,
+          "worse": 43
+        },
+        "postprocess_reselected": false
+      }
+    },
+    {
+      "n": 85,
+      "seconds": 4.7499063040013425,
+      "checkpoint_sha256": "decd153a0e2c043f248e1ecdd94e6275c5d375c0e09ce927db9f6f2b3ffd8016",
+      "recipe_sha256": "f980d17549aecd38edbc82d4c4591f25417e06bac693cbcbff7bd7df0d874a44",
+      "artifact_sha256": "2a4c4b37e4a5013070e07984974ee56269b428889d0804b219778159ef1e1526",
+      "postprocess_changed": [
+        "8788aab4de15",
+        "a5a7b1c23da4"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-extended-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 450,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7438353154688542,
+        "validation_miou_final": 0.7447876602355766,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "f83d4d196b3dc30f7e2db1f9c07555182ab8543d150faf79c9fdc267261576b1",
+        "continuation_selection": {
+          "mean": 0.02037318107623145,
+          "ci95": [
+            0.014372730585540143,
+            0.026549869181974047
+          ],
+          "improved": 127,
+          "worse": 43
+        },
+        "postprocess_reselected": false
+      }
+    },
+    {
+      "n": 85,
+      "seconds": 4.834965242014732,
+      "checkpoint_sha256": "decd153a0e2c043f248e1ecdd94e6275c5d375c0e09ce927db9f6f2b3ffd8016",
+      "recipe_sha256": "f980d17549aecd38edbc82d4c4591f25417e06bac693cbcbff7bd7df0d874a44",
+      "artifact_sha256": "dc897e6f8945bf6a9552ee263ae0f7acd3045bf131c5b50e24cb461481bba8ea",
+      "postprocess_changed": [
+        "f4e248db1767",
+        "032902f3762e",
+        "67572f7f12d0"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-extended-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 450,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7438353154688542,
+        "validation_miou_final": 0.7447876602355766,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "f83d4d196b3dc30f7e2db1f9c07555182ab8543d150faf79c9fdc267261576b1",
+        "continuation_selection": {
+          "mean": 0.02037318107623145,
+          "ci95": [
+            0.014372730585540143,
+            0.026549869181974047
+          ],
+          "improved": 127,
+          "worse": 43
+        },
+        "postprocess_reselected": false
+      }
+    },
+    {
+      "n": 85,
+      "seconds": 4.916644812008599,
+      "checkpoint_sha256": "decd153a0e2c043f248e1ecdd94e6275c5d375c0e09ce927db9f6f2b3ffd8016",
+      "recipe_sha256": "f980d17549aecd38edbc82d4c4591f25417e06bac693cbcbff7bd7df0d874a44",
+      "artifact_sha256": "f1897ccf6bc7f09a9c1095d34575a42b8fc7f8e56f21a380cf19a17df7e3acee",
+      "postprocess_changed": [
+        "54eb8d893e70",
+        "0510c2785a82",
+        "785ac4c1ff91"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-extended-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 450,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7438353154688542,
+        "validation_miou_final": 0.7447876602355766,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "f83d4d196b3dc30f7e2db1f9c07555182ab8543d150faf79c9fdc267261576b1",
+        "continuation_selection": {
+          "mean": 0.02037318107623145,
+          "ci95": [
+            0.014372730585540143,
+            0.026549869181974047
+          ],
+          "improved": 127,
+          "worse": 43
+        },
+        "postprocess_reselected": false
+      }
+    }
+  ],
+  "test_GT_used": false
+}

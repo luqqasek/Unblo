@@ -1,11 +1,11 @@
 # Watermark localization — current research handoff, 2026-11-22
 
-**Best accepted public submission: #3005, mIoU 0.6597**, up from #2675 (0.6440).
-Only StegaStamp changed:150 real/replay updates plus the fixed empty/full fallback.
-The server accepted the validated1020-mask artifact at04:01UTC on2026-11-22.
+**Best accepted public submission: #3054, mIoU 0.6677**, up from #3005 (0.6597) and #2675 (0.6440).
+Only StegaStamp changed:450 real/replay updates plus the fixed empty/full fallback.
+The server accepted the validated1020-mask artifact at04:15UTC on2026-11-22.
 The hidden final score and per-family public scores are unknown.
 
-Start with [latest submission](next_ideas/SUBMISSION_REPORT.md), [latest experiments](next_ideas/REPORT.md), [previous experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
+Start with [latest submission](next_ideas/SUBMISSION_450_REPORT.md), [latest experiments](next_ideas/REPORT.md), [previous experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
 [generator comparison](region_data/REPORT.md), and
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.
@@ -31,13 +31,26 @@ Three GPUs trained folds; fourth did oracle views; job wall6m26s on one node.
 Initial probabilities reproduced within5.25e-6 before training. The all170
 refit and340 test predictions completed;#3005/public0.6597 is the actual receipt.
 All PS/TM test masks remain bit-identical to#2675. Public per-family scores are
-unavailable. The same node now runs the predeclared450 continuation.
+unavailable. The predeclared450 continuation has completed; no node remains allocated for it.
 
 Because the curve improved from50 to150, one extension to450 was declared
 before its results: restore150 model/optimizer/RNG, same replay/LRs, three
 fold workers and one all170 worker on one4-GPU node. Keep150 unless450 adds
 >=0.005 paired OOF with positive CI and no>0.01 tiny-FG/clean-hole regression.
 Public scores do not enter selection. These are reused development folds.
+
+450 passed: raw mIoU0.743835, inherited fallback0.744788 versus0.724414,
+delta+0.020373 CI95[0.014373,0.026550],127 improve/43 worsen. Clean IoU on
+WM>50%0.491693→0.538708; FG<=1%0.220095→0.239436. Macro ROC-AUC slightly
+regresses0.945884→0.943751, despite improved mask/AP scores. All170 refit and
+340 test predictions completed; actual#3054 public0.6677. PS/TM unchanged.
+
+Verified next research: [IML-ViT/SAFIRE and prior frozen-model negatives](next_ideas/VERIFIED_FORENSICS_RESEARCH.md).
+Official IML-ViT checkpoint downloaded and SHA256 matches the owner's published
+7631fe852e139d904ad96fd766a37120d703c966cb80dfad70ffae4ff426cce4.
+No IML validation or training result yet. Frozen full TruFor/Mesorch/DetectiveSAM
+were already tested in pretrained_forensics; do not repeat frozen fusion.
+
 The oracle GT-box90% gate recovers3/43 small PS,21/45 TM and8/45 SS; outside-GT
 blur/mean recovers0 small cases. This does not justify broad PS/SS crop search.
 Re-embedding and dual-class losses are not new; their previous negative evidence

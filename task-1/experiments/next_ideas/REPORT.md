@@ -70,7 +70,9 @@ Server response: `{"submission_id": 3005, "status": "success", "score": 0.6597, 
 
 The150-update model is preserved and is the first submission candidate. A fixed450 endpoint was declared before its results: restore150 model/optimizer/RNG, keep the same replay and learning rates, train300 more updates. Three fold workers plus one all170 worker share one4-A100 node. Select only for paired OOF gain>=0.005, positive bootstrap lower bound and no>0.01 regression in FG<=5% or clean IoU on WM>50%. The all170 worker supplies no validation evidence. Public scores do not enter selection. [Predeclared extension](results/extension_protocol.json).
 
-The450 continuation has not produced its final validation result.
+Measured450 raw mIoU0.743835; with inherited postprocessing0.744788. Change versus selected150: `{"mean": 0.02037318107623145, "ci95": [0.014372730585540143, 0.026549869181974047], "improved": 127, "worse": 43}`. Minority guard passed: True; selected: True.
+
+Actual450 submission response: `{"submission_id": 3054, "status": "success", "score": 0.6677, "previous_best": 0.6597, "delta": 0.0079, "improved": true, "message": "New best on this task. Score shown is on the public split; the final ranking uses the held out subset, revealed after submissions close."}`. [450 submission report](SUBMISSION_450_REPORT.md).
 
 ## A2: oracle ladder
 
