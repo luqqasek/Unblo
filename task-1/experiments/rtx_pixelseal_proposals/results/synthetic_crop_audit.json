@@ -1,0 +1,1777 @@
+{
+  "summary": {
+    "0": {
+      "clean": {
+        "n": 32,
+        "bit_accuracy": 0.50634765625,
+        "passes_gate": 0,
+        "zero_pixel_fraction": 0.6038030366699221
+      },
+      "marked": {
+        "n": 32,
+        "bit_accuracy": 0.509033203125,
+        "passes_gate": 0,
+        "zero_pixel_fraction": 0.6038030366699221
+      }
+    },
+    "1": {
+      "clean": {
+        "n": 32,
+        "bit_accuracy": 0.5018310546875,
+        "passes_gate": 0,
+        "zero_pixel_fraction": 0.521505511688523
+      },
+      "marked": {
+        "n": 32,
+        "bit_accuracy": 0.6390380859375,
+        "passes_gate": 1,
+        "zero_pixel_fraction": 0.521505511688523
+      }
+    },
+    "2": {
+      "clean": {
+        "n": 32,
+        "bit_accuracy": 0.4969482421875,
+        "passes_gate": 0,
+        "zero_pixel_fraction": 0.4559159973212874
+      },
+      "marked": {
+        "n": 32,
+        "bit_accuracy": 0.85302734375,
+        "passes_gate": 18,
+        "zero_pixel_fraction": 0.4559159973212874
+      }
+    }
+  },
+  "rows": [
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 139,
+      "area": 0.008083343505859375,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.4775837659273242
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 133,
+      "area": 0.008083343505859375,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.4775837659273242
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 123,
+      "area": 0.0171661376953125,
+      "short_side": 25,
+      "zero_pixel_fraction": 0.5128888888888888
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 138,
+      "area": 0.0171661376953125,
+      "short_side": 25,
+      "zero_pixel_fraction": 0.5128888888888888
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 124,
+      "area": 0.05571746826171875,
+      "short_side": 109,
+      "zero_pixel_fraction": 0.47131315897576337
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 230,
+      "area": 0.05571746826171875,
+      "short_side": 109,
+      "zero_pixel_fraction": 0.47131315897576337
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 122,
+      "area": 0.005252838134765625,
+      "short_side": 17,
+      "zero_pixel_fraction": 0.8445896877269427
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 119,
+      "area": 0.005252838134765625,
+      "short_side": 17,
+      "zero_pixel_fraction": 0.8445896877269427
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.01837921142578125,
+      "short_side": 66,
+      "zero_pixel_fraction": 0.43088418430884184
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 167,
+      "area": 0.01837921142578125,
+      "short_side": 66,
+      "zero_pixel_fraction": 0.43088418430884184
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.12227249145507812,
+      "short_side": 133,
+      "zero_pixel_fraction": 0.8330577481047016
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 236,
+      "area": 0.12227249145507812,
+      "short_side": 133,
+      "zero_pixel_fraction": 0.8330577481047016
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 126,
+      "area": 0.00926971435546875,
+      "short_side": 45,
+      "zero_pixel_fraction": 0.4218106995884774
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 134,
+      "area": 0.00926971435546875,
+      "short_side": 45,
+      "zero_pixel_fraction": 0.4218106995884774
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 137,
+      "area": 0.024204254150390625,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.3566587864460205
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 212,
+      "area": 0.024204254150390625,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.3566587864460205
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 144,
+      "area": 0.095703125,
+      "short_side": 49,
+      "zero_pixel_fraction": 0.4481823979591837
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 222,
+      "area": 0.095703125,
+      "short_side": 49,
+      "zero_pixel_fraction": 0.4481823979591837
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 128,
+      "area": 0.0018310546875,
+      "short_side": 20,
+      "zero_pixel_fraction": 0.6229166666666667
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 135,
+      "area": 0.0018310546875,
+      "short_side": 20,
+      "zero_pixel_fraction": 0.6229166666666667
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 109,
+      "area": 0.037353515625,
+      "short_side": 48,
+      "zero_pixel_fraction": 0.7062908496732027
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 156,
+      "area": 0.037353515625,
+      "short_side": 48,
+      "zero_pixel_fraction": 0.7062908496732027
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 125,
+      "area": 0.146697998046875,
+      "short_side": 88,
+      "zero_pixel_fraction": 0.5508373205741627
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 139,
+      "area": 0.146697998046875,
+      "short_side": 88,
+      "zero_pixel_fraction": 0.5508373205741627
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 123,
+      "area": 0.00274658203125,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.3680555555555556
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 133,
+      "area": 0.00274658203125,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.3680555555555556
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.016880035400390625,
+      "short_side": 25,
+      "zero_pixel_fraction": 0.1342372881355932
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 123,
+      "area": 0.016880035400390625,
+      "short_side": 25,
+      "zero_pixel_fraction": 0.1342372881355932
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 117,
+      "area": 0.08306121826171875,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.4593551942683935
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 114,
+      "area": 0.08306121826171875,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.4593551942683935
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.0013275146484375,
+      "short_side": 12,
+      "zero_pixel_fraction": 0.3793103448275862
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 135,
+      "area": 0.0013275146484375,
+      "short_side": 12,
+      "zero_pixel_fraction": 0.3793103448275862
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 126,
+      "area": 0.027191162109375,
+      "short_side": 22,
+      "zero_pixel_fraction": 0.5837542087542088
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 128,
+      "area": 0.027191162109375,
+      "short_side": 22,
+      "zero_pixel_fraction": 0.5837542087542088
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 125,
+      "area": 0.14568328857421875,
+      "short_side": 95,
+      "zero_pixel_fraction": 0.5927206074888715
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 234,
+      "area": 0.14568328857421875,
+      "short_side": 95,
+      "zero_pixel_fraction": 0.5927206074888715
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.00171661376953125,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.68
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 122,
+      "area": 0.00171661376953125,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.68
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.04116058349609375,
+      "short_side": 83,
+      "zero_pixel_fraction": 0.5083410565338277
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 242,
+      "area": 0.04116058349609375,
+      "short_side": 83,
+      "zero_pixel_fraction": 0.5083410565338277
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 126,
+      "area": 0.0908660888671875,
+      "short_side": 60,
+      "zero_pixel_fraction": 0.5094458438287154
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 228,
+      "area": 0.0908660888671875,
+      "short_side": 60,
+      "zero_pixel_fraction": 0.5094458438287154
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 125,
+      "area": 0.0048065185546875,
+      "short_side": 12,
+      "zero_pixel_fraction": 0.11904761904761904
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 127,
+      "area": 0.0048065185546875,
+      "short_side": 12,
+      "zero_pixel_fraction": 0.11904761904761904
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 137,
+      "area": 0.0165557861328125,
+      "short_side": 35,
+      "zero_pixel_fraction": 0.4605990783410138
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 136,
+      "area": 0.0165557861328125,
+      "short_side": 35,
+      "zero_pixel_fraction": 0.4605990783410138
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 120,
+      "area": 0.110198974609375,
+      "short_side": 157,
+      "zero_pixel_fraction": 0.21583356410966492
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 252,
+      "area": 0.110198974609375,
+      "short_side": 157,
+      "zero_pixel_fraction": 0.21583356410966492
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 129,
+      "area": 0.00904083251953125,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.6590717299578059
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 139,
+      "area": 0.00904083251953125,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.6590717299578059
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 142,
+      "area": 0.012905120849609375,
+      "short_side": 17,
+      "zero_pixel_fraction": 0.7209577298255986
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 136,
+      "area": 0.012905120849609375,
+      "short_side": 17,
+      "zero_pixel_fraction": 0.7209577298255986
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 117,
+      "area": 0.0538330078125,
+      "short_side": 72,
+      "zero_pixel_fraction": 0.5419501133786848
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 248,
+      "area": 0.0538330078125,
+      "short_side": 72,
+      "zero_pixel_fraction": 0.5419501133786848
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 139,
+      "area": 0.00473785400390625,
+      "short_side": 23,
+      "zero_pixel_fraction": 0.7391304347826086
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 155,
+      "area": 0.00473785400390625,
+      "short_side": 23,
+      "zero_pixel_fraction": 0.7391304347826086
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 125,
+      "area": 0.025177001953125,
+      "short_side": 22,
+      "zero_pixel_fraction": 0.730909090909091
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 130,
+      "area": 0.025177001953125,
+      "short_side": 22,
+      "zero_pixel_fraction": 0.730909090909091
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 128,
+      "area": 0.076171875,
+      "short_side": 39,
+      "zero_pixel_fraction": 0.7509014423076923
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 171,
+      "area": 0.076171875,
+      "short_side": 39,
+      "zero_pixel_fraction": 0.7509014423076923
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.0081329345703125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.3517823639774859
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 122,
+      "area": 0.0081329345703125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.3517823639774859
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.043487548828125,
+      "short_side": 40,
+      "zero_pixel_fraction": 0.5966666666666667
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 194,
+      "area": 0.043487548828125,
+      "short_side": 40,
+      "zero_pixel_fraction": 0.5966666666666667
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.12047195434570312,
+      "short_side": 99,
+      "zero_pixel_fraction": 0.2693074950128242
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 248,
+      "area": 0.12047195434570312,
+      "short_side": 99,
+      "zero_pixel_fraction": 0.2693074950128242
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.003398895263671875,
+      "short_side": 27,
+      "zero_pixel_fraction": 0.745230078563412
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 128,
+      "area": 0.003398895263671875,
+      "short_side": 27,
+      "zero_pixel_fraction": 0.745230078563412
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.01087188720703125,
+      "short_side": 30,
+      "zero_pixel_fraction": 0.5035087719298246
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 129,
+      "area": 0.01087188720703125,
+      "short_side": 30,
+      "zero_pixel_fraction": 0.5035087719298246
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.0666961669921875,
+      "short_side": 124,
+      "zero_pixel_fraction": 0.3134866163349348
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 232,
+      "area": 0.0666961669921875,
+      "short_side": 124,
+      "zero_pixel_fraction": 0.3134866163349348
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 138,
+      "area": 0.00827789306640625,
+      "short_side": 35,
+      "zero_pixel_fraction": 0.6138248847926268
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 145,
+      "area": 0.00827789306640625,
+      "short_side": 35,
+      "zero_pixel_fraction": 0.6138248847926268
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 114,
+      "area": 0.0147857666015625,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.5936532507739938
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 143,
+      "area": 0.0147857666015625,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.5936532507739938
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.06694793701171875,
+      "short_side": 117,
+      "zero_pixel_fraction": 0.422962962962963
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 244,
+      "area": 0.06694793701171875,
+      "short_side": 117,
+      "zero_pixel_fraction": 0.422962962962963
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 140,
+      "area": 0.001373291015625,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.675
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 131,
+      "area": 0.001373291015625,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.675
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 124,
+      "area": 0.0354766845703125,
+      "short_side": 30,
+      "zero_pixel_fraction": 0.7047311827956989
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 180,
+      "area": 0.0354766845703125,
+      "short_side": 30,
+      "zero_pixel_fraction": 0.7047311827956989
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.13056182861328125,
+      "short_side": 109,
+      "zero_pixel_fraction": 0.4590954245310583
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 254,
+      "area": 0.13056182861328125,
+      "short_side": 109,
+      "zero_pixel_fraction": 0.4590954245310583
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 140,
+      "area": 0.001049041748046875,
+      "short_side": 11,
+      "zero_pixel_fraction": 0.6472727272727272
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 145,
+      "area": 0.001049041748046875,
+      "short_side": 11,
+      "zero_pixel_fraction": 0.6472727272727272
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 124,
+      "area": 0.01009368896484375,
+      "short_side": 49,
+      "zero_pixel_fraction": 0.3726379440665155
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 146,
+      "area": 0.01009368896484375,
+      "short_side": 49,
+      "zero_pixel_fraction": 0.3726379440665155
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 137,
+      "area": 0.09215545654296875,
+      "short_side": 94,
+      "zero_pixel_fraction": 0.5336948422882689
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 185,
+      "area": 0.09215545654296875,
+      "short_side": 94,
+      "zero_pixel_fraction": 0.5336948422882689
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 133,
+      "area": 0.0009765625,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.78125
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 129,
+      "area": 0.0009765625,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.78125
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 137,
+      "area": 0.03604888916015625,
+      "short_side": 27,
+      "zero_pixel_fraction": 0.7546031746031746
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 138,
+      "area": 0.03604888916015625,
+      "short_side": 27,
+      "zero_pixel_fraction": 0.7546031746031746
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 128,
+      "area": 0.080108642578125,
+      "short_side": 70,
+      "zero_pixel_fraction": 0.6008571428571429
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 232,
+      "area": 0.080108642578125,
+      "short_side": 70,
+      "zero_pixel_fraction": 0.6008571428571429
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 138,
+      "area": 0.001239776611328125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.7138461538461538
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 139,
+      "area": 0.001239776611328125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.7138461538461538
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 124,
+      "area": 0.03517913818359375,
+      "short_side": 53,
+      "zero_pixel_fraction": 0.2965734114075038
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 174,
+      "area": 0.03517913818359375,
+      "short_side": 53,
+      "zero_pixel_fraction": 0.2965734114075038
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 132,
+      "area": 0.10110855102539062,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.22120354650066026
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 211,
+      "area": 0.10110855102539062,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.22120354650066026
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 139,
+      "area": 0.00579833984375,
+      "short_side": 38,
+      "zero_pixel_fraction": 0.5802631578947368
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 136,
+      "area": 0.00579833984375,
+      "short_side": 38,
+      "zero_pixel_fraction": 0.5802631578947368
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.011474609375,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.48836436170212766
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 127,
+      "area": 0.011474609375,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.48836436170212766
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 129,
+      "area": 0.08843994140625,
+      "short_side": 48,
+      "zero_pixel_fraction": 0.43085748792270534
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 142,
+      "area": 0.08843994140625,
+      "short_side": 48,
+      "zero_pixel_fraction": 0.43085748792270534
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 112,
+      "area": 0.00421905517578125,
+      "short_side": 14,
+      "zero_pixel_fraction": 0.5913200723327305
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 113,
+      "area": 0.00421905517578125,
+      "short_side": 14,
+      "zero_pixel_fraction": 0.5913200723327305
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 141,
+      "area": 0.0148773193359375,
+      "short_side": 50,
+      "zero_pixel_fraction": 0.3120512820512821
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 117,
+      "area": 0.0148773193359375,
+      "short_side": 50,
+      "zero_pixel_fraction": 0.3120512820512821
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 136,
+      "area": 0.09739303588867188,
+      "short_side": 121,
+      "zero_pixel_fraction": 0.31632133484783204
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 252,
+      "area": 0.09739303588867188,
+      "short_side": 121,
+      "zero_pixel_fraction": 0.31632133484783204
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 124,
+      "area": 0.001636505126953125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.7762237762237763
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 119,
+      "area": 0.001636505126953125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.7762237762237763
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.033966064453125,
+      "short_side": 53,
+      "zero_pixel_fraction": 0.7438230008984726
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 209,
+      "area": 0.033966064453125,
+      "short_side": 53,
+      "zero_pixel_fraction": 0.7438230008984726
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.051177978515625,
+      "short_side": 78,
+      "zero_pixel_fraction": 0.6453488372093024
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 240,
+      "area": 0.051177978515625,
+      "short_side": 78,
+      "zero_pixel_fraction": 0.6453488372093024
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.00701904296875,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.6173913043478261
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 120,
+      "area": 0.00701904296875,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.6173913043478261
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 141,
+      "area": 0.0101470947265625,
+      "short_side": 38,
+      "zero_pixel_fraction": 0.912406015037594
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 137,
+      "area": 0.0101470947265625,
+      "short_side": 38,
+      "zero_pixel_fraction": 0.912406015037594
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 122,
+      "area": 0.09140396118164062,
+      "short_side": 49,
+      "zero_pixel_fraction": 0.6408330203246942
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 171,
+      "area": 0.09140396118164062,
+      "short_side": 49,
+      "zero_pixel_fraction": 0.6408330203246942
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 135,
+      "area": 0.002437591552734375,
+      "short_side": 9,
+      "zero_pixel_fraction": 0.539906103286385
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 134,
+      "area": 0.002437591552734375,
+      "short_side": 9,
+      "zero_pixel_fraction": 0.539906103286385
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 120,
+      "area": 0.040340423583984375,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.46761229314420805
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 205,
+      "area": 0.040340423583984375,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.46761229314420805
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 129,
+      "area": 0.053070068359375,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.47232604945370904
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 223,
+      "area": 0.053070068359375,
+      "short_side": 47,
+      "zero_pixel_fraction": 0.47232604945370904
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 117,
+      "area": 0.0016021728515625,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.5142857142857142
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 118,
+      "area": 0.0016021728515625,
+      "short_side": 15,
+      "zero_pixel_fraction": 0.5142857142857142
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.021114349365234375,
+      "short_side": 41,
+      "zero_pixel_fraction": 0.2870822041553749
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 180,
+      "area": 0.021114349365234375,
+      "short_side": 41,
+      "zero_pixel_fraction": 0.2870822041553749
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 135,
+      "area": 0.130523681640625,
+      "short_side": 94,
+      "zero_pixel_fraction": 0.31131634323123686
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 245,
+      "area": 0.130523681640625,
+      "short_side": 94,
+      "zero_pixel_fraction": 0.31131634323123686
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 122,
+      "area": 0.0074005126953125,
+      "short_side": 20,
+      "zero_pixel_fraction": 0.8345360824742268
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 128,
+      "area": 0.0074005126953125,
+      "short_side": 20,
+      "zero_pixel_fraction": 0.8345360824742268
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 138,
+      "area": 0.02826690673828125,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.6564102564102564
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 210,
+      "area": 0.02826690673828125,
+      "short_side": 57,
+      "zero_pixel_fraction": 0.6564102564102564
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.09720611572265625,
+      "short_side": 93,
+      "zero_pixel_fraction": 0.5735028647672867
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 252,
+      "area": 0.09720611572265625,
+      "short_side": 93,
+      "zero_pixel_fraction": 0.5735028647672867
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 113,
+      "area": 0.0031585693359375,
+      "short_side": 9,
+      "zero_pixel_fraction": 0.571256038647343
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 111,
+      "area": 0.0031585693359375,
+      "short_side": 9,
+      "zero_pixel_fraction": 0.571256038647343
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 141,
+      "area": 0.022430419921875,
+      "short_side": 60,
+      "zero_pixel_fraction": 0.42738095238095236
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 175,
+      "area": 0.022430419921875,
+      "short_side": 60,
+      "zero_pixel_fraction": 0.42738095238095236
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 126,
+      "area": 0.099609375,
+      "short_side": 51,
+      "zero_pixel_fraction": 0.4410615808823529
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 134,
+      "area": 0.099609375,
+      "short_side": 51,
+      "zero_pixel_fraction": 0.4410615808823529
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.0013427734375,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.7926136363636364
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 116,
+      "area": 0.0013427734375,
+      "short_side": 16,
+      "zero_pixel_fraction": 0.7926136363636364
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 136,
+      "area": 0.02057647705078125,
+      "short_side": 31,
+      "zero_pixel_fraction": 0.5975157582499073
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 125,
+      "area": 0.02057647705078125,
+      "short_side": 31,
+      "zero_pixel_fraction": 0.5975157582499073
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.08740997314453125,
+      "short_side": 114,
+      "zero_pixel_fraction": 0.3814262023217247
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 256,
+      "area": 0.08740997314453125,
+      "short_side": 114,
+      "zero_pixel_fraction": 0.3814262023217247
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 135,
+      "area": 0.00109100341796875,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.8041958041958042
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 129,
+      "area": 0.00109100341796875,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.8041958041958042
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 118,
+      "area": 0.02298736572265625,
+      "short_side": 46,
+      "zero_pixel_fraction": 0.7892465980750083
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 206,
+      "area": 0.02298736572265625,
+      "short_side": 46,
+      "zero_pixel_fraction": 0.7892465980750083
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 112,
+      "area": 0.06550216674804688,
+      "short_side": 77,
+      "zero_pixel_fraction": 0.5463281113505328
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 237,
+      "area": 0.06550216674804688,
+      "short_side": 77,
+      "zero_pixel_fraction": 0.5463281113505328
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 142,
+      "area": 0.0010528564453125,
+      "short_side": 12,
+      "zero_pixel_fraction": 0.3442028985507246
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 139,
+      "area": 0.0010528564453125,
+      "short_side": 12,
+      "zero_pixel_fraction": 0.3442028985507246
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.039093017578125,
+      "short_side": 42,
+      "zero_pixel_fraction": 0.2951795472287276
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 202,
+      "area": 0.039093017578125,
+      "short_side": 42,
+      "zero_pixel_fraction": 0.2951795472287276
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 123,
+      "area": 0.104736328125,
+      "short_side": 64,
+      "zero_pixel_fraction": 0.155011655011655
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 239,
+      "area": 0.104736328125,
+      "short_side": 64,
+      "zero_pixel_fraction": 0.155011655011655
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 123,
+      "area": 0.001636505126953125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.8065268065268065
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 124,
+      "area": 0.001636505126953125,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.8065268065268065
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 127,
+      "area": 0.023792266845703125,
+      "short_side": 33,
+      "zero_pixel_fraction": 0.3544973544973545
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 142,
+      "area": 0.023792266845703125,
+      "short_side": 33,
+      "zero_pixel_fraction": 0.3544973544973545
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 128,
+      "area": 0.14162063598632812,
+      "short_side": 75,
+      "zero_pixel_fraction": 0.5714747474747475
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 187,
+      "area": 0.14162063598632812,
+      "short_side": 75,
+      "zero_pixel_fraction": 0.5714747474747475
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 130,
+      "area": 0.001140594482421875,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.391304347826087
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 138,
+      "area": 0.001140594482421875,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.391304347826087
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 116,
+      "area": 0.0176239013671875,
+      "short_side": 42,
+      "zero_pixel_fraction": 0.2584415584415584
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 219,
+      "area": 0.0176239013671875,
+      "short_side": 42,
+      "zero_pixel_fraction": 0.2584415584415584
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 138,
+      "area": 0.1105499267578125,
+      "short_side": 161,
+      "zero_pixel_fraction": 0.2204968944099379
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 256,
+      "area": 0.1105499267578125,
+      "short_side": 161,
+      "zero_pixel_fraction": 0.2204968944099379
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 126,
+      "area": 0.002231597900390625,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.717948717948718
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 132,
+      "area": 0.002231597900390625,
+      "short_side": 13,
+      "zero_pixel_fraction": 0.717948717948718
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 134,
+      "area": 0.037639617919921875,
+      "short_side": 33,
+      "zero_pixel_fraction": 0.5775818384514037
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 130,
+      "area": 0.037639617919921875,
+      "short_side": 33,
+      "zero_pixel_fraction": 0.5775818384514037
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 116,
+      "area": 0.14361190795898438,
+      "short_side": 141,
+      "zero_pixel_fraction": 0.2796238744123038
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 252,
+      "area": 0.14361190795898438,
+      "short_side": 141,
+      "zero_pixel_fraction": 0.2796238744123038
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 0,
+      "kind": "clean",
+      "correct_bits": 131,
+      "area": 0.001983642578125,
+      "short_side": 8,
+      "zero_pixel_fraction": 0.6
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 0,
+      "kind": "marked",
+      "correct_bits": 142,
+      "area": 0.001983642578125,
+      "short_side": 8,
+      "zero_pixel_fraction": 0.6
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 1,
+      "kind": "clean",
+      "correct_bits": 123,
+      "area": 0.02143096923828125,
+      "short_side": 53,
+      "zero_pixel_fraction": 0.552687789248843
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 1,
+      "kind": "marked",
+      "correct_bits": 179,
+      "area": 0.02143096923828125,
+      "short_side": 53,
+      "zero_pixel_fraction": 0.552687789248843
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 2,
+      "kind": "clean",
+      "correct_bits": 121,
+      "area": 0.11014938354492188,
+      "short_side": 75,
+      "zero_pixel_fraction": 0.4091774891774892
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 2,
+      "kind": "marked",
+      "correct_bits": 222,
+      "area": 0.11014938354492188,
+      "short_side": 75,
+      "zero_pixel_fraction": 0.4091774891774892
+    }
+  ],
+  "protocol": "Oracle exact embed bbox on source-disjoint synthetic dev, not GT-free localization; official unchanged decoder"
+}

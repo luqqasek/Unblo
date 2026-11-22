@@ -1,0 +1,65 @@
+[
+  {
+    "family": "pixelseal",
+    "name": "IML shared hole adaptation / update0",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.5255654259455994,
+    "note": "Family baseline0.570883; clean IoU WM>50%0.054409."
+  },
+  {
+    "family": "trustmark",
+    "name": "IML shared hole adaptation / update0",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.593194193438331,
+    "note": "Family baseline0.646616; clean IoU WM>50%0.034757."
+  },
+  {
+    "family": "stegastamp",
+    "name": "IML shared hole adaptation / update0",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.6342153266542722,
+    "note": "Family baseline0.762273; clean IoU WM>50%0.135153."
+  },
+  {
+    "family": "pixelseal",
+    "name": "IML shared hole adaptation / update50",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.5482769221552113,
+    "note": "Family baseline0.570883; clean IoU WM>50%0.139126."
+  },
+  {
+    "family": "trustmark",
+    "name": "IML shared hole adaptation / update50",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.6061483239703205,
+    "note": "Family baseline0.646616; clean IoU WM>50%0.080286."
+  },
+  {
+    "family": "stegastamp",
+    "name": "IML shared hole adaptation / update50",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.7361443291273294,
+    "note": "Family baseline0.762273; clean IoU WM>50%0.463621."
+  },
+  {
+    "family": "pixelseal",
+    "name": "IML shared hole adaptation / update150",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.5600735922894617,
+    "note": "Family baseline0.570883; clean IoU WM>50%0.187357."
+  },
+  {
+    "family": "trustmark",
+    "name": "IML shared hole adaptation / update150",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.6161073998911146,
+    "note": "Family baseline0.646616; clean IoU WM>50%0.122089."
+  },
+  {
+    "family": "stegastamp",
+    "name": "IML shared hole adaptation / update150",
+    "protocol": "Fixed original fold1, equal blend, original full-message gate, native512; exploratory reused validation",
+    "miou": 0.7479636162784902,
+    "note": "Family baseline0.762273; clean IoU WM>50%0.502458."
+  }
+]

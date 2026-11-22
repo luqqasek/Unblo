@@ -1,0 +1,155 @@
+[
+  {
+    "loss_classifier": 0.12162547991647443,
+    "loss_box_reg": 0.0035190870985388756,
+    "loss_objectness": 0.18759130546823144,
+    "loss_rpn_box_reg": 0.005443894769996405,
+    "step": 1,
+    "seconds": 3.23499999998603,
+    "peak_gpu_bytes": 996772864
+  },
+  {
+    "loss_classifier": 0.006810414895880967,
+    "loss_box_reg": 0.001140246749855578,
+    "loss_objectness": 0.053067656233906746,
+    "loss_rpn_box_reg": 0.002451664535328746,
+    "step": 25,
+    "seconds": 6.454000000027008,
+    "peak_gpu_bytes": 1163912704
+  },
+  {
+    "loss_classifier": 0.05237869216216495,
+    "loss_box_reg": 0.015698375180363655,
+    "loss_objectness": 0.05837608501315117,
+    "loss_rpn_box_reg": 0.0035253665409982204,
+    "step": 50,
+    "seconds": 9.704000000027008,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.021130925975739956,
+    "loss_box_reg": 0.017238564789295197,
+    "loss_objectness": 0.07809250056743622,
+    "loss_rpn_box_reg": 0.041115984320640564,
+    "step": 75,
+    "seconds": 12.98499999998603,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.031266994890756905,
+    "loss_box_reg": 0.01641145534813404,
+    "loss_objectness": 0.16932093538343906,
+    "loss_rpn_box_reg": 0.023972157388925552,
+    "step": 100,
+    "seconds": 16.219000000040978,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.009802313288673759,
+    "loss_box_reg": 0.0008536555105820298,
+    "loss_objectness": 0.04019538871943951,
+    "loss_rpn_box_reg": 0.007824655622243881,
+    "step": 125,
+    "seconds": 19.48499999998603,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.019249505130574107,
+    "loss_box_reg": 0.005252127535641193,
+    "loss_objectness": 0.06498269271105528,
+    "loss_rpn_box_reg": 0.023425055667757988,
+    "step": 150,
+    "seconds": 22.73499999998603,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.007928746461402625,
+    "loss_box_reg": 0.0006452679517678916,
+    "loss_objectness": 0.13647416234016418,
+    "loss_rpn_box_reg": 0.020807024091482162,
+    "step": 175,
+    "seconds": 25.98499999998603,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.010695912642404437,
+    "loss_box_reg": 0.00038869527634233236,
+    "loss_objectness": 0.33254227554425597,
+    "loss_rpn_box_reg": 0.07608671486377716,
+    "step": 200,
+    "seconds": 29.219000000040978,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.008520621340721846,
+    "loss_box_reg": 0.0008828915888443589,
+    "loss_objectness": 0.07630093768239021,
+    "loss_rpn_box_reg": 0.0016629114979878068,
+    "step": 225,
+    "seconds": 32.46900000004098,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.009786196169443429,
+    "loss_box_reg": 0.0006759249372407794,
+    "loss_objectness": 0.2070834394544363,
+    "loss_rpn_box_reg": 0.07138877362012863,
+    "step": 250,
+    "seconds": 35.71900000004098,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.03007106762379408,
+    "loss_box_reg": 0.007837302051484585,
+    "loss_objectness": 0.09641419909894466,
+    "loss_rpn_box_reg": 0.02059876173734665,
+    "step": 275,
+    "seconds": 38.98499999998603,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.02815080713480711,
+    "loss_box_reg": 0.012796865776181221,
+    "loss_objectness": 0.12973661720752716,
+    "loss_rpn_box_reg": 0.023975132033228874,
+    "step": 300,
+    "seconds": 42.25,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.037301483971532434,
+    "loss_box_reg": 0.01624557003378868,
+    "loss_objectness": 0.09859124990180135,
+    "loss_rpn_box_reg": 0.0147390840575099,
+    "step": 325,
+    "seconds": 45.51600000006147,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.010039446176961064,
+    "loss_box_reg": 0.0008133293595165014,
+    "loss_objectness": 0.14489876851439476,
+    "loss_rpn_box_reg": 0.05917206034064293,
+    "step": 350,
+    "seconds": 48.79700000002049,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.024390422273427248,
+    "loss_box_reg": 0.009807734750211239,
+    "loss_objectness": 0.14091583527624607,
+    "loss_rpn_box_reg": 0.0496404804289341,
+    "step": 375,
+    "seconds": 52.125,
+    "peak_gpu_bytes": 1163976192
+  },
+  {
+    "loss_classifier": 0.003776727186050266,
+    "loss_box_reg": 0.0008515650988556445,
+    "loss_objectness": 0.016910843551158905,
+    "loss_rpn_box_reg": 0.008524763397872448,
+    "step": 400,
+    "seconds": 55.438000000081956,
+    "peak_gpu_bytes": 1163976192
+  }
+]

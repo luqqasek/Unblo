@@ -1,0 +1,38 @@
+{
+  "source_commit": "07dd2be0f4ea27a5c97c9fa5ffbe236733833eac",
+  "weight_sha256": "7631fe852e139d904ad96fd766a37120d703c966cb80dfad70ffae4ff426cce4",
+  "steps": 300,
+  "effective_batch": 8,
+  "real": 4,
+  "synthetic": 4,
+  "real_training_images": 170,
+  "validation_images": 171,
+  "family_shared": true,
+  "all_weights_trainable": true,
+  "precision": "FP32 raw normalization and projection; BF16 deeper; FP32 loss",
+  "upstream_context_change": "native512, positional interpolation in upstream code; strict1024 parameter shapes",
+  "BN_running_stats": "fixed",
+  "stochastic_depth": 0,
+  "dropout": 0,
+  "threshold": 0.5,
+  "router": "original full decoder>=90% AND baseline predicted watermark area>50%",
+  "fusion": "equal probability blend with inverted clean head on routed images; baseline elsewhere",
+  "baseline_hashes": {
+    "pixelseal": "9aa200f108cf230081e1e40bfb8a9305463a2c0adc4e7cb813fa37e12940dce9",
+    "trustmark": "5b43bcf4c4b7c572d554a4a42b24fa3b80e105dd1ec2446cfc45093b371e43c9",
+    "stegastamp": "9211dd2bd1c09d6138cb315c0a372461fbb8fd10c4f1f626239c8366c9062b68",
+    "/p/project1/training2666/pszenny1/native-localizer/small-zoom-finalscale/trustmark/proposals.json": "6e8cd082720f9f8d11779e042e5516a3a2fb61e2843a303c4818d22258457e69",
+    "/p/project1/training2666/pszenny1/native-localizer/local-presence-runs/tm-scan-0/proposals.json": "3cdf0c3a885820530e824203ca50e226b0a2c37ac5a27b28d6532640a11dcd6f",
+    "/p/project1/training2666/pszenny1/native-localizer/local-presence-runs/tm-scan-1/proposals.json": "797d5282df29dbee69b9d1eb38fea78eaf6cb08b974110f891d78cffdfd5723a"
+  },
+  "runtime_versions": {
+    "torch": "2.5.1",
+    "timm": "1.0.31",
+    "fvcore": "0.1.5.post20221221",
+    "numpy": "1.26.4",
+    "torchvision": "0.20.1"
+  },
+  "new_embedding_calls": 0,
+  "loss": "existing per-image halfBCE halfdualDice",
+  "gpus": 4
+}

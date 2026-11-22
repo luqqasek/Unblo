@@ -66,3 +66,47 @@ Full [TruFor's license](https://github.com/grip-unina/TruFor/blob/main/TruFor_tr
 5. If adaptation supplies no useful hole improvement, inspect SAFIRE proposal oracle coverage first; advance only if source geometry is complementary, then learn deployable polarity/selection using training images. Cache proposals and reuse them. Never report source-partition oracle or Permute-F1 as leaderboard-capable mIoU.
 
 No reported paper benchmark is used as an expected competition score. Both candidates remain unmeasured on our task; the proposed advantage is a testable hypothesis, and the archived negative frozen-map results lower expectations for a large zero-shot jump.
+
+## SAFIRE native512 source-proposal implementation review
+
+Follow-up, 2026-11-22: the experiment owner reports IML's 150-update screen failed (blend mIoU **0.64138 versus 0.65992**; no submission). The following is inspected SAFIRE code, not measured proposal quality or throughput. It supersedes the earlier suggestion that a separate SAM initializer is required.
+
+**Full checkpoint is sufficient if strict loading succeeds.** [Training saves the complete wrapper state dict](https://github.com/mjkwon2021/SAFIRE/blob/ec2af6af8c789fb6359493a3e352f89c6fd8107f/train.py#L345), including frozen encoder/prompt parameters; [inference loads `checkpoint['model']` strictly](https://github.com/mjkwon2021/SAFIRE/blob/ec2af6af8c789fb6359493a3e352f89c6fd8107f/infer_multi.py#L55). Construct `sam_model_registry['vit_b_adaptor'](checkpoint='')`: **empty string, not `None`**. The [builder](https://github.com/mjkwon2021/SAFIRE/blob/ec2af6af8c789fb6359493a3e352f89c6fd8107f/segment_anything/build_sam.py#L283) explicitly accepts `''`, whereas `None` reaches `Path(None)`. Then strip only leading `module.` and strict-load the full state. Download neither the encoder-only file nor the SAM initializer. Artifact completeness remains a runtime assertion, not permission to use `strict=False`.
+
+For minimal inference, the registry's returned `Sam` can itself receive that state: [Sam](https://github.com/mjkwon2021/SAFIRE/blob/ec2af6af8c789fb6359493a3e352f89c6fd8107f/segment_anything/modeling/sam.py#L44) and [AdaptorSAM](https://github.com/mjkwon2021/SAFIRE/blob/ec2af6af8c789fb6359493a3e352f89c6fd8107f/networks/safire_model.py#L39) register the same three submodules and nonpersistent normalization buffers. Their preprocess constants are identical. With input/original sizes both1024, Sam's additional crop/resize is identity geometry. This avoids importing monai/matplotlib/tqdm solely through `safire_model.py`; confirm a small numerical parity check if the wrapper is changed.
+
+Minimal extraction outline, using **the pinned repository's** `segment_anything`:
+
+```python
+from segment_anything import sam_model_registry
+from segment_anything.predictor_safire import SamPredictor
+from segment_anything.utils.amg import build_point_grid
+
+model = sam_model_registry['vit_b_adaptor'](checkpoint='')
+checkpoint = torch.load('safire.pth', map_location='cpu', weights_only=True)
+state = {k.removeprefix('module.'): v for k, v in checkpoint['model'].items()}
+model.load_state_dict(state, strict=True)
+model = model.eval().cuda()
+predictor = SamPredictor(model)
+# image_rgb: original HWC uint8, exactly512x512; no normalization beforehand.
+padded = np.zeros((1024, 1024, 3), np.uint8)
+padded[:512, :512] = image_rgb
+x = torch.from_numpy(padded).permute(2, 0, 1)[None].cuda().float()
+with torch.inference_mode():
+    predictor.set_torch_image(x, (1024, 1024))  # skips ResizeLongestSide
+    points = torch.as_tensor(build_point_grid(16) * 512, device='cuda').float()
+    for batch in points.split(32):
+        logits, quality, _ = predictor.predict_torch(
+            batch[:, None, :], torch.ones((len(batch), 1), device='cuda', dtype=torch.int),
+            multimask_output=False, return_logits=True)
+        logits = logits[:, 0, :512, :512]  # crop before statistics/storage
+        # Stream valid-region binary masks/probabilities to CPU; release full outputs.
+```
+
+This preserves all original pixels and samples 256 positive prompts at 32-pixel spacing entirely inside valid512; no GT-derived prompts. Run FP32 first, including the high-frequency encoder, and profile. Avoid calling the original dataset loader, which normally resizes512→1024. A standard `SafirePredictor.generate` alternative accepts `points_per_side=None, point_grids=[build_point_grid(16)*0.5]`, but retains full1024 logits and probabilities for every prompt: approximately **2 GiB just for those two float32 arrays per image**, before masks/features. Streaming is preferable.
+
+**Keep all sources; do not call binary foreground selection.** Every point-prompt mask is a candidate source region. The [multi-source path](https://github.com/mjkwon2021/SAFIRE/blob/ec2af6af8c789fb6359493a3e352f89c6fd8107f/networks/safire_predictor_multi.py#L229) groups prompt masks by average encoder feature, chooses highest predicted-quality mask per cluster, and softmaxes representative logits across clusters. This keeps all clusters; the binary path's smaller-region rule must not be used. For clustering, intersect each mask with valid512 **before** downsampling to the encoder's64 grid and computing its feature mean; skip empty feature supports, retain their raw candidates, and seed NumPy (upstream k-means randomly initializes). Treat clusters as unlabeled source IDs. Never identify “clean” using GT in deployment. First oracle screen can use the raw proposals without clustering, eliminating that extra failure mode.
+
+**Screen specification:** generate the same fixed prompt bank for every fixed-fold image; only afterward use GT to report clean-hole diagnostics. Report best single proposal IoU against `1-mask128`, recall at0.5/0.7, and oracle gain over baseline, separately for clean≤1%, clean1–5%, and watermark>50%. Evaluate a predeclared candidate set containing each proposal and its valid-region complement (a surrounding-source mask may delineate a hole). Match the grid exactly: native binary proposal `logit>0` →4×4 majority; for a complement, downsample the complemented512 mask separately because 8/16 ties make `down(~m)` differ from `~down(m)`. Also report continuous probability-averaged128 diagnostics separately. Do not create arbitrary GT-chosen unions of proposals. This is an **oracle geometry ceiling**, not deployable mIoU; any successful next step needs GT-free region selection/polarity.
+
+Minimal direct-predictor dependencies inspected: torch, torchvision, NumPy, Pillow, local SAM modules. Adding the official multi-source wrapper imports OpenCV, scikit-learn and local k-means. No Detectron2 runtime or monai is needed for the direct path. No local clone, weight download, or GPU execution was performed during this follow-up.

@@ -1,5 +1,7 @@
 # European AI Championship
 
+[Documentation index and work summary](task-1/experiments/DOCUMENTATION_INDEX.md) — research, experiment results, submission history and evidence through 2026-11-22.
+
 - [Task 1 — Localize Image Watermark](task-1/README.md)
 - [Task 2](task-2/README.md)
 - [Task 3](task-3/README.md)

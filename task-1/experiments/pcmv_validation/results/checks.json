@@ -1,0 +1,10 @@
+{
+  "exact_two_toggle_oracle_vs_bruteforce": {
+    "random_cases": 50,
+    "status": "passed",
+    "tolerance": 1e-12
+  },
+  "nonadditivity_counterexample": "reproduced",
+  "baseline_miou_reproduced": 0.5708832819549376,
+  "training_run": false
+}

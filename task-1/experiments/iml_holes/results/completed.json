@@ -1,0 +1,16 @@
+{
+  "step": 150,
+  "stop": "predeclared_no_gain_gate",
+  "seconds": 114.6113254899974,
+  "candidate": false,
+  "minority_guard": false,
+  "final_miou": 0.6413815361530222,
+  "delta": {
+    "mean": -0.01854247806526327,
+    "ci95": [
+      -0.026185182410859764,
+      -0.011328192254718065
+    ]
+  },
+  "test_inference": false
+}

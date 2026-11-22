@@ -1,0 +1,21 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3070",
+  "torch": "2.5.1+cu121",
+  "steps": 200,
+  "seed": 42,
+  "batch": 16,
+  "lr": 0.001,
+  "checkpoint_sha256": "6bb05904b7970ab56c648b38ce32164fc0751b2713aeb061cbbb0d204b07d1bd",
+  "code_sha256": "57d7607ff4d746f060993178f11a1bc661a00854ffd8661e30e9cbf826181528",
+  "base": "current MessageLocalizer synthetic400; all weights frozen",
+  "training": "real outer-train only, correction head; no synthetic replay; diagnostic, not replacement OOF recipe",
+  "threshold": 0.5,
+  "cache": "signed logits retained in float32; both scales interpolated to32; baseline logits128",
+  "selection": "fixed final step; no outer selection",
+  "variants": [
+    "baseline",
+    "scalar",
+    "bits",
+    "bits_wrong"
+  ]
+}

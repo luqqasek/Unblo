@@ -1,0 +1,27 @@
+{
+  "native_size": 256,
+  "rows": [
+    {
+      "image_name": "8d350a3ade55",
+      "max_logit_difference": 3.814697265625e-06,
+      "bit_agreement": 1.0
+    },
+    {
+      "image_name": "63ab2489dca0",
+      "max_logit_difference": 3.814697265625e-06,
+      "bit_agreement": 1.0
+    },
+    {
+      "image_name": "d854e128465a",
+      "max_logit_difference": 4.76837158203125e-06,
+      "bit_agreement": 1.0
+    },
+    {
+      "image_name": "330fb70f8303",
+      "max_logit_difference": 3.0249357223510742e-06,
+      "bit_agreement": 1.0
+    }
+  ],
+  "torch": "2.5.1+cu121",
+  "purpose": "Original official wrapper versus original dense extractor before loading finetuned state"
+}

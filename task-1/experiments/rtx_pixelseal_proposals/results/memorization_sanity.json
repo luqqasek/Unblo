@@ -1,0 +1,122 @@
+{
+  "before": [
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 0,
+      "kind": "clean",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 0,
+      "kind": "marked",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 1,
+      "kind": "clean",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 1,
+      "kind": "marked",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 2,
+      "kind": "clean",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 2,
+      "kind": "marked",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:358484",
+      "bucket": 0,
+      "kind": "clean",
+      "max_iou": 0,
+      "max_mark_score": 0
+    },
+    {
+      "source_id": "coco2017:358484",
+      "bucket": 0,
+      "kind": "marked",
+      "max_iou": 0,
+      "max_mark_score": 0
+    }
+  ],
+  "after": [
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 0,
+      "kind": "clean",
+      "max_iou": 0.9547228349960503,
+      "max_mark_score": 0.5141993165016174
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 0,
+      "kind": "marked",
+      "max_iou": 0.8669287478428166,
+      "max_mark_score": 0.9691906571388245
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 1,
+      "kind": "clean",
+      "max_iou": 0.9721255486350177,
+      "max_mark_score": 0.9892488718032837
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 1,
+      "kind": "marked",
+      "max_iou": 0.9689280735497994,
+      "max_mark_score": 0.9899294972419739
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 2,
+      "kind": "clean",
+      "max_iou": 0.9462072020246924,
+      "max_mark_score": 0.5141993165016174
+    },
+    {
+      "source_id": "coco2017:169612",
+      "bucket": 2,
+      "kind": "marked",
+      "max_iou": 0.9564733809941715,
+      "max_mark_score": 0.7421160936355591
+    },
+    {
+      "source_id": "coco2017:358484",
+      "bucket": 0,
+      "kind": "clean",
+      "max_iou": 0.9324439065123435,
+      "max_mark_score": 0.8931550979614258
+    },
+    {
+      "source_id": "coco2017:358484",
+      "bucket": 0,
+      "kind": "marked",
+      "max_iou": 0.936736594640015,
+      "max_mark_score": 0.8945167660713196
+    }
+  ],
+  "steps": 300,
+  "lr": 0.005,
+  "seconds": 39.85999999998603,
+  "scope": "4 synthetic training examples plus exact clean twins; training memorization only; no real/dev evaluation; checkpoint not saved or promoted"
+}

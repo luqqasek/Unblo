@@ -1,0 +1,13 @@
+{
+  "family": "trustmark",
+  "n": 4370,
+  "real": 170,
+  "synthetic_train": 4000,
+  "synthetic_dev": 200,
+  "historical_rgb_mismatches": 3043,
+  "features": "recomputed on exact current pixels, original frozen decoders",
+  "seconds": 716.344000000041,
+  "source_manifest_sha256": "185c382357304d11fd055178be01fb605a1f585931e87a9217a7d2a6c88a77bb",
+  "gpu": "NVIDIA GeForce RTX 3070",
+  "peak_gpu_bytes": 396571648
+}

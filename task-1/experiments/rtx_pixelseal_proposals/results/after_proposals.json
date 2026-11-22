@@ -1,0 +1,1662 @@
+{
+  "synthetic_summary": {
+    "0": {
+      "n": 32,
+      "proposal_recall_iou50": 0.0,
+      "mean_best_iou": 7.763023329918322e-05,
+      "clean_twin_positive_rate": 0.0
+    },
+    "1": {
+      "n": 32,
+      "proposal_recall_iou50": 0.03125,
+      "mean_best_iou": 0.03409327144636685,
+      "clean_twin_positive_rate": 0.0
+    },
+    "2": {
+      "n": 32,
+      "proposal_recall_iou50": 0.1875,
+      "mean_best_iou": 0.15521929853540734,
+      "clean_twin_positive_rate": 0.125
+    }
+  },
+  "synthetic_rows": [
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:198752",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.8316824985983808,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:208773",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.8342455517002555,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337139",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466772",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:122382",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:3325",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:209288",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.8913882476663524,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:334774",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.8918644421081072,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:112201",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:319197",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:131190",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:2998",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0.01688577377061277,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.016885723215606354,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:182637",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0.040678683157211785,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.04068415916770917,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.8195545083878598,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:337638",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.8119661275584554,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0.23416001023703975,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.23436774042672562,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:22545",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0010934171551826202,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0010934086506794185,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.5438486089116614,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:90540",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.5424910428825678,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0013907606708038756,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0013907588148944444,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.11342188178355915,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:390342",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.11345674678043957,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:473415",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:455227",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:574145",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:126967",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:233017",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.2724023702506142,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:523403",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:343867",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:49268",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.8086959105303853,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:466014",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.8420820855772945,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:242625",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:508568",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0.0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.03208587165309128,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:271977",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.03221057237613081,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0.8966056252048203,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:40359",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0.8987009841497843,
+      "wm_prediction": true
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0.527144920828216,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0.5266446932230838,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:222983",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 0,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 0,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 1,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 1,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 2,
+      "kind": "clean",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    },
+    {
+      "source_id": "coco2017:220922",
+      "bucket": 2,
+      "kind": "marked",
+      "best_box_iou": 0,
+      "wm_prediction": false
+    }
+  ],
+  "real": [
+    {
+      "image_name": "d854e128465a",
+      "proposals": [
+        {
+          "box": [
+            2.2019805908203125,
+            467.871337890625,
+            209.35104370117188,
+            503.40032958984375
+          ],
+          "score": 0.09392556548118591,
+          "label": 1
+        }
+      ]
+    },
+    {
+      "image_name": "330fb70f8303",
+      "proposals": []
+    },
+    {
+      "image_name": "4bd2be05e610",
+      "proposals": []
+    },
+    {
+      "image_name": "6d05e72e601c",
+      "proposals": []
+    },
+    {
+      "image_name": "ea6792c38efa",
+      "proposals": [
+        {
+          "box": [
+            331.40185546875,
+            476.5345764160156,
+            347.09783935546875,
+            511.8993835449219
+          ],
+          "score": 0.05376014485955238,
+          "label": 1
+        },
+        {
+          "box": [
+            339.6358337402344,
+            476.1621398925781,
+            355.1101989746094,
+            512.0
+          ],
+          "score": 0.053253136575222015,
+          "label": 1
+        }
+      ]
+    },
+    {
+      "image_name": "6a87cd543012",
+      "proposals": []
+    },
+    {
+      "image_name": "2e6b55c0036f",
+      "proposals": []
+    },
+    {
+      "image_name": "bab81c5c46bc",
+      "proposals": []
+    },
+    {
+      "image_name": "468f425e2cb4",
+      "proposals": []
+    },
+    {
+      "image_name": "d53fa7a68289",
+      "proposals": []
+    },
+    {
+      "image_name": "e7ece8e6125a",
+      "proposals": []
+    },
+    {
+      "image_name": "e8485cda4a0b",
+      "proposals": []
+    },
+    {
+      "image_name": "9aec69d421d3",
+      "proposals": []
+    },
+    {
+      "image_name": "ac150fa24f69",
+      "proposals": []
+    },
+    {
+      "image_name": "2610e4f2a637",
+      "proposals": []
+    },
+    {
+      "image_name": "07c5ceca91f8",
+      "proposals": []
+    },
+    {
+      "image_name": "572b61707c4c",
+      "proposals": []
+    },
+    {
+      "image_name": "f9e9a9d8fbaa",
+      "proposals": []
+    },
+    {
+      "image_name": "7cfa9111f9fc",
+      "proposals": []
+    },
+    {
+      "image_name": "f70cbefa2f77",
+      "proposals": []
+    },
+    {
+      "image_name": "ffa7099ac789",
+      "proposals": []
+    },
+    {
+      "image_name": "215d44e8678c",
+      "proposals": []
+    },
+    {
+      "image_name": "ce759ae7b8e4",
+      "proposals": []
+    },
+    {
+      "image_name": "7168c732ee2c",
+      "proposals": []
+    },
+    {
+      "image_name": "f1a940082acd",
+      "proposals": []
+    },
+    {
+      "image_name": "e5e5e32f3575",
+      "proposals": []
+    },
+    {
+      "image_name": "cfb8cf894a96",
+      "proposals": []
+    },
+    {
+      "image_name": "2260d5ffabd1",
+      "proposals": []
+    },
+    {
+      "image_name": "c4403dadabe9",
+      "proposals": []
+    },
+    {
+      "image_name": "ac82720f9631",
+      "proposals": []
+    },
+    {
+      "image_name": "f165a98d6f36",
+      "proposals": [
+        {
+          "box": [
+            35.38932418823242,
+            488.4187316894531,
+            113.96420288085938,
+            502.9707946777344
+          ],
+          "score": 0.05742194131016731,
+          "label": 1
+        }
+      ]
+    },
+    {
+      "image_name": "4b7baf414f18",
+      "proposals": []
+    },
+    {
+      "image_name": "8aff36a43581",
+      "proposals": []
+    },
+    {
+      "image_name": "9255874fb289",
+      "proposals": []
+    },
+    {
+      "image_name": "435a049a735c",
+      "proposals": []
+    },
+    {
+      "image_name": "64fa63c58b35",
+      "proposals": []
+    },
+    {
+      "image_name": "d46f9571398e",
+      "proposals": []
+    },
+    {
+      "image_name": "6e8ec5b44fa9",
+      "proposals": []
+    },
+    {
+      "image_name": "0b2fb5e65207",
+      "proposals": []
+    },
+    {
+      "image_name": "9b2d0936e9e3",
+      "proposals": []
+    },
+    {
+      "image_name": "ebfc9dc16dd6",
+      "proposals": []
+    },
+    {
+      "image_name": "d0e2697396ba",
+      "proposals": []
+    },
+    {
+      "image_name": "bf8ac504f2c3",
+      "proposals": []
+    },
+    {
+      "image_name": "244f74a38163",
+      "proposals": []
+    },
+    {
+      "image_name": "921536989578",
+      "proposals": []
+    },
+    {
+      "image_name": "8e7c82a556c8",
+      "proposals": []
+    },
+    {
+      "image_name": "a6eb9718a7f3",
+      "proposals": []
+    },
+    {
+      "image_name": "2360e3e4a53f",
+      "proposals": []
+    },
+    {
+      "image_name": "7c955f9c7927",
+      "proposals": []
+    },
+    {
+      "image_name": "97adb8e5e9c6",
+      "proposals": [
+        {
+          "box": [
+            75.15376281738281,
+            488.2316589355469,
+            150.74935913085938,
+            502.9010925292969
+          ],
+          "score": 0.09825769811868668,
+          "label": 1
+        },
+        {
+          "box": [
+            19.669239044189453,
+            488.16180419921875,
+            97.70945739746094,
+            502.5772705078125
+          ],
+          "score": 0.05905942991375923,
+          "label": 1
+        }
+      ]
+    },
+    {
+      "image_name": "8985ffba776e",
+      "proposals": []
+    },
+    {
+      "image_name": "ffb70b68ad69",
+      "proposals": []
+    },
+    {
+      "image_name": "28e8c53f7a62",
+      "proposals": []
+    },
+    {
+      "image_name": "6a6e6b368da2",
+      "proposals": []
+    },
+    {
+      "image_name": "1bb324d410cf",
+      "proposals": []
+    },
+    {
+      "image_name": "1dc32cbb2e04",
+      "proposals": []
+    },
+    {
+      "image_name": "124efa616612",
+      "proposals": []
+    }
+  ]
+}

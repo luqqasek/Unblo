@@ -1,0 +1,35 @@
+{
+  "builder_git_revision": "9e79fc36478c5c8581e32ee594fa5b4521ac96a8",
+  "polish": "/Users/luqasek/Desktop/Python projects/European-AI-Hackathon/task-1/dashboard/dist/index.html",
+  "english": "/Users/luqasek/Desktop/Python projects/European-AI-Hackathon/task-1/dashboard/dist/index-en.html",
+  "audit_rows": [
+    {
+      "experiment": "best_model_error_audit",
+      "method": "pixelseal",
+      "variant": "Audit #2675",
+      "protocol": "Screening \u00b7 57 images",
+      "miou": 0.5708832819549376,
+      "detail": "Recomputed saved predictions. No new model or independent validation.",
+      "folds": null
+    },
+    {
+      "experiment": "best_model_error_audit",
+      "method": "trustmark",
+      "variant": "Audit #2675",
+      "protocol": "Reused OOF + frozen scan \u00b7 170 images",
+      "miou": 0.6570460378911762,
+      "detail": "Recomputed saved predictions. No new model or independent validation.",
+      "folds": null
+    },
+    {
+      "experiment": "best_model_error_audit",
+      "method": "stegastamp",
+      "variant": "Audit #2675",
+      "protocol": "Synthetic-only \u00b7 170 real images",
+      "miou": 0.6949617064018395,
+      "detail": "Recomputed saved predictions. No new model or independent validation.",
+      "folds": null
+    }
+  ],
+  "report_exists": true
+}

@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "bits": 256,
+      "correct": 148,
+      "accuracy": 0.578125,
+      "binary_alignment_z": 2.5,
+      "exact_fair_coin_one_sided_p": 0.007314174448760227,
+      "fwer_80_independent_probes": 0.4441653014624456,
+      "fwer_320_independent_probes": 0.904548530639546
+    },
+    {
+      "bits": 256,
+      "correct": 149,
+      "accuracy": 0.58203125,
+      "binary_alignment_z": 2.625,
+      "exact_fair_coin_one_sided_p": 0.00512640372676482,
+      "fwer_80_independent_probes": 0.3371238477092101,
+      "fwer_320_independent_probes": 0.8069234276462142
+    },
+    {
+      "bits": 256,
+      "correct": 174,
+      "accuracy": 0.6796875,
+      "binary_alignment_z": 5.75,
+      "exact_fair_coin_one_sided_p": 4.50539657230801e-09,
+      "fwer_80_independent_probes": 3.604316616410778e-07,
+      "fwer_320_independent_probes": 1.441725867098602e-06
+    },
+    {
+      "bits": 100,
+      "correct": 58,
+      "accuracy": 0.58,
+      "binary_alignment_z": 1.6,
+      "exact_fair_coin_one_sided_p": 0.06660530960360667,
+      "fwer_80_independent_probes": 0.9959707326355944,
+      "fwer_320_independent_probes": 0.999999999736425
+    },
+    {
+      "bits": 100,
+      "correct": 68,
+      "accuracy": 0.68,
+      "binary_alignment_z": 3.6,
+      "exact_fair_coin_one_sided_p": 0.00020438858371340761,
+      "fwer_80_independent_probes": 0.01621977741950263,
+      "fwer_320_independent_probes": 0.06331762186177571
+    }
+  ],
+  "limits": "Independent-probe FWER is an illustration, not a calibration for correlated/adaptive proposals. Fixed-message permutations are a different null from independent random signs. Real search needs full-pipeline empirical null.",
+  "fixed_balanced_message_constant_v_example": {
+    "bits": 256,
+    "v": "all ones",
+    "signed_message": "128 plus ones,128 minus ones",
+    "permutation_statistic_variance": 0,
+    "independent_sign_statistic_variance": 1
+  }
+}

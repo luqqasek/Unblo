@@ -1,0 +1,307 @@
+{
+  "rows": [
+    {
+      "source": "val2017/000000000139.jpg",
+      "side": 64,
+      "original_ba": 0.96,
+      "synthetic400_ba": 0.83
+    },
+    {
+      "source": "val2017/000000000139.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.9
+    },
+    {
+      "source": "val2017/000000000139.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.93
+    },
+    {
+      "source": "val2017/000000000285.jpg",
+      "side": 64,
+      "original_ba": 0.88,
+      "synthetic400_ba": 0.84
+    },
+    {
+      "source": "val2017/000000000285.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.93
+    },
+    {
+      "source": "val2017/000000000285.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.94
+    },
+    {
+      "source": "val2017/000000000632.jpg",
+      "side": 64,
+      "original_ba": 0.72,
+      "synthetic400_ba": 0.79
+    },
+    {
+      "source": "val2017/000000000632.jpg",
+      "side": 128,
+      "original_ba": 0.96,
+      "synthetic400_ba": 0.84
+    },
+    {
+      "source": "val2017/000000000632.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.91
+    },
+    {
+      "source": "val2017/000000000724.jpg",
+      "side": 64,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.91
+    },
+    {
+      "source": "val2017/000000000724.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.95
+    },
+    {
+      "source": "val2017/000000000724.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.94
+    },
+    {
+      "source": "val2017/000000000776.jpg",
+      "side": 64,
+      "original_ba": 0.93,
+      "synthetic400_ba": 0.82
+    },
+    {
+      "source": "val2017/000000000776.jpg",
+      "side": 128,
+      "original_ba": 0.99,
+      "synthetic400_ba": 0.84
+    },
+    {
+      "source": "val2017/000000000776.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.95
+    },
+    {
+      "source": "val2017/000000000785.jpg",
+      "side": 64,
+      "original_ba": 0.97,
+      "synthetic400_ba": 0.86
+    },
+    {
+      "source": "val2017/000000000785.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000000785.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000000802.jpg",
+      "side": 64,
+      "original_ba": 0.85,
+      "synthetic400_ba": 0.76
+    },
+    {
+      "source": "val2017/000000000802.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000000802.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.93
+    },
+    {
+      "source": "val2017/000000000872.jpg",
+      "side": 64,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.89
+    },
+    {
+      "source": "val2017/000000000872.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.94
+    },
+    {
+      "source": "val2017/000000000872.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.95
+    },
+    {
+      "source": "val2017/000000000885.jpg",
+      "side": 64,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000000885.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.98
+    },
+    {
+      "source": "val2017/000000000885.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.97
+    },
+    {
+      "source": "val2017/000000001000.jpg",
+      "side": 64,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.95
+    },
+    {
+      "source": "val2017/000000001000.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.93
+    },
+    {
+      "source": "val2017/000000001000.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000001268.jpg",
+      "side": 64,
+      "original_ba": 0.81,
+      "synthetic400_ba": 0.79
+    },
+    {
+      "source": "val2017/000000001268.jpg",
+      "side": 128,
+      "original_ba": 0.98,
+      "synthetic400_ba": 0.86
+    },
+    {
+      "source": "val2017/000000001268.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000001296.jpg",
+      "side": 64,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000001296.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.95
+    },
+    {
+      "source": "val2017/000000001296.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.91
+    },
+    {
+      "source": "val2017/000000001353.jpg",
+      "side": 64,
+      "original_ba": 0.99,
+      "synthetic400_ba": 0.9
+    },
+    {
+      "source": "val2017/000000001353.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.89
+    },
+    {
+      "source": "val2017/000000001353.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.9
+    },
+    {
+      "source": "val2017/000000001425.jpg",
+      "side": 64,
+      "original_ba": 0.99,
+      "synthetic400_ba": 0.85
+    },
+    {
+      "source": "val2017/000000001425.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.86
+    },
+    {
+      "source": "val2017/000000001425.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.83
+    },
+    {
+      "source": "val2017/000000001490.jpg",
+      "side": 64,
+      "original_ba": 0.99,
+      "synthetic400_ba": 0.89
+    },
+    {
+      "source": "val2017/000000001490.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000001490.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.91
+    },
+    {
+      "source": "val2017/000000001503.jpg",
+      "side": 64,
+      "original_ba": 0.99,
+      "synthetic400_ba": 0.92
+    },
+    {
+      "source": "val2017/000000001503.jpg",
+      "side": 128,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.95
+    },
+    {
+      "source": "val2017/000000001503.jpg",
+      "side": 512,
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.88
+    }
+  ],
+  "summary": {
+    "64": {
+      "original_ba": 0.9425,
+      "synthetic400_ba": 0.865
+    },
+    "128": {
+      "original_ba": 0.995625,
+      "synthetic400_ba": 0.91125
+    },
+    "512": {
+      "original_ba": 1.0,
+      "synthetic400_ba": 0.9193749999999999
+    }
+  },
+  "note": "16 existing COCO val covers; exact official uint8 embedder; native-scale extraction; synthetic400 checkpoint, not adapted OOF weights"
+}

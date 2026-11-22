@@ -1,5 +1,7 @@
 # Eksperymenty zadania 1
 
+[Pełny indeks dokumentacji i wykonanych prac](DOCUMENTATION_INDEX.md).
+
 ## Aktualny wynik — zgłoszenie #3054
 
 **Najlepszy potwierdzony publiczny mIoU: 0,6677**, wcześniej #3005: 0,6597 oraz #2675: 0,6440.
@@ -141,5 +143,7 @@ FP32 first projection and deeper BF16. Target is clean regions; GT-free full
 message agreement plus baseline predicted area gates a fixed equal blend.
 All171 validation images receive newly computed original-decoder scores; prior
 GT-filtered oracle rows are NOT used for routing. Official weights strict-load
-and SHA256 checks passed. Training validation is not yet available; do not
-claim a gain. One node,4 A100, fixed300-update endpoint with150-update no-gain stop.
+and SHA256 checks passed. The completed screen stopped at the predefined150-update no-gain gate:
+mean mIoU0.659924→0.641382 on171 fixed-fold images. No test inference or submission.
+See the [completed report](iml_holes/REPORT.md). One node,4 A100; the planned300-update
+endpoint was not reached.
