@@ -204,7 +204,7 @@ General unreserved jobs are user-authorized outside the reserved one-node limit.
 Scheduler actually allocates whole4GPU nodes; pack workers when possible.
 Do not log/store API keys. Old checkpoints and accepted outputs are preserved.
 
-## Follow-up: continuation fails; shared clean-hole model under test
+## Follow-up: continuation and shared clean-hole screen rejected
 
 PS/TM450 continuation completed on the same57-image fold: PS fixed0.570883→0.568250,
 PS online0.565243→0.564761, TM fixed0.640957→0.631045, TM online0.646204→0.645036.
@@ -219,5 +219,21 @@ FP32 first projection and deeper BF16. Target is clean regions; GT-free full
 message agreement plus baseline predicted area gates a fixed equal blend.
 All171 validation images receive newly computed original-decoder scores; prior
 GT-filtered oracle rows are NOT used for routing. Official weights strict-load
-and SHA256 checks passed. Training validation is not yet available; do not
-claim a gain. One node,4 A100, fixed300-update endpoint with150-update no-gain stop.
+and SHA256 checks passed. The150-update early-stop gate rejected this model: mean fixed-fold mIoU
+0.659924→0.641382 (delta−0.018542); all three families regressed. No test
+predictions or submission were made. See [iml_holes/REPORT.md](iml_holes/REPORT.md).
+
+Current work: [PCMV](pcmv/PROTOCOL.md), one PixelSeal scorer fit/evaluation.
+First verify/deploy stronger TriForensic1561 global/carrier branch; preserve
+TrustMark/StegaStamp from #3054. SS1000 continuation was canceled while pending
+on explicit user steering, with zero new updates. PCMV now uses GPUs0–1 only;
+GPUs2–3 are for the user's separate experiment in the same allocation.
+
+## New best accepted: #3188 (2026-11-22)
+
+Public mIoU **0.6736**, +0.0059 over #3054. Only PixelSeal changed to EMA1561
+global/carrier branch; TrustMark and StegaStamp masks remain byte-identical.
+Same57-image PS validation0.570883→0.581724. No all170 PS refit; trained113 real
+images plus synthetic data. Small FG<=5% remains unresolved; see
+[pcmv/REPORT.md](pcmv/REPORT.md) for exact buckets, artifact hash and receipt.
+PCMV scorer evaluation is still running; no PCMV gain is claimed yet.

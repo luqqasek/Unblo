@@ -43,8 +43,17 @@ class IMLHoles(nn.Module):
             for block in enc.blocks:
                 x=checkpoint(block,x,use_reentrant=False) if self.training and self.checkpointing else block(x)
             features={enc._out_features[0]:x.permute(0,3,1,2)}
-            pyramid=self.net.featurePyramid_net(features)
-            logits=self.net.predict_head(list(pyramid.values())).float()
+            # Upstream keeps Python-list aliases to registered simfp modules;
+            # DataParallel shallow-copies that list and would call GPU0 weights.
+            # Resolve registered modules on each replica, preserving exact order/ops.
+            fpn=self.net.featurePyramid_net
+            levels=[getattr(fpn,f'simfp_{level}')(features['last_feat']) for level in (2,3,4,5)]
+            if fpn.top_block is not None:
+                top=features.get(fpn.top_block.in_feature)
+                if top is None:top=levels[fpn._out_features.index(fpn.top_block.in_feature)]
+                levels.extend(fpn.top_block(top))
+            assert len(levels)==len(fpn._out_features)
+            logits=self.net.predict_head(levels).float()
         if padded:
             # Match upstream1024 probability path, crop only valid native512 then pool.
             logits=F.interpolate(logits,size=(1024,1024),mode='bilinear',align_corners=False)

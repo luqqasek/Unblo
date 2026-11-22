@@ -9,10 +9,12 @@ historical comparability. Test images never select the rule.
 
 ## One node, two GPUs
 
-Job15905215 reserves one4-A10040GB node; our processes are restricted to physical
+Job15905215 completed the first base audit in85seconds, using4GPUs, before
+the two-GPU restriction reached its running process. It generated no test
+predictions because the earlier minority guard rejected the checkpoint.
+Job15905266 reserves one4-A10040GB node; our processes are restricted to physical
 devices0/1. Devices2/3 are reserved for the user's separate experiment in this
-same allocation. GPU job runtime expanded from10 to30minutes while pending.
-Base verification/test inference runs first, then replaces its process with
+same allocation. Runtime30minutes. Cached-base test inference runs first, then replaces its process with
 the two-worker PCMV feature stage, avoiding another queue wait. All image caches
 are resumable. No additional node is submitted concurrently.
 
@@ -64,11 +66,11 @@ the original broad PCMV proposal is implemented. Expand only after evidence.
 Cluster, task-1 cwd, PYTHONPATH=.:src:
 
 ```sh
-.venv-native/bin/python -m experiments.pcmv.base_candidate --root /p/project1/training2666/pszenny1/native-localizer
+.venv-native/bin/python -m experiments.pcmv.infer_cached --root /p/project1/training2666/pszenny1/native-localizer
 ```
 
-This runs the base check then the screen. Use --base-only for the base stage
-alone. A completed base is reused. Completed feature shards resume; a completed
+This reuses the completed base check, predicts test, then runs the screen. Use
+--infer-only for predictions alone. A completed base is reused. Completed feature shards resume; a completed
 scorer experiment refuses silent retraining. Checkpoint, data and model-source
 dependencies remain in the archived experiments; do not regenerate embeddings
 with different versions/strengths.

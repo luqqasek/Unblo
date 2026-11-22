@@ -1,0 +1,34 @@
+{
+  "base_submission": 3054,
+  "base_sha256": "e8abdf5626b4dd5af067cd8266adeb95a01f1fa19ecf03c9e5df82090e887714",
+  "sha256": "d8bb4c93e7e5a45b32beae781189b47af7401c6612c3336611d4d14b13d98f5f",
+  "bytes": 16734769,
+  "shape": [
+    1020,
+    128,
+    128
+  ],
+  "dtype": "torch.uint8",
+  "unique_names": true,
+  "binary": true,
+  "changed_images": {
+    "pixelseal": 294,
+    "trustmark": 0,
+    "stegastamp": 0
+  },
+  "checkpoint_sha256": "5105fc789582062ca4d9a4f3a3269ec4ea37612558476ddb087a7756f8d223e9",
+  "test_GT_used": false,
+  "real_training_images": 113,
+  "all170_refit": false,
+  "selection": {
+    "selected": true,
+    "reason": "User prioritized strongest overall checkpoint and immediate predictions. Overall gain>0.003; minority regression disclosed. Earlier completed job used prior minority veto and produced no test artifact.",
+    "previous_selection": false,
+    "delta": 0.010841180351744943,
+    "minority_guard": false,
+    "gpu_devices": [
+      0,
+      1
+    ]
+  }
+}
