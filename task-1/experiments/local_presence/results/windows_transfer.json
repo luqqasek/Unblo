@@ -1,0 +1,8 @@
+{
+  "host": "100.82.56.77",
+  "destination": "L:/3 - Projekty pythonowe/European-AI-Hackathon/task-1/experiments/local_presence",
+  "archive_bytes": 86120044,
+  "sha256": "8e50c829d786835669daae2b69b6c9a0f224d8ed779d64d69d9f96f023c2bac5",
+  "verified": true,
+  "stdout": "Built L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\dashboard\\dist\\index.html: 407 measurements, 99 images, 9 submissions\n{\"local_presence_rows\": 22, \"both_languages_verified\": true, \"submission_2409_present\": true}\nTRANSFER_SHA256_VERIFIED\n"
+}

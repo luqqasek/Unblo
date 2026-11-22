@@ -9,6 +9,29 @@ Start with [small-region report](small_zoom/REPORT.md),
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.
 
+## Subsequent local-presence screens (production unchanged)
+
+Read [local_presence/REPORT.md](local_presence/REPORT.md) before proposing new work.
+The bounded empty-mask TrustMark crop scan recovers two more ≤1% images without
+GT proposals: reused OOF 0.652655→0.657046; tiny FG IoU0.080586→0.245392,
+misses8/9→6/9. Other168 masks unchanged. Paired-bootstrap delta CI95[0,0.01107].
+The gain is concentrated in two development images; no new submission was made.
+
+PixelSeal paired local pretraining gives tiny-fold AUC0.74975 vs base0.52268,
+but naive integration loses0.03602mIoU. Spatial correction reduces false positives:
+fold1 0.557485→0.560130 (+0.002645), only1/7 tiny recoveries,1–5% FG IoU still0.
+Do not compare this57-image screen directly with production170-image0.585655.
+Further500-update local continuation + matched spatial correction fails to beat it;
+real-patch adaptation hurts TM by0.01539. Clean-hole veto also regresses.
+
+Three sequential4GPU/one-node jobs completed in14m17s allocated node time.
+New checkpoints under local-presence-runs, exact encodings under local-presence-data;
+SHA256/provenance and negative endpoints are saved. Regenerable caches6.44GB removed.
+Next research should distinguish presence ranking from spatial extent/calibration,
+and improve tiny-box proposals without expanding expensive exhaustive search blindly.
+Use the exact existing TM AR≤2/raw100bit/native245 wrapper. No90%-gate requirement
+for irregular remnants; no claim of physical undetectability from negative pilots.
+
 ## Current evidence and production
 
 | Family | Development validation | Protocol / model |

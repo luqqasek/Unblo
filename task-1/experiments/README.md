@@ -18,6 +18,20 @@ User dopuszcza pojedynczy ustalony fold jako szybką estymację kolejnej próby;
 nie nazywaj jej pełnym OOF. Duże poprawy walidacyjne mogą prowadzić do nowych
 zgłoszeń, bez strojenia hiperparametrów na leaderboardzie.
 
+## Nowe próby małych watermarków — local_presence
+
+[Raport i pełna tabela](local_presence/REPORT.md). Trzy kolejne alokacje jednego
+node’a z czterema A100, łącznie **14 min 17 s** pracy node’a.
+- TrustMark: skan cropów tylko dla pustych predykcji, bez GT, poprawił istniejące
+  OOF **0,65265 → 0,65705**. FG IoU ≤1% **0,08059 → 0,24539**, trafienia **1/9 → 3/9**.
+  Pozostałe 168 masek nie zmieniły się. To dwa trafienia, nie dowód dużego zysku testowego.
+- PixelSeal: najlepszy nowy screen na jednym foldzie **0,55748 → 0,56013**.
+  Trafiony tylko 1/7 najmniejszych znaków; FG IoU 1–5% nadal 0. Przedział bootstrap
+  zmiany mIoU obejmuje zero. Nie nazywaj tego pełnym OOF ani potwierdzoną generalizacją.
+- Pierwsze głowy 1×1/clean-hole i dalsza adaptacja na realnych patchach nie pomogły;
+  regresje zapisano w raporcie. Czyste dziury pozostają nierozwiązane.
+- **Bez nowego submission. #2409/public 0,6369 pozostaje najlepszym zgłoszeniem.**
+
 ## Organizacja eksperymentów
 
 [`pretrained_forensics`](pretrained_forensics/REPORT.md): TruFor, Mesorch i DetectiveSAM,

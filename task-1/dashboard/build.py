@@ -297,6 +297,9 @@ def build():
     # Small zoom measured adapter
     from small_zoom_adapter import add_rows as add_small_zoom_rows
     add_small_zoom_rows(EXPERIMENTS, DIST, row)
+    # Local presence measured adapter
+    from local_presence_adapter import add_rows as add_local_presence_rows
+    add_local_presence_rows(EXPERIMENTS, DIST, row)
     titles={'synthetic_pretrain_2k/results/full_train/upload_receipt.json':'StegaStamp synthetic pretrain + real finetune; previous PixelSeal / TrustMark',
             'decoder_evidence/results/full_train/upload_receipt.json':'StegaStamp message correction + previous PixelSeal / TrustMark',
             'stegastamp_stable_selection/results/full_train/upload_receipt.json':'StegaStamp stable selection + previous PixelSeal / TrustMark',
