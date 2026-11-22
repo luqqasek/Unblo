@@ -1,97 +1,383 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Unblo · European AI Championship</title>
 <style>
-:root{--ink:#172328;--muted:#566469;--paper:#f5f4ee;--accent:#087e82}*{box-sizing:border-box}body{margin:0;background:#222b2e;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
-.slide{width:1600px;height:900px;padding:65px 90px;position:relative;background:var(--paper);overflow:hidden;display:none;transform-origin:top left}.slide.active{display:block}
-.top{display:flex;justify-content:space-between;align-items:center;font-size:21px;letter-spacing:1px;color:var(--muted);margin-bottom:42px}.brand{font-weight:800;font-size:29px;color:var(--ink);letter-spacing:-1px}
-h1{font-size:62px;line-height:1.06;letter-spacing:-2.2px;max-width:1250px;margin:0 0 26px;font-weight:700}h2{font-size:32px;margin:0 0 16px;letter-spacing:-.7px}p{font-size:28px;line-height:1.4;margin:0 0 24px}.lead{max-width:1150px;color:var(--muted);font-size:29px}.foot{position:absolute;bottom:34px;left:90px;right:90px;display:flex;justify-content:space-between;color:var(--muted);font-size:17px;line-height:1.3}.accent{color:var(--accent)}.big{font-size:146px;line-height:1;letter-spacing:-8px;font-weight:700}.metric-label{font-size:27px;margin-top:13px}.split{display:grid;grid-template-columns:1fr 1fr;gap:85px;margin-top:48px}.rule{border-top:2px solid #c9ceca;padding:25px 0}.rule p{font-size:25px;margin:0;max-width:1100px}.rule h2{font-size:29px}.num{font-size:25px;color:var(--accent);display:inline-block;width:55px}.light{color:var(--muted)}.small{font-size:22px;line-height:1.45}.dark{background:#12282c;color:#f5f4ee;--ink:#f5f4ee;--muted:#b1c5c5;--accent:#7ce4ce}.t2{--accent:#6651ad}.t3{--accent:#a54d31}.dark.t2{--accent:#c5b3ff}.dark.t3{--accent:#ffb08a}.dark .rule{border-color:#40565a}.gallery{display:flex;gap:64px;margin-top:38px}.frame{width:340px}.crop{width:340px;height:340px;position:relative;overflow:hidden;background:white}.crop img{position:absolute;width:2040px;max-width:none;height:auto;top:-34.5px}.frame p{font-size:24px;margin-top:15px}.caption{font-size:21px;color:var(--muted)}
-.bars{margin-top:34px;width:100%}.barrow{display:grid;grid-template-columns:230px 1fr 105px;align-items:center;gap:20px;margin:23px 0;font-size:23px}.track{height:34px;background:#dfe3dd}.bar{height:100%;background:var(--accent)}.bar.old{opacity:.45}.charttitle{font-size:23px;margin-bottom:18px}.result{margin-top:50px}.stack{margin-top:40px}.stack .rule{display:flex;gap:20px;align-items:baseline}.stack .rule h2{width:300px;flex-shrink:0}.stack .rule p{max-width:940px}.equation{font-size:59px;letter-spacing:-1.5px;line-height:1.4;margin:35px 0 25px}.table{width:100%;border-collapse:collapse;margin-top:36px;font-size:25px}.table td,.table th{text-align:left;border-bottom:1px solid #c9ceca;padding:23px 10px}.table th{font-size:21px;color:var(--muted);font-weight:400}.tagline{font-size:36px;line-height:1.25;max-width:1050px;margin-top:35px}.thinline{border-top:1px solid #40565a;margin:35px 0}.callout{font-size:24px;color:var(--muted);max-width:1150px;margin-top:30px}.numbers{display:flex;gap:95px;margin-top:38px}.numbers strong{font-size:57px;display:block;letter-spacing:-2px;margin-bottom:8px}.numbers span{font-size:23px;color:var(--muted)}
-@page{size:1600px 900px;margin:0}@media print{body{background:white}.slide,.slide.active{display:block!important;transform:none!important;break-after:page;page-break-after:always}.slide:last-child{break-after:auto}body{height:auto!important}}
-</style></head><body>
-<section class="slide active" data-task="1">
- <div class="top"><span class="brand">Unblo</span><span>01 / WATERMARK LOCALIZATION</span></div>
- <h1>Where does the watermark survive?</h1>
- <p class="lead">A watermark can cover most of an image and still contain small clean holes.<br>We predict both regions on a 128 × 128 grid.</p>
- <div class="gallery">
-  <div class="frame"><div class="crop"><img src="assets/localization-example.png" style="left:0" alt="Validation input photograph of people with umbrellas"></div><p>Input image</p></div>
-  <div class="frame"><div class="crop"><img src="assets/localization-example.png" style="left:-340px" alt="Ground truth watermarked and clean regions"></div><p>Ground truth</p></div>
-  <div class="frame"><div class="crop"><img src="assets/localization-example.png" style="left:-1020px" alt="Selected StegaStamp prediction"></div><p>Earlier model prediction</p></div>
+/* Inter (SIL OFL 1.1) is bundled so the deck renders identically offline. */
+@font-face{font-family:"Inter";src:url("assets/fonts/inter-latin-opsz-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:block}
+
+/* ---------- Tokens: one palette, one accent per task ---------- */
+.slide{--paper:#f5f4ee;--ink:#172328;--muted:#566469;--rule:#ced3ce;--track:#e1e5df;--accent:#06767a}
+.slide.t2{--accent:#6651ad}
+.slide.t3{--accent:#a54d31}
+.slide.dark{--paper:#12282c;--ink:#f5f4ee;--muted:#b1c5c5;--rule:#3b5257;--track:#28434a;--accent:#7ce4ce}
+.slide.dark.t2{--accent:#c5b3ff}
+.slide.dark.t3{--accent:#ffb08a}
+
+/* ---------- Stage ---------- */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:#0b1719;overflow:hidden;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.slide{width:1600px;height:900px;padding:56px 96px 44px;position:absolute;left:50%;top:50%;margin:-450px 0 0 -800px;background:var(--paper);color:var(--ink);overflow:hidden;display:none;flex-direction:column;transform-origin:center}
+.slide.active{display:flex}
+
+/* ---------- Frame: same header, headline position and footer on every slide ---------- */
+.top{flex:none;display:flex;justify-content:space-between;align-items:baseline}
+.brand{font-size:26px;font-weight:750;letter-spacing:-.02em}
+.task{margin-left:22px;padding-left:22px;border-left:2px solid var(--rule);font-size:20px;font-weight:550;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.task b{margin-right:12px;font-weight:700;color:var(--accent)}
+.steps{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-size:20px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.steps li{padding-bottom:7px;border-bottom:3px solid transparent;opacity:.72}
+.steps .on{opacity:1;color:var(--ink);font-weight:700;border-color:var(--accent)}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;padding-top:40px}
+.foot{flex:none;display:flex;justify-content:space-between;align-items:baseline;gap:40px;padding-top:18px;font-size:20px;line-height:1.35;color:var(--muted)}
+.foot code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.9em}
+.pg{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ---------- Type scale: 60 / 34 / 30 / 28 / 24 / 20 ---------- */
+h1{margin:0;font-size:60px;line-height:1.08;font-weight:680;letter-spacing:-.028em;text-wrap:balance}
+h2{margin:0;font-size:34px;line-height:1.2;font-weight:650;letter-spacing:-.018em}
+p{margin:0;font-size:28px;line-height:1.42;text-wrap:pretty}
+.lead{margin-top:22px;max-width:1120px;font-size:30px;line-height:1.38;color:var(--muted)}
+.lead span{display:block}
+.nb{white-space:nowrap}
+.label{font-size:20px;line-height:1.3;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.quiet{color:var(--muted)}
+.ic{width:.95em;height:.95em;margin-right:.42em;vertical-align:-.13em;flex:none}
+.ic path{fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Rows: method steps on a shared three-column grid ---------- */
+.rows{flex:1;min-height:0;display:grid;grid-auto-rows:1fr;list-style:none;margin:36px 0 0;padding:0}
+.rows li{display:grid;grid-template-columns:72px 440px 1fr;align-items:baseline;align-content:center;border-top:2px solid var(--rule)}
+.rows .n{font-size:24px;font-weight:650;letter-spacing:.02em;color:var(--accent);font-variant-numeric:tabular-nums}
+.rows h2{padding-right:32px}
+.rows p > span{display:block}
+.rows.unnumbered li{grid-template-columns:512px 1fr}
+
+/* ---------- Slide 1: example gallery ---------- */
+.lead-row{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
+.key{display:flex;gap:28px;list-style:none;margin:0 0 6px;padding:0;font-size:22px;color:var(--muted);white-space:nowrap}
+.sw{display:inline-block;width:20px;height:20px;margin-right:10px;vertical-align:-3px;box-shadow:0 0 0 1px var(--muted)}
+.sw.wm{background:#fff}
+.sw.clean{background:#000}
+.gallery{display:grid;grid-template-columns:repeat(3,416px);justify-content:space-between;margin-top:34px}
+figure{margin:0}
+.crop{position:relative;width:416px;height:416px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--rule)}
+/* One source strip of six 256 px panels under a 26 px title band; 2 px is trimmed from each panel edge. */
+.crop img{position:absolute;top:-44.66px;width:2520px;max-width:none;height:auto}
+figcaption{margin-top:14px;font-size:24px;line-height:1.3;font-weight:550}
+
+/* ---------- Results: headline number left, evidence right ---------- */
+.cols{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-content:start;margin-top:52px}
+.hero{margin-left:-6px;font-size:168px;line-height:.9;font-weight:700;letter-spacing:-.05em;color:var(--accent);font-variant-numeric:tabular-nums}
+.hero-label{margin-top:18px;font-size:28px;font-weight:500}
+.support{margin-top:30px;padding-top:28px;border-top:1px solid var(--rule);font-size:26px}
+.col h2{font-size:30px;line-height:1.25;letter-spacing:-.015em;padding-top:6px}
+.col .note{margin-top:22px;font-size:24px}
+.col .note + .note{margin-top:14px}
+.pairs{margin:18px 0 0}
+.pairs div{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-top:1px solid var(--rule);font-size:26px}
+.pairs dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+.interval{margin-top:6px;padding-top:20px;border-top:1px solid var(--rule)}
+.interval svg{display:block;width:100%;height:auto;margin-top:8px;overflow:visible}
+.interval text{font-size:22px;fill:var(--ink);font-variant-numeric:tabular-nums}
+.interval .axis{font-size:20px;fill:var(--muted)}
+.bars{margin-top:18px}
+.bar{display:grid;grid-template-columns:200px 1fr 104px;align-items:center;gap:20px;padding:17px 0;border-top:1px solid var(--rule);font-size:26px}
+.bar b{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.track{height:14px;background:var(--track);border-radius:0 4px 4px 0}
+.track i{display:block;height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+.scale{display:grid;grid-template-columns:200px 1fr 104px;gap:20px;font-size:20px;color:var(--muted)}
+.scale span{grid-column:2;display:flex;justify-content:space-between}
+.checks{list-style:none;margin:18px 0 0;padding:0}
+.checks li{display:flex;align-items:baseline;padding:20px 0;border-top:1px solid var(--rule);font-size:26px;line-height:1.4}
+.checks .ic{color:var(--accent);position:relative;top:.14em}
+.runs{width:100%;margin-top:30px;border-collapse:collapse;font-size:24px;font-variant-numeric:tabular-nums}
+.runs th{padding:0 0 12px;text-align:left;border-bottom:1px solid var(--rule)}
+.runs td{padding:12px 0;border-bottom:1px solid var(--rule)}
+.runs th:last-child,.runs td:last-child{text-align:right}
+.runs .best td{font-weight:700}
+.runs th{font-variant-numeric:normal}
+.runs .best td:first-child{position:relative}
+.runs .best td:first-child::before{content:"";position:absolute;left:-24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--accent)}
+
+/* ---------- Slide 4: comparison table and key numbers ---------- */
+.matrix{width:100%;margin-top:36px;border-collapse:collapse}
+.matrix th{padding:0 0 14px;text-align:left;border-bottom:2px solid var(--ink)}
+.matrix td{padding:36px 24px 36px 0;border-bottom:1px solid var(--rule);font-size:28px;line-height:1.3}
+.matrix td:first-child{font-weight:600}
+.matrix .verdict{font-weight:650;white-space:nowrap}
+.matrix .yes .ic{color:var(--accent)}
+.matrix .no .ic{color:var(--muted)}
+.stats{display:grid;grid-template-columns:44% 1fr;margin-top:64px}
+.stat{display:flex;align-items:center;gap:24px}
+.stat b{font-size:72px;line-height:1;font-weight:700;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.stat span{font-size:24px;line-height:1.3;color:var(--muted)}
+.stat span strong{display:block;font-weight:600;color:var(--ink)}
+
+/* ---------- Slide 7: two demands and the gate ---------- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:96px;margin-top:44px}
+.pair > div{padding-top:26px;border-top:2px solid var(--rule)}
+.pair p{margin-top:12px}
+.gate{margin-top:60px;padding-top:32px;border-top:2px solid var(--rule)}
+.gate .stat span{font-size:26px}
+
+/* ---------- Slide 8: target rule ---------- */
+.equation{margin-top:34px;padding-top:30px;border-top:2px solid var(--rule);font-size:56px;line-height:1.2;font-weight:450;letter-spacing:-.025em}
+.equation b{font-weight:680;color:var(--accent)}
+.equation + .lead{margin-top:18px}
+
+/* ---------- PDF export: one slide per page ---------- */
+@page{size:1600px 900px;margin:0}
+@media print{
+  html,body{height:auto;overflow:visible;background:#fff}
+  .slide,.slide.active{display:flex!important;position:relative;left:auto;top:auto;margin:0;transform:none!important;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 1 · Task 1 · Task -->
+<section class="slide active" data-task="1" aria-label="Slide 1 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>01</b>Watermark localization</span></div>
+  <ol class="steps"><li class="on">Task</li><li>Method</li><li>Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>Where does the watermark survive?</h1>
+  <div class="lead-row">
+   <p class="lead"><span>A watermark can cover most of an image and still contain small clean holes.</span><span>We predict both regions on a 128 × 128 grid.</span></p>
+   <ul class="key"><li><i class="sw wm"></i>Watermarked</li><li><i class="sw clean"></i>Clean</li></ul>
+  </div>
+  <div class="gallery">
+   <figure><div class="crop"><img src="assets/localization-example.png" style="left:-2px" alt="Validation input photograph of people with umbrellas"></div><figcaption>Input image</figcaption></figure>
+   <figure><div class="crop"><img src="assets/localization-example.png" style="left:-422px" alt="Ground truth watermarked and clean regions"></div><figcaption>Ground truth</figcaption></figure>
+   <figure><div class="crop"><img src="assets/localization-example.png" style="left:-1262px" alt="Selected StegaStamp prediction"></div><figcaption>Earlier model prediction</figcaption></figure>
+  </div>
  </div>
- <div class="foot"><span>Historical StegaStamp example. White = watermarked, black = clean.</span><span>1 / 9</span></div>
+ <footer class="foot"><span>Historical StegaStamp example.</span><span class="pg">1 / 9</span></footer>
 </section>
-<section class="slide" data-task="1">
- <div class="top"><span class="brand">Unblo</span><span>01 / METHOD</span></div>
- <h1>General image evidence plus a specialist</h1>
- <p class="lead">The final recipe combines shared edit localization with PixelSeal-specific features.</p>
- <div class="stack">
-  <div class="rule"><h2><span class="num">01</span>DINO ensemble</h2><p>Two models predict partial watermark regions and clean holes.<br>Keep the selected TrustMark and StegaStamp outputs frozen.</p></div>
-  <div class="rule"><h2><span class="num">02</span>PixelSeal specialist</h2><p>Refine the decoder with feature CutMix.<br>Blend 70% ensemble probability with 30% specialist output.</p></div>
-  <div class="rule"><h2><span class="num">03</span>Mask decoding</h2><p>Rank pixel probabilities and choose a region size<br>using an expected-mIoU approximation.</p></div>
+
+<!-- 2 · Task 1 · Method -->
+<section class="slide" data-task="1" aria-label="Slide 2 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>01</b>Watermark localization</span></div>
+  <ol class="steps"><li>Task</li><li class="on">Method</li><li>Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>General image evidence plus a specialist</h1>
+  <p class="lead">The final recipe combines shared edit localization with PixelSeal-specific features.</p>
+  <ol class="rows">
+   <li><span class="n">01</span><h2>DINO ensemble</h2><p><span>Two models predict partial watermark regions and clean holes.</span><span>Keep the selected TrustMark and StegaStamp outputs frozen.</span></p></li>
+   <li><span class="n">02</span><h2>PixelSeal specialist</h2><p><span>Refine the decoder with feature CutMix.</span><span>Blend 70% ensemble probability with 30% specialist output.</span></p></li>
+   <li><span class="n">03</span><h2>Mask decoding</h2><p><span>Rank pixel probabilities and choose a region size using an <span class="nb">expected-mIoU</span> approximation.</span></p></li>
+  </ol>
  </div>
- <div class="foot"><span>Code: task-1/solution/{model.py, reproduce.py} and experiments/h100_hour/h2_decode.py.</span><span>2 / 9</span></div>
+ <footer class="foot"><span>Code: <code>task-1/solution/{model.py, reproduce.py}</code> and <code>experiments/h100_hour/h2_decode.py</code>.</span><span class="pg">2 / 9</span></footer>
 </section>
-<section class="slide dark" data-task="1">
- <div class="top"><span class="brand">Unblo</span><span>01 / RESULTS</span></div>
- <h1>The final recipe reaches 0.7309 public mIoU</h1>
- <div class="split result"><div><div class="big accent">0.7309</div><div class="metric-label">Public mIoU · submission 4129</div><div class="thinline"></div><p class="small">1,020 accepted masks replay exactly.<br>Final weights and cached ensemble inputs accompany the code.</p></div>
- <div><p class="charttitle">PixelSeal · reused 57-image development fold</p><div class="bars"><div class="barrow"><span>Before final edit</span><div class="track"><div class="bar old" style="width:62.934%"></div></div><span>0.6293</span></div><div class="barrow"><span>Feature CutMix</span><div class="track"><div class="bar" style="width:63.0891%"></div></div><span>0.6309</span></div></div><p class="small">Paired delta +0.0016<br>95% interval [−0.0032, +0.0071]</p><p class="small light">The local interval includes zero; the promotion gate failed. The public recipe also changes other-family masks, so the public gain is not an isolated effect of this edit.</p></div></div>
- <div class="foot"><span>Bars show mIoU on a 0–1 scale. Public and development scores are separate. Hidden score unknown.</span><span>3 / 9</span></div>
-</section>
-<section class="slide t2" data-task="2">
- <div class="top"><span class="brand">Unblo</span><span>02 / MODEL EQUALITY</span></div>
- <h1>Different answers can come<br>from the same model</h1>
- <p class="lead">Group 33 anonymous endpoints by family and exact model identity.</p>
- <table class="table"><thead><tr><th>What changed?</th><th>Same model?</th><th>Evidence we need</th></tr></thead><tbody><tr><td>System prompt, sampling, watermark</td><td class="accent">Yes</td><td>Recognize the behavioral disguise</td></tr><tr><td>Quantization or LoRA adapter</td><td>No</td><td>Detect a change in the weights</td></tr></tbody></table>
- <div class="numbers"><div><strong class="accent">100</strong><span>responses per scored endpoint</span></div><div><strong>90%</strong><span>score weight on model equality</span></div></div>
- <div class="foot"><span>Task score: 0.1 × family MCC + 0.9 × within-family model MCC.</span><span>4 / 9</span></div>
-</section>
-<section class="slide t2" data-task="2">
- <div class="top"><span class="brand">Unblo</span><span>02 / METHOD</span></div>
- <h1>Compare behavior, then test weight evidence</h1>
- <div class="stack">
-  <div class="rule"><h2><span class="num">01</span>Identify disguises</h2><p>Repeated openings, vocabulary variation, digit skew<br>and custom-prompt evidence flag changed behavior.</p></div>
-  <div class="rule"><h2><span class="num">02</span>Score local copies</h2><p>Measure how well base, adapter and quantized copies<br>explain the saved endpoint responses.</p></div>
-  <div class="rule"><h2><span class="num">03</span>Apply the v4 rule</h2><p>Prioritize adapter and quantization evidence.<br>Then group disguises and resolve plain-base candidates.</p></div>
+
+<!-- 3 · Task 1 · Results -->
+<section class="slide dark" data-task="1" aria-label="Slide 3 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>01</b>Watermark localization</span></div>
+  <ol class="steps"><li>Task</li><li>Method</li><li class="on">Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>The final recipe is our best confirmed public result</h1>
+  <div class="cols">
+   <div class="col">
+    <div class="hero">0.7309</div>
+    <p class="hero-label">Public mIoU · submission 4129</p>
+    <p class="support">1,020 accepted masks replay exactly. Final weights and cached ensemble inputs accompany the code.</p>
+   </div>
+   <div class="col">
+    <h2>PixelSeal · reused 57-image development fold</h2>
+    <dl class="pairs">
+     <div><dt>Before final edit</dt><dd>0.6293</dd></div>
+     <div><dt>Feature CutMix</dt><dd>0.6309</dd></div>
+    </dl>
+    <figure class="interval">
+     <figcaption class="label">Paired delta · 95% interval</figcaption>
+     <svg viewBox="0 0 656 104" role="img" aria-label="Paired delta of plus 0.0016 mIoU, with a 95% interval from minus 0.0032 to plus 0.0071 that includes zero">
+      <line x1="225.3" y1="34" x2="225.3" y2="72" stroke="var(--muted)" stroke-width="2"/>
+      <line x1="61.1" y1="52" x2="589.8" y2="52" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="61.1" y1="43" x2="61.1" y2="61" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="589.8" y1="43" x2="589.8" y2="61" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="307.5" cy="52" r="10" fill="var(--accent)" stroke="var(--paper)" stroke-width="3"/>
+      <text x="61.1" y="22" text-anchor="middle">−0.0032</text>
+      <text x="307.5" y="22" text-anchor="middle" font-weight="700">+0.0016</text>
+      <text x="589.8" y="22" text-anchor="middle">+0.0071</text>
+      <text class="axis" x="225.3" y="98" text-anchor="middle">0 · no change</text>
+     </svg>
+    </figure>
+    <p class="note quiet">The local interval includes zero; the promotion gate failed. The public recipe also changes other-family masks, so the public gain is not an isolated effect of this edit.</p>
+   </div>
+  </div>
  </div>
- <p class="callout">The submitted solution includes manual family/tag assignments and an ep-26 exception informed by public feedback.</p>
- <div class="foot"><span>Code: task-2/research/experiments/s82/{typed2.py, v3.py, v4.py}</span><span>5 / 9</span></div>
+ <footer class="foot"><span>Public and development scores are separate. Hidden score unknown.</span><span class="pg">3 / 9</span></footer>
 </section>
-<section class="slide dark t2" data-task="2">
- <div class="top"><span class="brand">Unblo</span><span>02 / RESULTS</span></div>
- <h1>All submitted groupings replay exactly</h1>
- <div class="split result"><div><div class="big accent">1.0000</div><div class="metric-label">Public score · submission 2411</div><div class="thinline"></div><p>33 / 33 endpoint labels reconstructed<br>from the frozen evidence.</p></div>
- <div><h2>What the other checks show</h2><table class="table" style="margin-top:15px"><tbody><tr><td>Practice</td><td>1.0000</td></tr><tr><td>Local test bed</td><td>0.4876</td></tr></tbody></table><p class="small light" style="margin-top:27px">Local scores use known families and reused development data. The perfect public score does not establish hidden-pair correctness.</p><p class="small">Replay checks CSV partitions and the accepted upload hash without new API queries.</p></div></div>
- <div class="foot"><span>Evidence: accepted receipt, saved response captures and task-2/replay.py.</span><span>6 / 9</span></div>
+
+<!-- 4 · Task 2 · Task -->
+<section class="slide t2" data-task="2" aria-label="Slide 4 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>02</b>Model equality</span></div>
+  <ol class="steps"><li class="on">Task</li><li>Method</li><li>Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>Different answers can come from the same model</h1>
+  <p class="lead">Group 33 anonymous endpoints by family and exact model identity.</p>
+  <table class="matrix">
+   <colgroup><col style="width:44%"><col style="width:19%"><col></colgroup>
+   <thead><tr><th class="label">What changed?</th><th class="label">Same model?</th><th class="label">Evidence we need</th></tr></thead>
+   <tbody>
+    <tr><td>System prompt, sampling, watermark</td><td class="verdict yes"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Yes</td><td>Recognize the behavioral disguise</td></tr>
+    <tr><td>Quantization or LoRA adapter</td><td class="verdict no"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>No</td><td>Detect a change in the weights</td></tr>
+   </tbody>
+  </table>
+  <div class="stats">
+   <div class="stat"><b>100</b><span>responses per scored endpoint</span></div>
+   <div class="stat"><b>90%</b><span>score weight on model equality</span></div>
+  </div>
+ </div>
+ <footer class="foot"><span>Task score: 0.1 × family MCC + 0.9 × within-family model MCC.</span><span class="pg">4 / 9</span></footer>
 </section>
-<section class="slide t3" data-task="3">
- <div class="top"><span class="brand">Unblo</span><span>03 / MACHINE UNLEARNING</span></div>
- <h1>Forgetting has to preserve useful behavior</h1>
- <p class="lead">We receive a trained ViT-B/16 and 3,500 unlabeled forget images.<br>Retain data and retrained gold models stay hidden.</p>
- <div class="split"><div><h2 class="accent">Move the forget examples</h2><p>Reduce confidence by a controlled amount for each image, using its robustness under altered views.</p></div><div><h2>Preserve the model elsewhere</h2><p>Keep teacher outputs and CLS features stable on strong transformed and mixed views.</p></div></div>
- <div class="rule" style="margin-top:38px"><p>The evaluator also requires at least <strong>70% hidden validation accuracy</strong>.<br>Local teacher agreement cannot verify that gate.</p></div>
- <div class="foot"><span>Exact architecture and preprocessing match the supplied checkpoint.</span><span>7 / 9</span></div>
+
+<!-- 5 · Task 2 · Method -->
+<section class="slide t2" data-task="2" aria-label="Slide 5 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>02</b>Model equality</span></div>
+  <ol class="steps"><li>Task</li><li class="on">Method</li><li>Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>Compare behavior, then test weight evidence</h1>
+  <ol class="rows">
+   <li><span class="n">01</span><h2>Identify disguises</h2><p><span>Repeated openings, vocabulary variation, digit skew and custom-prompt evidence flag changed behavior.</span></p></li>
+   <li><span class="n">02</span><h2>Score local copies</h2><p><span>Measure how well base, adapter and quantized copies explain the saved endpoint responses.</span></p></li>
+   <li><span class="n">03</span><h2>Apply the v4 rule</h2><p><span>Prioritize adapter and quantization evidence.</span><span>Then group disguises and resolve plain-base candidates.</span></p></li>
+  </ol>
+ </div>
+ <footer class="foot"><span>Code: <code>task-2/research/experiments/s82/{typed2.py, v3.py, v4.py}</code></span><span class="pg">5 / 9</span></footer>
 </section>
-<section class="slide t3" data-task="3">
- <div class="top"><span class="brand">Unblo</span><span>03 / METHOD</span></div>
- <h1>Per-image targets control how much to forget</h1>
- <div class="equation"><span class="accent">Target log-odds</span> = −3 + 6.5 × hardness rank score</div>
- <p class="lead">Keep the teacher’s relative probabilities over the other classes.<br>Lower the target by one additional logit for altered forget views.</p>
- <div class="stack" style="margin-top:25px"><div class="rule"><h2>Target fitting</h2><p>Distillation at two temperatures and direct log-odds matching.</p></div><div class="rule"><h2>Preservation</h2><p>Teacher-output loss, weight 5.<br>Normalized CLS-feature loss, weight 10.</p></div></div>
- <div class="foot"><span>E50: 2,500 updates, batch 32, AdamW, learning rate 6e−5. Code: targets.py, unlearn_core.py.</span><span>8 / 9</span></div>
+
+<!-- 6 · Task 2 · Results -->
+<section class="slide dark t2" data-task="2" aria-label="Slide 6 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>02</b>Model equality</span></div>
+  <ol class="steps"><li>Task</li><li>Method</li><li class="on">Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>All submitted groupings replay exactly</h1>
+  <div class="cols">
+   <div class="col">
+    <div class="hero">1.0000</div>
+    <p class="hero-label">Public score · submission 2411</p>
+    <p class="support">33 / 33 endpoint labels reconstructed from the frozen evidence.</p>
+   </div>
+   <div class="col">
+    <h2>What the other checks show</h2>
+    <div class="bars" role="img" aria-label="Scores on a 0 to 1 scale: practice 1.0000, local test bed 0.4876">
+     <div class="bar"><span>Practice</span><div class="track"><i style="width:100%"></i></div><b>1.0000</b></div>
+     <div class="bar"><span>Local test bed</span><div class="track"><i style="width:48.76%"></i></div><b>0.4876</b></div>
+     <div class="scale"><span><span>0</span><span>1</span></span></div>
+    </div>
+    <p class="note quiet">Local scores use known families and reused development data. The perfect public score does not establish <span class="nb">hidden-pair</span> correctness.</p>
+    <p class="note">Replay checks CSV partitions and the accepted upload hash without new API queries.</p>
+   </div>
+  </div>
+ </div>
+ <footer class="foot"><span>Evidence: accepted receipt, saved response captures and <code>task-2/replay.py</code>.</span><span class="pg">6 / 9</span></footer>
 </section>
-<section class="slide dark t3" data-task="3">
- <div class="top"><span class="brand">Unblo</span><span>03 / RESULTS</span></div>
- <h1>Stronger preservation improved unlearning</h1>
- <div class="split result"><div><div class="big accent">0.3149</div><div class="metric-label">Public score · submission 4183</div><div class="thinline"></div><p class="small">E30: 0.3013 · E43: 0.3055 · E50: 0.3149<br>CLS-feature weights: 0.5, 2 and 10.</p></div><div><h2>Evidence behind the result</h2><div class="rule"><p>Strict architecture load and finite FP32 weights.</p></div><div class="rule"><p>Finite server-style FP16 output on 256 real images.</p></div><div class="rule"><p>Receipt and validation record share the same checkpoint hash.</p></div><p class="small light">The exact checkpoint accompanies the source<br>as a release asset, with a verified hash.</p></div></div>
- <div class="foot"><span>Unblo · github.com/luqqasek/Unblo · Final hidden scores remain unknown.</span><span>9 / 9</span></div>
+
+<!-- 7 · Task 3 · Task -->
+<section class="slide t3" data-task="3" aria-label="Slide 7 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>03</b>Machine unlearning</span></div>
+  <ol class="steps"><li class="on">Task</li><li>Method</li><li>Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>Forgetting has to preserve useful behavior</h1>
+  <p class="lead"><span>We receive a trained ViT-B/16 and 3,500 unlabeled forget images.</span><span>Retain data and retrained gold models stay hidden.</span></p>
+  <div class="pair">
+   <div><h2>Move the forget examples</h2><p>Reduce confidence by a controlled amount for each image, using its robustness under altered views.</p></div>
+   <div><h2>Preserve the model elsewhere</h2><p>Keep teacher outputs and CLS features stable on strong transformed and mixed views.</p></div>
+  </div>
+  <div class="gate">
+   <div class="stat"><b>70%</b><span><strong>The evaluator also requires at least 70% hidden validation accuracy.</strong>Local teacher agreement cannot verify that gate.</span></div>
+  </div>
+ </div>
+ <footer class="foot"><span>Exact architecture and preprocessing match the supplied checkpoint.</span><span class="pg">7 / 9</span></footer>
 </section>
+
+<!-- 8 · Task 3 · Method -->
+<section class="slide t3" data-task="3" aria-label="Slide 8 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>03</b>Machine unlearning</span></div>
+  <ol class="steps"><li>Task</li><li class="on">Method</li><li>Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>Per-image targets control how much to forget</h1>
+  <p class="equation"><b>Target log-odds</b> = −3 + 6.5 × hardness rank score</p>
+  <p class="lead"><span>Keep the teacher’s relative probabilities over the other classes.</span><span>Lower the target by one additional logit for altered forget views.</span></p>
+  <ul class="rows unnumbered">
+   <li><h2>Target fitting</h2><p><span>Distillation at two temperatures and direct log-odds matching.</span></p></li>
+   <li><h2>Preservation</h2><p><span>Teacher-output loss, weight 5.</span><span>Normalized CLS-feature loss, weight 10.</span></p></li>
+  </ul>
+ </div>
+ <footer class="foot"><span>E50: 2,500 updates, batch 32, AdamW, learning rate 6e−5. Code: <code>targets.py</code>, <code>unlearn_core.py</code>.</span><span class="pg">8 / 9</span></footer>
+</section>
+
+<!-- 9 · Task 3 · Results -->
+<section class="slide dark t3" data-task="3" aria-label="Slide 9 of 9">
+ <header class="top">
+  <div><span class="brand">Unblo</span><span class="task"><b>03</b>Machine unlearning</span></div>
+  <ol class="steps"><li>Task</li><li>Method</li><li class="on">Results</li></ol>
+ </header>
+ <div class="body">
+  <h1>Stronger preservation improved unlearning</h1>
+  <div class="cols">
+   <div class="col">
+    <div class="hero">0.3149</div>
+    <p class="hero-label">Public score · submission 4183</p>
+    <table class="runs">
+     <colgroup><col style="width:20%"><col style="width:45%"><col></colgroup>
+     <thead><tr><th class="label">Run</th><th class="label">CLS-feature weight</th><th class="label">Public score</th></tr></thead>
+     <tbody>
+      <tr><td>E30</td><td>0.5</td><td>0.3013</td></tr>
+      <tr><td>E43</td><td>2</td><td>0.3055</td></tr>
+      <tr class="best"><td>E50</td><td>10</td><td>0.3149</td></tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="col">
+    <h2>Evidence behind the result</h2>
+    <ul class="checks">
+     <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Strict architecture load and finite FP32 weights.</span></li>
+     <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Finite server-style FP16 output on 256 real images.</span></li>
+     <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Receipt and validation record share the same checkpoint hash.</span></li>
+    </ul>
+    <p class="note quiet">The exact checkpoint accompanies the source as a release asset, with a verified hash.</p>
+   </div>
+  </div>
+ </div>
+ <footer class="foot"><span>Unblo · github.com/luqqasek/Unblo · Final hidden scores remain unknown.</span><span class="pg">9 / 9</span></footer>
+</section>
+
 <script>
 const slides=[...document.querySelectorAll('.slide')];let current=0;
-function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));location.hash=String(current+1);fit()}
-function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);slides.forEach(x=>x.style.transform=`scale(${s})`);document.body.style.height=`${900*s}px`}
-addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}if(e.key==='Home')show(0);if(e.key==='End')show(8);if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.()});
-addEventListener('resize',fit);show((Number(location.hash.slice(1))||1)-1);
-</script></body></html>
+function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));history.replaceState(null,'','#'+(current+1));fit()}
+function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);slides.forEach(x=>x.style.transform=`scale(${s})`)}
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}
+  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}
+  if(e.key==='Home')show(0);
+  if(e.key==='End')show(slides.length-1);
+  if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.();
+});
+addEventListener('resize',fit);
+show((Number(location.hash.slice(1))||1)-1);
+</script>
+</body>
+</html>

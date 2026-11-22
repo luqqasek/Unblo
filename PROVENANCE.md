@@ -6,6 +6,8 @@
 
 The organizers' briefs are included as `task-1/challenge.pdf`, `task-2/challenge.pdf` and `task-3/challenge.pdf`. Official assets come from SprintML's [watermark localization](https://huggingface.co/datasets/SprintML/Hackathon_Watermark_Localisation_Task), [model equality](https://huggingface.co/datasets/SprintML/model_equality) and [unlearning](https://huggingface.co/datasets/SprintML/unlearning) datasets.
 
+The slides bundle the Inter typeface (Latin subset from `@fontsource-variable/inter` 5.3.0) under the SIL Open Font License 1.1; the license text is `slides/assets/fonts/OFL.txt`.
+
 Third-party model implementations and weights retain their original licenses. This submission does not grant new rights to those assets. Source hashes for the accepted prediction/checkpoint artifacts are recorded with the receipts.
 
 The cleanup changes navigation, packaging and validation entry points. It does not rerun training or replace the accepted submission files. Local scratch work was moved to a backup outside the repository before removal.

@@ -9,6 +9,7 @@ const fs = require('node:fs');
     const page = await browser.newPage({ viewport: { width: 1600, height: 900 } });
     await page.goto('file://' + path.join(__dirname, 'index.html'));
     await page.evaluate(() => document.fonts.ready);
+    if (!(await page.evaluate(() => document.fonts.check('16px Inter')))) throw new Error('Bundled Inter font did not load');
     const count = await page.locator('.slide').count();
     if (count !== 9) throw new Error(`Expected nine slides, found ${count}`);
     const failures = [];
@@ -16,10 +17,16 @@ const fs = require('node:fs');
       await page.evaluate(n => show(n), i);
       const overflow = await page.locator('.slide.active').evaluate(slide => {
         const s = slide.getBoundingClientRect();
-        return [...slide.querySelectorAll('h1,h2,p,.big,.foot,.equation,td,th')].filter(el => {
+        // Text must stay inside the slide and inside its own box.
+        const clipped = [...slide.querySelectorAll('h1,h2,p,li,td,th,dt,dd,figcaption,.hero,.foot,.equation,svg text')].filter(el => {
           const r = el.getBoundingClientRect();
-          return r.right > s.right + 1 || r.bottom > s.bottom + 1 || el.scrollWidth > el.clientWidth + 2;
+          return r.left < s.left - 1 || r.right > s.right + 1 || r.bottom > s.bottom + 1 || el.scrollWidth > el.clientWidth + 2;
         }).map(el => el.textContent);
+        // Content must not run into the footer.
+        const body = slide.querySelector('.body');
+        const limit = body.getBoundingClientRect().bottom;
+        const spill = [...body.querySelectorAll('*')].filter(el => el.getBoundingClientRect().bottom > limit + 1).map(el => `Runs into footer: ${el.textContent.trim().slice(0, 60)}`);
+        return [...clipped, ...spill];
       });
       if (overflow.length) failures.push({ slide: i + 1, overflow });
       if (process.env.SLIDE_PREVIEWS) {
@@ -27,7 +34,7 @@ const fs = require('node:fs');
         await page.screenshot({ path: path.join(process.env.SLIDE_PREVIEWS, `${i + 1}.png`) });
       }
     }
-    if (failures.length) throw new Error(JSON.stringify(failures));
+    if (failures.length) throw new Error(JSON.stringify(failures, null, 1));
     await page.pdf({ path: path.join(__dirname, 'Unblo.pdf'), preferCSSPageSize: true, printBackground: true });
     console.log('PASS: nine slides rendered, three per task; no text overflow. PDF: slides/Unblo.pdf');
   } finally { await browser.close(); }
