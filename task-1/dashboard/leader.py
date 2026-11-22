@@ -37,4 +37,11 @@ def leader_evidence(submissions, experiments, dist):
             'Finetuning has no confirmed local mIoU advantage over synthetic-only; synthetic-only was not submitted.',
             'Validation reuses 170 development images across three seeds. Gallery panels show OOF predictions, not the final test predictions.',
         )]
+    elif experiment == 'next_ideas' and entry:
+        leader['note'] = 'Native RGB StegaStamp adapted with real labels and synthetic replay. PixelSeal and TrustMark masks are retained from submission #2675. Training endpoints and postprocessing are selected on local validation.'
+        leader['issues'] = [dict(detail=text) for text in (
+            'Small watermarks and tiny clean holes remain difficult; average improvement does not eliminate complete misses.',
+            'Local results use repeatedly inspected three-fold development validation and one seed, not an independent hidden-test estimate.',
+            'The final all-170 refit has no held-out validation score. Inspect the fold results and failure gallery.',
+        )]
     return leader

@@ -1,10 +1,11 @@
 # Watermark localization — current research handoff, 2026-11-22
 
-**Best accepted public submission: #2675, mIoU 0.6440**, up from #2409 (0.6369).
-Exactly one new submission was made after freezing the new validation recipe.
+**Best accepted public submission: #3005, mIoU 0.6597**, up from #2675 (0.6440).
+Only StegaStamp changed:150 real/replay updates plus the fixed empty/full fallback.
+The server accepted the validated1020-mask artifact at04:01UTC on2026-11-22.
 The hidden final score and per-family public scores are unknown.
 
-Start with [latest submission](local_presence/SUBMISSION_REPORT.md), [latest experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
+Start with [latest submission](next_ideas/SUBMISSION_REPORT.md), [latest experiments](next_ideas/REPORT.md), [previous experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
 [generator comparison](region_data/REPORT.md), and
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.
@@ -28,7 +29,9 @@ FG<=1%0.189824→0.211660; FG1–5%0.360077→0.382853; clean on WM>50%
 increase3→4. Fixed empty/full1% fallback adds0.002395 to0.724414.
 Three GPUs trained folds; fourth did oracle views; job wall6m26s on one node.
 Initial probabilities reproduced within5.25e-6 before training. The all170
-refit/test prediction job is queued; no new submission receipt yet.
+refit and340 test predictions completed;#3005/public0.6597 is the actual receipt.
+All PS/TM test masks remain bit-identical to#2675. Public per-family scores are
+unavailable. The same node now runs the predeclared450 continuation.
 
 Because the curve improved from50 to150, one extension to450 was declared
 before its results: restore150 model/optimizer/RNG, same replay/LRs, three

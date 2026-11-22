@@ -1,6 +1,6 @@
 # Next ideas: opportunity audit and StegaStamp adaptation
 
-Accepted public best remains #2675, mIoU0.6440 until a new server receipt is recorded. This work was explicitly authorized after the TriForensic cancellation. [Frozen screening protocol](PROTOCOL.md).
+Starting accepted public baseline: #2675, mIoU 0.6440. Actual new server receipts are recorded below; a planned submission is not a measured result. This work was explicitly authorized after the TriForensic cancellation. [Frozen screening protocol](PROTOCOL.md).
 
 ## Findings before new training
 
@@ -61,6 +61,10 @@ Compute: three concurrent single-GPU workers;450 optimizer updates total,7200 im
 Selected150-update adaptation: True. Postprocessing: `top1pct`; fixed1% fallback affects only completely empty/full predictions. OOF mIoU before fallback0.722019, after fallback0.724414. The fallback adds+0.002395; paired95% interval[0.00010245551590245343, 0.0055763488466821845]. This remains exploratory selection on reused development folds.
 
 Final refit uses all170 StegaStamp real images with the same150-update replay policy. It has no held-out validation score. Four-GPU DataParallel preserves effective batch16 and the optimizer-update count; minor floating-point reduction differences from the single-GPU folds are possible. Keep PixelSeal and TrustMark test masks from#2675 bit-for-bit. No new threshold tuning, TTA or test-label use. [Frozen recipe](results/selected_recipe.json).
+
+## Leaderboard receipt
+
+Server response: `{"submission_id": 3005, "status": "success", "score": 0.6597, "previous_best": 0.644, "delta": 0.0158, "improved": true, "message": "New best on this task. Score shown is on the public split; the final ranking uses the held out subset, revealed after submissions close."}`. Only StegaStamp predictions changed; the public score is a separate test subset, not the OOF metric. [Submission report](SUBMISSION_REPORT.md).
 
 ## One bounded extension to450 updates
 

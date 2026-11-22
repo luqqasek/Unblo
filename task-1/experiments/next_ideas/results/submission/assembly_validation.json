@@ -1,0 +1,235 @@
+{
+  "names": 1020,
+  "shape": [
+    1020,
+    128,
+    128
+  ],
+  "dtype": "torch.uint8",
+  "unique_names": true,
+  "binary": true,
+  "bytes": 16734690,
+  "sha256": "beb7470f804ca689e50bc967f7af8b0d6046cdf5a5e51568b76b1542c7cfa498",
+  "base_sha256": "67b1a62d4d47589095e1b05d8e7471271ede3576c3130a0f1c1c96904ddf76a4",
+  "changed_images": {
+    "pixelseal": 0,
+    "trustmark": 0,
+    "stegastamp": 340
+  },
+  "sources": [
+    {
+      "n": 85,
+      "seconds": 5.208544864988653,
+      "checkpoint_sha256": "367e547d1aebc0278a0e2397fea8b3ed0ab6050cc2d61abcf16469465ae3ef8d",
+      "recipe_sha256": "75a9e508c177bec1acbd3ff6436762af4d97c4e7df52fd5a288a9bd9c6766c57",
+      "artifact_sha256": "c65af4aee318bd443f3f52ed6f612c92b111693edfbeb3261740d242dff9c5e8",
+      "postprocess_changed": [
+        "43a2c0bc3dba",
+        "ae882662c260",
+        "2518fe7b3a45",
+        "3e1747153fbd",
+        "9282c44cc28c"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 150,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7220191418632667,
+        "validation_miou_final": 0.7244144791593452,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "63518be6b4dfb9ec695de24b48582eceb60b9a169ad305a9fb54693de31dac70"
+      }
+    },
+    {
+      "n": 85,
+      "seconds": 5.025931434996892,
+      "checkpoint_sha256": "367e547d1aebc0278a0e2397fea8b3ed0ab6050cc2d61abcf16469465ae3ef8d",
+      "recipe_sha256": "75a9e508c177bec1acbd3ff6436762af4d97c4e7df52fd5a288a9bd9c6766c57",
+      "artifact_sha256": "eaeb056899fd5c988896a0f17548fc1ebc09f9054af71a3f838d741a25f711ea",
+      "postprocess_changed": [
+        "a5a7b1c23da4"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 150,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7220191418632667,
+        "validation_miou_final": 0.7244144791593452,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "63518be6b4dfb9ec695de24b48582eceb60b9a169ad305a9fb54693de31dac70"
+      }
+    },
+    {
+      "n": 85,
+      "seconds": 5.082166366017191,
+      "checkpoint_sha256": "367e547d1aebc0278a0e2397fea8b3ed0ab6050cc2d61abcf16469465ae3ef8d",
+      "recipe_sha256": "75a9e508c177bec1acbd3ff6436762af4d97c4e7df52fd5a288a9bd9c6766c57",
+      "artifact_sha256": "a6dc02a9b868e06310452cb66fadbc4f930050288198b2e930dc30a06351ebfd",
+      "postprocess_changed": [
+        "f4e248db1767",
+        "032902f3762e",
+        "67572f7f12d0"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 150,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7220191418632667,
+        "validation_miou_final": 0.7244144791593452,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "63518be6b4dfb9ec695de24b48582eceb60b9a169ad305a9fb54693de31dac70"
+      }
+    },
+    {
+      "n": 85,
+      "seconds": 4.978858095011674,
+      "checkpoint_sha256": "367e547d1aebc0278a0e2397fea8b3ed0ab6050cc2d61abcf16469465ae3ef8d",
+      "recipe_sha256": "75a9e508c177bec1acbd3ff6436762af4d97c4e7df52fd5a288a9bd9c6766c57",
+      "artifact_sha256": "3766dc5778613bf4c5d157f87b5aed0b1a97dd516482271f8d580d660958a2bb",
+      "postprocess_changed": [
+        "54eb8d893e70",
+        "0510c2785a82",
+        "785ac4c1ff91",
+        "82c059d9ebdf"
+      ],
+      "test_GT_used": false,
+      "recipe": {
+        "family": "stegastamp",
+        "recipe_frozen": true,
+        "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-runs/stegastamp/all170/last.pt",
+        "needs_all170_refit": true,
+        "updates": 150,
+        "threshold": 0.5,
+        "weights": "raw",
+        "tta": false,
+        "precision": "FP32;TF32off",
+        "postprocess": "top1pct",
+        "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+        "adaptation_selection": {
+          "delta": 0.02705743546142719,
+          "ci95": [
+            0.018781981571411394,
+            0.035188036306005456
+          ],
+          "milestone": 0.01,
+          "selected": true
+        },
+        "fallback_selection": {
+          "mean_delta": 0.0023953372960785315,
+          "ci95": [
+            0.00010245551590245343,
+            0.0055763488466821845
+          ],
+          "selected": true
+        },
+        "validation_miou_before_fallback": 0.7220191418632667,
+        "validation_miou_final": 0.7244144791593452,
+        "preserve_families": [
+          "pixelseal",
+          "trustmark"
+        ],
+        "base_submission_id": 2675,
+        "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+        "test_labels_used": false,
+        "evidence_sha256": "63518be6b4dfb9ec695de24b48582eceb60b9a169ad305a9fb54693de31dac70"
+      }
+    }
+  ],
+  "test_GT_used": false
+}

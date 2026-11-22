@@ -1,0 +1,53 @@
+{
+  "n": 85,
+  "seconds": 5.082166366017191,
+  "checkpoint_sha256": "367e547d1aebc0278a0e2397fea8b3ed0ab6050cc2d61abcf16469465ae3ef8d",
+  "recipe_sha256": "75a9e508c177bec1acbd3ff6436762af4d97c4e7df52fd5a288a9bd9c6766c57",
+  "artifact_sha256": "a6dc02a9b868e06310452cb66fadbc4f930050288198b2e930dc30a06351ebfd",
+  "postprocess_changed": [
+    "f4e248db1767",
+    "032902f3762e",
+    "67572f7f12d0"
+  ],
+  "test_GT_used": false,
+  "recipe": {
+    "family": "stegastamp",
+    "recipe_frozen": true,
+    "checkpoint": "/p/project1/training2666/pszenny1/native-localizer/next-ideas-runs/stegastamp/all170/last.pt",
+    "needs_all170_refit": true,
+    "updates": 150,
+    "threshold": 0.5,
+    "weights": "raw",
+    "tta": false,
+    "precision": "FP32;TF32off",
+    "postprocess": "top1pct",
+    "fallback_policy": "only empty/full masks;164 highest minority-probability cells;fixed before adaptation results",
+    "adaptation_selection": {
+      "delta": 0.02705743546142719,
+      "ci95": [
+        0.018781981571411394,
+        0.035188036306005456
+      ],
+      "milestone": 0.01,
+      "selected": true
+    },
+    "fallback_selection": {
+      "mean_delta": 0.0023953372960785315,
+      "ci95": [
+        0.00010245551590245343,
+        0.0055763488466821845
+      ],
+      "selected": true
+    },
+    "validation_miou_before_fallback": 0.7220191418632667,
+    "validation_miou_final": 0.7244144791593452,
+    "preserve_families": [
+      "pixelseal",
+      "trustmark"
+    ],
+    "base_submission_id": 2675,
+    "selection_scope": "Reused development folds, exploratory postprocessing; not independent test estimate",
+    "test_labels_used": false,
+    "evidence_sha256": "63518be6b4dfb9ec695de24b48582eceb60b9a169ad305a9fb54693de31dac70"
+  }
+}

@@ -1,6 +1,18 @@
 # Eksperymenty zadania 1
 
-## Aktualny wynik — zgłoszenie #2675
+## Aktualny wynik — zgłoszenie #3005
+
+**Najlepszy potwierdzony publiczny mIoU: 0,6597**, wcześniej #2675: 0,6440.
+[Raport zgłoszenia](next_ideas/SUBMISSION_REPORT.md) · [Walidacja i diagnostyka](next_ideas/REPORT.md).
+Zmieniono wyłącznie StegaStamp:150 kroków realnego fine-tuningu z75% replayem
+syntetycznym, próg0,5 i ustalony fallback dla całkowicie pustych/pełnych masek.
+3-fold OOF:0,69496→0,72202; z fallbackiem0,72441. Wszystkie340 testowych
+predykcji SS pochodzą z refitu na170 obrazach; PS/TM zachowano bitowo z#2675.
+Plik1020×128×128 uint8,16,73MB, przyjęty przez serwer22.11 o04:01UTC.
+Jedna kontynuacja do450 trwa; jej wynik nie jest jeszcze znany. Publiczny
+wynik#3005 nie będzie używany do wyboru tej kontynuacji.
+
+## Poprzedni wynik — zgłoszenie #2675
 
 **Najlepszy potwierdzony publiczny mIoU: 0,6440**, wcześniej #2409: 0,6369.
 [Raport zgłoszenia](local_presence/SUBMISSION_REPORT.md) ·
@@ -25,9 +37,9 @@ mały eksploracyjny zysk. Nowa adaptacja150 kroków: **StegaStamp OOF0,69496→0
 delta+0,02706, bootstrap95%[+0,01878,+0,03519], poprawa we wszystkich3 foldach.
 Z ustalonym fallbackiem0,72441. FG<=1%0,18982→0,21166; clean IoU na WM>50%
 0,44265→0,49107. Najmniejszych pominiętych dziur nadal4/12 (wcześniej3).
-Trening końcowy/test czekają w kolejce. Jedna kontynuacja do450 kroków ma
+Trening końcowy/test150 zakończony, zgłoszenie#3005 przyjęte. Kontynuacja do450 ma
 ustalony próg wyboru+0,005 OOF wobec150 i kontrolę regresji obu małych klas.
-Nie ma jeszcze nowego potwierdzonego submissionu; publiczny rekord nadal#2675.
+Publiczny rekord#3005:0,6597; wynik450 pozostaje nieznany.
 
 ## TriForensic-WM — aktualny screen
 

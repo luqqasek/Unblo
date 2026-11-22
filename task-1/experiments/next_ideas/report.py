@@ -9,7 +9,7 @@ from experiments.triforensic_wm.evaluate import summarize
 def main():
     root=Path(__file__).parent;r=root/'results';a=json.loads((r/'error_budget.json').read_text());f=json.loads((r/'fallback.json').read_text());measures=[]
     lines=['# Next ideas: opportunity audit and StegaStamp adaptation','',
-        'Accepted public best remains #2675, mIoU0.6440 until a new server receipt is recorded. This work was explicitly authorized after the TriForensic cancellation. [Frozen screening protocol](PROTOCOL.md).','',
+        'Starting accepted public baseline: #2675, mIoU 0.6440. Actual new server receipts are recorded below; a planned submission is not a measured result. This work was explicitly authorized after the TriForensic cancellation. [Frozen screening protocol](PROTOCOL.md).','',
         '## Findings before new training','',
         'All510 training masks contain both classes. Exact train metadata identifies85 full-canvas/restoration images per family; the remaining43 rectangular and42 fragment supports are geometry proxies, not definitive edit-type labels.','',
         '| Family | Protocol | mIoU | Empty masks | Full masks | Clean IoU on85 restored canvases |','|---|---|---:|---:|---:|---:|']
@@ -64,6 +64,9 @@ def main():
             d=json.loads(extended.read_text());lines+=['',f"Measured450 raw mIoU{d['raw_summary']['all']['miou']:.6f}; with inherited postprocessing{d['summary']['all']['miou']:.6f}. Change versus selected150: `{json.dumps(d['paired_delta'])}`. Minority guard passed: {d['minority_guard_passed']}; selected: {d['selected']}."]
             measures.append({'family':'stegastamp','name':'A4 bounded450 continuation','protocol':'Same170 development OOF; inherited fixed postprocess; endpoint declared before450 results','miou':d['summary']['all']['miou'],'note':f"Selected: {d['selected']}; delta versus150 {d['paired_delta']['mean']:+.6f}; no public-score selection."})
         else:lines+=['','The450 continuation has not produced its final validation result.']
+        receipt450=r/'extended/submission/server_receipt.json'
+        if receipt450.exists():
+            response=json.loads(receipt450.read_text())['response'];lines+=['',f"Actual450 submission response: `{json.dumps(response)}`. [450 submission report](SUBMISSION_450_REPORT.md)."]
     lines+=['','## A2: oracle ladder','',
         'GT defines diagnostic views only. Successful crop decoding does not prove the original edit type; failed decoding does not prove physical signal absence. Outside-GT blur/mean replacements change context and produce boundaries. The official wrapper performs one native resize (PS256/TM245/SS400), without an extra intermediate256 resize.']
     for family in ('pixelseal','trustmark','stegastamp'):
