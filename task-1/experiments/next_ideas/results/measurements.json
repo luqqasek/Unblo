@@ -1,0 +1,65 @@
+[
+  {
+    "family": "pixelseal",
+    "name": "A1 baseline",
+    "protocol": "historical #2409 three-fold OOF;newer #2675 PS continuation has only a57-image screen",
+    "miou": 0.5856553376906618,
+    "note": "Saved label-disjoint maps; PS is historical #2409, not current full OOF."
+  },
+  {
+    "family": "trustmark",
+    "name": "A1 baseline",
+    "protocol": "#2675 base three-fold OOF plus unchanged GT-free crop corrections",
+    "miou": 0.6570460378911762,
+    "note": "Saved label-disjoint maps; PS is historical #2409, not current full OOF."
+  },
+  {
+    "family": "stegastamp",
+    "name": "A1 baseline",
+    "protocol": "unchanged synthetic-only production checkpoint;170 real images independent of training",
+    "miou": 0.6949617064018395,
+    "note": "Saved label-disjoint maps; PS is historical #2409, not current full OOF."
+  },
+  {
+    "family": "pixelseal",
+    "name": "A5 top1pct",
+    "protocol": "Exploratory saved-map fallback; same images as A1 baseline",
+    "miou": 0.5878611288230843,
+    "note": "Delta+0.002206; changed47 masks; fixed1% area, no GT for placement."
+  },
+  {
+    "family": "pixelseal",
+    "name": "A5 best13box",
+    "protocol": "Exploratory saved-map fallback; same images as A1 baseline",
+    "miou": 0.5884235981728596,
+    "note": "Delta+0.002768; changed47 masks; fixed1% area, no GT for placement."
+  },
+  {
+    "family": "trustmark",
+    "name": "A5 top1pct",
+    "protocol": "Exploratory saved-map fallback; same images as A1 baseline",
+    "miou": 0.6579138105749314,
+    "note": "Delta+0.000868; changed25 masks; fixed1% area, no GT for placement."
+  },
+  {
+    "family": "trustmark",
+    "name": "A5 best13box",
+    "protocol": "Exploratory saved-map fallback; same images as A1 baseline",
+    "miou": 0.6575131152071715,
+    "note": "Delta+0.000467; changed25 masks; fixed1% area, no GT for placement."
+  },
+  {
+    "family": "stegastamp",
+    "name": "A5 top1pct",
+    "protocol": "Exploratory saved-map fallback; same images as A1 baseline",
+    "miou": 0.6976148397913344,
+    "note": "Delta+0.002653; changed7 masks; fixed1% area, no GT for placement."
+  },
+  {
+    "family": "stegastamp",
+    "name": "A5 best13box",
+    "protocol": "Exploratory saved-map fallback; same images as A1 baseline",
+    "miou": 0.6979854785158462,
+    "note": "Delta+0.003024; changed7 masks; fixed1% area, no GT for placement."
+  }
+]

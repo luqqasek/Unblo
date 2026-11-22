@@ -303,6 +303,9 @@ def build():
     # TriForensic measured adapter
     from triforensic_adapter import add_rows as add_triforensic_rows
     add_triforensic_rows(EXPERIMENTS,DIST,row)
+    # Next ideas measured adapter
+    from next_ideas_adapter import add_rows as add_next_ideas
+    add_next_ideas(EXPERIMENTS,DIST,row)
     titles={'synthetic_pretrain_2k/results/full_train/upload_receipt.json':'StegaStamp synthetic pretrain + real finetune; previous PixelSeal / TrustMark',
             'decoder_evidence/results/full_train/upload_receipt.json':'StegaStamp message correction + previous PixelSeal / TrustMark',
             'stegastamp_stable_selection/results/full_train/upload_receipt.json':'StegaStamp stable selection + previous PixelSeal / TrustMark',

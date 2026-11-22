@@ -1,0 +1,6 @@
+{
+  "n": 510,
+  "method": "63bit grayscale DCT pHash,32x32; candidates<=4 Hamming; candidate screen, not proof of distinct sources",
+  "candidates": [],
+  "within_family_cross_fold": []
+}

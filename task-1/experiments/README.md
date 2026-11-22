@@ -13,6 +13,16 @@ TM: **0,65265 → 0,65705 na istniejących OOF (170 obrazów)**.
 PS ≤1% nadal ma FG IoU 0; TM ≤1% rośnie 0,08059→0,24539 (3/9 trafień).
 Nie znamy wyniku ukrytego zbioru końcowego ani publicznych wyników per metoda.
 
+## Next ideas — nowe priorytety
+
+[Audyt szans i wyników](next_ideas/REPORT.md) · [Protokół](next_ideas/PROTOCOL.md).
+Nowe zadanie użytkownika po zatrzymaniu TriForensic: analiza strat, ostrożny
+fallback dla pustych masek, 3-fold adaptacja natywnego StegaStamp i oracle decoder.
+Około 48% mierzonego błędu przypada na czystą klasę w255 obrazach po przywróceniu
+czystych obszarów. W tej analizie PS używa starszego OOF #2409 — nie nazywać
+całości aktualnym OOF #2675. StegaStamp top1% fallback:0,69496→0,69761,
+mały eksploracyjny zysk. Nowa adaptacja150 kroków jeszcze bez pełnego wyniku.
+
 ## TriForensic-WM — aktualny screen
 
 [Raport z pomiarami](triforensic_wm/REPORT.md) · [Protokół](triforensic_wm/PROTOCOL.md).

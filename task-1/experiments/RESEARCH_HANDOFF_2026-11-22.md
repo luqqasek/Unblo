@@ -9,6 +9,23 @@ Start with [latest submission](local_presence/SUBMISSION_REPORT.md), [latest exp
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.
 
+## Next ideas: active opportunity audit
+
+A new user task explicitly authorizes further experiments and submission after
+TriForensic was stopped. See [next_ideas](next_ideas/REPORT.md) and protocol.
+A1 weighted error accounting attributes47.7% of measured error to clean-class
+errors in255 restoration examples. Baseline audit uses historical PS #2409 OOF,
+current corrected TM OOF and unchanged synthetic-only SS. All510 GT masks have
+both classes, but this is not proof about hidden test. Fixed top1% fallback
+improves SS0.694962→0.697615; PS/TM intervals include zero.
+
+Three-fold SS adaptation is queued:150 predeclared updates,75% synthetic replay
+plus25% real, backbone LR3e-6/new1e-5, existing FP32 architecture/loss, raw
+weights and threshold0.5. Three GPUs train separate folds; fourth does oracle
+decoder views, one node only. No adaptation gain or submission claimed yet.
+Re-embedding and dual-class losses are not new; their previous negative evidence
+is retained. No test self-training or held-out mask bank.
+
 ## TriForensic unified screening update
 
 See [TriForensic report](triforensic_wm/REPORT.md) and [protocol](triforensic_wm/PROTOCOL.md).
