@@ -68,6 +68,33 @@ No test pixels, labels, masks or predictions influence training or selection.
 All GPU tasks run through Slurm on one node. The job releases the node when workers
 finish; no fixed wall-time or unmeasured mIoU improvement is promised.
 
+## Bounded continuation declared after the150-update result
+
+The first endpoint improved170-image OOF from0.694962 to0.722019, with all
+three folds improving and the curve still rising from update50. Before any
+450-update result or new public receipt, declare exactly300 additional updates
+to total450. Restore each150 checkpoint's model, AdamW and RNG state, and keep
+the same deterministic data sequence, losses, LRs and effective batch16.
+Three single-GPU fold workers run beside a fourth all170 continuation on the
+same node. The all170 worker is not used for validation or model selection.
+
+The450 candidate inherits the already selected150 postprocessing unchanged.
+Select450 only if paired OOF mIoU improves by at least0.005 over150, the paired
+bootstrap lower bound is positive, and neither FG IoU on<=5% images nor clean
+IoU on>50%-watermarked images drops by more than0.01. Otherwise retain150.
+This is one bounded development extension, not unbiased additional validation.
+No public score enters this decision. Keep every150 checkpoint and prediction.
+
+Initial all170 refit uses4-GPU DataParallel; its450 continuation uses1 GPU
+beside the three folds. Restore the first CUDA RNG stream when reducing device
+count; the model has no dropout or stochastic depth. Floating-point reduction
+order can differ, while optimizer state, data exposure and batch size remain
+the same. Save this distinction rather than claiming bitwise equivalence.
+
+Production creates150 predictions first. Only a selected450 candidate produces
+additional test predictions. Each artifact must pass binary/shape/name/size
+validation. Upload at most once per10 minutes, only after local selection.
+
 ```sh
 PYTHONPATH=.:src python -m experiments.next_ideas.audit
 # Within a Slurm allocation with4 GPUs:

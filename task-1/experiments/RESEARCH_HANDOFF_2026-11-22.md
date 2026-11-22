@@ -19,10 +19,24 @@ current corrected TM OOF and unchanged synthetic-only SS. All510 GT masks have
 both classes, but this is not proof about hidden test. Fixed top1% fallback
 improves SS0.694962→0.697615; PS/TM intervals include zero.
 
-Three-fold SS adaptation is queued:150 predeclared updates,75% synthetic replay
+Three-fold SS adaptation completed:150 predeclared updates,75% synthetic replay
 plus25% real, backbone LR3e-6/new1e-5, existing FP32 architecture/loss, raw
-weights and threshold0.5. Three GPUs train separate folds; fourth does oracle
-decoder views, one node only. No adaptation gain or submission claimed yet.
+weights and threshold0.5. OOF0.694962→0.722019; paired delta0.027057,
+CI95[0.018782,0.035188];124 improved,42 worse. All three folds improved.
+FG<=1%0.189824→0.211660; FG1–5%0.360077→0.382853; clean on WM>50%
+0.442654→0.491067. Tiny clean IoU improves0.149905→0.163369 but misses
+increase3→4. Fixed empty/full1% fallback adds0.002395 to0.724414.
+Three GPUs trained folds; fourth did oracle views; job wall6m26s on one node.
+Initial probabilities reproduced within5.25e-6 before training. The all170
+refit/test prediction job is queued; no new submission receipt yet.
+
+Because the curve improved from50 to150, one extension to450 was declared
+before its results: restore150 model/optimizer/RNG, same replay/LRs, three
+fold workers and one all170 worker on one4-GPU node. Keep150 unless450 adds
+>=0.005 paired OOF with positive CI and no>0.01 tiny-FG/clean-hole regression.
+Public scores do not enter selection. These are reused development folds.
+The oracle GT-box90% gate recovers3/43 small PS,21/45 TM and8/45 SS; outside-GT
+blur/mean recovers0 small cases. This does not justify broad PS/SS crop search.
 Re-embedding and dual-class losses are not new; their previous negative evidence
 is retained. No test self-training or held-out mask bank.
 

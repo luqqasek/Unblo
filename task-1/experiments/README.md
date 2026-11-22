@@ -21,7 +21,13 @@ fallback dla pustych masek, 3-fold adaptacja natywnego StegaStamp i oracle decod
 Około 48% mierzonego błędu przypada na czystą klasę w255 obrazach po przywróceniu
 czystych obszarów. W tej analizie PS używa starszego OOF #2409 — nie nazywać
 całości aktualnym OOF #2675. StegaStamp top1% fallback:0,69496→0,69761,
-mały eksploracyjny zysk. Nowa adaptacja150 kroków jeszcze bez pełnego wyniku.
+mały eksploracyjny zysk. Nowa adaptacja150 kroków: **StegaStamp OOF0,69496→0,72202**,
+delta+0,02706, bootstrap95%[+0,01878,+0,03519], poprawa we wszystkich3 foldach.
+Z ustalonym fallbackiem0,72441. FG<=1%0,18982→0,21166; clean IoU na WM>50%
+0,44265→0,49107. Najmniejszych pominiętych dziur nadal4/12 (wcześniej3).
+Trening końcowy/test czekają w kolejce. Jedna kontynuacja do450 kroków ma
+ustalony próg wyboru+0,005 OOF wobec150 i kontrolę regresji obu małych klas.
+Nie ma jeszcze nowego potwierdzonego submissionu; publiczny rekord nadal#2675.
 
 ## TriForensic-WM — aktualny screen
 

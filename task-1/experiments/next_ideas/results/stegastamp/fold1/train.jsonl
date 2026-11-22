@@ -1,0 +1,16 @@
+{"step": 1, "loss": 0.24623948335647583, "gradient_norm": 5.269125461578369, "seconds_per_update": 2.9682359479775187, "eta_training_seconds": 442.2671562486503, "peak_GB": 12.29905152}
+{"step": 10, "loss": 0.19559794664382935, "gradient_norm": 3.608551025390625, "seconds_per_update": 2.0288456612004664, "eta_training_seconds": 284.0383925680653, "peak_GB": 13.05134592}
+{"step": 20, "loss": 0.25692981481552124, "gradient_norm": 2.836416244506836, "seconds_per_update": 1.9609028201521141, "eta_training_seconds": 254.91736661977484, "peak_GB": 13.05134592}
+{"step": 30, "loss": 0.2142218053340912, "gradient_norm": 2.47165584564209, "seconds_per_update": 1.9382946531676377, "eta_training_seconds": 232.59535838011652, "peak_GB": 13.05134592}
+{"step": 40, "loss": 0.21028044819831848, "gradient_norm": 6.50241231918335, "seconds_per_update": 1.9272848540749692, "eta_training_seconds": 212.0013339482466, "peak_GB": 13.05134592}
+{"step": 50, "loss": 0.23211848735809326, "gradient_norm": 4.561473369598389, "seconds_per_update": 1.9205203396384605, "eta_training_seconds": 192.05203396384604, "peak_GB": 13.05134592}
+{"step": 60, "loss": 0.2296520322561264, "gradient_norm": 2.134556293487549, "seconds_per_update": 1.9161130802492456, "eta_training_seconds": 172.4501772224321, "peak_GB": 13.05134592}
+{"step": 70, "loss": 0.19210557639598846, "gradient_norm": 3.9251692295074463, "seconds_per_update": 1.9149489941279172, "eta_training_seconds": 153.19591953023337, "peak_GB": 13.05134592}
+{"step": 80, "loss": 0.21224091947078705, "gradient_norm": 2.024346351623535, "seconds_per_update": 1.912383911024517, "eta_training_seconds": 133.8668737717162, "peak_GB": 13.05134592}
+{"step": 90, "loss": 0.1892290860414505, "gradient_norm": 3.034822940826416, "seconds_per_update": 1.910079230378162, "eta_training_seconds": 114.60475382268972, "peak_GB": 13.05134592}
+{"step": 100, "loss": 0.18624570965766907, "gradient_norm": 2.5501325130462646, "seconds_per_update": 1.9084586737604696, "eta_training_seconds": 95.42293368802348, "peak_GB": 13.05134592}
+{"step": 110, "loss": 0.21883051097393036, "gradient_norm": 5.805346488952637, "seconds_per_update": 1.9069938427908875, "eta_training_seconds": 76.27975371163551, "peak_GB": 13.05134592}
+{"step": 120, "loss": 0.24660393595695496, "gradient_norm": 7.85994815826416, "seconds_per_update": 1.9057734796411145, "eta_training_seconds": 57.17320438923343, "peak_GB": 13.05134592}
+{"step": 130, "loss": 0.2219698280096054, "gradient_norm": 3.5588576793670654, "seconds_per_update": 1.9048099582531275, "eta_training_seconds": 38.09619916506255, "peak_GB": 13.05134592}
+{"step": 140, "loss": 0.16544277966022491, "gradient_norm": 2.8988733291625977, "seconds_per_update": 1.9039102140845248, "eta_training_seconds": 19.039102140845248, "peak_GB": 13.05134592}
+{"step": 150, "loss": 0.2134876549243927, "gradient_norm": 12.698906898498535, "seconds_per_update": 1.9031056603323668, "eta_training_seconds": 0.0, "peak_GB": 13.05134592}
