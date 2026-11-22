@@ -1,0 +1,37 @@
+{
+  "packages": {
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3"
+  },
+  "code_sha256": {
+    "assemble.py": "caf73e47f5528a7551a11767af36f6b33b792269fccb0517c6210af47c8347e2",
+    "oracle.py": "f8a9061df5c3b418a29da4c9b95d099b5ff3f5a46f9d59d463d6eb43745c7434",
+    "report.py": "f6360c38ac100c29b2856e71bf731debf5e230511b59899cd2e7f620365f50ca",
+    "screen.py": "0637b8ea5d0966a9b35e66f5d9fde79eed0f070b6902386a62b9f3a23fff5756",
+    "infer_cached.py": "846bbe254a003d9c53f09df8b19259d3e7b0f7a6761b43bee5a4d4c6277121fd",
+    "repair_real.py": "be8e046bb7b80a06b592bf6caeae43974e6c868bc9259ea4990477400bf580aa",
+    "dashboard_adapter.py": "71afddf2b1f9236785d8677fe5e344d019b75349cd15901dca4faa0e5d3b724a",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native_probe.py": "e473836b1ccfd746f9ddf2ac4bcb37cf39e7aad6dd6fe4a4143e98a1f1ec262b",
+    "proposals.py": "3ff32f167b0ff08698ec8468987af3d7995e387ec2e52fb5b28306f0639dbd4c",
+    "fit.py": "e04d59f4e4a9cd88ed2f95d022e1463e4644757e077b5dbb2364ad41370f4df8",
+    "base_candidate.py": "5c7d392167c903b1239e5b2d8bd1666ec3c9c63664875e7b48a0d3269da4c989",
+    "features.py": "0c1eb0d473e800e987f4ea6864b211f089110770048b6cc932730295768bbef5",
+    "install_dashboard.py": "b622527be804f75f12fbcc2fa1ffd03ae35baf3c54ec36a3f961d27475def3a2"
+  },
+  "scorer_sha256": {
+    "control_b.pkl": "a4f83f9d799b7b11783038ae89813e251294d005ec6ee281de5f27a50d8f35ef",
+    "pcmv.pkl": "5957b495e3a45488128b129df75a3e489edf27b4f6c8fb1b15936c1b56b0fc83"
+  },
+  "slurm": "15905215      COMPLETED   00:01:25 2026-11-22T05:48:57 2026-11-22T05:50:22         jrc0224 \n15905215.ba+  COMPLETED   00:01:25 2026-11-22T05:48:57 2026-11-22T05:50:22         jrc0224 \n15905215.0    COMPLETED   00:01:06 2026-11-22T05:49:16 2026-11-22T05:50:22         jrc0224 \n15905266      COMPLETED   00:21:21 2026-11-22T05:54:21 2026-11-22T06:15:42         jrc0319 \n15905266.ba+  COMPLETED   00:21:21 2026-11-22T05:54:21 2026-11-22T06:15:42         jrc0319 \n15905266.0    COMPLETED   00:21:01 2026-11-22T05:54:41 2026-11-22T06:15:42         jrc0319 \n15905266.1    COMPLETED   00:00:01 2026-11-22T05:55:15 2026-11-22T05:55:16         jrc0319 \n15905266.2    COMPLETED   00:00:00 2026-11-22T05:59:08 2026-11-22T05:59:08         jrc0319 \n15905266.3    COMPLETED   00:00:01 2026-11-22T05:59:32 2026-11-22T05:59:33         jrc0319 \n15905266.4    COMPLETED   00:15:01 2026-11-22T06:00:24 2026-11-22T06:15:25         jrc0319 \n15905266.5    COMPLETED   00:00:50 2026-11-22T06:01:24 2026-11-22T06:02:14         jrc0319 \n15905266.6    COMPLETED   00:00:31 2026-11-22T06:02:38 2026-11-22T06:03:09         jrc0319 \n15905266.7    COMPLETED   00:01:09 2026-11-22T06:03:47 2026-11-22T06:04:56         jrc0319 \n15905266.8    COMPLETED   00:00:03 2026-11-22T06:03:59 2026-11-22T06:04:02         jrc0319 \n15905266.9    COMPLETED   00:00:30 2026-11-22T06:05:06 2026-11-22T06:05:36         jrc0319 \n15905266.10      FAILED   00:00:10 2026-11-22T06:07:43 2026-11-22T06:07:53         jrc0319 \n15905266.11   COMPLETED   00:06:29 2026-11-22T06:09:13 2026-11-22T06:15:42         jrc0319 \n",
+  "application_gpu_devices": [
+    0,
+    1
+  ],
+  "best_submission": 3188,
+  "pcmv_submitted": false,
+  "result": "No validation gain; both calibrated scorers apply zero toggles. Stop."
+}

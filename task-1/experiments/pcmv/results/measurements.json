@@ -2,8 +2,22 @@
   {
     "family": "pixelseal",
     "name": "Global carrier EMA1561 / exact inference",
-    "protocol": "Repeated57-image development fold, one seed,113-real training; no all170 refit",
+    "protocol": "Repeated 57-image development fold, one seed, 113-real training; no all 170 refit",
     "miou": 0.5817244623066825,
-    "note": "Delta+0.010841; minority guardFalse; per-bucket regressions retained in report."
+    "note": "Delta +0.010841; minority guard False; per-bucket regressions retained in report."
+  },
+  {
+    "family": "pixelseal",
+    "name": "PCMV control_b",
+    "protocol": "One 57-image developmental fold, inner action calibration, final evaluation",
+    "miou": 0.5817244623066825,
+    "note": "Delta +0.000000; anti-shortcut{'clean_false_toggle_rate': 0.0, 'marked_false_toggle_rate': 0.0, 'mean_miou_delta': 0.0, 'mean_miou_drop': 0.0, 'low_observability_false_carve_image_rate': 0.0, 'images': 400}"
+  },
+  {
+    "family": "pixelseal",
+    "name": "PCMV pcmv",
+    "protocol": "One 57-image developmental fold, inner action calibration, final evaluation",
+    "miou": 0.5817244623066825,
+    "note": "Delta +0.000000; anti-shortcut{'clean_false_toggle_rate': 0.0, 'marked_false_toggle_rate': 0.0, 'mean_miou_delta': 0.0, 'mean_miou_drop': 0.0, 'low_observability_false_carve_image_rate': 0.0, 'images': 400}"
   }
 ]

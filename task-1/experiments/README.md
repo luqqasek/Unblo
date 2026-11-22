@@ -147,11 +147,13 @@ and SHA256 checks passed. The150-update early-stop gate rejected this model: mea
 0.659924→0.641382 (delta−0.018542); all three families regressed. No test
 predictions or submission were made. See [iml_holes/REPORT.md](iml_holes/REPORT.md).
 
-Current work: [PCMV](pcmv/PROTOCOL.md), one PixelSeal scorer fit/evaluation.
-First verify/deploy stronger TriForensic1561 global/carrier branch; preserve
-TrustMark/StegaStamp from #3054. SS1000 continuation was canceled while pending
-on explicit user steering, with zero new updates. PCMV now uses GPUs0–1 only;
-GPUs2–3 are for the user's separate experiment in the same allocation.
+Completed: [PCMV](pcmv/REPORT.md), one PixelSeal scorer fit/evaluation.
+The stronger EMA1561 global/carrier branch was deployed as #3188; TrustMark and
+StegaStamp remain unchanged from #3054. Both PCMV and the proposal-only control
+preserve the strongest base's 0.581724 mIoU on the fixed 57-image fold: calibration
+selected no action, so neither made test predictions or a submission. The job
+used GPUs 0–1, leaving GPUs 2–3 for the user's experiment, and has completed.
+SS1000 was canceled while pending on user steering, with zero new updates.
 
 ## New best accepted: #3188 (2026-11-22)
 
@@ -160,4 +162,4 @@ global/carrier branch; TrustMark and StegaStamp masks remain byte-identical.
 Same57-image PS validation0.570883→0.581724. No all170 PS refit; trained113 real
 images plus synthetic data. Small FG<=5% remains unresolved; see
 [pcmv/REPORT.md](pcmv/REPORT.md) for exact buckets, artifact hash and receipt.
-PCMV scorer evaluation is still running; no PCMV gain is claimed yet.
+PCMV completed without gain (0.581724 → 0.581724); no duplicate submission or extended training. Tiny foreground and clean-hole failures remain unresolved.
