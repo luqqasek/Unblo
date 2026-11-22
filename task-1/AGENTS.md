@@ -1,8 +1,8 @@
 # Task 1 experiment dashboard
 
 For model optimization, start with `experiments/RESEARCH_HANDOFF_2026-11-22.md`
-and `experiments/README.md`. Current best accepted submission is #2163 (0.6145
-public mIoU): message-conditioned PS/TM and native RGB StegaStamp. Preserve the
+and `experiments/README.md`. Current best accepted submission is #2409 (0.6369
+public mIoU): message-conditioned PS/TM with NRGMark crop verification for TM, and native RGB StegaStamp. Preserve the
 historical inverse-STN correction only in the legacy feature pipeline; the new
 raw-image segmentator has no STN. Read the protocol before comparing scores.
 

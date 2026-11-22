@@ -1,0 +1,31 @@
+{
+  "n": 1020,
+  "shape": [
+    1020,
+    128,
+    128
+  ],
+  "dtype": "torch.uint8",
+  "unique_names": true,
+  "binary": true,
+  "bytes": 16734690,
+  "sha256": "4221278af7cdd670059752305fa340225c12a04bf3547dd9766665c63ce14003",
+  "stegastamp_unchanged": true,
+  "sources": {
+    "pixelseal": {
+      "path": "/Users/luqasek/Desktop/Python projects/European-AI-Hackathon/task-1/experiments/small_zoom/results/submission/pixelseal-subset.pt",
+      "sha256": "27f88e4302cd52ed9e391454d2fe05259152c71ecfd959893f58f247d1f5f369",
+      "n": 340
+    },
+    "trustmark": {
+      "path": "/Users/luqasek/Desktop/Python projects/European-AI-Hackathon/task-1/experiments/small_zoom/results/submission/trustmark-subset.pt",
+      "sha256": "26d889a3a43319a1464553230278642826a4823a206ffd4ec3e8e413ae31a1a9",
+      "n": 340
+    },
+    "stegastamp": {
+      "path": "/Users/luqasek/Desktop/Python projects/European-AI-Hackathon/task-1/experiments/native_hybrid_submission/results/stegastamp-subset.pt",
+      "sha256": "412f664ba2504f1d161bdcf510266a352a591a2b3f9be309ced7dcd7a31edd47",
+      "n": 340
+    }
+  }
+}

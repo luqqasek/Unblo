@@ -1,0 +1,25 @@
+{
+  "family": "trustmark",
+  "full_refit": true,
+  "source": "region",
+  "source_checkpoint": "/p/project1/training2666/pszenny1/native-localizer/region-runs/trustmark/objects/last.pt",
+  "source_sha256": "911e4efee153a91b3eea5a35ecdaddd4682e153d513b5fdc12c3afd0fe8eaf42",
+  "steps": 150,
+  "batch": 32,
+  "microbatch": 16,
+  "synthetic": 24,
+  "real": 8,
+  "threshold": 0.5,
+  "encoder_lr": 2e-06,
+  "new_lr": 2e-05,
+  "seed": 42,
+  "tta": false,
+  "proposal_scales": [
+    512,
+    1536,
+    2560,
+    4096
+  ],
+  "proposal_bit_accuracy_threshold": 0.9,
+  "recipe_frozen_before_test": true
+}

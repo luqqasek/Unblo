@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "metric_contract_tests": 3,
+  "families": {
+    "pixelseal": {
+      "oof_maps": 170,
+      "real_small_images": 43,
+      "decoder_views": 301,
+      "crop_tolerance_views": 731,
+      "synthetic_covers": 16,
+      "geometry_real": 170,
+      "geometry_replay_views": 1024,
+      "probability_metrics_and_policy_buckets_recomputed": true,
+      "decoder_bits_recomputed": true
+    },
+    "trustmark": {
+      "oof_maps": 170,
+      "real_small_images": 45,
+      "decoder_views": 360,
+      "crop_tolerance_views": 765,
+      "synthetic_covers": 16,
+      "geometry_real": 170,
+      "geometry_replay_views": 1024,
+      "probability_metrics_and_policy_buckets_recomputed": true,
+      "decoder_bits_recomputed": true
+    }
+  },
+  "all_oof_source_hashes_unchanged": true,
+  "limitations": [
+    "geometry is code replay, not archived training realizations",
+    "oracle postprocessing selects using evaluation GT",
+    "boundary agreement uses Sobel proxy, not semantic object annotations"
+  ]
+}

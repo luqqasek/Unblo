@@ -1,0 +1,13 @@
+{
+  "family": "pixelseal",
+  "variant": "objects_plus100",
+  "seed": 73,
+  "initial": "objects600 checkpoint, no real training",
+  "steps": 100,
+  "batch": 32,
+  "encoder_lr": 5e-06,
+  "new_lr": 5e-05,
+  "loss": "same segmentation +0.1 changed-cell ranking",
+  "threshold": 0.5,
+  "data": "unchanged objects data"
+}

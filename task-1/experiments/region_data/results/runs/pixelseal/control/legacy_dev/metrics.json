@@ -1,0 +1,1217 @@
+{
+  "groups": {
+    "all": {
+      "n": 64,
+      "miou": {
+        "mean": 0.5444960875309284,
+        "defined": 64,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.5159914713962781,
+        "defined": 64,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.5730007036655786,
+        "defined": 64,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.5899581336937264,
+        "defined": 61,
+        "undefined": 3
+      },
+      "clean_ap": {
+        "mean": 0.6488825738880053,
+        "defined": 59,
+        "undefined": 5
+      },
+      "roc_auc": {
+        "mean": 0.6837068551929579,
+        "defined": 56,
+        "undefined": 8
+      },
+      "true_area": {
+        "mean": 0.49892520904541016,
+        "defined": 64,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.47569751739501953,
+        "defined": 64,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.058302879333496094,
+        "defined": 64,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.359375,
+        "defined": 64,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0625,
+        "defined": 64,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.3770491803278688,
+        "defined": 61,
+        "undefined": 3
+      },
+      "fp_area": {
+        "mean": 0.01842975616455078,
+        "defined": 64,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.11149837506602522,
+        "defined": 64,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.2739748954772949,
+        "defined": 64,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.2885251045227051,
+        "defined": 64,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.22077556175067659,
+        "defined": 56,
+        "undefined": 8
+      },
+      "minority_iou": {
+        "mean": 0.15494657954495236,
+        "defined": 64,
+        "undefined": 0
+      }
+    },
+    "partial": {
+      "n": 56,
+      "miou": {
+        "mean": 0.5156811626748558,
+        "defined": 56,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.46555031161806787,
+        "defined": 56,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.5658120137316435,
+        "defined": 56,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.5533472527735234,
+        "defined": 56,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.6300727117748627,
+        "defined": 56,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.6837068551929579,
+        "defined": 56,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.4809145246233259,
+        "defined": 56,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.4549745832170759,
+        "defined": 56,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.06663186209542411,
+        "defined": 56,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.375,
+        "defined": 56,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.03571428571428571,
+        "defined": 56,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.4107142857142857,
+        "defined": 56,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.020822797502790178,
+        "defined": 56,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.05599814293260026,
+        "defined": 56,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.2595427376883371,
+        "defined": 56,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.24045726231166295,
+        "defined": 56,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.22077556175067659,
+        "defined": 56,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.10565323376565981,
+        "defined": 56,
+        "undefined": 0
+      }
+    },
+    "fully_clean": {
+      "n": 3,
+      "miou": {
+        "mean": 0.8310953776041666,
+        "defined": 3,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.6666666666666666,
+        "defined": 3,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.9955240885416666,
+        "defined": 3,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 3
+      },
+      "clean_ap": {
+        "mean": 1.0,
+        "defined": 3,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 3
+      },
+      "true_area": {
+        "mean": 0.0,
+        "defined": 3,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.004475911458333333,
+        "defined": 3,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.0,
+        "defined": 3,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.6666666666666666,
+        "defined": 3,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0,
+        "defined": 3,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 3
+      },
+      "fp_area": {
+        "mean": 0.004475911458333333,
+        "defined": 3,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.6666666666666666,
+        "defined": 3,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 1.0,
+        "defined": 3,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.0,
+        "defined": 3,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 3
+      },
+      "minority_iou": {
+        "mean": 0.6666666666666666,
+        "defined": 3,
+        "undefined": 0
+      }
+    },
+    "fully_marked": {
+      "n": 5,
+      "miou": {
+        "mean": 0.695263671875,
+        "defined": 5,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.99052734375,
+        "defined": 5,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.4,
+        "defined": 5,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 1.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 5
+      },
+      "roc_auc": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 5
+      },
+      "true_area": {
+        "mean": 1.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.99052734375,
+        "defined": 5,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.4,
+        "defined": 5,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.4,
+        "defined": 5,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 1.0,
+        "defined": 5,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 5
+      },
+      "minority_iou": {
+        "mean": 0.4,
+        "defined": 5,
+        "undefined": 0
+      }
+    },
+    "fg_le_1pct": {
+      "n": 7,
+      "miou": {
+        "mean": 0.4960850306919643,
+        "defined": 7,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.0,
+        "defined": 7,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.9921700613839286,
+        "defined": 7,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.022227006893345447,
+        "defined": 7,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.9948005362312305,
+        "defined": 7,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.5498252694111089,
+        "defined": 7,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.006583077566964286,
+        "defined": 7,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.0012468610491071428,
+        "defined": 7,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.006583077566964286,
+        "defined": 7,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.7142857142857143,
+        "defined": 7,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0,
+        "defined": 7,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 1.0,
+        "defined": 7,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.0012468610491071428,
+        "defined": 7,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.0,
+        "defined": 7,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.49670846121651785,
+        "defined": 7,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.003291538783482143,
+        "defined": 7,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.022227006893345447,
+        "defined": 7,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.0,
+        "defined": 7,
+        "undefined": 0
+      }
+    },
+    "fg_1_to_5pct": {
+      "n": 11,
+      "miou": {
+        "mean": 0.4892841391306044,
+        "defined": 11,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.006883236800134307,
+        "defined": 11,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.9716850414610746,
+        "defined": 11,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.0822793396476955,
+        "defined": 11,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.9839514712219505,
+        "defined": 11,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.6424001487072023,
+        "defined": 11,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.026933149857954544,
+        "defined": 11,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.002263849431818182,
+        "defined": 11,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.026933149857954544,
+        "defined": 11,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.9090909090909091,
+        "defined": 11,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0,
+        "defined": 11,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.9090909090909091,
+        "defined": 11,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.0018088600852272727,
+        "defined": 11,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.01264488935721812,
+        "defined": 11,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.4865334250710227,
+        "defined": 11,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.013466574928977272,
+        "defined": 11,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.0822793396476955,
+        "defined": 11,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.006883236800134307,
+        "defined": 11,
+        "undefined": 0
+      }
+    },
+    "fg_gt_50pct": {
+      "n": 27,
+      "miou": {
+        "mean": 0.5368808832198557,
+        "defined": 27,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.9101074824742048,
+        "defined": 27,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.16365428396550666,
+        "defined": 27,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.9639048542258976,
+        "defined": 27,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.27412653210443744,
+        "defined": 27,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.742515366084792,
+        "defined": 27,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.92962646484375,
+        "defined": 27,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.9243638780381944,
+        "defined": 27,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.07037353515625,
+        "defined": 27,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.0,
+        "defined": 27,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.07407407407407407,
+        "defined": 27,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.0,
+        "defined": 27,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.03617124204282408,
+        "defined": 27,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.09096622507309131,
+        "defined": 27,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.035186767578125,
+        "defined": 27,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.464813232421875,
+        "defined": 27,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.27412653210443744,
+        "defined": 27,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.16365428396550666,
+        "defined": 27,
+        "undefined": 0
+      }
+    },
+    "minority_0_0.0025": {
+      "n": 0,
+      "miou": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "full": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": null,
+        "defined": 0,
+        "undefined": 0
+      }
+    },
+    "minority_0.0025_0.01": {
+      "n": 12,
+      "miou": {
+        "mean": 0.499410015149155,
+        "defined": 12,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.41108555129221425,
+        "defined": 12,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.5877344790060959,
+        "defined": 12,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.4278708769661288,
+        "defined": 12,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.5910181452212205,
+        "defined": 12,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.5729388598599341,
+        "defined": 12,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.41839599609375,
+        "defined": 12,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.4136810302734375,
+        "defined": 12,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.005950927734375,
+        "defined": 12,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.4166666666666667,
+        "defined": 12,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.08333333333333333,
+        "defined": 12,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.5833333333333334,
+        "defined": 12,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.002716064453125,
+        "defined": 12,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.013157894736842106,
+        "defined": 12,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.290802001953125,
+        "defined": 12,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.209197998046875,
+        "defined": 12,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.023683586440787677,
+        "defined": 12,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.008968609865470852,
+        "defined": 12,
+        "undefined": 0
+      }
+    },
+    "minority_0.01_0.05": {
+      "n": 23,
+      "miou": {
+        "mean": 0.5035062701739615,
+        "defined": 23,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.5038388397287596,
+        "defined": 23,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.5031737006191633,
+        "defined": 23,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.5557918940121032,
+        "defined": 23,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.5496116089712999,
+        "defined": 23,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.6950889515440949,
+        "defined": 23,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.5216993248980978,
+        "defined": 23,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.5099858823029891,
+        "defined": 23,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.025801948879076088,
+        "defined": 23,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.43478260869565216,
+        "defined": 23,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.043478260869565216,
+        "defined": 23,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.43478260869565216,
+        "defined": 23,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.011440111243206522,
+        "defined": 23,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.0407334351346423,
+        "defined": 23,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.23915033755095108,
+        "defined": 23,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.2608496624490489,
+        "defined": 23,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.11837711126187353,
+        "defined": 23,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.04174675056393103,
+        "defined": 23,
+        "undefined": 0
+      }
+    },
+    "minority_0.05_0.2": {
+      "n": 17,
+      "miou": {
+        "mean": 0.5415856243686676,
+        "defined": 17,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.45452153108321797,
+        "defined": 17,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.6286497176541174,
+        "defined": 17,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.6039936816247099,
+        "defined": 17,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.7464002486859374,
+        "defined": 17,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.7391073323504816,
+        "defined": 17,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.48555980009191174,
+        "defined": 17,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.4378841624540441,
+        "defined": 17,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.09670840992647059,
+        "defined": 17,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.35294117647058826,
+        "defined": 17,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0,
+        "defined": 17,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.35294117647058826,
+        "defined": 17,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.025254193474264705,
+        "defined": 17,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.0793927219613999,
+        "defined": 17,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.2572200999540441,
+        "defined": 17,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.24277990004595587,
+        "defined": 17,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.400814050413389,
+        "defined": 17,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.18330676497352763,
+        "defined": 17,
+        "undefined": 0
+      }
+    },
+    "minority_0.2_0.5": {
+      "n": 4,
+      "miou": {
+        "mean": 0.5244062749333982,
+        "defined": 4,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.45565787323226353,
+        "defined": 4,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.593154676634533,
+        "defined": 4,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.7004723704563309,
+        "defined": 4,
+        "undefined": 0
+      },
+      "clean_ap": {
+        "mean": 0.7154957206842091,
+        "defined": 4,
+        "undefined": 0
+      },
+      "roc_auc": {
+        "mean": 0.7151117592535157,
+        "defined": 4,
+        "undefined": 0
+      },
+      "true_area": {
+        "mean": 0.414215087890625,
+        "defined": 4,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.335174560546875,
+        "defined": 4,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.355621337890625,
+        "defined": 4,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.0,
+        "defined": 4,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0,
+        "defined": 4,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.0,
+        "defined": 4,
+        "undefined": 0
+      },
+      "fp_area": {
+        "mean": 0.110260009765625,
+        "defined": 4,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.17286399648573453,
+        "defined": 4,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.2928924560546875,
+        "defined": 4,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.2071075439453125,
+        "defined": 4,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.6356790011744335,
+        "defined": 4,
+        "undefined": 0
+      },
+      "minority_iou": {
+        "mean": 0.43314187624272926,
+        "defined": 4,
+        "undefined": 0
+      }
+    },
+    "real": {
+      "n": 64,
+      "miou": {
+        "mean": 0.5444960875309284,
+        "defined": 64,
+        "undefined": 0
+      },
+      "fg_iou": {
+        "mean": 0.5159914713962781,
+        "defined": 64,
+        "undefined": 0
+      },
+      "clean_iou": {
+        "mean": 0.5730007036655786,
+        "defined": 64,
+        "undefined": 0
+      },
+      "fg_ap": {
+        "mean": 0.5899581336937264,
+        "defined": 61,
+        "undefined": 3
+      },
+      "clean_ap": {
+        "mean": 0.6488825738880053,
+        "defined": 59,
+        "undefined": 5
+      },
+      "roc_auc": {
+        "mean": 0.6837068551929579,
+        "defined": 56,
+        "undefined": 8
+      },
+      "true_area": {
+        "mean": 0.49892520904541016,
+        "defined": 64,
+        "undefined": 0
+      },
+      "pred_area": {
+        "mean": 0.47569751739501953,
+        "defined": 64,
+        "undefined": 0
+      },
+      "minority_fraction": {
+        "mean": 0.058302879333496094,
+        "defined": 64,
+        "undefined": 0
+      },
+      "empty": {
+        "mean": 0.359375,
+        "defined": 64,
+        "undefined": 0
+      },
+      "full": {
+        "mean": 0.0625,
+        "defined": 64,
+        "undefined": 0
+      },
+      "complete_fg_miss": {
+        "mean": 0.3770491803278688,
+        "defined": 61,
+        "undefined": 3
+      },
+      "fp_area": {
+        "mean": 0.01842975616455078,
+        "defined": 64,
+        "undefined": 0
+      },
+      "internal_boundary_f1": {
+        "mean": 0.11149837506602522,
+        "defined": 64,
+        "undefined": 0
+      },
+      "constant_clean_miou": {
+        "mean": 0.2739748954772949,
+        "defined": 64,
+        "undefined": 0
+      },
+      "constant_marked_miou": {
+        "mean": 0.2885251045227051,
+        "defined": 64,
+        "undefined": 0
+      },
+      "minority_ap": {
+        "mean": 0.22077556175067659,
+        "defined": 56,
+        "undefined": 8
+      },
+      "minority_iou": {
+        "mean": 0.15494657954495236,
+        "defined": 64,
+        "undefined": 0
+      }
+    }
+  },
+  "ap_implementation": "sklearn.metrics.average_precision_score, non-interpolated, per image, absent positive class excluded",
+  "roc_undefined": "single-class GT excluded",
+  "official_empty_union": 1,
+  "boundary": "1-cell tolerance, image frame excluded"
+}

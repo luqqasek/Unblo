@@ -1,0 +1,17 @@
+{
+  "code_sha256": {
+    "data.py": "8738c2d84983b247ed007b195d9a15b0f51c287ac9bf62bfacfdb0162177e188",
+    "adapt_job.py": "eca50c10ac643d28d5dffb916dc2789fc58c8fafb756bbe802cf12d352a3daf7",
+    "prepare.py": "b4324a51f9ae26f4096160e9977a421b2e2565a959c2013d0c2652683a843dd0",
+    "__init__.py": "1c3cc8a8ff3e9a439d642c78376393c1388a1a96a7e99e91b7ced3b50205c56a",
+    "job.py": "9f7ca6e768ccdad776d9546a50b2ef91f64897e0c82b2b7c8040cbd0a57f20e5",
+    "test_data.py": "e8685c90628f36756b1d20bcff5f4fc7bce2294648db6464c5b586a1e675eae6",
+    "adapt.py": "ab135dc9984f90f69d84c717d094fdb2a94b188036862f2cbdf96752ab259ffc",
+    "experiment.py": "93854f6d6396821157923eb3ba775bae250ccfbf7f101dd172384a64214c38b8"
+  },
+  "jobs": {
+    "synthetic": 15904148,
+    "adapt": 15904154
+  },
+  "no_test_images_used": true
+}

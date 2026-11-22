@@ -1,0 +1,240 @@
+{
+  "n_covers": 16,
+  "signal": [
+    {
+      "side": 48,
+      "stratum": "all",
+      "n": 16,
+      "pixels": 2304.0,
+      "mae_rgb_uint8": 0.8316514756944444,
+      "rms_rgb_uint8": 1.265764336797694,
+      "zero_pixel_fraction": 0.3088921440972222,
+      "zero_channel_fraction": 0.40381763599537035,
+      "mae_Y": 0.8242960069444444,
+      "mae_Cb": 0.10940981162410651,
+      "mae_Cr": 0.08211266890553182,
+      "chroma_energy_fraction": 0.055248473868574385
+    },
+    {
+      "side": 48,
+      "stratum": "smooth_q25",
+      "n": 16,
+      "pixels": 576.1875,
+      "mae_rgb_uint8": 0.7833442905915013,
+      "rms_rgb_uint8": 1.1625618628540413,
+      "zero_pixel_fraction": 0.32291102505777003,
+      "zero_channel_fraction": 0.4181526664500289,
+      "mae_Y": 0.777206849778247,
+      "mae_Cb": 0.10295636613360165,
+      "mae_Cr": 0.0805494342087042,
+      "chroma_energy_fraction": 0.06514132924135298
+    },
+    {
+      "side": 48,
+      "stratum": "textured_q75",
+      "n": 16,
+      "pixels": 576.0,
+      "mae_rgb_uint8": 0.7807798032407407,
+      "rms_rgb_uint8": 1.1778500310290205,
+      "zero_pixel_fraction": 0.31217447916666663,
+      "zero_channel_fraction": 0.4164858217592593,
+      "mae_Y": 0.7699152560763889,
+      "mae_Cb": 0.12176665226439054,
+      "mae_Cr": 0.08641277899132196,
+      "chroma_energy_fraction": 0.07215847836155213
+    },
+    {
+      "side": 64,
+      "stratum": "all",
+      "n": 16,
+      "pixels": 4096.0,
+      "mae_rgb_uint8": 0.9122670491536458,
+      "rms_rgb_uint8": 1.3763542928905368,
+      "zero_pixel_fraction": 0.2813568115234375,
+      "zero_channel_fraction": 0.37625630696614587,
+      "mae_Y": 0.8985801239013671,
+      "mae_Cb": 0.11874290621307582,
+      "mae_Cr": 0.08809640098060252,
+      "chroma_energy_fraction": 0.050882632719558674
+    },
+    {
+      "side": 64,
+      "stratum": "smooth_q25",
+      "n": 16,
+      "pixels": 1027.3125,
+      "mae_rgb_uint8": 0.8471130562379112,
+      "rms_rgb_uint8": 1.2522355393232272,
+      "zero_pixel_fraction": 0.3045797140003088,
+      "zero_channel_fraction": 0.39478407671436544,
+      "mae_Y": 0.8368907735344302,
+      "mae_Cb": 0.1039186213622319,
+      "mae_Cr": 0.08190849335495147,
+      "chroma_energy_fraction": 0.05859498797643242
+    },
+    {
+      "side": 64,
+      "stratum": "textured_q75",
+      "n": 16,
+      "pixels": 1024.0,
+      "mae_rgb_uint8": 0.8326009114583333,
+      "rms_rgb_uint8": 1.2273113727386142,
+      "zero_pixel_fraction": 0.26971435546875,
+      "zero_channel_fraction": 0.38264973958333337,
+      "mae_Y": 0.8152937622070312,
+      "mae_Cb": 0.13306687055807354,
+      "mae_Cr": 0.0947597792077167,
+      "chroma_energy_fraction": 0.07398650147280646
+    },
+    {
+      "side": 128,
+      "stratum": "all",
+      "n": 16,
+      "pixels": 16384.0,
+      "mae_rgb_uint8": 1.095654805501302,
+      "rms_rgb_uint8": 1.709096849488275,
+      "zero_pixel_fraction": 0.24852371215820312,
+      "zero_channel_fraction": 0.3454678853352865,
+      "mae_Y": 1.0774123039245604,
+      "mae_Cb": 0.1387441755686603,
+      "mae_Cr": 0.09407339762689046,
+      "chroma_energy_fraction": 0.03930715154890373
+    },
+    {
+      "side": 128,
+      "stratum": "smooth_q25",
+      "n": 16,
+      "pixels": 4096.5625,
+      "mae_rgb_uint8": 1.135242096444636,
+      "rms_rgb_uint8": 1.6957634798999373,
+      "zero_pixel_fraction": 0.24509628131913258,
+      "zero_channel_fraction": 0.32969853071695554,
+      "mae_Y": 1.1225303886174767,
+      "mae_Cb": 0.12647585600255556,
+      "mae_Cr": 0.0904567913547286,
+      "chroma_energy_fraction": 0.03868030811881333
+    },
+    {
+      "side": 128,
+      "stratum": "textured_q75",
+      "n": 16,
+      "pixels": 4096.125,
+      "mae_rgb_uint8": 0.8994368501498444,
+      "rms_rgb_uint8": 1.4258399620169968,
+      "zero_pixel_fraction": 0.26831569271357597,
+      "zero_channel_fraction": 0.3914138498549852,
+      "mae_Y": 0.8753523897884996,
+      "mae_Cb": 0.15308231937382516,
+      "mae_Cr": 0.10097498997411397,
+      "chroma_energy_fraction": 0.06631795087674887
+    },
+    {
+      "side": 512,
+      "stratum": "all",
+      "n": 16,
+      "pixels": 262144.0,
+      "mae_rgb_uint8": 1.265331506729126,
+      "rms_rgb_uint8": 2.0373452254893243,
+      "zero_pixel_fraction": 0.23073863983154297,
+      "zero_channel_fraction": 0.3344165484110514,
+      "mae_Y": 1.2410412638187407,
+      "mae_Cb": 0.1603386976648938,
+      "mae_Cr": 0.10271446323938957,
+      "chroma_energy_fraction": 0.03254372754784337
+    },
+    {
+      "side": 512,
+      "stratum": "smooth_q25",
+      "n": 16,
+      "pixels": 65604.5,
+      "mae_rgb_uint8": 1.223589383081519,
+      "rms_rgb_uint8": 1.9248131129477584,
+      "zero_pixel_fraction": 0.25440435890061475,
+      "zero_channel_fraction": 0.3439441140753152,
+      "mae_Y": 1.2090872781273436,
+      "mae_Cb": 0.13808751163220231,
+      "mae_Cr": 0.09312914087231336,
+      "chroma_energy_fraction": 0.03192918446084601
+    },
+    {
+      "side": 512,
+      "stratum": "textured_q75",
+      "n": 16,
+      "pixels": 65540.1875,
+      "mae_rgb_uint8": 1.2136611489201934,
+      "rms_rgb_uint8": 1.980806826703205,
+      "zero_pixel_fraction": 0.21238946003048853,
+      "zero_channel_fraction": 0.3405341684602893,
+      "mae_Y": 1.18131908412036,
+      "mae_Cb": 0.1896725958320651,
+      "mae_Cr": 0.11852138152468383,
+      "chroma_energy_fraction": 0.042671467147467335
+    }
+  ],
+  "controls": [
+    {
+      "side": 48,
+      "regime": "local_embedding",
+      "bit_accuracy": 0.8318749999999999
+    },
+    {
+      "side": 48,
+      "regime": "large_source_fragment",
+      "bit_accuracy": 0.4875
+    },
+    {
+      "side": 48,
+      "regime": "clean",
+      "bit_accuracy": 0.48750000000000004
+    },
+    {
+      "side": 64,
+      "regime": "local_embedding",
+      "bit_accuracy": 0.9493750000000001
+    },
+    {
+      "side": 64,
+      "regime": "large_source_fragment",
+      "bit_accuracy": 0.493125
+    },
+    {
+      "side": 64,
+      "regime": "clean",
+      "bit_accuracy": 0.484375
+    },
+    {
+      "side": 128,
+      "regime": "local_embedding",
+      "bit_accuracy": 0.9962500000000001
+    },
+    {
+      "side": 128,
+      "regime": "large_source_fragment",
+      "bit_accuracy": 0.5
+    },
+    {
+      "side": 128,
+      "regime": "clean",
+      "bit_accuracy": 0.5225000000000001
+    },
+    {
+      "side": 512,
+      "regime": "local_embedding",
+      "bit_accuracy": 1.0
+    },
+    {
+      "side": 512,
+      "regime": "large_source_fragment",
+      "bit_accuracy": 1.0
+    },
+    {
+      "side": 512,
+      "regime": "clean",
+      "bit_accuracy": 0.4875
+    }
+  ],
+  "seconds": 7.719000000040978,
+  "peak_allocated_bytes": 363410944,
+  "code_sha256": "b25d98deb59acfd9a8284c4f4e899a9ba59d6a91b024249d823fd3d00fa0eaa7",
+  "wrapper_sha256": "a9397f1240311c83453f98ef6c3b5b9aef2cf5d59b368bab7eb439f665334fa6",
+  "protocol": "Diagnostic controls on first sorted COCO val2017 covers already available locally; same covers/messages for both methods. Not original cluster training realizations, no training. Exact official FP32 embedding/uint8, unchanged strength. Y/Cb/Cr are linear BT.601 residuals in 0..255 units. Low-JND measured on original embed crop."
+}

@@ -1,0 +1,22 @@
+{
+  "seconds_this_invocation": 216.05426262598485,
+  "resumed_evaluation": false,
+  "steps": 200,
+  "effective_views": {
+    "views": 6400,
+    "same_content_clean_hole": 811,
+    "fg_le1": 744,
+    "fg_1to5": 861,
+    "clean_le1": 800,
+    "clean_1to5": 824,
+    "empty": 1326,
+    "full": 179,
+    "marked_object_transplant": 828,
+    "legacy": 3192,
+    "clean_object_addition": 795,
+    "same_content_object_remnant": 774
+  },
+  "old_dev_miou": 0.6036400368510431,
+  "object_dev_miou": 0.5524699851586099,
+  "real_miou": 0.5829099760275698
+}

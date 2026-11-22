@@ -1,0 +1,162 @@
+{
+  "family": "trustmark",
+  "n_images": 45,
+  "groups": {
+    "le1": {
+      "background128_to256": {
+        "n": 9,
+        "bit_accuracy": 0.5133333333333332,
+        "wrong_message_accuracy": 0.4976562500000001,
+        "gt_retained": 0.0,
+        "crop_gt_fraction": 0.0,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "bbox256": {
+        "n": 9,
+        "bit_accuracy": 0.6777777777777777,
+        "wrong_message_accuracy": 0.5000868055555556,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.9451001240474926,
+        "n_ge75": 2,
+        "n_ge90": 2
+      },
+      "bbox_margin16_to256": {
+        "n": 9,
+        "bit_accuracy": 0.4833333333333333,
+        "wrong_message_accuracy": 0.5023784722222222,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.28923421525680854,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "bbox_margin32_to256": {
+        "n": 9,
+        "bit_accuracy": 0.5044444444444445,
+        "wrong_message_accuracy": 0.5002256944444444,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.1419817760126529,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "bbox_native": {
+        "n": 9,
+        "bit_accuracy": 0.6822222222222223,
+        "wrong_message_accuracy": 0.4994618055555555,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.9451001240474926,
+        "n_ge75": 2,
+        "n_ge90": 2
+      },
+      "full": {
+        "n": 9,
+        "bit_accuracy": 0.5,
+        "wrong_message_accuracy": 0.4963715277777778,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.005743238661024306,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "margin128_to256": {
+        "n": 9,
+        "bit_accuracy": 0.5044444444444444,
+        "wrong_message_accuracy": 0.4978298611111111,
+        "gt_retained": 0.9933445425248704,
+        "crop_gt_fraction": 0.09124755859375,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "margin192_to256": {
+        "n": 9,
+        "bit_accuracy": 0.48999999999999994,
+        "wrong_message_accuracy": 0.49949652777777775,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.04084080825617284,
+        "n_ge75": 0,
+        "n_ge90": 0
+      }
+    },
+    "1to5": {
+      "background128_to256": {
+        "n": 36,
+        "bit_accuracy": 0.5058333333333334,
+        "wrong_message_accuracy": 0.4992404513888889,
+        "gt_retained": 0.0,
+        "crop_gt_fraction": 0.0,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "bbox256": {
+        "n": 36,
+        "bit_accuracy": 0.7538888888888889,
+        "wrong_message_accuracy": 0.5000911458333334,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.7921455795247271,
+        "n_ge75": 19,
+        "n_ge90": 19
+      },
+      "bbox_margin16_to256": {
+        "n": 36,
+        "bit_accuracy": 0.5011111111111111,
+        "wrong_message_accuracy": 0.4999956597222222,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.4354592219928281,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "bbox_margin32_to256": {
+        "n": 36,
+        "bit_accuracy": 0.4988888888888888,
+        "wrong_message_accuracy": 0.49914496527777774,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.28507959252519016,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "bbox_native": {
+        "n": 36,
+        "bit_accuracy": 0.7566666666666666,
+        "wrong_message_accuracy": 0.500056423611111,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.7921455795247271,
+        "n_ge75": 19,
+        "n_ge90": 19
+      },
+      "full": {
+        "n": 36,
+        "bit_accuracy": 0.4952777777777778,
+        "wrong_message_accuracy": 0.5005078125,
+        "gt_retained": 1.0,
+        "crop_gt_fraction": 0.028031773037380643,
+        "n_ge75": 0,
+        "n_ge90": 0
+      },
+      "margin128_to256": {
+        "n": 36,
+        "bit_accuracy": 0.5216666666666667,
+        "wrong_message_accuracy": 0.5011067708333334,
+        "gt_retained": 0.8560233214444365,
+        "crop_gt_fraction": 0.3621063232421875,
+        "n_ge75": 1,
+        "n_ge90": 0
+      },
+      "margin192_to256": {
+        "n": 36,
+        "bit_accuracy": 0.4930555555555556,
+        "wrong_message_accuracy": 0.5014105902777777,
+        "gt_retained": 0.9312023080983889,
+        "crop_gt_fraction": 0.18125708309220678,
+        "n_ge75": 0,
+        "n_ge90": 0
+      }
+    }
+  },
+  "seconds": 7.171999999904074,
+  "peak_allocated_bytes": 328478720,
+  "torch": "2.5.1+cu121",
+  "device": "NVIDIA GeForce RTX 3070",
+  "wrapper_sha256": "a9397f1240311c83453f98ef6c3b5b9aef2cf5d59b368bab7eb439f665334fa6",
+  "code_sha256": "1013b97eb79cd21c2d1f90fb7c0acb206ee1907e1852284292d32a0ac3eb794c",
+  "native_resolution": 245,
+  "protocol": "GT oracle crops; bilinear antialias 256 followed by unchanged official preprocessing. Full image uses wrapper directly. TM bbox_native tests direct resize to245. Diagnostic only, no segmentation or model fitting."
+}

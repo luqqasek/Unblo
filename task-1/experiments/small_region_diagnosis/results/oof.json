@@ -1,0 +1,640 @@
+{
+  "families": {
+    "pixelseal": {
+      "n_maps": 170,
+      "groups": {
+        "all": {
+          "n": 170,
+          "miou": 0.5719164707651277,
+          "fg_iou": 0.5538591118227649,
+          "clean_iou": 0.5899738297074909,
+          "roc_auc": 0.7571975671580008,
+          "fg_ap": 0.6613203659224746,
+          "empty": 0.2411764705882353,
+          "true_area": 0.4939410041360294,
+          "max_prob_gt": 0.7088109275709619,
+          "max_prob_bg": 0.7562166521873545,
+          "pr_auc_trapezoid": 0.66125444791538,
+          "per_image_oracle_fg": 0.6013482986533516,
+          "oracle_shared_threshold": {
+            "threshold": 0.25790905952453613,
+            "objective": 0.5606707351264908,
+            "miou": 0.5615572227266301,
+            "fg_iou": 0.5606707351266437,
+            "clean_iou": 0.5624437103266164
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.3,
+            "high": 0.8,
+            "miou": 0.5664566840726526,
+            "fg_iou": 0.5609875368319303,
+            "clean_iou": 0.5719258313133749
+          }
+        },
+        "le1": {
+          "n": 17,
+          "miou": 0.49435245289522056,
+          "fg_iou": 0.0,
+          "clean_iou": 0.9887049057904411,
+          "roc_auc": 0.4792405454151,
+          "fg_ap": 0.005786562714596849,
+          "empty": 0.8823529411764706,
+          "true_area": 0.005457261029411764,
+          "max_prob_gt": 0.047130278311669827,
+          "max_prob_bg": 0.32899198681116104,
+          "pr_auc_trapezoid": 0.005694590716196609,
+          "per_image_oracle_fg": 0.008906643911896286,
+          "oracle_shared_threshold": {
+            "threshold": 0.014801370911300182,
+            "objective": 0.005805191335183102,
+            "miou": 0.15899565968220267,
+            "fg_iou": 0.005805191335183078,
+            "clean_iou": 0.3121861280292222
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.001,
+            "high": 0.05,
+            "miou": 0.002728630514705882,
+            "fg_iou": 0.005457261029411764,
+            "clean_iou": 0.0
+          }
+        },
+        "1to5": {
+          "n": 26,
+          "miou": 0.4993676194461751,
+          "fg_iou": 0.024346010089136567,
+          "clean_iou": 0.9743892288032137,
+          "roc_auc": 0.5503418525695042,
+          "fg_ap": 0.09903235885085894,
+          "empty": 0.6923076923076923,
+          "true_area": 0.024256779597355768,
+          "max_prob_gt": 0.14684998602248156,
+          "max_prob_bg": 0.32640151493251324,
+          "pr_auc_trapezoid": 0.09888862210384039,
+          "per_image_oracle_fg": 0.08790412180491283,
+          "oracle_shared_threshold": {
+            "threshold": 0.10296858847141266,
+            "objective": 0.046339289639218524,
+            "miou": 0.49156342467831915,
+            "fg_iou": 0.04633928963921884,
+            "clean_iou": 0.9367875597174193
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.1,
+            "high": 0.2,
+            "miou": 0.4934644829062203,
+            "fg_iou": 0.04693927006069328,
+            "clean_iou": 0.9399896957517474
+          }
+        },
+        "5to20": {
+          "n": 30,
+          "miou": 0.6002644863655143,
+          "fg_iou": 0.2950031731884006,
+          "clean_iou": 0.9055257995426282,
+          "roc_auc": 0.8058114342200667,
+          "fg_ap": 0.534553649824885,
+          "empty": 0.26666666666666666,
+          "true_area": 0.11455281575520833,
+          "max_prob_gt": 0.6740499079848329,
+          "max_prob_bg": 0.6802021771669388,
+          "pr_auc_trapezoid": 0.5343707524283332,
+          "per_image_oracle_fg": 0.4098360628939292,
+          "oracle_shared_threshold": {
+            "threshold": 0.3054107427597046,
+            "objective": 0.30584042879161866,
+            "miou": 0.6017255022870025,
+            "fg_iou": 0.3058404287916155,
+            "clean_iou": 0.8976105757823893
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.3,
+            "high": 0.8,
+            "miou": 0.6049029160197436,
+            "fg_iou": 0.31030973908773146,
+            "clean_iou": 0.8994960929517558
+          }
+        },
+        "gt20": {
+          "n": 97,
+          "miou": 0.5961888209720311,
+          "fg_iou": 0.8729170881639223,
+          "clean_iou": 0.3194605537801398,
+          "roc_auc": 0.8463223293958176,
+          "fg_ap": 0.9661303073794192,
+          "empty": 0.0,
+          "true_area": 0.8227828507570877,
+          "max_prob_gt": 0.9861551142230476,
+          "max_prob_bg": 0.9698088906474949,
+          "pr_auc_trapezoid": 0.9661259933596847,
+          "per_image_oracle_fg": 0.9020330801115665,
+          "oracle_shared_threshold": {
+            "threshold": 0.28501126170158386,
+            "objective": 0.8798131586425522,
+            "miou": 0.5822745012513869,
+            "fg_iou": 0.8798131586427145,
+            "clean_iou": 0.2847358438600593
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.3,
+            "high": 0.7,
+            "miou": 0.5857980461499622,
+            "fg_iou": 0.8808576153466519,
+            "clean_iou": 0.2907384769532724
+          }
+        },
+        "clean_holes": {
+          "n": 85,
+          "miou": 0.580033230610308,
+          "fg_iou": 0.9088738994528321,
+          "clean_iou": 0.2511925617677839,
+          "roc_auc": 0.8350087071434722,
+          "fg_ap": 0.9801314570936803,
+          "empty": 0.0,
+          "true_area": 0.897189510569853,
+          "max_prob_gt": 0.9900259978630963,
+          "max_prob_bg": 0.9705384864526636,
+          "pr_auc_trapezoid": 0.9801296275345831,
+          "per_image_oracle_fg": 0.9307752100402814,
+          "oracle_shared_threshold": {
+            "threshold": 0.21358279883861542,
+            "objective": 0.9181055324749403,
+            "miou": 0.5573890522180655,
+            "fg_iou": 0.9181055324751219,
+            "clean_iou": 0.19667257196100882
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.2,
+            "high": 0.7,
+            "miou": 0.555598380073785,
+            "fg_iou": 0.918465370642244,
+            "clean_iou": 0.1927313895053264
+          }
+        }
+      },
+      "policies": {
+        "baseline_t05": {
+          "parameters": {
+            "threshold": 0.5
+          },
+          "groups": {
+            "all": {
+              "n": 170,
+              "miou": 0.5719164707651277,
+              "fg_iou": 0.5538591118227649,
+              "clean_iou": 0.5899738297074909
+            },
+            "le1": {
+              "n": 17,
+              "miou": 0.49435245289522056,
+              "fg_iou": 0.0,
+              "clean_iou": 0.9887049057904411
+            },
+            "1to5": {
+              "n": 26,
+              "miou": 0.4993676194461751,
+              "fg_iou": 0.024346010089136567,
+              "clean_iou": 0.9743892288032137
+            },
+            "5to20": {
+              "n": 30,
+              "miou": 0.6002644863655143,
+              "fg_iou": 0.2950031731884006,
+              "clean_iou": 0.9055257995426282
+            },
+            "gt20": {
+              "n": 97,
+              "miou": 0.5961888209720311,
+              "fg_iou": 0.8729170881639223,
+              "clean_iou": 0.3194605537801398
+            },
+            "clean_holes": {
+              "n": 85,
+              "miou": 0.580033230610308,
+              "fg_iou": 0.9088738994528321,
+              "clean_iou": 0.2511925617677839
+            }
+          }
+        },
+        "global_threshold_oracle_miou": {
+          "parameters": {
+            "threshold": 0.5237451195716858,
+            "objective": 0.5720674349106021
+          },
+          "groups": {
+            "all": {
+              "n": 170,
+              "miou": 0.5720674349105868,
+              "fg_iou": 0.552545140529129,
+              "clean_iou": 0.5915897292920443
+            },
+            "le1": {
+              "n": 17,
+              "miou": 0.49450504078584556,
+              "fg_iou": 0.0,
+              "clean_iou": 0.9890100815716911
+            },
+            "1to5": {
+              "n": 26,
+              "miou": 0.49916581206804794,
+              "fg_iou": 0.023743141846153445,
+              "clean_iou": 0.9745884822899425
+            },
+            "5to20": {
+              "n": 30,
+              "miou": 0.5996473644139086,
+              "fg_iou": 0.29317735654928295,
+              "clean_iou": 0.9061173722785346
+            },
+            "gt20": {
+              "n": 97,
+              "miou": 0.5966716102603491,
+              "fg_iou": 0.8713405309842625,
+              "clean_iou": 0.3220026895364357
+            },
+            "clean_holes": {
+              "n": 85,
+              "miou": 0.5805031562334008,
+              "fg_iou": 0.907261959675612,
+              "clean_iou": 0.2537443527911895
+            }
+          }
+        },
+        "global_hysteresis_oracle_miou": {
+          "parameters": {
+            "low": 0.5,
+            "high": 0.8
+          },
+          "groups": {
+            "all": {
+              "n": 170,
+              "miou": 0.5720729020920019,
+              "fg_iou": 0.5537287812691993,
+              "clean_iou": 0.5904170229148045
+            },
+            "le1": {
+              "n": 17,
+              "miou": 0.4943721995634191,
+              "fg_iou": 0.0,
+              "clean_iou": 0.9887443991268382
+            },
+            "1to5": {
+              "n": 26,
+              "miou": 0.49889594298590356,
+              "fg_iou": 0.023156815974495534,
+              "clean_iou": 0.9746350699973116
+            },
+            "5to20": {
+              "n": 30,
+              "miou": 0.6004736014875678,
+              "fg_iou": 0.2951435625659066,
+              "clean_iou": 0.905803640409229
+            },
+            "gt20": {
+              "n": 97,
+              "miou": 0.5965212721732132,
+              "fg_iou": 0.8729640074582454,
+              "clean_iou": 0.3200785368881809
+            },
+            "clean_holes": {
+              "n": 85,
+              "miou": 0.5798316136959916,
+              "fg_iou": 0.9085342322430666,
+              "clean_iou": 0.25112899514891657
+            }
+          }
+        }
+      }
+    },
+    "trustmark": {
+      "n_maps": 170,
+      "groups": {
+        "all": {
+          "n": 170,
+          "miou": 0.5787213476763099,
+          "fg_iou": 0.5806232811207286,
+          "clean_iou": 0.5768194142318913,
+          "roc_auc": 0.794761803996603,
+          "fg_ap": 0.6955144529041791,
+          "empty": 0.1588235294117647,
+          "true_area": 0.5032596363740809,
+          "max_prob_gt": 0.7650184331078301,
+          "max_prob_bg": 0.825000441337333,
+          "pr_auc_trapezoid": 0.6954029288673941,
+          "per_image_oracle_fg": 0.6349001350274024,
+          "oracle_shared_threshold": {
+            "threshold": 0.16807985305786133,
+            "objective": 0.5943241792640318,
+            "miou": 0.5637987163050718,
+            "fg_iou": 0.5943241792643001,
+            "clean_iou": 0.5332732533458436
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.2,
+            "high": 0.5,
+            "miou": 0.5689375516692101,
+            "fg_iou": 0.5946692009071326,
+            "clean_iou": 0.5432059024312876
+          }
+        },
+        "le1": {
+          "n": 9,
+          "miou": 0.4970465766059028,
+          "fg_iou": 0.0,
+          "clean_iou": 0.9940931532118056,
+          "roc_auc": 0.6474772978753855,
+          "fg_ap": 0.0373414906972649,
+          "empty": 0.8888888888888888,
+          "true_area": 0.005893283420138889,
+          "max_prob_gt": 0.09880008993463384,
+          "max_prob_bg": 0.34803208543194664,
+          "pr_auc_trapezoid": 0.03655606237985106,
+          "per_image_oracle_fg": 0.04580707114345002,
+          "oracle_shared_threshold": {
+            "threshold": 0.03013862669467926,
+            "objective": 0.023408869918723856,
+            "miou": 0.445684501106506,
+            "fg_iou": 0.02340886991872375,
+            "clean_iou": 0.8679601322942881
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.05,
+            "high": 0.4,
+            "miou": 0.4996829057826788,
+            "fg_iou": 0.017192096402622717,
+            "clean_iou": 0.9821737151627351
+          }
+        },
+        "1to5": {
+          "n": 36,
+          "miou": 0.513775229435049,
+          "fg_iou": 0.06082435042531874,
+          "clean_iou": 0.9667261084447796,
+          "roc_auc": 0.6695695937585898,
+          "fg_ap": 0.15907802990241363,
+          "empty": 0.5,
+          "true_area": 0.028406778971354168,
+          "max_prob_gt": 0.2546470592626267,
+          "max_prob_bg": 0.5551292440957494,
+          "pr_auc_trapezoid": 0.15887166610575146,
+          "per_image_oracle_fg": 0.13402324715903374,
+          "oracle_shared_threshold": {
+            "threshold": 0.13074710965156555,
+            "objective": 0.07198812651743719,
+            "miou": 0.5060376638282497,
+            "fg_iou": 0.07198812651743786,
+            "clean_iou": 0.9400872011390613
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.2,
+            "high": 0.5,
+            "miou": 0.5151326055114009,
+            "fg_iou": 0.07278182555349655,
+            "clean_iou": 0.9574833854693051
+          }
+        },
+        "5to20": {
+          "n": 25,
+          "miou": 0.6433441841326197,
+          "fg_iou": 0.35556829611315394,
+          "clean_iou": 0.9311200721520855,
+          "roc_auc": 0.8887476673794689,
+          "fg_ap": 0.6250191647578673,
+          "empty": 0.04,
+          "true_area": 0.095205078125,
+          "max_prob_gt": 0.8385484540462493,
+          "max_prob_bg": 0.7862098050117493,
+          "pr_auc_trapezoid": 0.6248614633697895,
+          "per_image_oracle_fg": 0.49066587708713677,
+          "oracle_shared_threshold": {
+            "threshold": 0.1279982626438141,
+            "objective": 0.4122121932150442,
+            "miou": 0.65470875961595,
+            "fg_iou": 0.41221219321503505,
+            "clean_iou": 0.8972053260168649
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.1,
+            "high": 0.6,
+            "miou": 0.6635037067210403,
+            "fg_iou": 0.4289259944109186,
+            "clean_iou": 0.8980814190311622
+          }
+        },
+        "gt20": {
+          "n": 100,
+          "miou": 0.593296970525423,
+          "fg_iou": 0.8762707377238351,
+          "clean_iou": 0.31032320332701085,
+          "roc_auc": 0.829590139387481,
+          "fg_ap": 0.9654909538200152,
+          "empty": 0.0,
+          "true_area": 0.8209832763671875,
+          "max_prob_gt": 0.9903292733430863,
+          "max_prob_bg": 0.9747788834571839,
+          "pr_auc_trapezoid": 0.9654857678198655,
+          "per_image_oracle_fg": 0.9042927548946369,
+          "oracle_shared_threshold": {
+            "threshold": 0.2507670521736145,
+            "objective": 0.8825698685262299,
+            "miou": 0.5779135251030857,
+            "fg_iou": 0.88256986852667,
+            "clean_iou": 0.2732571816795014
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.2,
+            "high": 0.8,
+            "miou": 0.5712512380739939,
+            "fg_iou": 0.8826323355410153,
+            "clean_iou": 0.25987014060697233
+          }
+        },
+        "clean_holes": {
+          "n": 85,
+          "miou": 0.5653343876478317,
+          "fg_iou": 0.9091742967860675,
+          "clean_iou": 0.22149447850959605,
+          "roc_auc": 0.8103055328250413,
+          "fg_ap": 0.9799325486906204,
+          "empty": 0.0,
+          "true_area": 0.9079209271599264,
+          "max_prob_gt": 0.990642980968251,
+          "max_prob_bg": 0.9851192796931547,
+          "pr_auc_trapezoid": 0.9799311275970825,
+          "per_image_oracle_fg": 0.9334501215746794,
+          "oracle_shared_threshold": {
+            "threshold": 0.16089411079883575,
+            "objective": 0.917191473959854,
+            "miou": 0.5360325338844221,
+            "fg_iou": 0.9171914739606118,
+            "clean_iou": 0.1548735938082321
+          },
+          "oracle_hysteresis_grid": {
+            "low": 0.2,
+            "high": 0.3,
+            "miou": 0.5423185190728445,
+            "fg_iou": 0.9171062497687283,
+            "clean_iou": 0.16753078837696067
+          }
+        }
+      },
+      "policies": {
+        "baseline_t05": {
+          "parameters": {
+            "threshold": 0.5
+          },
+          "groups": {
+            "all": {
+              "n": 170,
+              "miou": 0.5787213476763099,
+              "fg_iou": 0.5806232811207286,
+              "clean_iou": 0.5768194142318913
+            },
+            "le1": {
+              "n": 9,
+              "miou": 0.4970465766059028,
+              "fg_iou": 0.0,
+              "clean_iou": 0.9940931532118056
+            },
+            "1to5": {
+              "n": 36,
+              "miou": 0.513775229435049,
+              "fg_iou": 0.06082435042531874,
+              "clean_iou": 0.9667261084447796
+            },
+            "5to20": {
+              "n": 25,
+              "miou": 0.6433441841326197,
+              "fg_iou": 0.35556829611315394,
+              "clean_iou": 0.9311200721520855
+            },
+            "gt20": {
+              "n": 100,
+              "miou": 0.593296970525423,
+              "fg_iou": 0.8762707377238351,
+              "clean_iou": 0.31032320332701085
+            },
+            "clean_holes": {
+              "n": 85,
+              "miou": 0.5653343876478317,
+              "fg_iou": 0.9091742967860675,
+              "clean_iou": 0.22149447850959605
+            }
+          }
+        },
+        "global_threshold_oracle_miou": {
+          "parameters": {
+            "threshold": 0.5554232001304626,
+            "objective": 0.5790255719659381
+          },
+          "groups": {
+            "all": {
+              "n": 170,
+              "miou": 0.5790255719659291,
+              "fg_iou": 0.5777187062647743,
+              "clean_iou": 0.5803324376670839
+            },
+            "le1": {
+              "n": 9,
+              "miou": 0.4970533582899306,
+              "fg_iou": 0.0,
+              "clean_iou": 0.9941067165798612
+            },
+            "1to5": {
+              "n": 36,
+              "miou": 0.5142611440432792,
+              "fg_iou": 0.060645840332908506,
+              "clean_iou": 0.9678764477536497
+            },
+            "5to20": {
+              "n": 25,
+              "miou": 0.6393133136906429,
+              "fg_iou": 0.34686610455146377,
+              "clean_iou": 0.9317605228298222
+            },
+            "gt20": {
+              "n": 100,
+              "miou": 0.5946463298177443,
+              "fg_iou": 0.8735727719924031,
+              "clean_iou": 0.31571988764308556
+            },
+            "clean_holes": {
+              "n": 85,
+              "miou": 0.5670605991065246,
+              "fg_iou": 0.9065928961919246,
+              "clean_iou": 0.22752830202112503
+            }
+          }
+        },
+        "global_hysteresis_oracle_miou": {
+          "parameters": {
+            "low": 0.5,
+            "high": 0.9
+          },
+          "groups": {
+            "all": {
+              "n": 170,
+              "miou": 0.5793253306059797,
+              "fg_iou": 0.580988871650313,
+              "clean_iou": 0.5776617895616464
+            },
+            "le1": {
+              "n": 9,
+              "miou": 0.4970533582899306,
+              "fg_iou": 0.0,
+              "clean_iou": 0.9941067165798612
+            },
+            "1to5": {
+              "n": 36,
+              "miou": 0.5169808792381189,
+              "fg_iou": 0.06472461448731143,
+              "clean_iou": 0.9692371439889264
+            },
+            "5to20": {
+              "n": 25,
+              "miou": 0.6442386999112134,
+              "fg_iou": 0.35442730691615987,
+              "clean_iou": 0.9340500929062671
+            },
+            "gt20": {
+              "n": 100,
+              "miou": 0.5929454682805456,
+              "fg_iou": 0.87577339386106,
+              "clean_iou": 0.3101175427000311
+            },
+            "clean_holes": {
+              "n": 85,
+              "miou": 0.5648780844529958,
+              "fg_iou": 0.9085339173376451,
+              "clean_iou": 0.2212222515683465
+            }
+          }
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold1\\split.json": "68d28dc4aa8d10aac72a0253415916f37b9a7c66725ddb3fccc5fed101cdf9e7",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold1\\per_image.json": "8c152170129e1bfe3706e53fe2bc698994130926e3dde495917f7913bc2e599e",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold1\\maps.npz": "0ba390dd00c09b6f70ab6e1d2e8cbd45963778617372e0de40638d5143111037",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold2\\split.json": "ec7d4beba5d17087b8acd85091472b3c0363b5ccc405b7c0be2bcd937bebd9a8",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold2\\per_image.json": "365f8e120782b22781fd029429587a403a5967070e160e61b4e57f67875e013b",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold2\\maps.npz": "f35f0f9c442d7072ae13607638d57e9eed3a1184b74df8453fb0880ef0a2cdd0",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold3\\split.json": "1e110d6a73be8e9dc954f8d4157f6ff6e61bbbb2d8cccae546b65a61f5fd4bb8",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold3\\per_image.json": "26354b0900fc0475cf65fce79f62e26eb6060be7ea754796f89bb9dfa1e80d7b",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\pixelseal\\matched-v1-adapt\\fold3\\maps.npz": "a5104ce11eac35d03bd25a7ebbed3b4bc956c2c7e08c6458c462a3697b81c18a",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold1\\split.json": "fd053effd2f98049c46f6eed41446bbbfaf938b494e19461e1f16dbb795f2cf8",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold1\\per_image.json": "f387de7e6d4d3507113c4bd903800aa7aad21b6c7a6694da1a0a4b9805ee2712",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold1\\maps.npz": "db6b3cf1c09db507476ae7e080f10a412086ce4c1912cb6e582326cb9661c04f",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold2\\split.json": "e0f8f35812364821082d44fc60e2b9bcb4656c42db753954a6668e25ea83bbca",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold2\\per_image.json": "99fa00cb992d707376edf0b6db01bb4a2f9f4cadb78e86acb7ab6284f2ba7e5e",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold2\\maps.npz": "0cd0d0d767d894b4918e2d097d3dbe1043b613dcfe8f7a0b87f103b9bcdf9e4c",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold3\\split.json": "cee2c74cea22cde81ead8479e1738ee36243894a04f863143d47acb70fde0183",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold3\\per_image.json": "767901ba837a2024cfde0fff8ddd9b6ca58ca21253f73636840a5232c227d7aa",
+    "L:\\3 - Projekty pythonowe\\European-AI-Hackathon\\task-1\\experiments\\message_localizer\\results\\runs\\trustmark\\matched-v1-adapt\\fold3\\maps.npz": "21ebbad20732f24ccb5d21107cb24f3eb6ae32f8d1baf21752667628c79f7714"
+  },
+  "seconds": 12.047000000020489,
+  "protocol": "Unchanged seed42 3-fold adapted OOF, 170/family; no fitting. Oracle uses evaluation GT, not deployable or independent validation.",
+  "clean_holes": "full_watermark metadata == true and 0 < official foreground area < 1; overlapping cohort",
+  "pr_auc": "fg_ap is non-interpolated average precision, macro per image; trapezoidal PR area additionally computed when maps exist."
+}

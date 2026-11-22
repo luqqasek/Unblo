@@ -1,0 +1,14 @@
+{
+  "n": 340,
+  "checkpoint_sha256": "06e522413898eadffe3c952932f7ad89b12530491fd73a93ba05f4ce7d6ea4d9",
+  "subset_sha256": "26d889a3a43319a1464553230278642826a4823a206ffd4ec3e8e413ae31a1a9",
+  "seconds": 230.65990479200264,
+  "corrected_count": 41,
+  "shape": [
+    340,
+    128,
+    128
+  ],
+  "binary": true,
+  "threshold": 0.5
+}

@@ -1,0 +1,18 @@
+{
+  "seconds_this_invocation": 122.12409058000776,
+  "resumed_evaluation": true,
+  "steps": 200,
+  "effective_views": {
+    "views": 6400,
+    "legacy": 6400,
+    "fg_le1": 475,
+    "fg_1to5": 896,
+    "clean_le1": 520,
+    "clean_1to5": 921,
+    "empty": 1026,
+    "full": 330
+  },
+  "old_dev_miou": 0.6005957305773111,
+  "object_dev_miou": 0.5539334342879466,
+  "real_miou": 0.5841541049459803
+}

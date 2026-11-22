@@ -1,0 +1,19 @@
+{
+  "train_source_count": 2500,
+  "dev_source_count": 128,
+  "train_object_masks": 7404,
+  "dev_object_masks": 413,
+  "source_disjoint": true,
+  "train_new_embedding_calls": 128,
+  "dev_new_embedding_calls": 32,
+  "pool_bin_counts": {
+    "(False, 0)": 2148,
+    "(False, 1)": 2662,
+    "(False, 2)": 1879,
+    "(False, 3)": 715,
+    "(True, 0)": 1845,
+    "(True, 1)": 2298,
+    "(True, 2)": 1718,
+    "(True, 3)": 689
+  }
+}

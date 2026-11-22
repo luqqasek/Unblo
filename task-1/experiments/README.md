@@ -1,21 +1,22 @@
 # Eksperymenty zadania 1
 
-## Aktualna baza — 2026-11-22
+## Aktualna baza — 2026-11-22, zgłoszenie #2409
 
-**Najlepsze zaakceptowane zgłoszenie: #2163, publiczny mIoU 0,6145.**
-PixelSeal i TrustMark: nowe modele ze znaną wiadomością i odmrożonym oryginalnym
- ekstraktorem, po reficie; StegaStamp: natywny model RGB z pilota.
-Walidacja rozwojowa: PS **0,57192**, TM **0,57872** (3-fold OOF, seed42),
-StegaStamp **0,69496** (synthetic-only). Protokoły nie są identyczne.
+**Najlepszy potwierdzony publiczny mIoU: 0,6369**, wcześniej #2163:0,6145.
+PixelSeal: message_localizer po dopasowanej kontynuacji; TrustMark: model z wiadomością
+plus propozycje NRGMark i weryfikacja cropów; StegaStamp bez zmian.
+Walidacja rozwojowa: PS **0,58566** (3-fold OOF), TM **0,65265** (OOF + zamrożona
+korekta bez GT), SS **0,69496** (synthetic-only). Protokoły nie są identyczne.
+TM FG IoU1–5% **0,07164→0,50398**; <=1% **0→0,08059**, tylko1/9 trafień.
+Krótki test nowych małych prostokątów/residualu PS nie rozwiązał problemu.
 
-**Zacznij od [aktualnego handoffu badawczego](RESEARCH_HANDOFF_2026-11-22.md)**:
-wykonane eksperymenty, ograniczenia, wnioski, ścieżki checkpointów i dalsze cele.
-[Raport nowych modeli](message_localizer/REPORT.md) ·
-[wcześniejsze zgłoszenie #2008: 0,5993](native_hybrid_submission/REPORT.md).
-
-Historyczna baza inverse-STN pozostaje właściwą kontrolą dla eksperymentów na
-starym ekstraktorze StegaStamp. Nowy segmentator RGB nie ma STN i jego wyjść
-nie wolno inverse-warpować. Nie zastępuj nowej bazy starszym wynikiem #1496.
+**Zacznij od [aktualnego handoffu](RESEARCH_HANDOFF_2026-11-22.md)**.
+[Nowy raport](small_zoom/REPORT.md) · [Dane obiektowe](region_data/REPORT.md) ·
+[Diagnoza RTX3070](small_region_diagnosis/REPORT.md) ·
+[Poprzednie modele #2163](message_localizer/REPORT.md).
+User dopuszcza pojedynczy ustalony fold jako szybką estymację kolejnej próby;
+nie nazywaj jej pełnym OOF. Duże poprawy walidacyjne mogą prowadzić do nowych
+zgłoszeń, bez strojenia hiperparametrów na leaderboardzie.
 
 ## Organizacja eksperymentów
 

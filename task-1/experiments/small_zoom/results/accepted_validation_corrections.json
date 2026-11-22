@@ -1,0 +1,236 @@
+[
+  {
+    "image_name": "77026d0b7c0f",
+    "fold": 1,
+    "area": 0.08892822265625,
+    "baseline_miou": 0.6907970287086018,
+    "corrected_miou": 0.8872363469193718,
+    "baseline_fg_iou": 0.4373795761078998,
+    "corrected_fg_iou": 0.7958280657395702
+  },
+  {
+    "image_name": "33d1b360407b",
+    "fold": 3,
+    "area": 0.008056640625,
+    "baseline_miou": 0.4959716796875,
+    "corrected_miou": 0.8610990904247119,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.7252747252747253
+  },
+  {
+    "image_name": "61628c0067e6",
+    "fold": 3,
+    "area": 0.09478759765625,
+    "baseline_miou": 0.8379241399945012,
+    "corrected_miou": 0.9185246082365056,
+    "baseline_fg_iou": 0.7083825265643447,
+    "corrected_fg_iou": 0.8547763666482606
+  },
+  {
+    "image_name": "bb70e4ac4e26",
+    "fold": 2,
+    "area": 0.09033203125,
+    "baseline_miou": 0.7032207222896618,
+    "corrected_miou": 0.9217770869355358,
+    "baseline_fg_iou": 0.4589086127547666,
+    "corrected_fg_iou": 0.858242463117383
+  },
+  {
+    "image_name": "b801c7f31896",
+    "fold": 3,
+    "area": 0.028564453125,
+    "baseline_miou": 0.4857177734375,
+    "corrected_miou": 0.9604100763829952,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.9230769230769231
+  },
+  {
+    "image_name": "f10e01fec41b",
+    "fold": 3,
+    "area": 0.01861572265625,
+    "baseline_miou": 0.490692138671875,
+    "corrected_miou": 0.8842882525146303,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.7741116751269036
+  },
+  {
+    "image_name": "129674d13f5f",
+    "fold": 2,
+    "area": 0.0255126953125,
+    "baseline_miou": 0.48724365234375,
+    "corrected_miou": 0.9717687937969315,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.9449760765550239
+  },
+  {
+    "image_name": "0afce1b27992",
+    "fold": 1,
+    "area": 0.04205322265625,
+    "baseline_miou": 0.478973388671875,
+    "corrected_miou": 0.941122934126276,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.8873239436619719
+  },
+  {
+    "image_name": "01a8a19cb848",
+    "fold": 3,
+    "area": 0.0478515625,
+    "baseline_miou": 0.47607421875,
+    "corrected_miou": 0.9018573548290483,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.814317673378076
+  },
+  {
+    "image_name": "9f4496f5db6f",
+    "fold": 3,
+    "area": 0.04119873046875,
+    "baseline_miou": 0.45904541015625,
+    "corrected_miou": 0.6875390712782692,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.4258064516129032
+  },
+  {
+    "image_name": "9ccd12ff89e9",
+    "fold": 2,
+    "area": 0.0201416015625,
+    "baseline_miou": 0.48992919921875,
+    "corrected_miou": 0.8748183340986271,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.7556675062972292
+  },
+  {
+    "image_name": "dc3c83c40513",
+    "fold": 1,
+    "area": 0.0166015625,
+    "baseline_miou": 0.49169921875,
+    "corrected_miou": 1.0,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 1.0
+  },
+  {
+    "image_name": "11d701e4f965",
+    "fold": 1,
+    "area": 0.04205322265625,
+    "baseline_miou": 0.477630615234375,
+    "corrected_miou": 0.8549002405073518,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.7249712313003452
+  },
+  {
+    "image_name": "22df37a04afe",
+    "fold": 3,
+    "area": 0.0107421875,
+    "baseline_miou": 0.485626220703125,
+    "corrected_miou": 0.6457151835956374,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.31368821292775667
+  },
+  {
+    "image_name": "d18114453ad6",
+    "fold": 2,
+    "area": 0.056396484375,
+    "baseline_miou": 0.468017578125,
+    "corrected_miou": 0.922573891237146,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.8549618320610687
+  },
+  {
+    "image_name": "75a578c59136",
+    "fold": 1,
+    "area": 0.01019287109375,
+    "baseline_miou": 0.494903564453125,
+    "corrected_miou": 1.0,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 1.0
+  },
+  {
+    "image_name": "7db094a4dda1",
+    "fold": 3,
+    "area": 0.0283203125,
+    "baseline_miou": 0.48583984375,
+    "corrected_miou": 0.9484954864593782,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.9
+  },
+  {
+    "image_name": "56f20ecd8eb0",
+    "fold": 1,
+    "area": 0.037109375,
+    "baseline_miou": 0.47796630859375,
+    "corrected_miou": 0.8838523233755184,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.7780784844384303
+  },
+  {
+    "image_name": "7f593f986f59",
+    "fold": 2,
+    "area": 0.08673095703125,
+    "baseline_miou": 0.445159912109375,
+    "corrected_miou": 0.8248912111249804,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.6884019241047569
+  },
+  {
+    "image_name": "e8c512787c95",
+    "fold": 1,
+    "area": 0.03509521484375,
+    "baseline_miou": 0.482452392578125,
+    "corrected_miou": 0.907087669504888,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.8214285714285714
+  },
+  {
+    "image_name": "a33c6023b6ad",
+    "fold": 1,
+    "area": 0.03955078125,
+    "baseline_miou": 0.480224609375,
+    "corrected_miou": 0.9807200601616846,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.9629629629629629
+  },
+  {
+    "image_name": "ee050a31b3b3",
+    "fold": 1,
+    "area": 0.04351806640625,
+    "baseline_miou": 0.478240966796875,
+    "corrected_miou": 0.9446222741828985,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.8946047678795483
+  },
+  {
+    "image_name": "f0fcf967b41f",
+    "fold": 3,
+    "area": 0.0850830078125,
+    "baseline_miou": 0.5412989342712218,
+    "corrected_miou": 0.92571730098239,
+    "baseline_fg_iou": 0.15571428571428572,
+    "corrected_fg_iou": 0.8642407277816655
+  },
+  {
+    "image_name": "bac4f0abc084",
+    "fold": 3,
+    "area": 0.0213623046875,
+    "baseline_miou": 0.48931884765625,
+    "corrected_miou": 0.9207095549975626,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.8454106280193237
+  },
+  {
+    "image_name": "cb64072dd412",
+    "fold": 1,
+    "area": 0.0108642578125,
+    "baseline_miou": 0.49456787109375,
+    "corrected_miou": 0.9631097278785635,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.9270833333333334
+  },
+  {
+    "image_name": "c6112bbf6604",
+    "fold": 1,
+    "area": 0.011962890625,
+    "baseline_miou": 0.4940185546875,
+    "corrected_miou": 0.9345734680992186,
+    "baseline_fg_iou": 0.0,
+    "corrected_fg_iou": 0.8708133971291866
+  }
+]

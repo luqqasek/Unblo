@@ -1,0 +1,12 @@
+{
+  "variant": "tiny",
+  "pretrain_updates": 200,
+  "batch": 32,
+  "seed": 941,
+  "init": "region-runs/pixelseal/control/last.pt",
+  "encoder_lr": 5e-06,
+  "new_lr": 5e-05,
+  "aux_weight": 0,
+  "aux": "FP32 Y residual,16 subpixels per128cell, balanced L1 within/outside rectangle; no residual inference input",
+  "threshold": 0.5
+}

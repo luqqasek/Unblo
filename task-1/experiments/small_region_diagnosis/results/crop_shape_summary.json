@@ -1,0 +1,51 @@
+[
+  {
+    "family": "pixelseal",
+    "bucket": "le1",
+    "near_rectangle": true,
+    "n": 17,
+    "bit_accuracy": 0.5413602941176471
+  },
+  {
+    "family": "pixelseal",
+    "bucket": "1to5",
+    "near_rectangle": true,
+    "n": 17,
+    "bit_accuracy": 0.7208180147058824
+  },
+  {
+    "family": "pixelseal",
+    "bucket": "1to5",
+    "near_rectangle": false,
+    "n": 9,
+    "bit_accuracy": 0.5052083333333334
+  },
+  {
+    "family": "trustmark",
+    "bucket": "le1",
+    "near_rectangle": true,
+    "n": 8,
+    "bit_accuracy": 0.7024999999999999
+  },
+  {
+    "family": "trustmark",
+    "bucket": "le1",
+    "near_rectangle": false,
+    "n": 1,
+    "bit_accuracy": 0.48
+  },
+  {
+    "family": "trustmark",
+    "bucket": "1to5",
+    "near_rectangle": true,
+    "n": 19,
+    "bit_accuracy": 0.9905263157894737
+  },
+  {
+    "family": "trustmark",
+    "bucket": "1to5",
+    "near_rectangle": false,
+    "n": 17,
+    "bit_accuracy": 0.4894117647058824
+  }
+]

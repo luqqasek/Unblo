@@ -1,0 +1,11 @@
+{
+  "seconds": 9.064241932006553,
+  "n": 170,
+  "peak_bytes": 1379123200,
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.5.1+cu124",
+  "batch": 64,
+  "threshold_fixed": 0.9,
+  "source": "Adobe trustmark commit 4c60b9fdb4125fca3001f0803e6890a6b55371ac",
+  "mask_inputs": false
+}
