@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unblo · Task 1 &amp; Task 3 technical briefing</title>
+<style>
+:root{--paper:#f5f2e9;--ink:#183d39;--accent:#167365;--muted:#536963;--line:#ccd4c8}
+*{box-sizing:border-box}body{margin:0;background:#dce2db;color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,a{font:inherit}a{color:inherit;text-underline-offset:3px}
+#stage{position:relative;width:1600px;height:900px;transform-origin:top left}.slide{flex-direction:column;display:none;width:1600px;height:900px;padding:54px 76px 40px;background:var(--paper);position:absolute;inset:0}.slide.active{display:flex;flex-direction:column}.slide.task3{--ink:#283d59;--accent:#385d97;--muted:#5e6b7d;--line:#cbd3de;--paper:#f0f3f8}
+.eyebrow{font-size:18px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin:0 0 17px}h1{font-size:48px;letter-spacing:-1.5px;line-height:1.08;margin:0 0 20px;max-width:1400px}h2{font-size:26px;line-height:1.2;margin:0 0 14px;color:var(--accent)}p,li{font-size:25px;line-height:1.4;margin:0 0 16px}strong{font-weight:700}.lead{font-size:28px;max-width:1400px;margin-bottom:27px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:56px}.columns>div+div{border-left:1px solid var(--line);padding-left:44px}ul,ol{margin:0;padding-left:27px}li{padding-left:5px;margin-bottom:12px}.formula{font-size:28px;font-family:Georgia,serif;padding:17px 0;margin:6px 0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.small{font-size:21px;line-height:1.4}.qa{margin-top:auto;padding:18px 0 0;border-top:2px solid var(--accent);font-size:23px;line-height:1.4}.qa strong{color:var(--accent)}.footer{display:flex;justify-content:space-between;gap:22px;margin-top:18px;font-size:16px;color:var(--muted)}.sources{max-width:1300px}.metric{font-size:56px;color:var(--accent);font-weight:700;letter-spacing:-2px;margin:0 0 12px}.steps p{margin-bottom:18px}table{border-collapse:collapse;width:100%;font-size:23px;line-height:1.35}td,th{text-align:left;padding:13px 12px 13px 0;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--accent);font-size:19px}.tag{font-weight:700;color:var(--accent)}
+nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;background:#183d39;color:white;padding:9px 16px;border-radius:5px;z-index:5;font-size:14px}nav button{border:1px solid #8ca49e;background:transparent;color:white;padding:5px 9px;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #d59727;outline-offset:3px}#help{opacity:.8}body.reading #stage{width:auto!important;height:auto!important;transform:none!important}body.reading .slide{position:relative;display:flex;margin:25px auto;max-width:1600px}body.reading{padding-bottom:60px}
+.compact .columns p{font-size:24px;margin-bottom:12px}.compact .columns p.small{font-size:20px}
+@media(max-width:800px){body.reading .slide{width:100%;height:auto;min-height:90vh;padding:25px}.reading .columns{grid-template-columns:1fr;gap:20px}.reading .columns>div+div{padding:0;border:0}.reading h1{font-size:32px}.reading p,.reading li,.reading .qa{font-size:19px}.reading .footer{font-size:13px}.reading .qa{margin-top:25px}#help{display:none}}
+@media print{@page{size:1600px 900px;margin:0}body{background:white;padding:0!important}#stage{transform:none!important;width:1600px!important;height:auto!important}.slide,body.reading .slide{display:flex!important;position:relative!important;margin:0!important;break-after:page;page-break-after:always}nav{display:none}.slide:last-child{break-after:auto}}
+</style>
+</head>
+<body>
+<main id="stage" aria-label="Ten-slide technical briefing">
+<section class="slide active">
+<p class="eyebrow">Unblo / Task 1 / Problem and design</p>
+<h1>Watermark localization: both classes matter</h1>
+<p class="lead">Given an image, watermark family and embedded message, predict which pixels contain the watermark.</p>
+<div class="columns"><div><h2>The task</h2><ul>
+<li><strong>Input:</strong> 512 × 512 RGB image. <strong>Output:</strong> 128 × 128 binary mask.</li>
+<li><strong>510 labeled training images:</strong> 170 per family, covering PixelSeal, TrustMark and StegaStamp.</li>
+<li>The score averages intersection-over-union for <strong>watermarked and clean pixels</strong>.</li>
+</ul></div><div><h2>The observation that shaped the method</h2>
+<p>Some images have a small marked region. Others are mostly watermarked with small clean holes. A model must handle both geometries.</p>
+<p>We used separate <strong>partial-watermark and clean-hole heads</strong>, class-balanced supervision and an IoU-oriented loss.</p>
+<p class="small">Illustration: predicting “watermark everywhere” on a 98% marked image gives 98% pixel accuracy, but completely misses the clean region.</p></div></div>
+<div class="qa"><strong>If asked why accuracy is insufficient:</strong> “A majority-class prediction can look accurate while missing the region that matters. We optimize for overlap of both classes.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-1/README.md">Task 1 README</a>, <a href="../task-1/experiments/h100_hour/dino_job4.py">DINO training</a></span><span>01 / 10</span></div>
+</section>
+<section class="slide">
+<p class="eyebrow">Unblo / Task 1 / Architecture and adaptation</p>
+<h1>Pretrained visual features plus watermark evidence</h1>
+<div class="columns"><div><h2>DINOv2 segmentation branch</h2>
+<p>A pretrained vision transformer supplies features from several layers. A convolutional decoder combines them with a local image branch to predict spatial masks.</p>
+<p><strong>Frozen:</strong> original DINO weights.<br><strong>Trained:</strong> LoRA updates in attention, feature projections, local branch and segmentation decoder.</p>
+<p>LoRA adds a small low-rank update to an existing weight matrix. It lets us adapt pretrained features with fewer trainable parameters.</p>
+<p class="small">The selected ensemble uses a rank-32 member and a family-conditioned member. Separate family channels account for different watermark traces.</p>
+</div><div><h2>PixelSeal specialist</h2>
+<p>The specialist combines multiscale image features, local residual information and agreement between decoded bits and the <strong>known watermark message</strong>.</p>
+<p>For PixelSeal, the final probability map combines:</p>
+<div class="formula">p = 0.70 p<sub>ensemble</sub> + 0.30 p<sub>specialist</sub></div>
+<p class="small">TrustMark and StegaStamp keep the selected frozen ensemble outputs. The baseline predicted coverage routes between hole and partial heads.</p>
+</div></div>
+<div class="qa"><strong>If asked why DINO can help:</strong> “It provides spatial context. Local processing and message agreement provide additional signals specific to the watermark.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-1/experiments/h100_hour/dino_job4.py">DINO / LoRA</a>, <a href="../task-1/experiments/triforensic_wm/model.py">message evidence</a>, <a href="../task-1/solution/manifest.json">selected recipe</a></span><span>02 / 10</span></div>
+</section>
+<section class="slide">
+<p class="eyebrow">Unblo / Task 1 / Training data and augmentation</p>
+<h1>More geometries, then a focused decoder update</h1>
+<div class="columns"><div><h2>Real images and synthetic pairs</h2>
+<p>DINO training uses the official labeled images. The specialist training also uses cached clean / watermarked image pairs to generate masks with known support.</p>
+<p>The synthetic sampler produces <strong>50% clean-hole examples, 25% locally embedded crops and 25% full-image watermark remnants</strong>.</p>
+<p>The selected PixelSeal precursor uses batches of <strong>24 synthetic + 8 real examples</strong>, and an exponential moving average of weights (EMA).</p>
+<p class="small">The archived source-preparation pipeline specifies COCO train2017. The exact external image count in the selected checkpoint is not established by the final package. Pretrained weights are a separate source of prior knowledge.</p>
+</div><div><h2>Final refinement: Feature CutMix</h2>
+<p>Freeze the feature extractor. Train only the last prediction head on cached 166-channel feature maps.</p>
+<p><strong>Feature CutMix:</strong> swap a rectangular feature region between examples and swap the matching mask region. This varies context and boundaries while keeping supervision aligned.</p>
+<p>Also use rotations, flips, feature dropout and crops biased toward the minority class.</p>
+<p class="small"><strong>85 fit / 28 selection / 57 reused development images.</strong> AdamW, LR 2e−4, weight decay 0.05. Selected update: step 200, with 191,745 changed parameters. Logit gain 8 adjusts output sharpness.</p>
+</div></div>
+<div class="qa"><strong>If asked what is new in the final edit:</strong> “A decoder-only update with feature-space mixing. It adds no new backbone and does not establish a statistically reliable local gain.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-1/experiments/h100_sprint/data.py">synthetic sampling</a>, <a href="../task-1/experiments/h100_sprint/run.py">training</a>, <a href="../task-1/solution/checkpoint-protocol.json">final protocol</a></span><span>03 / 10</span></div>
+</section>
+<section class="slide">
+<p class="eyebrow">Unblo / Task 1 / Loss and mask selection</p>
+<h1>Pixel supervision and overlap optimization</h1>
+<div class="formula">L = 0.50 balanced BCE + 0.25 Lovász(watermark) + 0.25 Lovász(clean)</div>
+<div class="columns"><div><h2>Why these three terms?</h2>
+<p><strong>Balanced binary cross-entropy:</strong> average errors separately for the two classes. A tiny clean hole gets a meaningful contribution even when the watermark dominates.</p>
+<p><strong>Watermark Lovász:</strong> a differentiable surrogate related to IoU, encouraging the marked region to overlap the target.</p>
+<p><strong>Clean Lovász:</strong> applies the same objective to the complementary class, protecting clean-region overlap.</p>
+<p class="small">These are two loss families, with Lovász applied symmetrically. We do not have a component-by-component ablation proving each term’s final contribution.</p>
+</div><div><h2>Turning probabilities into a mask</h2>
+<ol><li>Sort pixels by predicted watermark probability.</li><li>Consider marking the top <em>k</em> pixels.</li><li>Estimate the two-class IoU using expected intersection and union counts.</li><li>Choose the best region size <em>k</em>.</li></ol>
+<p class="small">This is a ratio-of-expectations approximation, rather than exact expected IoU. The final PixelSeal path uses it after blending. It is post-processing, not another training loss.</p>
+</div></div>
+<div class="qa"><strong>If asked why not threshold at 0.5:</strong> “A fixed threshold treats pixels independently. Our final decision accounts for the region-level metric and both classes.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-1/experiments/h100_sprint/core.py">loss_fn</a>, <a href="../task-1/experiments/h100_hour/h2_decode.py">expected_miou_decode</a>, <a href="../task-1/solution/reproduce.py">final inference</a></span><span>04 / 10</span></div>
+</section>
+<section class="slide">
+<p class="eyebrow">Unblo / Task 1 / Results and questions</p>
+<h1>What improved, and what we can defend</h1>
+<div class="columns"><div><h2>Problems and responses</h2>
+<table><thead><tr><th>Problem</th><th>Our response</th></tr></thead><tbody>
+<tr><td>Small regions disappear in the majority class</td><td>Two geometry heads, balanced BCE and symmetric Lovász</td></tr>
+<tr><td>Limited labeled examples</td><td>Pretrained features, synthetic geometries and feature mixing</td></tr>
+<tr><td>Different watermark traces</td><td>Family conditioning and a PixelSeal specialist</td></tr>
+<tr><td>Thresholding does not directly target mIoU</td><td>Probability-based region-size selection</td></tr>
+</tbody></table></div><div><p class="metric">0.7309 mIoU</p>
+<p>Organizer-accepted public score, submission 4129. This is overlap quality, not pixel accuracy.</p>
+<p>The last PixelSeal edit moved local mIoU from <strong>0.629340 to 0.630891</strong> on 57 reused images. Its paired interval includes zero, and its promotion gate failed.</p>
+<p>The public comparison also changes other-family ensemble outputs. We cannot attribute the whole gain to Feature CutMix.</p>
+<p class="small"><strong>Reproducibility:</strong> all 1,020 submitted masks replay exactly. Complete replay uses cached ensemble maps. PixelSeal neural inference is available, but the package is not a complete fresh-image service for every family.</p>
+</div></div>
+<div class="qa"><strong>If asked what mattered most:</strong> “The design addressed observed failure modes. Public evaluation supports the selected system, but it does not isolate the causal benefit of every component.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-1/solution/checkpoint-result.json">local evidence</a>, <a href="../task-1/solution/upload_receipt.json">public receipt</a>, <a href="../task-1/README.md">reproduction scope</a></span><span>05 / 10</span></div>
+</section>
+<section class="slide task3">
+<p class="eyebrow">Unblo / Task 3 / Problem and constraints</p>
+<h1>Unlearning with no labeled retain set</h1>
+<div class="columns"><div><h2>What we had</h2>
+<p>An original <strong>ViT-B/16 image classifier</strong> and <strong>3,500 unlabeled images</strong> to forget.</p>
+<p>The classifier produces one logit per class. Softmax converts these scores into class probabilities.</p>
+<p>We freeze the original model as a <strong>teacher</strong> and initialize a trainable <strong>student</strong> from the same weights.</p>
+<p>For each image, the teacher’s highest-scoring class becomes a <strong>pseudo-label</strong>. It can be wrong because we have no true labels.</p>
+</div><div><h2>What success required</h2>
+<p>The evaluator compares exact and altered forget images against retrained reference models, and applies a hidden <strong>70% accuracy gate</strong>.</p>
+<p>We had no gold-model outputs, labeled control images or genuine retain set for directly measuring this objective.</p>
+<p>Early token-drop distillation barely changed predictions and scored zero. Simple class suppression also scored zero.</p>
+<p class="small">That motivated image-specific soft targets and explicit preservation constraints. Simply making all forget predictions wrong would not reproduce a retrained model.</p>
+</div></div>
+<div class="qa"><strong>If asked where the labels came from:</strong> “Directly from the original classifier’s argmax. They identify the class whose confidence we control. The training target is a modified probability distribution.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-3/README.md">task and method</a>, <a href="../task-3/src/run_real.py">pseudo-label construction</a>, <a href="../RESEARCH_NOTES.md">early experiments</a></span><span>06 / 10</span></div>
+</section>
+<section class="slide task3">
+<p class="eyebrow">Unblo / Task 3 / Constructing forgetting targets</p>
+<h1>We designed the target confidence distribution</h1>
+<div class="columns"><div><h2>Teacher evidence sets the ordering</h2>
+<ol><li>Evaluate each image and <strong>28 transformed views</strong> with the original classifier.</li><li>Measure log-odds of its pseudo-class against all other classes.</li><li>Combine the ranked original margin and ranked average margin across views, then rank that combined signal.</li><li>Assign higher target confidence to images with stronger teacher evidence.</li></ol>
+<p class="small">Confidence and transformation sensitivity are proxies. They do not directly measure how much the model memorized an image.</p>
+</div><div><h2>Our chosen distribution sets the values</h2>
+<div class="formula">δ* = −3 + 6.5 Φ<sup>−1</sup>(u)<br>p*(pseudo-class) = sigmoid(δ*)</div>
+<p><strong>u</strong> is the image’s fractional rank. <strong>Φ<sup>−1</sup></strong> converts that rank into a normal-distribution quantile. <strong>δ*</strong> is target log-odds.</p>
+<p>The location −3 and spread 6.5 are selected parameters. They do not come from a retrained gold model.</p>
+<p class="small">At the median rank, δ* = −3, giving about 4.7% target probability. Higher-ranked images can retain much more confidence. The method does not guarantee a decrease for every image.</p>
+</div></div>
+<div class="qa"><strong>If asked where the forgetting distributions came from:</strong> “The teacher supplied an ordering. We imposed a chosen log-odds distribution on that ordering. These are heuristic surrogate targets.”</div>
+<div class="footer"><span class="sources">Source: <a href="../task-3/src/targets.py">hardness_v2, nscore and target_v2</a></span><span>07 / 10</span></div>
+</section>
+<section class="slide task3">
+<p class="eyebrow">Unblo / Task 3 / Soft targets and preservation data</p>
+<h1>Keep class relationships while changing confidence</h1>
+<div class="columns"><div><h2>How the full target is assembled</h2>
+<p>We set the pseudo-class probability using its target log-odds. For the other classes, we average teacher logits over mild views and apply a temperature of 1.5.</p>
+<p>We normalize over those other classes, then allocate the remaining probability mass according to their relative preferences.</p>
+<p><strong>Illustrative example:</strong> target “cat” probability is 20%. The teacher prefers “dog” over “fox” at 3:1 among the alternatives. The target becomes cat 20%, dog 60%, fox 20%.</p>
+<p class="small">This avoids replacing the remaining distribution with arbitrary or uniform probabilities. Ordinary cross-entropy on the original argmax would instead reinforce that class.</p>
+</div><div><h2>Where preservation examples come from</h2>
+<p><strong>Final E50 uses only the supplied forget images and original checkpoint.</strong> No external natural-image anchors or synthetic image bank enter the selected training.</p>
+<p>Strong crops, color changes, rotations and optional CutMix create <strong>surrogate preservation views</strong>. We ask the student to match the teacher on these views.</p>
+<p class="small">Working hypothesis: preserve useful representation and behavior beyond the exact image. These views remain derived from the forget set. They are not an independent retain set and cannot prove retained utility.</p>
+</div></div>
+<div class="qa"><strong>If asked whether we are preserving the same data:</strong> “There is a deliberate tension: change exact and mild-view predictions, while constraining drift on strong views. The separation is approximate.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-3/src/targets.py">rdist_v2 / target_v2</a>, <a href="../task-3/src/aug.py">view generation</a>, <a href="../task-3/evidence/runs-E50_feature10.json">selected configuration</a></span><span>08 / 10</span></div>
+</section>
+<section class="slide task3 compact">
+<p class="eyebrow">Unblo / Task 3 / Loss and optimization</p>
+<h1>Forgetting targets and preservation losses</h1>
+<div class="formula">L = KL<sub>target</sub> + 2 L<sub>log-odds</sub> + 5 KL<sub>anchor</sub> + 10 L<sub>CLS</sub></div>
+<div class="columns"><div><h2>What each term does</h2>
+<p><strong>Target KL:</strong> match the student’s output distribution to the constructed soft target.</p>
+<p><strong>Log-odds loss:</strong> Smooth L1 between student and target pseudo-class log-odds, controlling the desired confidence.</p>
+<p><strong>Anchor KL:</strong> match teacher outputs on strong transformed / mixed views.</p>
+<p><strong>CLS loss:</strong> squared distance between unit-normalized teacher and student CLS vectors. The CLS token summarizes the image for classification.</p>
+<p class="small">KL terms average temperatures 1 and 2. Different loss scales mean 10 versus 5 does not imply twice the importance.</p>
+</div><div><h2>The selected training recipe</h2>
+<p><strong>Frozen teacher, all student weights trainable.</strong> 2,500 AdamW updates, learning rate 6e−5, warmup and cosine decay, gradient clipping at 1.0.</p>
+<p>Each forget batch has <strong>16 exact + 16 mildly altered images</strong>. A separate batch has 32 strong preservation views.</p>
+<p>Mild transforms include crops, flips, color changes, noise and blur. Their target pseudo-class logit gets an extra reduction of 1.</p>
+<p class="small">E50 uses feature-preservation weight 10. Weight-distance regularization, conflict projection and synthetic-bank replacement are disabled.</p>
+</div></div>
+<div class="qa"><strong>If asked why preserve features as well as outputs:</strong> “Similar probabilities can conceal internal representation changes. CLS matching adds a direct constraint on that representation.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../task-3/src/unlearn_core.py">run_unlearn</a>, <a href="../task-3/src/model_protection.py">normalized_cls_loss</a>, <a href="../task-3/scripts/train_best.sh">training command</a></span><span>09 / 10</span></div>
+</section>
+<section class="slide task3">
+<p class="eyebrow">Unblo / Task 3 / Evidence and answers</p>
+<h1>Controlled forgetting with stronger preservation</h1>
+<div class="columns"><div><h2>The development story</h2>
+<table><thead><tr><th>Observation</th><th>Response</th></tr></thead><tbody>
+<tr><td>Gentle distillation barely changes predictions</td><td>Explicit per-image confidence targets</td></tr>
+<tr><td>Simple class suppression scores zero</td><td>Image-specific targets with relative alternative-class probabilities</td></tr>
+<tr><td>We cannot directly check retain accuracy</td><td>Teacher constraints on strong views and internal features</td></tr>
+<tr><td>Stronger CLS preservation improves the observed score</td><td>Select E50 with feature coefficient 10</td></tr>
+</tbody></table></div><div><p class="metric">0.3149 public score</p>
+<p>E30: <strong>0.3013</strong> at CLS weight 0.5.<br>E43: <strong>0.3055</strong> at weight 2.<br>E50: <strong>0.3149</strong> at weight 10.</p>
+<p>This is an observed development comparison, not a repeated multi-seed causal study. The final hidden result is unknown.</p>
+<p><strong>Validation:</strong> the checkpoint hash matches the accepted receipt. Recorded GPU checks confirm strict architecture loading and finite FP16 outputs on 256 real images.</p>
+<p class="small">Those checks establish artifact integrity and numerical validity. Local pseudo-label metrics do not establish genuine accuracy. We make no claim of certified deletion or exact equivalence to retraining.</p>
+</div></div>
+<div class="qa"><strong>If asked whether this was just parameter search:</strong> “We used iterative experiments, but the main design was image-specific target construction plus output and representation preservation. Public feedback helped select within that design.”</div>
+<div class="footer"><span class="sources">Sources: <a href="../RESEARCH_NOTES.md">research history</a>, <a href="../task-3/evidence/submission-E50_feature10.json">public receipt</a>, <a href="../task-3/evidence/validation-E50_feature10.json">GPU validation</a></span><span>10 / 10</span></div>
+</section>
+</main>
+<nav aria-label="Presentation controls"><button id="prev" aria-label="Previous slide">←</button><span id="counter" aria-live="polite">1 / 10</span><button id="next" aria-label="Next slide">→</button><button id="read" aria-pressed="false">Read all</button><button id="full">Fullscreen</button><span id="help">Arrow keys · R reading mode · F fullscreen</span></nav>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let current=0;
+function fit(){if(document.body.classList.contains('reading'))return;const s=Math.min(innerWidth/1600,(innerHeight-66)/900);const el=document.getElementById('stage');el.style.transform=`scale(${s})`;el.style.marginLeft=`${Math.max(0,(innerWidth-1600*s)/2)}px`;}
+function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));document.getElementById('counter').textContent=`${current+1} / ${slides.length}`;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1;history.replaceState(null,'',`#slide-${current+1}`);}
+function reading(){const on=document.body.classList.toggle('reading');const b=document.getElementById('read');b.textContent=on?'Slide view':'Read all';b.setAttribute('aria-pressed',on);document.getElementById('stage').style.marginLeft='';fit();if(!on)scrollTo(0,0);}
+async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(e){document.getElementById('help').textContent='Use your browser’s fullscreen command';}}
+document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);document.getElementById('read').onclick=reading;document.getElementById('full').onclick=fullscreen;
+addEventListener('keydown',e=>{if(e.target.closest('button,a,input')||e.ctrlKey||e.metaKey||e.altKey)return;if(['ArrowRight','PageDown',' '].includes(e.key)&&!document.body.classList.contains('reading')){e.preventDefault();show(current+1);}if(['ArrowLeft','PageUp'].includes(e.key)&&!document.body.classList.contains('reading')){e.preventDefault();show(current-1);}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key.toLowerCase()==='r')reading();if(e.key.toLowerCase()==='f')fullscreen();});
+addEventListener('resize',fit);show((parseInt(location.hash.replace('#slide-',''),10)||1)-1);fit();
+</script>
+</body></html>
