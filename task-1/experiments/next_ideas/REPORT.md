@@ -109,3 +109,7 @@ At the unchanged90% gate, exact GT boxes recover3/43 small PixelSeal,21/45 small
 Re-embedding and gradient×HPF were already measured in message_localizer: real re-embedding macro AUC0.49812 PS /0.51902 TM. Two-class per-image losses and an unchanged frozen verifier already exist. A verified payload is not a pixel-perfect pseudo-mask, particularly when clean holes remain inside a decodable crop. The independent fair-coin null is not sufficient to lower a search verifier threshold after many correlated/adaptive crops.
 
 A63-bit grayscale DCT pHash search found no pairs within Hamming distance4 among510 training images. This limited check does not prove absence of edited siblings. There is no test self-training and no use of held-out real masks in a synthetic mask bank.
+
+## PS/TM bounded continuation
+
+[Measured continuation results and minority regressions](MESSAGE_EXTENSION_REPORT.md). No test submission is implied by these training results.

@@ -1,0 +1,30 @@
+[
+  {
+    "family": "pixelseal",
+    "name": "ps-data-small / continuation450",
+    "protocol": "Same57-image fold1; existing150 parent; exploratory repeated development fold; fixed capped TM verifier",
+    "miou": 0.5682503903729986,
+    "note": "Delta-0.002633; candidateFalse; no submission."
+  },
+  {
+    "family": "trustmark",
+    "name": "tm-data-small / continuation450",
+    "protocol": "Same57-image fold1; existing150 parent; exploratory repeated development fold; fixed capped TM verifier",
+    "miou": 0.6310453335476163,
+    "note": "Delta-0.009911; candidateFalse; no submission."
+  },
+  {
+    "family": "pixelseal",
+    "name": "ps-data-online / continuation450",
+    "protocol": "Same57-image fold1; existing150 parent; exploratory repeated development fold; fixed capped TM verifier",
+    "miou": 0.5647612384657449,
+    "note": "Delta-0.000482; candidateFalse; no submission."
+  },
+  {
+    "family": "trustmark",
+    "name": "tm-data-online / continuation450",
+    "protocol": "Same57-image fold1; existing150 parent; exploratory repeated development fold; fixed capped TM verifier",
+    "miou": 0.6450364164863828,
+    "note": "Delta-0.001167; candidateFalse; no submission."
+  }
+]

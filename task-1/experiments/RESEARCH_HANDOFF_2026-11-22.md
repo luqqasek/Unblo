@@ -203,3 +203,21 @@ FP32 and frozen BN; microbatch gradient equivalence tested. GPU only inside Slur
 General unreserved jobs are user-authorized outside the reserved one-node limit.
 Scheduler actually allocates whole4GPU nodes; pack workers when possible.
 Do not log/store API keys. Old checkpoints and accepted outputs are preserved.
+
+## Follow-up: continuation fails; shared clean-hole model under test
+
+PS/TM450 continuation completed on the same57-image fold: PS fixed0.570883→0.568250,
+PS online0.565243→0.564761, TM fixed0.640957→0.631045, TM online0.646204→0.645036.
+No arm passed the predeclared selection gate; none was submitted. TM screen
+uses capped original rectangles, without the later empty-mask scan. See
+[next_ideas/MESSAGE_EXTENSION_REPORT.md](next_ideas/MESSAGE_EXTENSION_REPORT.md).
+
+The new [IML-ViT clean-hole experiment](iml_holes/PROTOCOL.md) adapts the full
+pretrained model across families on fold-training restoration images. Native512
+input, explicit original1024 positional-parameter adaptation, no image resize,
+FP32 first projection and deeper BF16. Target is clean regions; GT-free full
+message agreement plus baseline predicted area gates a fixed equal blend.
+All171 validation images receive newly computed original-decoder scores; prior
+GT-filtered oracle rows are NOT used for routing. Official weights strict-load
+and SHA256 checks passed. Training validation is not yet available; do not
+claim a gain. One node,4 A100, fixed300-update endpoint with150-update no-gain stop.

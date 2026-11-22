@@ -1,0 +1,20 @@
+{
+  "endpoint": 450,
+  "parent_updates": 150,
+  "new_updates": 300,
+  "fold": 1,
+  "threshold": 0.5,
+  "effective_batch": 16,
+  "real": 4,
+  "synthetic": 12,
+  "minimum_gain": 0.005,
+  "minority_guard": 0.01,
+  "arms": [
+    "ps-data-small",
+    "tm-data-small",
+    "ps-data-online",
+    "tm-data-online"
+  ],
+  "public_score_used": false,
+  "selection": "Exploratory fixedfold, compare safe capped verification at both endpoints; also report original0. No test inference without evidence review."
+}
