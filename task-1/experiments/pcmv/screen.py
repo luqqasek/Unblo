@@ -59,7 +59,11 @@ def worker(root,out,rank,world):
     lookup={str(n):i for i,n in enumerate(real['names'])};start=time.monotonic();done=0
     for task in tasks[rank::world]:
         path=dest/(task['id']+'.npz')
-        if path.exists():continue
+        if path.exists() and path.with_suffix('.json').exists():
+            try:
+                with np.load(path) as cached:assert cached['features'].ndim==2
+                continue
+            except (OSError,ValueError,EOFError):pass
         if task['kind']=='real':
             it=ds[task['index']];rgb=it['image'];gt=it['mask128'];bits=it['message'];source=it['image_name']
         elif task['kind']=='pool':
@@ -80,7 +84,7 @@ def worker(root,out,rank,world):
             features,wrong,keys,basic=evidence(rgb,bits,proposals,p,local,obs)
         masks=np.stack([r[1] for r in proposals]);target=action_targets(p>=.5,masks,gt.astype(bool))
         np.savez_compressed(path,features=features,wrong=wrong,masks=np.packbits(masks,axis=-1),gains=target,base=p.astype(np.float32),gt=gt.astype(bool),local=local.astype(np.float32),obs=obs.astype(np.float32))
-        atomic_json(path.with_suffix('.json'),dict(task,source_id=str(source),proposal_sources=[r[2] for r in proposals],feature_keys=keys,basic_indices=basic,base='TriForensic global1561' if use_tri else 'PS data-small150'))
+        atomic_json(path.with_suffix('.json'),dict(task,source_id=str(source),proposal_sources=[r[2] for r in proposals],feature_keys=keys,basic_indices=basic,base='TriForensic global1561' if use_tri else 'PS data-small150',signed_bits_fixed=True))
         done+=1
         if done%5==0:print('PCMV_FEATURES',rank,done,'seconds',round(time.monotonic()-start,1),'last',task['id'],flush=True)
     atomic_json(out/f'worker-{rank}.json',{'seconds':time.monotonic()-start,'completed':done,'rank':rank})

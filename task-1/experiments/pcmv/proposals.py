@@ -98,3 +98,22 @@ def compose(base,masks,gains,threshold,max_toggles=2):
         result[m]=action==0;occupied|=m;applied.append({'proposal':i,'action':'add' if action==0 else 'carve','predicted_gain':gain})
         if len(applied)>=max_toggles:break
     return result,applied
+
+
+def exact_oracle(base,masks,gt):
+    """Exact <=2 disjoint toggles via additive confusion counts, NOT additive IoU."""
+    base=np.asarray(base,bool);gt=np.asarray(gt,bool);masks=np.asarray(masks,bool)
+    counts=np.array([((~base)&(~gt)).sum(),(base&(~gt)).sum(),((~base)&gt).sum(),(base&gt).sum()],np.float64)
+    changes=[]
+    for m in masks:
+        tn=(m&~base&~gt).sum();fp=(m&base&~gt).sum();fn=(m&~base&gt).sum();tp=(m&base&gt).sum()
+        changes.extend([[-tn,tn,-fn,fn],[fp,-fp,tp,-tp]])
+    changes=np.asarray(changes)
+    def score(c):
+        tn,fp,fn,tp=np.moveaxis(c,-1,0);uc=tn+fp+fn;uw=tp+fp+fn
+        clean=np.divide(tn,uc,out=np.ones_like(tn),where=uc!=0);wm=np.divide(tp,uw,out=np.ones_like(tp),where=uw!=0)
+        return (clean+wm)/2
+    one=score(counts+changes);two=score(counts+changes[:,None,:]+changes[None,:,:])
+    packed=np.packbits(masks.reshape(len(masks),-1),axis=1);disjoint=~np.bitwise_and(packed[:,None,:],packed[None,:,:]).any(-1);eligible=np.repeat(np.repeat(disjoint,2,0),2,1)
+    baseline=metrics(base,gt);best_one=max(baseline,float(one.max()));best_two=max(best_one,float(np.max(two[eligible])) if eligible.any() else baseline)
+    return {'base':baseline,'one_toggle':best_one,'two_disjoint_toggles':best_two}

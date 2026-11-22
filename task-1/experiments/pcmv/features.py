@@ -11,6 +11,12 @@ def tensor(rgb):
     return torch.from_numpy(np.ascontiguousarray(rgb)).permute(2,0,1).float().cuda()/255
 
 
+def signed_payload(bits):
+    b=np.asarray(bits,dtype=np.float32)
+    assert b.ndim==1 and np.isin(b,[0,1]).all(),'Raw binary payload required'
+    return b*2-1
+
+
 class Evidence:
     def __init__(self,wm,bias):
         self.wm=wm;self.bias=np.asarray(bias,np.float32);self.pooling_checked=False
@@ -39,7 +45,8 @@ class Evidence:
             assert np.array_equal(iso[mask512],rgb[mask512]) and np.array_equal(abl[~mask512],rgb[~mask512])
             images.extend([iso,abl,ri,crop]);capacity.append(float(obs[mask].sum()))
         logits=self.decode(images);raw=np.tanh(logits-self.bias)
-        rng=np.random.default_rng(934);signs=rng.choice([-1.,1.],size=(65,len(bits))).astype(np.float32);signs[0]=np.asarray(bits)*2-1
+        rng=np.random.default_rng(934);signs=rng.choice([-1.,1.],size=(65,len(bits))).astype(np.float32);signs[0]=signed_payload(bits)
+        assert set(np.unique(signs[0])).issubset({-1.,1.})
         score=raw@signs.T/np.sqrt(np.maximum((raw*raw).sum(1,keepdims=True),1e-12))
         margin=raw@signs.T/len(bits)
         # The signed alignment is a feature. Empirical null is retained; no

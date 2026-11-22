@@ -2,8 +2,8 @@
 
 This index consolidates the repository history and previously local research reports.
 It is a snapshot of saved evidence, not a fresh leaderboard query or a new experiment.
-The latest recorded best accepted submission is **#3054, public mIoU 0.6677**.
-See the [submission report](next_ideas/SUBMISSION_450_REPORT.md) and
+The latest recorded best accepted submission is **#3188, public mIoU 0.6736**.
+See the [submission report](pcmv/REPORT.md) and
 [experiment overview](README.md) for its recipe and validation limitations.
 
 ## Start here
@@ -27,6 +27,10 @@ with per-family holdout, reused-fold OOF, oracle, or synthetic-dev measurements.
 | #2675 | 0.6440 | [Local-presence submission](local_presence/SUBMISSION_REPORT.md) |
 | #3005 | 0.6597 | [StegaStamp adaptation](next_ideas/REPORT.md) |
 | #3054 | 0.6677 | [450-update submission](next_ideas/SUBMISSION_450_REPORT.md) |
+| #3188 | 0.6736 | [Stronger PixelSeal deployment](pcmv/REPORT.md) |
+
+#3188 replaces PixelSeal with the verified EMA1561 global/carrier branch and retains
+TrustMark/StegaStamp from #3054. No all170-image PixelSeal refit was run.
 
 #3054 retains PixelSeal and TrustMark from #2675 and replaces StegaStamp with
 450-update real/replay adaptation plus the validated empty/full-mask fallback.
@@ -42,7 +46,7 @@ estimate of hidden-final performance.
 | PixelSeal proposals | Short RTX NRGMark adaptation; real baseline mIoU remains 0.55748. No accepted verified corrections or submission. | [Plan](rtx_pixelseal_proposals/PLAN.md), [report](rtx_pixelseal_proposals/REPORT.md) |
 | All-information model | Completed PS/TM three-fold comparisons: deltas -0.003989 / -0.003753, both intervals include zero. SS stopped during preparation. | [Protocol](rtx_all_information/PROTOCOL.md), [report](rtx_all_information/REPORT.md) |
 | PCMV preliminary validation | No selector training. Restricted proposal oracle gain +0.107918 on 57 PS images misses the proposed +0.15 gate. GT-based signal diagnostics motivate further clean-hole checks, not a deployable gain. | [Report](pcmv_validation/REPORT.md), [research](pcmv_validation/RESEARCH.md) |
-| PCMV follow-up planning | Source review and fixed-fold protocol; a plan is not proof that the proposed model was trained. | [Sources](pcmv/SOURCES.md), [protocol](pcmv/PROTOCOL.md) |
+| PCMV follow-up | Stronger PS base deployed as #3188. Proposal scorer experiment running on2GPUs; no scorer improvement claimed yet. | [Sources](pcmv/SOURCES.md), [protocol](pcmv/PROTOCOL.md) |
 | IML-ViT clean-hole adaptation | Stopped by the predefined no-gain gate at update 150: mean mIoU 0.659924 → 0.641382 on 171 fixed-fold images. No test inference or submission. | [Protocol](iml_holes/PROTOCOL.md), [completed report](iml_holes/REPORT.md) |
 | SAFIRE follow-up | Inspected native-resolution proposal implementation; no GPU execution or measured proposal quality in this review. | [Source review](next_ideas/VERIFIED_FORENSICS_RESEARCH.md) |
 | Post-#2409 research brief | Historical bottleneck analysis, preserved with its original evaluation scope. | [Brief](small_zoom/RESEARCH_BRIEF_AFTER_2409.md) |

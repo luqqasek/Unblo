@@ -1,4 +1,4 @@
-# PCMV bounded screen, frozen before GPU evaluation
+# PCMV bounded screen, scorer recipe fixed before fitting
 
 One PixelSeal fixed-fold screen. The production reference is submission3054
 (public0.6677). First evaluate the EMA1561 TriForensic global/carrier branch
@@ -41,6 +41,14 @@ are resumable. No additional node is submitted concurrently.
  masked-crop probes, full-image pre-pooling masked/JND-weighted readouts;
  clean per-bit bias estimated from32 training covers,64 wrong-message nulls.
  Known-message alignment is a feature, not a formal Gaussian p-value.
+-After the archived RTX report was published/read, before any scorer fitting
+ or final evaluation, added a native512 frozen-decoder ablation and masked
+ pooling supplement. The archived oracle ranking favored512 over256 for
+ clean holes. These separate probes deliberately bypass wrapper resizing;
+ official256/crop probes remain unchanged. Their masks expand the128 proposal
+ grid by exact4x repetition; untouched RGB bytes remain unchanged. The two
+ native-probe workers stream alongside proposal workers on the SAME GPUs0/1.
+ Existing cached features are reused. No new model fitting was introduced.
 -JND-quartile inside/ring carrier contrasts, sample counts, geometry, base map
  statistics and per-image ranks. No raw RGB/SAM semantic embeddings in scorer.
 -Two multioutput regressors: ControlB sees unstratified base/local/geometry;
@@ -49,12 +57,16 @@ are resumable. No additional node is submitted concurrently.
  L2=1, seed42, no early stopping. Images weighted equally per source view;
  real training views receive3x synthetic weight.
 -Tune only action threshold on23 calibration images plus64 calibration controls.
- Fixed grid0,.002,.005,.01,.02,.03,.05,.08,.12,1. Up to2 non-overlapping
- add/carve toggles. Threshold1 gives no-op eligibility. Require<2% false
+ Fixed grid0,.002,.005,.01,.02,.03,.05,.08,.12,1. At mostONE add/carve toggle:
+ this pre-fit correction follows the archived counterexample that two
+ separately positive IoU changes may combine negatively. Threshold1 gives
+ no-op eligibility. Require<2% false
  polarity toggles and mean positive mIoU loss<.003 on calibration controls.
 -One final57-image evaluation and400-control audit; report both class IoUs,
  minority buckets/misses, per-image changes, paired bootstrap intervals,
- wrong-message conditional swap and bounded greedy oracle. Reused development
+ wrong-message conditional swap and exact one/two-disjoint-toggle oracle.
+ The oracle combines confusion counts, not individual IoU gains, and was
+ checked against brute-force40 random cases. Reused development
  folds and base choice imply selection optimism; do not call this unbiased OOF.
 
 The screen does not train a new pixel backbone, compute full3-fold CV, or use
@@ -74,3 +86,29 @@ This reuses the completed base check, predicts test, then runs the screen. Use
 scorer experiment refuses silent retraining. Checkpoint, data and model-source
 dependencies remain in the archived experiments; do not regenerate embeddings
 with different versions/strengths.
+
+## Integration corrections before fitting
+
+The first CPU fit attempt stopped before fitting any regressor: metadata key
+`base` shadowed the numeric probability map during cache loading. Separately,
+the new PCMV probe code initially converted real uint8 bits with unsigned
+`2*b-1`; zero bits became255. Synthetic bits were already float and unaffected.
+The global segmentator explicitly casts messages to float, so baseline masks,
+validation0.581724 and accepted submission3188 were unaffected.
+
+Both faults were fixed before model fitting. All170 real proposal features and
+native512 message features are regenerated with float signed bits. Existing
+proposals must reproduce exactly; their masks and baseline probabilities are
+asserted unchanged. Repair receipts and feature markers prevent fitting on
+mixed caches. `check_protocol.py` verifies signed uint8/int64/float payloads,
+metadata/map separation, and40 oracle comparisons against brute force. All170
+actual real payloads were separately checked for exact ±1 conversion.
+
+The CPU scorer starts once training/calibration/validation features are ready;
+the400 final controls may finish concurrently. A file lock ensures exactly one
+fit even if producer completion overlaps the early CPU fit. The finalizer loads
+those fixed regressors and only adds the outstanding control audit, without
+retraining or reevaluating the held-out fold. No submission based on PCMV is
+eligible before this audit. Selection requires>0.01 gain versus the best base,
+a positive paired95% lower bound, a gain versus proposal-only ControlB, and the
+predeclared false-toggle/mean-loss limits. These conditions were set before fit.
