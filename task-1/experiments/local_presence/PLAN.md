@@ -113,3 +113,30 @@ proof that real adaptation or carrier detection cannot work at a different budge
 Three Slurm jobs completed:15904587 (4m46s),15904621 (6m52s),15904639 (2m39s).
 Total allocated node time14m17s; each one node/four GPUs, sequential allocations.
 Approximately0.952 allocated GPU-hours, not measured active utilization.
+
+## Full-model data-use screen requested during the work
+
+User asked whether real training data and available synthetic data were being
+used adequately. The preceding screens froze the full adapted base model and
+used128 fixed synthetic compositions to train correction heads. The main
+historical model had already used2500 synthetic training source rows and full
+real/replay adaptation; these quantities must not be confused.
+
+Fourth one-node/four-GPU batch: each family's full MessageLocalizer starts from
+the unchanged fold1 production-baseline checkpoint. ALL encoder/decoder/context
+weights are trainable; original JND and ResNet BN running statistics stay frozen.
+Compare128 fixed full_examples replay compositions vs online draws from existing
+2500 original encodings +128 extra encodings and512 exact thin-crop realizations.
+No new independent public source identities or embedding calls are added by this
+screen; it expands the subset and composition diversity used in this continuation.
+
+Online mixture:50% existing RegionData sampler (which itself retains50% legacy
+examples),25% exact newly-small-crop realizations,25% large-source remnants or
+same-content clean holes. RegionData includes COCO objects and cross-image edits.
+This is a combined replay-volume/distribution test, not an isolated data-size law.
+150updates x16views (12synthetic+4real), identical real RNG/exposure, encoderLR2e-6,
+new modulesLR2e-5, seed4242. Native FP32, no JPEG/blur/new resize. Batch16 when it
+fits; fallback8x2 accumulation if first backward OOM. Loss unchanged both-class
+Dice+BCE. No new paired auxiliary. Validate0/50/150; endpoint150 fixed.
+The new TM empty-mask scan is not applied in this comparison. All old #2409
+rectangles remain. Same fold reused; report developmental optimism explicitly.

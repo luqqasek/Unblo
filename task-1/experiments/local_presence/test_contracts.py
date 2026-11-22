@@ -1,4 +1,12 @@
 import torch
+from experiments.local_presence.verification import verified,correct_bits
+
+def test_exact_raw_bit_threshold():
+    score=float(torch.cat([torch.ones(90),torch.zeros(10)]).mean())
+    assert score<.9
+    assert correct_bits({'bit_accuracy':score})==90
+    assert verified({'bit_accuracy':score})
+    assert not verified({'bit_accuracy':float(torch.cat([torch.ones(89),torch.zeros(11)]).mean())})
 from experiments.local_presence.model import Presence,Correction
 
 def test_actual_receptive_field_and_constraints():

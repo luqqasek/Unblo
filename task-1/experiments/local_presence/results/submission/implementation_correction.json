@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-11-22T02:16:46.575961+00:00",
+  "fix": "Use integer raw-bit count >=90/100 instead of comparing float32 accuracy to Python0.9",
+  "reason": "90/100 in float32 is0.8999999761581421",
+  "threshold_change": false,
+  "test_labels_used": false,
+  "validation_boundary_cases": 0,
+  "validation_metrics_unchanged": true,
+  "applies_to": "new empty-mask scan only; old #2409 nonempty masks preserved",
+  "test_boundary_case_seen": "47512c194859",
+  "test_quality_unknown": true
+}

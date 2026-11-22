@@ -1,0 +1,4 @@
+JobID|JobName|State|Elapsed|AllocTRES|MaxRSS
+15904704|local-presence-test|COMPLETED|00:07:54|billing=128,cpu=256,gres/gpu=4,gres/mem512=0,node=1|
+15904704.batch|batch|COMPLETED|00:07:54|cpu=256,gres/gpu=4,gres/mem512=0,mem=0,node=1|5986668K
+15904704.0|python|COMPLETED|00:07:34|cpu=64,gres/gpu=4,gres/mem512=0,mem=0,node=1|

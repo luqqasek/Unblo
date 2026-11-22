@@ -5,9 +5,9 @@ def add_rows(experiments,dist,row):
     root=experiments/'local_presence';path=root/'results/measurements.json'
     if not path.exists():return
     for m in json.loads(path.read_text(encoding='utf-8')):
-        g=m['groups'];row('local_presence',m['family'],m['run']+' / '+m['stage'],m['protocol'],g['all']['miou'],f"Delta {m['delta']:+.5f}; FG<=1% {g['fg_le1']['fg_iou']}; FG1–5% {g['fg_1to5']['fg_iou']}; clean<=1% {g['clean_le1']['clean_iou']}; clean1–5% {g['clean_1to5']['clean_iou']}. Development; no new public score.")
+        g=m['groups'];row('local_presence',m['family'],m['run']+' / '+m['stage'],m['protocol'],g['all']['miou'],f"Delta {m['delta']:+.5f}; FG<=1% {g['fg_le1']['fg_iou']}; FG1–5% {g['fg_1to5']['fg_iou']}; clean<=1% {g['clean_le1']['clean_iou']}; clean1–5% {g['clean_1to5']['clean_iou']}. Development estimate; public score has a separate receipt.")
     target=dist/'reports/local_presence/results';target.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(path,target/'measurements.json')
-    for source in (root/'results').glob('*/*.json'):
+    for source in (root/'results').rglob('*.json'):
         if source.name=='patch_provenance.json':continue
-        dest=target/source.parent.name/source.name;dest.parent.mkdir(exist_ok=True);shutil.copyfile(source,dest)
+        dest=target/source.relative_to(root/'results');dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,dest)

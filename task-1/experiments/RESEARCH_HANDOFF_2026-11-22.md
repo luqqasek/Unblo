@@ -1,10 +1,10 @@
 # Watermark localization — current research handoff, 2026-11-22
 
-**Best accepted public submission: #2409, mIoU 0.6369**, up from #2163 (0.6145).
+**Best accepted public submission: #2675, mIoU 0.6440**, up from #2409 (0.6369).
 Exactly one new submission was made after freezing the new validation recipe.
 The hidden final score and per-family public scores are unknown.
 
-Start with [small-region report](small_zoom/REPORT.md),
+Start with [latest submission](local_presence/SUBMISSION_REPORT.md), [latest experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
 [generator comparison](region_data/REPORT.md), and
 [RTX3070 diagnostic evidence](small_region_diagnosis/REPORT.md).
 [Prior #2163 handoff](RESEARCH_HANDOFF_PRE_2409.md) is historical, not the current baseline.
@@ -15,7 +15,7 @@ Read [local_presence/REPORT.md](local_presence/REPORT.md) before proposing new w
 The bounded empty-mask TrustMark crop scan recovers two more ≤1% images without
 GT proposals: reused OOF 0.652655→0.657046; tiny FG IoU0.080586→0.245392,
 misses8/9→6/9. Other168 masks unchanged. Paired-bootstrap delta CI95[0,0.01107].
-The gain is concentrated in two development images; no new submission was made.
+The gain is concentrated in two development images; it was subsequently included in #2675.
 
 PixelSeal paired local pretraining gives tiny-fold AUC0.74975 vs base0.52268,
 but naive integration loses0.03602mIoU. Spatial correction reduces false positives:
@@ -32,7 +32,23 @@ and improve tiny-box proposals without expanding expensive exhaustive search bli
 Use the exact existing TM AR≤2/raw100bit/native245 wrapper. No90%-gate requirement
 for irregular remnants; no claim of physical undetectability from negative pilots.
 
-## Current evidence and production
+## Full-model data-use follow-up
+
+Full MessageLocalizer continuation is stronger than frozen corrections for PS:
+fold1 0.557485→0.570883 after150 updates, fixed128 replay,25% real data,
+all localizer weights trainable, original JND/BN running statistics frozen.
+Paired image-bootstrap delta CI95[0.007745,0.019303], but this is reused development
+validation. Tiny FG IoU remains0;1–5% FG IoU0.012724. More online replay diversity
+(1212 primary source IDs actually sampled) gives0.565243. TM fixed replay0.640957,
+online0.646204 vs base0.646616. Do not claim that more data cannot work:150updates
+and changed mixture confound data scale with optimization and distribution.
+The online arm adds no new public source identities or embedder calls; it draws
+from existing2500 encodings,128 extras and512 thin-crop realizations.
+The frozen PS continuation and TM empty-mask scan were submitted once as #2675,
+public mIoU0.6440. PS changed279 test masks, TM8, SS0. Final hidden score unknown.
+See local_presence/SUBMISSION_REPORT.md and the server receipt.
+
+## Previous #2409 evidence and production
 
 | Family | Development validation | Protocol / model |
 |---|---:|---|

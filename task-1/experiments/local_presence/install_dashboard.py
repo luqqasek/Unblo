@@ -18,4 +18,13 @@ for name in ['index.html','index-en.html']:
 assert (root/'dashboard/dist/reports/local_presence/REPORT.html').exists()
 receipts=[r for r in d['submissions'] if r['id']==2409]
 if receipts:assert receipts[0]['score']==.6369
+latest=root/'experiments/local_presence/results/submission/upload_receipt.json'
+if latest.exists():
+    response=json.loads(latest.read_text())['response'];response=json.loads(response) if isinstance(response,str) else response
+    if response.get('status')=='success':
+        assert next(r for r in d['submissions'] if r['id']==response['submission_id'])['score']==response['score']
+        for name in ['index.html','index-en.html']:assert str(response['submission_id']) in (root/'dashboard/dist'/name).read_text(encoding='utf-8')
+        instructions=root/'AGENTS.md'
+        if instructions.exists() and response['submission_id']==2675:
+            text=instructions.read_text(encoding='utf-8');text=text.replace('#2409 (0.6369','#2675 (0.6440');instructions.write_text(text,encoding='utf-8')
 print(json.dumps({'local_presence_rows':len(rows),'both_languages_verified':True,'submission_2409_present':bool(receipts)}))

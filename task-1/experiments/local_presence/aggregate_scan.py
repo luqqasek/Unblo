@@ -6,6 +6,7 @@ from .train import summary
 from experiments.small_zoom.proposals import boxmask
 from experiments.native_localizer.evaluate import image_metrics,gallery
 from wmloc.data import LocalisationDataset
+from .verification import verified
 
 def main():
     here=Path(__file__).resolve().parent;exp=here.parent;out=here/'results/tm-scan';out.mkdir(exist_ok=True)
@@ -24,7 +25,7 @@ def main():
         b=image_metrics(p,y);b['image_name']=n;br.append(b);before=p.copy()
         if n in scan:
             assert not (p>=.5).any();candidate=scan[n]['correct_top']
-            if candidate and candidate[0]['bit_accuracy']>=.9:p[boxmask(candidate[0]['box'])]=1
+            if candidate and verified(candidate[0]):p[boxmask(candidate[0]['box'])]=1
         r=image_metrics(p,y);r['image_name']=n;rr.append(r);names.append(n);probs.append(p);gt.append(y)
         if r['miou']!=b['miou']:
             changed.append({'image_name':n,'before':b,'after':r,'candidate':scan[n]['correct_top'][0]})

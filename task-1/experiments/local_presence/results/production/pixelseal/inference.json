@@ -1,0 +1,8 @@
+{
+  "n": 340,
+  "seconds": 117.26194347502314,
+  "checkpoint_sha256": "67bf8b853ce89cbee12d3a1c6866e47b9143d624287a516dae830c958affe205",
+  "subset_sha256": "13b3f0ae35dde15f97cc9d0a1462f23c8856cd2953bbab72c7e725c7e584e39e",
+  "test_labels_used": false,
+  "threshold": 0.5
+}

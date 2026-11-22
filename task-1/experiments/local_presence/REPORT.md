@@ -1,6 +1,6 @@
 # Local presence: small watermark experiments
 
-Development screens on one Slurm node at a time, four NVIDIA A10040GB workers. Production submission#2409/public0.6369 is unchanged. Learned branches use fixed fold1 (57 validation images per family); frozen proposal screens reuse170-image OOF. These repeatedly inspected development estimates are not independent hidden-test estimates.
+Development screens on one Slurm node at a time, four NVIDIA A10040GB workers. New accepted submission#2675 has public mIoU0.6440, above#2409/public0.6369; all previous artifacts are preserved. Learned branches use fixed fold1 (57 validation images per family); frozen proposal screens reuse170-image OOF. These repeatedly inspected development estimates are not independent hidden-test estimates.
 
 | Run | Endpoint | n | mIoU | Delta | FG ≤1% | FG 1–5% | FG 5–20% | FG >20% | Clean ≤1% | Clean 1–5% | Clean in >50% WM |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -26,6 +26,14 @@ Development screens on one Slurm node at a time, four NVIDIA A10040GB workers. P
 | tm-adapt-control-spatial | final | 57 | 0.64795 | 0.00133 | 0.00000 | 0.53003 | 0.29233 | 0.88253 | 0.00000 | 0.11199 | 0.25019 |
 | tm-adapt-real-spatial | baseline | 57 | 0.64662 | 0.00000 | 0.00000 | 0.52530 | 0.27785 | 0.88487 | 0.00000 | 0.10383 | 0.24857 |
 | tm-adapt-real-spatial | final | 57 | 0.63122 | -0.01539 | 0.00000 | 0.46847 | 0.27557 | 0.88120 | 0.00000 | 0.10850 | 0.24920 |
+| ps-data-small | baseline | 57 | 0.55748 | 0.00000 | 0.00000 | 0.00000 | 0.30093 | 0.85988 | 0.00000 | 0.08307 | 0.23200 |
+| ps-data-small | final | 57 | 0.57088 | 0.01340 | 0.00000 | 0.01272 | 0.34846 | 0.88177 | 0.00000 | 0.07553 | 0.23986 |
+| ps-data-online | baseline | 57 | 0.55748 | 0.00000 | 0.00000 | 0.00000 | 0.30093 | 0.85988 | 0.00000 | 0.08307 | 0.23200 |
+| ps-data-online | final | 57 | 0.56524 | 0.00776 | 0.00000 | 0.00611 | 0.34499 | 0.88747 | 0.00000 | 0.06151 | 0.21516 |
+| tm-data-small | baseline | 57 | 0.64662 | 0.00000 | 0.00000 | 0.52530 | 0.27785 | 0.88487 | 0.00000 | 0.10383 | 0.24857 |
+| tm-data-small | final | 57 | 0.64096 | -0.00566 | 0.00000 | 0.51644 | 0.33905 | 0.86493 | 0.00000 | 0.11164 | 0.24798 |
+| tm-data-online | baseline | 57 | 0.64662 | 0.00000 | 0.00000 | 0.52530 | 0.27785 | 0.88487 | 0.00000 | 0.10383 | 0.24857 |
+| tm-data-online | final | 57 | 0.64620 | -0.00041 | 0.00000 | 0.53593 | 0.27414 | 0.86972 | 0.00000 | 0.13563 | 0.25938 |
 
 ## What changed and what did not
 
@@ -37,7 +45,7 @@ Tiled NRGMark adds only +0.00062 mIoU with13 improvements/9 regressions and no n
 
 Clean-hole localization remains unresolved. Do not deploy the negative one-sided veto or infer a physical detection limit from this short screen. The next matched screen continues each local encoder for500 updates:128 synthetic views versus96 synthetic+32 real outer-training patches, followed by the same600-update spatial correction. Measured PS control0.55803/real0.55937 both trail the earlier spatial0.56013. TM control0.64795 is +0.00133 over its same-fold base; TM real0.63122 is -0.01539. Real-patch adaptation is rejected in this screen.
 
-No new submission or test prediction was made in this experiment series. Preserve#2409 and all old masks.
+After the full-model data screen, one production candidate was frozen: additional PS continuation plus TM empty-mask scanning; SS unchanged. See the production section for the actual receipt. Preserve#2409 and all old masks.
 
 ## Compute
 
@@ -52,8 +60,12 @@ No new submission or test prediction was made in this experiment series. Preserv
 - ps-adapt-real-spatial: 35.8s worker elapsed; peak PyTorch allocated 1.61GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
 - tm-adapt-control-spatial: 33.7s worker elapsed; peak PyTorch allocated 1.60GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
 - tm-adapt-real-spatial: 33.7s worker elapsed; peak PyTorch allocated 1.60GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
+- ps-data-small: 128.0s worker elapsed; peak PyTorch allocated 24.16GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
+- ps-data-online: 162.5s worker elapsed; peak PyTorch allocated 24.16GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
+- tm-data-small: 98.3s worker elapsed; peak PyTorch allocated 14.19GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
+- tm-data-online: 134.4s worker elapsed; peak PyTorch allocated 14.19GB. Includes data/preparation where recorded, excludes queue. This is not node elapsed.
 
-Three successful Slurm allocations total14m17s node time (approximately0.952 allocated GPU-hours), excluding queues and local preparation. Slurm accounting is recorded separately. Four independent workers share one node; short spatial workers finish before the longer scan workers. Do not add parallel worker durations and call that wall time.
+The first three successful Slurm allocations total14m17s node time; the full-model data screen adds3m31s and production7m54s, for25m42s allocated node time across five sequential4GPU jobs (approximately1.713 allocated GPU-hours). These are allocated node durations, excluding queues and local preparation. Slurm accounting is recorded separately. Four independent workers share one node; short spatial workers finish before the longer scan workers. Do not add parallel worker durations and call that wall time.
 
 ## Protocol
 
@@ -69,8 +81,24 @@ Metrics: official per-image mean of clean/foreground IoU, empty union=1; AP uses
 
 Not run: Noiseprint++, annular features, boundary head, RF intervention, full end-to-end refit or new full CV. The research claims about guaranteed0.70+, exact conditional-median collapse, and zero-risk proposal unions are hypotheses, not established conclusions.
 
+## Full-model fine-tuning and data use
+
+The historical main models already used full encoder/decoder fine-tuning with real-label replay; only the new correction screens above froze those bases. A subsequent four-worker screen compares full MessageLocalizer continuation using128 fixed synthetic composites against online sampling across2500 original encoded training sources,128 extra realizations and512 thin-crop encodings. The latter two pools overlap existing source identities. No additional public source identities or embedding calls are created in this screen. This changes replay diversity and geometry mixture jointly, not only dataset size.
+
+Both arms:150updates×16views,12synthetic+4real per update,113real training images,57validation images, same real sampling RNG, all localizer weights trainable except original JND; ResNet BN statistics frozen; encoderLR2e-6,otherLR2e-5. The existing TM rectangle verifier is preserved; the new empty-mask scan is evaluated separately. Validation0/50/150 is diagnostic, fixed endpoint150. Completed endpoints appear in the main table only after completion.
+
+Measured PS fixed replay0.570883 (+0.013398 vs base; paired-bootstrap CI95[0.007745,0.019303]); online0.565243 (+0.007758). Both still have tiny FG IoU0; fixed replay1–5% FG IoU0.012724. Most gain is outside the smallest-region bucket. TM fixed replay0.640957 (-0.005659), online0.646204 (-0.000412). Online sampled1212 PS/1218 TM primary source identities across1800 synthetic views; fixed replay visited all128 stored compositions. The fixed arm records indices rather than source IDs, so its raw exposure counter0 is not zero training sources. A150-update screen cannot establish a data-scaling ceiling, and the online arm changes both diversity and mixture.
+
+Bootstrap intervals resample image-level paired changes and condition on the chosen run. They do not correct for repeated validation inspection or adaptive experiment selection; unrecognized source siblings are not newly grouped in this screening analysis.
+
 ## Reproduction and sources
 
-Run each stage inside one Slurm allocation: `python -m experiments.local_presence.job`, then `job2`, then `job3`. Scripts preserve completed outputs; use separate output directories for reruns. Cluster root and baseline paths are recorded in code/configs. CPU aggregation: `python -m experiments.local_presence.aggregate_scan`; report: `python experiments/local_presence/report.py`. Use task-1 cwd and PYTHONPATH=.:src. Pinned environment and unchanged base checkpoint provenance remain in message_localizer/region_data.
+Run each stage inside one Slurm allocation: `python -m experiments.local_presence.job`, then `job2`, then `job3`; the full-model data screen uses `job4`. Scripts preserve completed outputs; use separate output directories for reruns. Cluster root and baseline paths are recorded in code/configs. CPU aggregation: `python -m experiments.local_presence.aggregate_scan`; report: `python experiments/local_presence/report.py`. Use task-1 cwd and PYTHONPATH=.:src. Pinned environment and unchanged base checkpoint provenance remain in message_localizer/region_data.
 
 [SRNet](https://ws.binghamton.edu/fridrich/Research/SRNet.pdf), [NRGMark](https://collomosse.com/pubs/Agarwal-WACV-2026.pdf), [constrained-filter author code](https://github.com/LuminolT/constrained-conv-TIFS2018). Fixed-filter source commit and SHA256 are in srm_source.json. Detailed changes in PLAN.md.
+
+## Production candidate
+
+PixelSeal: continue original full170-data #2409 model for150 updates with the fixed replay policy selected above, then predict340 test masks. TrustMark: preserve old340 test masks; scan only38 empty masks using the unchanged validation grid/verifier. StegaStamp: preserve old340 masks exactly. No test labels, no TTA, no leaderboard hyperparameter search. Frozen recipe in results/submission/frozen_recipe.json. Implementation correction before upload: use integer correct-bit count>=90/100, because float32 mean90/100 becomes0.899999976. This preserves the declared threshold and leaves scan validation metrics unchanged (no90-bit boundary cases). One boundary case was observed during test execution; no test labels were available. The original #2409 mask is still preserved outside the new empty-mask scan. Details in implementation_correction.json.
+
+Server receipt: {"submission_id": 2675, "status": "success", "score": 0.644, "previous_best": 0.6369, "delta": 0.007, "improved": true, "message": "New best on this task. Score shown is on the public split; the final ranking uses the held out subset, revealed after submissions close."}

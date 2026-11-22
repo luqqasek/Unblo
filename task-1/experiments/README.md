@@ -1,6 +1,19 @@
 # Eksperymenty zadania 1
 
-## Aktualna baza — 2026-11-22, zgłoszenie #2409
+## Aktualny wynik — zgłoszenie #2675
+
+**Najlepszy potwierdzony publiczny mIoU: 0,6440**, wcześniej #2409: 0,6369.
+[Raport zgłoszenia](local_presence/SUBMISSION_REPORT.md) ·
+[Eksperymenty i negatywne wyniki](local_presence/REPORT.md).
+PixelSeal: dodatkowe 150 kroków pełnego fine-tuningu z replayem na wszystkich
+170 realnych obrazach. TrustMark: zamrożony skan cropów wyłącznie dla pustych
+masek #2409, 8 korekt testowych. StegaStamp bez zmian.
+Walidacja PS: **0,55748 → 0,57088 na jednym foldzie (57 obrazów)**;
+TM: **0,65265 → 0,65705 na istniejących OOF (170 obrazów)**.
+PS ≤1% nadal ma FG IoU 0; TM ≤1% rośnie 0,08059→0,24539 (3/9 trafień).
+Nie znamy wyniku ukrytego zbioru końcowego ani publicznych wyników per metoda.
+
+## Poprzednia baza — zgłoszenie #2409
 
 **Najlepszy potwierdzony publiczny mIoU: 0,6369**, wcześniej #2163:0,6145.
 PixelSeal: message_localizer po dopasowanej kontynuacji; TrustMark: model z wiadomością
@@ -30,7 +43,17 @@ node’a z czterema A100, łącznie **14 min 17 s** pracy node’a.
   zmiany mIoU obejmuje zero. Nie nazywaj tego pełnym OOF ani potwierdzoną generalizacją.
 - Pierwsze głowy 1×1/clean-hole i dalsza adaptacja na realnych patchach nie pomogły;
   regresje zapisano w raporcie. Czyste dziury pozostają nierozwiązane.
-- **Bez nowego submission. #2409/public 0,6369 pozostaje najlepszym zgłoszeniem.**
+- **Po dalszym pełnym fine-tuningu wysłano #2675/public 0,6440; patrz aktualny raport powyżej.**
+
+### Pełny fine-tuning po pytaniu o wykorzystanie danych
+
+Na tym samym foldzie PS dalszy trening całego modelu dał **0,55748 → 0,57088**
+(+0,01340; bootstrap zmiany 0,00774–0,01930). Replay online obejmujący 1212 źródeł
+osiągnął 0,56524, więc nie przebił stałych 128 kompozycji. TM: stała pula 0,64096,
+online 0,64620, baza 0,64662. To test wykorzystania istniejących danych, nie nowych
+niezależnych źródeł. PS ≤1% nadal ma FG IoU 0; zysk dotyczy głównie większych masek.
+Zgłoszony kandydat #2675: PS pełna kontynuacja + TM skan pustych masek,
+SS bez zmian. Ostateczny status i odpowiedź serwera: [raport](local_presence/REPORT.md).
 
 ## Organizacja eksperymentów
 

@@ -1,0 +1,17 @@
+{
+  "family": "pixelseal",
+  "source": "/p/project1/training2666/pszenny1/native-localizer/small-zoom-production/pixelseal/last.pt",
+  "source_sha256": "658358d0b10d5f25992624a4519696aad4ac797982dd756a3b3e966e541d0790",
+  "steps": 150,
+  "seed": 4242,
+  "batch": 16,
+  "synthetic": 12,
+  "real": 4,
+  "encoder_lr": 2e-06,
+  "new_lr": 2e-05,
+  "threshold": 0.5,
+  "source_policy": "exact128fixed replay as ps-data-small validation",
+  "train_real_count": 170,
+  "test_recipe_frozen": true,
+  "tta": false
+}
