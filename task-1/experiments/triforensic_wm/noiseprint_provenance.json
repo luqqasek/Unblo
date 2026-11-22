@@ -1,0 +1,24 @@
+{
+  "commit": "ae54475df6f41a491d7615100feb19263dec13f7",
+  "authors": "Guillaro, Cozzolino, Sud, Dufour, Verdoliva; TruFor CVPR2023, GRIP-UNINA",
+  "files": [
+    {
+      "file": "DnCNN.py",
+      "url": "https://raw.githubusercontent.com/grip-unina/TruFor/ae54475df6f41a491d7615100feb19263dec13f7/TruFor_train_test/lib/models/DnCNN.py",
+      "sha256": "3736b7c625d03b85accea77c26a41ea2da956dae07d70182532e7df9b74ae882",
+      "bytes": 5442
+    },
+    {
+      "file": "noiseprint.th",
+      "url": "https://raw.githubusercontent.com/grip-unina/TruFor/ae54475df6f41a491d7615100feb19263dec13f7/TruFor_train_test/pretrained_models/noiseprint%2B%2B/noiseprint%2B%2B.th",
+      "sha256": "51c153596efecdfc9bdff1b961d63855b943e6a8fd37083cc7499e60b36dd8bf",
+      "bytes": 2267965
+    },
+    {
+      "file": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/grip-unina/TruFor/ae54475df6f41a491d7615100feb19263dec13f7/TruFor_train_test/LICENSE.txt",
+      "sha256": "07201e07e3d2c1ac55480037a87734fcccacbb0cd0e25a31e3b89ac7ffadf8b4",
+      "bytes": 1837
+    }
+  ]
+}
