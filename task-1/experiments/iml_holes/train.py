@@ -90,7 +90,13 @@ def main():
     atomic_json(out/'probe.json',probe);print('IML_PROBE',json.dumps(probe),flush=True)
     assert probe['fp32_bf16_probability_mean']<.01,'Investigate AMP before training'
     del fp,amp,padded,x;torch.cuda.empty_cache()
-    forward=torch.nn.DataParallel(model,device_ids=list(range(4)));syn,provenance=synth_bank(root);atomic_json(out/'synthetic_provenance.json',provenance)
+    forward=torch.nn.DataParallel(model,device_ids=list(range(4)))
+    with torch.inference_mode():
+        smoke=images[valid[0]][None].cuda()
+        single=model(smoke,force_fp32=True);parallel=forward(smoke.repeat(4,1,1,1),force_fp32=True)
+        replica_error=float((parallel-single).abs().max());assert replica_error<1e-3,('Replica mismatch',replica_error)
+    atomic_json(out/'replica_check.json',{'FP32_single_vs_four_replicas_max_abs_logit':replica_error,'tolerance':1e-3,'upstream_list_alias_fixed':True})
+    syn,provenance=synth_bank(root);atomic_json(out/'synthetic_provenance.json',provenance)
     groups={}
     for name,param in model.named_parameters():
         if not param.requires_grad:continue
@@ -105,14 +111,14 @@ def main():
         for begin in range(0,len(valid),8):
             ids=valid[begin:begin+8];xx=torch.stack([images[i] for i in ids]).cuda();clean=forward(xx).float().sigmoid().cpu().numpy()
             for i,c in zip(ids,clean):
-                it=items[i];name=it['image_name'];b=base[name];y=it['mask128'];route=agreement[name] and b['mask'].mean()>.5;prob=.5*b['p']+.5*(1-c) if route else b['p'];mask=prob>=.5 if route else b['mask']
+                it=items[i];name=it['image_name'];b=base[name];y=it['mask128'];route=bool(agreement[name] and b['mask'].mean()>.5);prob=.5*b['p']+.5*(1-c) if route else b['p'];mask=prob>=.5 if route else b['mask']
                 meta={'image_name':name,'family':b['family'],'full_watermark':bool(it['full_watermark']),'routed':bool(route)}
                 rows.append(score(prob,mask,y,**meta));brows.append(score(b['p'],b['mask'],y,**meta));srows.append(dict(image_metrics(1-c,y),**meta));names.append(name);pp.append(prob);cp.append(c);routes.append(route);masks.append(mask);ys.append(y)
         delta=np.array([r['miou']-b['miou'] for r,b in zip(rows,brows)]);boot=np.random.default_rng(42);ci=np.quantile(delta[boot.integers(len(delta),size=(5000,len(delta)))].mean(1),[.025,.975]);summ=summarize(rows);before=summarize(brows)
         family={f:{'before':summarize([r for r in brows if r['family']==f]),'after':summarize([r for r in rows if r['family']==f])} for f in FAMILIES}
         result={'step':step,'summary':summ,'baseline':before,'specialist_diagnostic':summarize(srows),'by_family':family,'paired_delta':{'mean':float(delta.mean()),'ci95':ci.tolist()},'routed':int(sum(routes)),'routed_non_restoration':sum(r['routed'] and not r['full_watermark'] for r in rows),'per_image':rows,'baseline_per_image':brows,'specialist_per_image':srows,'protocol':'predeclared equal blend, threshold0.5, original fold1 across3 families, reused development; no GT routing'}
         atomic_json(out/f'real-{step}.json',result);np.savez_compressed(out/f'maps-{step}.npz',names=names,probabilities=pp,clean_probabilities=cp,masks=masks,targets=ys,routed=routes)
-        print('IML_VALIDATION',step,json.dumps({'miou':summ['all']['miou'],'baseline':before['all']['miou'],'delta':result['paired_delta'],'clean_wm_over50':summ['wm_over50']['clean_iou'],'families':{f:v['after']['all']['miou'] for f,v in family.items()},'routed':sum(routes)}),flush=True);model.train();return result
+        print('IML_VALIDATION',step,json.dumps({'miou':summ['all']['miou'],'baseline':before['all']['miou'],'delta':result['paired_delta'],'clean_wm_over50':summ['wm_over50']['clean_iou'],'families':{f:v['after']['all']['miou'] for f,v in family.items()},'routed':int(sum(routes))}),flush=True);model.train();return result
     evaluate(0);exposure=[];training=time.monotonic();stop='endpoint';final=None
     for step in range(1,a.steps+1):
         rid=rng.choice(train,4,replace=True);sid=rng.integers(len(syn),size=4);x=torch.stack([images[i] for i in rid]+[syn[i][0] for i in sid]).cuda();y=torch.stack([targets[i] for i in rid]+[syn[i][1] for i in sid]).cuda()

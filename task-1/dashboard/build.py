@@ -306,11 +306,17 @@ def build():
     # Next ideas measured adapter
     from next_ideas_adapter import add_rows as add_next_ideas
     add_next_ideas(EXPERIMENTS,DIST,row)
-    from pcmv_validation_adapter import add_rows as add_pcmv
-    add_pcmv(EXPERIMENTS, DIST, row)
+    from pcmv_validation_adapter import add_rows as add_pcmv_validation
+    add_pcmv_validation(EXPERIMENTS, DIST, row)
     # RTX all-information measured adapter
     from rtx_all_information_adapter import add_rows as add_allinfo
     add_allinfo(EXPERIMENTS, DIST, row)
+    # Shared IML-ViT measured adapter
+    from iml_holes_adapter import add_rows as add_iml_holes
+    add_iml_holes(EXPERIMENTS,DIST,row)
+    # PCMV measured adapter
+    from pcmv_adapter import add_rows as add_pcmv
+    add_pcmv(EXPERIMENTS,DIST,row)
     titles={'synthetic_pretrain_2k/results/full_train/upload_receipt.json':'StegaStamp synthetic pretrain + real finetune; previous PixelSeal / TrustMark',
             'decoder_evidence/results/full_train/upload_receipt.json':'StegaStamp message correction + previous PixelSeal / TrustMark',
             'stegastamp_stable_selection/results/full_train/upload_receipt.json':'StegaStamp stable selection + previous PixelSeal / TrustMark',

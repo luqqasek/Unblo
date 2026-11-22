@@ -1,10 +1,10 @@
 # Task 1 experiment dashboard
 
 For model optimization, start with `experiments/RESEARCH_HANDOFF_2026-11-22.md`
-and `experiments/README.md`. Current best accepted submission is #3054 (0.6677
-public mIoU): PS/TM retained from #2675, including NRGMark crop verification and
-the empty-mask TM scan; native RGB StegaStamp after450 real/replay updates and
-the validated fixed empty/full-mask fallback. See `next_ideas/REPORT.md`. Preserve the
+and `experiments/README.md`. Current best accepted submission is #3188 (0.6736
+public mIoU): PixelSeal EMA1561 global/carrier branch, TrustMark and StegaStamp
+unchanged from #3054. PixelSeal single-fold validation0.581724; tiny masks remain
+unresolved. See `pcmv/REPORT.md` and `next_ideas/REPORT.md`. Preserve the
 historical inverse-STN correction only in the legacy feature pipeline; the new
 raw-image segmentator has no STN. Read the protocol before comparing scores.
 

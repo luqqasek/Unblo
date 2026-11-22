@@ -1,0 +1,11 @@
+{
+  "selected": true,
+  "reason": "User prioritized strongest overall checkpoint and immediate predictions. Overall gain>0.003; minority regression disclosed. Earlier completed job used prior minority veto and produced no test artifact.",
+  "previous_selection": false,
+  "delta": 0.010841180351744943,
+  "minority_guard": false,
+  "gpu_devices": [
+    0,
+    1
+  ]
+}

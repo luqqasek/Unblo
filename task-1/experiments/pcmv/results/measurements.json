@@ -1,0 +1,9 @@
+[
+  {
+    "family": "pixelseal",
+    "name": "Global carrier EMA1561 / exact inference",
+    "protocol": "Repeated57-image development fold, one seed,113-real training; no all170 refit",
+    "miou": 0.5817244623066825,
+    "note": "Delta+0.010841; minority guardFalse; per-bucket regressions retained in report."
+  }
+]

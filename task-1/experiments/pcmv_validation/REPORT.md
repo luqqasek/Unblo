@@ -91,7 +91,7 @@ Sprawdzono zgodność full-mask spatial pooling z oryginalnym dekoderem: maksyma
 
 **Jedna rekomendowana metoda do dalszego sprawdzenia:** weryfikator wyłącznie czystych dziur oparty na **kontraście ablacji zamrożonego PixelSeal przy wejściu 512 względem dopasowanych kontroli**, początkowo z co najwyżej jednym carve. Najpierw potrzebuje propozycji bez GT obejmujących rzeczywiste dziury oraz pomiaru fałszywych wycięć na clean/full-WM twins i przy błędnych wiadomościach. Dopiero po spełnieniu tych warunków uzasadniony będzie trening selektora. Obecny test nie uzasadnia uruchomienia pełnego PCMV ani podania prognozy publicznego wyniku 0,80.
 
-Poprzedni eksperyment wszystkich informacji został zakończony jako **brak wykazanej poprawy**: PS Δ−0,00399, TM Δ−0,00375, oba CI obejmują zero; SS nie wytrenowano. [Raport zatrzymanego eksperymentu](../rtx_all_information/REPORT.md). Najlepszy istniejący publiczny wynik pozostaje **#3054: 0,6677**; badania PCMV go nie zmieniły.
+Poprzedni eksperyment wszystkich informacji został zakończony jako **brak wykazanej poprawy**: PS Δ−0,00399, TM Δ−0,00375, oba CI obejmują zero; SS nie wytrenowano. [Raport zatrzymanego eksperymentu](../rtx_all_information/REPORT.md). Punktem odniesienia dostępnym podczas tej lokalnej analizy był **#3054: 0,6677**; opisane tu sondy go nie zmieniły. Przy synchronizacji repozytorium znaleziono nowszy, osobny wynik **#3188: 0,6736**, uzyskany mocniejszą bazą PixelSeal — nie weryfikatorem opisanym powyżej; zobacz [osobny raport PCMV](../pcmv/REPORT.md).
 
 Skrypty odtwarzające obliczenia: `validate_cached.py`, `proposal_screen.py`, `signal_oracle.py`. Wagi i duże cache pozostają lokalnie na maszynie RTX; żaden skrypt nie uruchamia treningu.
 
