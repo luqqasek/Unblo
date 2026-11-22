@@ -1,6 +1,6 @@
 # Task 3 · Machine unlearning
 
-**Selected result: E50_feature10, public score 0.3149, accepted submission 4183.** [Server receipt](evidence/submissions-E50_feature10_queue_v1_attempt1.json) · [GPU validation](evidence/validation-E50_feature10.json) · [challenge brief](challenge.pdf).
+**Selected result: E50_feature10, public score 0.3149, accepted submission 4183.** [Server receipt](evidence/submission-E50_feature10.json) · [GPU validation](evidence/validation-E50_feature10.json) · [challenge brief](challenge.pdf).
 
 Starting from the supplied ViT-B/16 checkpoint, forget 3,500 unlabeled images while retaining utility. The evaluator compares exact and altered forget images with retrained gold models and applies a 70% hidden-accuracy gate. Gold models, control images and utility labels are unavailable locally.
 
