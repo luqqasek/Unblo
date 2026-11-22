@@ -1,0 +1,11 @@
+{
+  "step": 400,
+  "seconds_total": 84.02634435100481,
+  "seconds_train_including_gates": 36.17553878000035,
+  "candidate_for_test": false,
+  "new_validation_miou": 0.5817244623066825,
+  "delta": 0.0,
+  "gpu_processes": 2,
+  "job_id": "15905399",
+  "stopped_reason": "recognition_gate_or_time_budget"
+}

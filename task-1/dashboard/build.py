@@ -312,6 +312,9 @@ def build():
     # PCMV measured adapter
     from pcmv_adapter import add_rows as add_pcmv
     add_pcmv(EXPERIMENTS,DIST,row)
+    # Native PixelSeal regions adapter
+    from pixelseal_regions_adapter import add_rows as add_regions
+    add_regions(EXPERIMENTS,DIST,row)
     titles={'synthetic_pretrain_2k/results/full_train/upload_receipt.json':'StegaStamp synthetic pretrain + real finetune; previous PixelSeal / TrustMark',
             'decoder_evidence/results/full_train/upload_receipt.json':'StegaStamp message correction + previous PixelSeal / TrustMark',
             'stegastamp_stable_selection/results/full_train/upload_receipt.json':'StegaStamp stable selection + previous PixelSeal / TrustMark',

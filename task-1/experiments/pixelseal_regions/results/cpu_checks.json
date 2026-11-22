@@ -1,0 +1,7 @@
+{
+  "integral_sum_vs_direct_tolerance": 0.0001,
+  "backward_finite": true,
+  "majority_mask_and_box_iou_exact": true,
+  "batch_independent_forward": true,
+  "trainable_parameters": 95610
+}

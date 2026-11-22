@@ -2,7 +2,15 @@
 
 [Pełny indeks dokumentacji i wykonanych prac](DOCUMENTATION_INDEX.md).
 
-## Aktualny wynik — zgłoszenie #3054
+## Aktualny wynik — zgłoszenie #3188
+
+**Najlepszy potwierdzony publiczny mIoU: 0,6736**, +0,0059 wobec #3054.
+Zmieniono PixelSeal na gałąź global/carrier EMA1561; TrustMark i StegaStamp
+pozostają bez zmian. Ten sam rozwojowy fold 57 obrazów PixelSeal:
+0,570883 → 0,581724. FG IoU ≤5% nadal wynosi 0.
+[Raport i potwierdzenie serwera](pcmv/REPORT.md).
+
+## Poprzedni wynik — zgłoszenie #3054
 
 **Najlepszy potwierdzony publiczny mIoU: 0,6677**, wcześniej #3005: 0,6597 oraz #2675: 0,6440.
 [Raport zgłoszenia](next_ideas/SUBMISSION_450_REPORT.md) · [Walidacja](next_ideas/REPORT.md).
@@ -163,3 +171,15 @@ Same57-image PS validation0.570883→0.581724. No all170 PS refit; trained113 re
 images plus synthetic data. Small FG<=5% remains unresolved; see
 [pcmv/REPORT.md](pcmv/REPORT.md) for exact buckets, artifact hash and receipt.
 PCMV completed without gain (0.581724 → 0.581724); no duplicate submission or extended training. Tiny foreground and clean-hole failures remain unresolved.
+
+## Native PixelSeal region screen: rejected
+
+[Report](pixelseal_regions/REPORT.md): exact native thin-crop pairs from public
+photos and GT-clean regions of real training images; new95,610-parameter region
+classifier and500,494-box search, one fixed57-image development fold. The
+predeclared geometry covers all16 small cases at IoU>=0.5 (oracle coverage only),
+but recognition remains chance after400 updates: held-out AUC0.5027. FullFP32
+audit AUC0.5016 confirms readout quantization alone does not rescue this checkpoint.
+Inner calibration selects no changes; validation0.581724→0.581724, all16 small
+foreground cases still missed. No test inference or submission. Two A100 workers,
+143s allocated node time; node released. Best accepted remains#3188/public0.6736.

@@ -1,9 +1,11 @@
 # Watermark localization — current research handoff, 2026-11-22
 
-**Best accepted public submission: #3054, mIoU 0.6677**, up from #3005 (0.6597) and #2675 (0.6440).
-Only StegaStamp changed:450 real/replay updates plus the fixed empty/full fallback.
-The server accepted the validated1020-mask artifact at04:15UTC on2026-11-22.
-The hidden final score and per-family public scores are unknown.
+**Best accepted public submission: #3188, mIoU 0.6736**, up from #3054 (0.6677).
+Only PixelSeal changed to the EMA1561 global/carrier branch; TrustMark and
+StegaStamp remain unchanged. Same 57-image PixelSeal development fold:
+0.570883 → 0.581724; tiny foreground remains unresolved. See
+[PCMV and submission receipt](pcmv/REPORT.md). Public per-family scores and
+the hidden final score are unknown.
 
 Start with [latest submission](next_ideas/SUBMISSION_450_REPORT.md), [latest experiments](next_ideas/REPORT.md), [previous experiments](local_presence/REPORT.md), [previous small-region report](small_zoom/REPORT.md),
 [generator comparison](region_data/REPORT.md), and
@@ -239,3 +241,15 @@ Same57-image PS validation0.570883→0.581724. No all170 PS refit; trained113 re
 images plus synthetic data. Small FG<=5% remains unresolved; see
 [pcmv/REPORT.md](pcmv/REPORT.md) for exact buckets, artifact hash and receipt.
 PCMV completed without gain (0.581724 → 0.581724); no duplicate submission or extended training. Tiny foreground and clean-hole failures remain unresolved.
+
+## Native PixelSeal region screen: rejected
+
+[Report](pixelseal_regions/REPORT.md): exact native thin-crop pairs from public
+photos and GT-clean regions of real training images; new95,610-parameter region
+classifier and500,494-box search, one fixed57-image development fold. The
+predeclared geometry covers all16 small cases at IoU>=0.5 (oracle coverage only),
+but recognition remains chance after400 updates: held-out AUC0.5027. FullFP32
+audit AUC0.5016 confirms readout quantization alone does not rescue this checkpoint.
+Inner calibration selects no changes; validation0.581724→0.581724, all16 small
+foreground cases still missed. No test inference or submission. Two A100 workers,
+143s allocated node time; node released. Best accepted remains#3188/public0.6736.
